@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: es-alpha.bst
+Database file #1: main.bib
+Warning--to sort, need author or key in PyMEs2017
+You've used 21 entries,
+            2580 wiz_defined-function locations,
+            672 strings with 7312 characters,
+and the built_in function-call counts, 5804 in all, are:
+= -- 539
+> -- 161
+< -- 20
++ -- 43
+- -- 40
+* -- 299
+:= -- 885
+add.period$ -- 62
+call.type$ -- 21
+change.case$ -- 83
+chr.to.int$ -- 19
+cite$ -- 23
+duplicate$ -- 258
+empty$ -- 584
+format.name$ -- 80
+if$ -- 1246
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 2
+newline$ -- 107
+num.names$ -- 60
+pop$ -- 205
+preamble$ -- 1
+purify$ -- 125
+quote$ -- 0
+skip$ -- 245
+stack$ -- 0
+substring$ -- 149
+swap$ -- 22
+text.length$ -- 20
+text.prefix$ -- 20
+top$ -- 0
+type$ -- 164
+warning$ -- 1
+while$ -- 40
+width$ -- 25
+write$ -- 252
+(There was 1 warning)

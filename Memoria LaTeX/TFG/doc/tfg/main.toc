@@ -1,0 +1,54 @@
+\select@language {spanish}
+\contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.1}
+\contentsline {chapter}{Abstract}{\es@scroman {vii}}{chapter*.2}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{chapter*.3}
+\contentsline {chapter}{\'{I}ndice general}{\es@scroman {xiii}}{chapter*.4}
+\contentsline {chapter}{\IeC {\'I}ndice de tablas}{\es@scroman {xv}}{chapter*.5}
+\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {xvii}}{chapter*.6}
+\contentsline {chapter}{\IeC {\'I}ndice de listados}{\es@scroman {xix}}{chapter*.7}
+\contentsline {chapter}{Listado de acr\IeC {\'o}nimos}{\es@scroman {xxi}}{chapter*.8}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}T\IeC {\'\i }tulo del proyecto}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Estructura del documento}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}M\IeC {\'a}s texto para que ocupe varias p\IeC {\'a}ginas}{1}{section.1.3}
+\contentsline {section}{\numberline {1.4}Otra secci\IeC {\'o}n}{4}{section.1.4}
+\contentsline {chapter}{\numberline {2}Objetivos}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Objetivo general}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Objetivos espec\IeC {\'\i }ficos}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Objetivo I: Gesti\IeC {\'o}n de los Usuarios}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Objetivo II: Establecimiento de diferentes roles}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Objetivo III: Establecimiento de pol\IeC {\'\i }ticas para el uso}{6}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Objetivo IV: Interacci\IeC {\'o}n entre PC y dispositivo m\IeC {\'o}vil}{6}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Objetivo V: Integraci\IeC {\'o}n de la aplicaci\IeC {\'o}n con otros servicios}{6}{subsection.2.2.5}
+\contentsline {chapter}{\numberline {3}Antecedentes}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}WhatsApp}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Funcionalidades a nivel de Usuario}{8}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Funcionalidades para los Desarrolladores}{8}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Telegram}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Funcionalidades a nivel de Usuario}{9}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Funcionalidades para los Desarrolladores}{10}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Slack}{10}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Funcionalidades para los Usuarios}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Funcionalidades para los Desarrolladores}{11}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Skype}{12}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Funcionalidades para los Usuarios}{12}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Funcionalidades para los Desarrolladores}{13}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Signal}{13}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Funcionalidades para los Usuarios}{14}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Funcionalidades para los Desarrolladores}{14}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Wickr}{14}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Funcionalidades para los Usuarios}{15}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Funcionalidades para los Desarrolladores}{15}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}Pap\IeC {\'a}s 2.0}{16}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Funcionalidades para los Usuarios}{16}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Funcionalidades para los Desarrolladores}{17}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}Comparaci\IeC {\'o}n de Alternativas}{17}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}WhatsApp vs Telegram}{17}{subsection.3.8.1}
+\contentsline {section}{\numberline {3.9}Problemas comunes con las aplicaciones de mensajer\IeC {\'\i }a}{18}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Celebraciones desafortunadas}{18}{subsection.3.9.1}
+\contentsline {subsection}{\numberline {3.9.2}Uso de los grupos para compartir deberes hechos}{18}{subsection.3.9.2}
+\contentsline {subsection}{\numberline {3.9.3}Grupos escolares para hablar de todo}{19}{subsection.3.9.3}
+\contentsline {chapter}{\numberline {4}Metodolog\IeC {\'\i }a}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Scrum}{21}{section.4.1}
+\contentsline {chapter}{Un anexo de ejemplo}{25}{appendix*.17}
+\contentsline {chapter}{Referencias}{27}{appendix*.18}

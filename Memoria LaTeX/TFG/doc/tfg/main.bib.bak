@@ -1,0 +1,194 @@
+% Encoding: UTF-8
+@Book{design_patterns,
+  key =          {GoF},
+  author = 	 	 {E. Gamma and R. Helm and R. Johnson and J. Vlissides},
+  title = 	 	 {Dessign Patterns},
+  publisher = 	 {Addison-Wesley},
+  year = 	 	 {1996},
+}
+
+@Book{puder05:_distr_system_archit,
+  author =		{A. Puder and K. Römer and F. Pilhofer},
+  title = 	 	{Distributed Systems Architecture: A Middleware Approach},
+  publisher = 	{Morgan Kaufman},
+  year = 	 	{2005}
+}
+
+@Book{sousa,
+  author = 	 {{Martínez de Sousa}, J.},
+  title = 	 {Ortografía y ortotipografía del español actual},
+  publisher = 	 {Trea},
+  year = 	 {2008},
+}
+
+@Misc{Novoa2014,
+  author    = {Jaime Novoa},
+  title     = {La historia de WhatsApp: de la nada absoluta a ser comprados por Facebook},
+  month     = feb,
+  year      = {2014},
+  timestamp = {2017-09-04},
+  url       = {https://www.genbeta.com/movil/la-historia-de-whatsapp-de-la-nada-absoluta-a-ser-comprados-por-facebook},
+}
+
+@Misc{WhatsApp2017,
+  author    = {WhatsApp},
+  title     = {Funciones},
+  year      = {2017},
+  owner     = {WhatsApp Inc.},
+  timestamp = {2017-09-04},
+  url       = {https://www.whatsapp.com/features/},
+}
+
+@Misc{Ramirez2017,
+  author    = {Iván Ramírez},
+  title     = {WhatsApp vs Telegram en 2017: ¿cuál es la mejor aplicación de mensajería?},
+  month     = jun,
+  year      = {2017},
+  timestamp = {2017-09-05},
+  url       = {https://www.xatakandroid.com/comunicacion-y-mensajeria/whatsapp-vs-telegram-en-2017-cual-es-la-mejor-aplicacion-de-mensajeria},
+}
+
+@Misc{Telegram2017,
+  author    = {Telegram},
+  title     = {What can you do with Telegram?},
+  year      = {2017},
+  timestamp = {2017-09-05},
+  url       = {https://telegram.org},
+}
+
+@Misc{Telegram2017a,
+  author    = {Telegram},
+  title     = {Preguntas Frecuentes},
+  year      = {2017},
+  timestamp = {2017-09-06},
+  url       = {https://telegram.org/faq/es},
+}
+
+@Misc{PyMEs2017,
+  title     = {Caso de Estudio real: cómo Slack se ha convertido en la iniciativa empresarial que más rápido ha crecido de la historia},
+  year      = {2017},
+  timestamp = {2017-09-06},
+  url       = {https://www.recursosparapymes.com/premium/caso-de-estudio-real-como-slack-se-ha-convertido-en-la-iniciativa-empresarial-que-mas-rapido-ha-crecido-de-la-historia/},
+}
+
+@Misc{Thomas2015,
+  author    = {Knowlton Thomas},
+  title     = {A Brief History of Slack},
+  month     = sep,
+  year      = {2015},
+  timestamp = {2017-09-06},
+  url       = {https://techvibes.com/2015/09/25/a-brief-history-of-slack-2015-09-25},
+}
+
+@Misc{Slack2017,
+  author    = {Slack},
+  title     = {Features},
+  year      = {2017},
+  timestamp = {2017-09-06},
+  url       = {https://slack.com/features},
+}
+
+@Misc{Velasco2013,
+  author    = {J.J. Velasco},
+  title     = {Historia de la Tecnología: Skype cumple 10 años},
+  month     = aug,
+  year      = {2013},
+  timestamp = {2017-09-06},
+  url       = {https://hipertextual.com/2013/08/skype-decimo-aniversario},
+}
+
+@Misc{Ramirez2013,
+  author    = {Iván Ramírez},
+  title     = {Skype cumple 10 años: historia del programa de llamadas más famoso},
+  month     = aug,
+  year      = {2013},
+  timestamp = {2017-09-06},
+  url       = {https://www.softonic.com/articulos/skype-10-aniversario},
+}
+
+@Misc{Skype2017,
+  author    = {Skype},
+  title     = {Características},
+  year      = {2017},
+  timestamp = {2017-09-06},
+  url       = {https://www.skype.com/es/features/},
+}
+
+@Misc{Skype2017a,
+  author = {Skype},
+  title  = {Skype for Developers},
+  year   = {2017},
+  url    = {https://dev.skype.com},
+}
+
+@Misc{Signal2017,
+  author    = {Signal},
+  title     = {Características},
+  year      = {2017},
+  timestamp = {2017-09-07},
+  url       = {https://signal.org},
+}
+
+@Misc{Elio2016,
+  author    = {Javier Elio},
+  title     = {Wickr Me, la mensajería instantánea ultrasegura que utiliza Mr Robot},
+  month     = sep,
+  year      = {2016},
+  timestamp = {2017-09-07},
+  url       = {https://elandroidelibre.elespanol.com/2016/09/wickr-me.html},
+}
+
+@Misc{Wickr2017,
+  author    = {Wickr},
+  title     = {Products},
+  year      = {2017},
+  timestamp = {2017-09-07},
+  url       = {https://www.wickr.com/products},
+}
+
+@Misc{JCCM2017,
+  author    = {JCCM},
+  title     = {Papás 2.0},
+  month     = feb,
+  year      = {2017},
+  timestamp = {2017-09-08},
+  url       = {http://www.educa.jccm.es/alumnado/es/papas},
+}
+
+@Manual{JCCM2010,
+  title     = {Manual Papás 2.0},
+  author    = {JCCM},
+  month     = sep,
+  year      = {2010},
+  timestamp = {2017-09-08},
+  url       = {http://www.ies-ramonycajal.com/files/ManualPadresMadres.pdf},
+}
+
+@Misc{Vanguardia2017,
+  author    = {Vanguardia},
+  title     = {Un grupo de madres celebra que el colegio cambie de clase a un niño con Asperger},
+  month     = sep,
+  year      = {2017},
+  timestamp = {2017-09-22},
+  url       = {http://www.lavanguardia.com/vida/20170903/431027397175/madres-celebran-colegio-eche-nino-asperger.html},
+}
+
+@Misc{Alias2017,
+  author    = {Marina Alias},
+  title     = {Los grupos de WhatsApp de padres vuelven con alevosía: <<Hasta comparten fotos de los deberes hechos>>},
+  month     = sep,
+  year      = {2017},
+  timestamp = {2017-09-22},
+  url       = {http://www.vozpopuli.com/altavoz/educacion/reglas-escritas-grupos-WhatsApp-colegio-redes-sociales-padres_0_1059194995.html},
+}
+
+@Misc{Consuelo2017,
+  author    = {Consuelo},
+  title     = {<<Me fui del grupo de WhatsApp y ahora me tratan con distancia en la vida real>>},
+  month     = aug,
+  year      = {2017},
+  timestamp = {2017-10-01},
+  url       = {http://www.lanacion.com.ar/2050884-me-fui-del-grupo-de-whatsapp-y-ahora-me-tratan-con-distancia-en-la-vida-real},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
