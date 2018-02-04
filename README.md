@@ -3,3 +3,7 @@ Trabajo Fin de Grado para el desarrollo de una aplicación de mensajería instan
 
 ## Autor
 * Diego Andérica Richard
+
+-----------------------------------------------------------
+Escuela Superior de Informática <br>
+Universidad de Castilla-La Mancha - España
