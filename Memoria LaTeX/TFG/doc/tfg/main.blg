@@ -4,45 +4,45 @@ The top-level auxiliary file: main.aux
 The style file: es-alpha.bst
 Database file #1: main.bib
 Warning--to sort, need author or key in PyMEs2017
-You've used 21 entries,
+You've used 23 entries,
             2580 wiz_defined-function locations,
-            672 strings with 7312 characters,
-and the built_in function-call counts, 5804 in all, are:
-= -- 539
-> -- 161
-< -- 20
-+ -- 43
-- -- 40
-* -- 299
-:= -- 885
-add.period$ -- 62
-call.type$ -- 21
-change.case$ -- 83
-chr.to.int$ -- 19
-cite$ -- 23
-duplicate$ -- 258
-empty$ -- 584
-format.name$ -- 80
-if$ -- 1246
+            683 strings with 7607 characters,
+and the built_in function-call counts, 6460 in all, are:
+= -- 600
+> -- 194
+< -- 21
++ -- 55
+- -- 51
+* -- 341
+:= -- 998
+add.period$ -- 69
+call.type$ -- 23
+change.case$ -- 93
+chr.to.int$ -- 21
+cite$ -- 25
+duplicate$ -- 288
+empty$ -- 634
+format.name$ -- 94
+if$ -- 1377
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 2
-newline$ -- 107
-num.names$ -- 60
-pop$ -- 205
+missing$ -- 4
+newline$ -- 118
+num.names$ -- 66
+pop$ -- 222
 preamble$ -- 1
-purify$ -- 125
+purify$ -- 139
 quote$ -- 0
-skip$ -- 245
+skip$ -- 264
 stack$ -- 0
-substring$ -- 149
-swap$ -- 22
-text.length$ -- 20
-text.prefix$ -- 20
+substring$ -- 164
+swap$ -- 25
+text.length$ -- 21
+text.prefix$ -- 21
 top$ -- 0
-type$ -- 164
+type$ -- 176
 warning$ -- 1
-while$ -- 40
-width$ -- 25
-write$ -- 252
+while$ -- 45
+width$ -- 28
+write$ -- 278
 (There was 1 warning)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{{Mar}08}
+\begin{thebibliography}{GoGdlHdD17}
 
 \bibitem[Ali17]{Alias2017}
 Marina Alias.
@@ -20,6 +20,11 @@ Javier Elio.
   Robot, Septiembre 2016.
 \newblock url:
   \url{https://elandroidelibre.elespanol.com/2016/09/wickr-me.html}.
+
+\bibitem[GoGdlHdD17]{Gomez2017}
+Carmen~Lasa Gómez, Alonso Álvarez García, y Rafael de~las Heras~del Dedo.
+\newblock {\em Métodos Ágiles: Scrum, Kanban, Lean}.
+\newblock Anaya Multimedia, 2017.
 
 \bibitem[JCC10]{JCCM2010}
 JCCM.
@@ -82,6 +87,13 @@ Skype.
 Slack.
 \newblock Features, 2017.
 \newblock url: \url{https://slack.com/features}.
+
+\bibitem[Sut17]{Schwaber2017}
+Ken Schwaber;~Jeff Sutherland.
+\newblock {\em The Scrum Guide}.
+\newblock Scrum, Noviembre 2017.
+\newblock url:
+  \url{http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf}.
 
 \bibitem[Tel17a]{Telegram2017a}
 Telegram.
