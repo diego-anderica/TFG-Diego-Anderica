@@ -1,204 +1,331 @@
+% This file was created with JabRef 2.10.
 % Encoding: UTF-8
-@Book{design_patterns,
-  key =          {GoF},
-  author = 	 	 {E. Gamma and R. Helm and R. Johnson and J. Vlissides},
-  title = 	 	 {Dessign Patterns},
-  publisher = 	 {Addison-Wesley},
-  year = 	 	 {1996},
-}
 
-@Book{puder05:_distr_system_archit,
-  author =		{A. Puder and K. Römer and F. Pilhofer},
-  title = 	 	{Distributed Systems Architecture: A Middleware Approach},
-  publisher = 	{Morgan Kaufman},
-  year = 	 	{2005}
-}
-
-@Book{sousa,
-  author = 	 {{Martínez de Sousa}, J.},
-  title = 	 {Ortografía y ortotipografía del español actual},
-  publisher = 	 {Trea},
-  year = 	 {2008},
-}
-
-@Misc{Novoa2014,
-  author    = {Jaime Novoa},
-  title     = {La historia de WhatsApp: de la nada absoluta a ser comprados por Facebook},
-  month     = feb,
-  year      = {2014},
-  timestamp = {2017-09-04},
-  url       = {https://www.genbeta.com/movil/la-historia-de-whatsapp-de-la-nada-absoluta-a-ser-comprados-por-facebook},
-}
-
-@Misc{WhatsApp2017,
-  author    = {WhatsApp},
-  title     = {Funciones},
-  year      = {2017},
-  owner     = {WhatsApp Inc.},
-  timestamp = {2017-09-04},
-  url       = {https://www.whatsapp.com/features/},
-}
-
-@Misc{Ramirez2017,
-  author    = {Iván Ramírez},
-  title     = {WhatsApp vs Telegram en 2017: ¿cuál es la mejor aplicación de mensajería?},
-  month     = jun,
-  year      = {2017},
-  timestamp = {2017-09-05},
-  url       = {https://www.xatakandroid.com/comunicacion-y-mensajeria/whatsapp-vs-telegram-en-2017-cual-es-la-mejor-aplicacion-de-mensajeria},
-}
-
-@Misc{Telegram2017,
-  author    = {Telegram},
-  title     = {What can you do with Telegram?},
-  year      = {2017},
-  timestamp = {2017-09-05},
-  url       = {https://telegram.org},
-}
-
-@Misc{Telegram2017a,
-  author    = {Telegram},
-  title     = {Preguntas Frecuentes},
-  year      = {2017},
-  timestamp = {2017-09-06},
-  url       = {https://telegram.org/faq/es},
-}
-
-@Misc{PyMEs2017,
-  title     = {Caso de Estudio real: cómo Slack se ha convertido en la iniciativa empresarial que más rápido ha crecido de la historia},
-  year      = {2017},
-  timestamp = {2017-09-06},
-  url       = {https://www.recursosparapymes.com/premium/caso-de-estudio-real-como-slack-se-ha-convertido-en-la-iniciativa-empresarial-que-mas-rapido-ha-crecido-de-la-historia/},
-}
-
-@Misc{Thomas2015,
-  author    = {Knowlton Thomas},
-  title     = {A Brief History of Slack},
-  month     = sep,
-  year      = {2015},
-  timestamp = {2017-09-06},
-  url       = {https://techvibes.com/2015/09/25/a-brief-history-of-slack-2015-09-25},
-}
-
-@Misc{Slack2017,
-  author    = {Slack},
-  title     = {Features},
-  year      = {2017},
-  timestamp = {2017-09-06},
-  url       = {https://slack.com/features},
-}
-
-@Misc{Velasco2013,
-  author    = {J.J. Velasco},
-  title     = {Historia de la Tecnología: Skype cumple 10 años},
-  month     = aug,
-  year      = {2013},
-  timestamp = {2017-09-06},
-  url       = {https://hipertextual.com/2013/08/skype-decimo-aniversario},
-}
-
-@Misc{Ramirez2013,
-  author    = {Iván Ramírez},
-  title     = {Skype cumple 10 años: historia del programa de llamadas más famoso},
-  month     = aug,
-  year      = {2013},
-  timestamp = {2017-09-06},
-  url       = {https://www.softonic.com/articulos/skype-10-aniversario},
-}
-
-@Misc{Skype2017,
-  author    = {Skype},
-  title     = {Características},
-  year      = {2017},
-  timestamp = {2017-09-06},
-  url       = {https://www.skype.com/es/features/},
-}
-
-@Misc{Skype2017a,
-  author = {Skype},
-  title  = {Skype for Developers},
-  year   = {2017},
-  url    = {https://dev.skype.com},
-}
-
-@Misc{Signal2017,
-  author    = {Signal},
-  title     = {Características},
-  year      = {2017},
-  timestamp = {2017-09-07},
-  url       = {https://signal.org},
-}
-
-@Misc{Elio2016,
-  author    = {Javier Elio},
-  title     = {Wickr Me, la mensajería instantánea ultrasegura que utiliza Mr Robot},
-  month     = sep,
-  year      = {2016},
-  timestamp = {2017-09-07},
-  url       = {https://elandroidelibre.elespanol.com/2016/09/wickr-me.html},
-}
-
-@Misc{Wickr2017,
-  author    = {Wickr},
-  title     = {Products},
-  year      = {2017},
-  timestamp = {2017-09-07},
-  url       = {https://www.wickr.com/products},
-}
-
-@Misc{JCCM2017,
-  author    = {JCCM},
-  title     = {Papás 2.0},
-  month     = feb,
-  year      = {2017},
-  timestamp = {2017-09-08},
-  url       = {http://www.educa.jccm.es/alumnado/es/papas},
-}
-
-@Manual{JCCM2010,
-  title     = {Manual Papás 2.0},
-  author    = {JCCM},
-  month     = sep,
-  year      = {2010},
-  timestamp = {2017-09-08},
-  url       = {http://www.ies-ramonycajal.com/files/ManualPadresMadres.pdf},
-}
-
-@Misc{Vanguardia2017,
-  author    = {Vanguardia},
-  title     = {Un grupo de madres celebra que el colegio cambie de clase a un niño con Asperger},
-  month     = sep,
-  year      = {2017},
-  timestamp = {2017-09-22},
-  url       = {http://www.lavanguardia.com/vida/20170903/431027397175/madres-celebran-colegio-eche-nino-asperger.html},
-}
 
 @Misc{Alias2017,
-  author    = {Marina Alias},
-  title     = {Los grupos de WhatsApp de padres vuelven con alevosía: <<Hasta comparten fotos de los deberes hechos>>},
-  month     = sep,
-  year      = {2017},
-  timestamp = {2017-09-22},
-  url       = {http://www.vozpopuli.com/altavoz/educacion/reglas-escritas-grupos-WhatsApp-colegio-redes-sociales-padres_0_1059194995.html},
+  Title                    = {Los grupos de WhatsApp de padres vuelven con alevosía: <<Hasta comparten fotos de los deberes hechos>>},
+
+  Author                   = {Marina Alias},
+  Month                    = sep,
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-22},
+  Url                      = {http://www.vozpopuli.com/altavoz/educacion/reglas-escritas-grupos-WhatsApp-colegio-redes-sociales-padres_0_1059194995.html}
+}
+
+@Misc{AndroidStudio,
+  Title                    = {Android Studio},
+
+  Author                   = {Android},
+
+  Timestamp                = {2018-02-15},
+  Url                      = {https://developer.android.com/studio/index.html}
 }
 
 @Misc{Consuelo2017,
-  author    = {Consuelo},
-  title     = {<<Me fui del grupo de WhatsApp y ahora me tratan con distancia en la vida real>>},
-  month     = aug,
-  year      = {2017},
-  timestamp = {2017-10-01},
-  url       = {http://www.lanacion.com.ar/2050884-me-fui-del-grupo-de-whatsapp-y-ahora-me-tratan-con-distancia-en-la-vida-real},
+  Title                    = {<<Me fui del grupo de WhatsApp y ahora me tratan con distancia en la vida real>>},
+
+  Author                   = {Consuelo},
+  Month                    = aug,
+  Year                     = {2017},
+
+  Timestamp                = {2017-10-01},
+  Url                      = {http://www.lanacion.com.ar/2050884-me-fui-del-grupo-de-whatsapp-y-ahora-me-tratan-con-distancia-en-la-vida-real}
+}
+
+@Misc{creaTactil,
+  Title                    = {miColegioApp},
+
+  Author                   = {creaTáctil},
+
+  Timestamp                = {2018-02-13},
+  Url                      = {http://micolegioapp.com/wordpress/}
+}
+
+@Misc{Educo2016,
+  Title                    = {Las 5 mejores apps para colegios},
+
+  Author                   = {Educo},
+  Month                    = nov,
+  Year                     = {2016},
+
+  Timestamp                = {2018-02-13},
+  Url                      = {http://www.educo.es/las-5-mejores-apps-para-colegios/}
+}
+
+@Misc{Elio2016,
+  Title                    = {Wickr Me, la mensajería instantánea ultrasegura que utiliza Mr Robot},
+
+  Author                   = {Javier Elio},
+  Month                    = sep,
+  Year                     = {2016},
+
+  Timestamp                = {2017-09-07},
+  Url                      = {https://elandroidelibre.elespanol.com/2016/09/wickr-me.html}
+}
+
+@Book{design_patterns,
+  Title                    = {Dessign Patterns},
+  Author                   = {E. Gamma and R. Helm and R. Johnson and J. Vlissides},
+  Publisher                = {Addison-Wesley},
+  Year                     = {1996},
+
+  Key                      = {GoF}
+}
+
+@Book{Gomez2017,
+  Title                    = {Métodos Ágiles: Scrum, Kanban, Lean},
+  Author                   = {Carmen Lasa Gomez and Alonso Álvarez García and Rafael de las Heras del Dedo},
+  Publisher                = {Anaya Multimedia},
+  Year                     = {2017},
+
+  ISBN                     = {978-84-415-3888-7}
+}
+
+@Misc{Andro,
+  Title                    = {Android},
+
+  Author                   = {Google},
+
+  Timestamp                = {2018-02-15},
+  Url                      = {https://www.android.com/}
+}
+
+@Misc{GooFirebase,
+  Title                    = {Firebase},
+
+  Author                   = {Google},
+
+  Timestamp                = {2018-02-15},
+  Url                      = {https://firebase.google.com/?hl=es-419}
+}
+
+@Misc{JCCM2017,
+  Title                    = {Papás 2.0},
+
+  Author                   = {JCCM},
+  Month                    = feb,
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-08},
+  Url                      = {http://www.educa.jccm.es/alumnado/es/papas}
+}
+
+@Manual{JCCM2010,
+  Title                    = {Manual Papás 2.0},
+  Author                   = {JCCM},
+  Month                    = sep,
+  Year                     = {2010},
+
+  Timestamp                = {2017-09-08},
+  Url                      = {http://www.ies-ramonycajal.com/files/ManualPadresMadres.pdf}
+}
+
+@Book{sousa,
+  Title                    = {Ortografía y ortotipografía del español actual},
+  Author                   = {{Martínez de Sousa}, J.},
+  Publisher                = {Trea},
+  Year                     = {2008}
+}
+
+@Misc{Microsoft,
+  Title                    = {Windows},
+
+  Author                   = {Microsoft},
+
+  Timestamp                = {2018-02-15},
+  Url                      = {https://www.microsoft.com/es-es/windows/}
+}
+
+@Misc{Novoa2014,
+  Title                    = {La historia de WhatsApp: de la nada absoluta a ser comprados por Facebook},
+
+  Author                   = {Jaime Novoa},
+  Month                    = feb,
+  Year                     = {2014},
+
+  Timestamp                = {2017-09-04},
+  Url                      = {https://www.genbeta.com/movil/la-historia-de-whatsapp-de-la-nada-absoluta-a-ser-comprados-por-facebook}
+}
+
+@Misc{Java,
+  Title                    = {Java},
+
+  Author                   = {Oracle},
+
+  Timestamp                = {2018-02-15},
+  Url                      = {https://www.java.com/es/about/}
+}
+
+@Book{puder05:_distr_system_archit,
+  Title                    = {Distributed Systems Architecture: A Middleware Approach},
+  Author                   = {A. Puder and K. Römer and F. Pilhofer},
+  Publisher                = {Morgan Kaufman},
+  Year                     = {2005}
+}
+
+@Misc{Ramirez2017,
+  Title                    = {WhatsApp vs Telegram en 2017: ¿cuál es la mejor aplicación de mensajería?},
+
+  Author                   = {Iván Ramírez},
+  Month                    = jun,
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-05},
+  Url                      = {https://www.xatakandroid.com/comunicacion-y-mensajeria/whatsapp-vs-telegram-en-2017-cual-es-la-mejor-aplicacion-de-mensajeria}
+}
+
+@Misc{Ramirez2013,
+  Title                    = {Skype cumple 10 años: historia del programa de llamadas más famoso},
+
+  Author                   = {Iván Ramírez},
+  Month                    = aug,
+  Year                     = {2013},
+
+  Timestamp                = {2017-09-06},
+  Url                      = {https://www.softonic.com/articulos/skype-10-aniversario}
+}
+
+@Misc{Signal2017,
+  Title                    = {Características},
+
+  Author                   = {Signal},
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-07},
+  Url                      = {https://signal.org}
+}
+
+@Misc{Skype2017,
+  Title                    = {Características},
+
+  Author                   = {Skype},
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-06},
+  Url                      = {https://www.skype.com/es/features/}
+}
+
+@Misc{Skype2017a,
+  Title                    = {Skype for Developers},
+
+  Author                   = {Skype},
+  Year                     = {2017},
+
+  Url                      = {https://dev.skype.com}
+}
+
+@Misc{Slack2017,
+  Title                    = {Features},
+
+  Author                   = {Slack},
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-06},
+  Url                      = {https://slack.com/features}
 }
 
 @Manual{Schwaber2017,
-  title        = {The Scrum Guide},
-  author       = {Ken Schwaber; Jeff Sutherland},
-  organization = {Scrum},
-  month        = nov,
-  year         = {2017},
-  timestamp    = {2018-02-05},
-  url          = {http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf},
+  Title                    = {The Scrum Guide},
+  Author                   = {Ken Schwaber; Jeff Sutherland},
+  Month                    = nov,
+  Organization             = {Scrum},
+  Year                     = {2017},
+
+  Timestamp                = {2018-02-05},
+  Url                      = {http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf}
 }
 
-@Comment{jabref-meta: databaseType:bibtex;}
+@Misc{Telegram2017,
+  Title                    = {What can you do with Telegram?},
+
+  Author                   = {Telegram},
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-05},
+  Url                      = {https://telegram.org}
+}
+
+@Misc{Telegram2017a,
+  Title                    = {Preguntas Frecuentes},
+
+  Author                   = {Telegram},
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-06},
+  Url                      = {https://telegram.org/faq/es}
+}
+
+@Misc{TheLatexProject,
+  Title                    = {An introduction to LaTeX},
+
+  Author                   = {The{\ }Latex{\ }Project},
+
+  Timestamp                = {2018-02-18},
+  Url                      = {https://www.latex-project.org/about/}
+}
+
+@Misc{Thomas2015,
+  Title                    = {A Brief History of Slack},
+
+  Author                   = {Knowlton Thomas},
+  Month                    = sep,
+  Year                     = {2015},
+
+  Timestamp                = {2017-09-06},
+  Url                      = {https://techvibes.com/2015/09/25/a-brief-history-of-slack-2015-09-25}
+}
+
+@Misc{Vanguardia2017,
+  Title                    = {Un grupo de madres celebra que el colegio cambie de clase a un niño con Asperger},
+
+  Author                   = {Vanguardia},
+  Month                    = sep,
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-22},
+  Url                      = {http://www.lavanguardia.com/vida/20170903/431027397175/madres-celebran-colegio-eche-nino-asperger.html}
+}
+
+@Misc{Velasco2013,
+  Title                    = {Historia de la Tecnología: Skype cumple 10 años},
+
+  Author                   = {J.J. Velasco},
+  Month                    = aug,
+  Year                     = {2013},
+
+  Timestamp                = {2017-09-06},
+  Url                      = {https://hipertextual.com/2013/08/skype-decimo-aniversario}
+}
+
+@Misc{WhatsApp2017,
+  Title                    = {Funciones},
+
+  Author                   = {WhatsApp},
+  Year                     = {2017},
+
+  Owner                    = {WhatsApp Inc.},
+  Timestamp                = {2017-09-04},
+  Url                      = {https://www.whatsapp.com/features/}
+}
+
+@Misc{Wickr2017,
+  Title                    = {Products},
+
+  Author                   = {Wickr},
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-07},
+  Url                      = {https://www.wickr.com/products}
+}
+
+@Misc{PyMEs2017,
+  Title                    = {Caso de Estudio real: cómo Slack se ha convertido en la iniciativa empresarial que más rápido ha crecido de la historia},
+  Year                     = {2017},
+
+  Timestamp                = {2017-09-06},
+  Url                      = {https://www.recursosparapymes.com/premium/caso-de-estudio-real-como-slack-se-ha-convertido-en-la-iniciativa-empresarial-que-mas-rapido-ha-crecido-de-la-historia/}
+}
+
+@comment{jabref-meta: databaseType:bibtex;}
+

@@ -1,9 +1,7 @@
 \chapter{Antecedentes}
 \label{chap:antecedentes}
 
-\drop{H}{oy} en día existen numerosas alternativas y aplicaciones para poder comunicarse de manera instantánea con otros usuarios, permitiendo la coordinación y organización de un grupo de trabajo, clase docente o, simplemente, para hablar con los amigos. Esto último es lo que se conoce habitualmente como \textit{chatear}.
-
-En este capítulo se presentarán dichas alternativas principales junto con las características más destacadas que ofrecen a los usuarios finales y las que ofrecen a los desarrolladores, tales como si poseen una \acf{API}, si son multiplataforma o si se tratan de aplicaciones de código abierto.
+\drop{H}{oy} en día existen numerosas aplicaciones para comunicarse de manera instantánea con otros usuarios, permitiendo la coordinación y organización de un grupo de trabajo o, simplemente, para hablar con los amigos. Esto último es lo que se conoce habitualmente como \textit{chatear}. En este capítulo se presentará una serie de herramientas para la mensajería instantánea junto con las características más destacadas que ofrecen a los usuarios finales junto con las que ofrecen a los desarrolladores, por ejemplo, si poseen una \acf{API}, si son multiplataforma o si se tratan de aplicaciones de código abierto.
 
 \section{WhatsApp}
 \label{sec:whatsapp}
@@ -16,9 +14,7 @@ En este capítulo se presentarán dichas alternativas principales junto con las 
 	\end{center}
 \end{figure}
 
-WhatsApp es una de las aplicaciones de mensajería instantánea más usadas a nivel de usuario, quizá porque fue de las primeras en llegar a los \textit{smartphones} o teléfonos inteligentes.
-
-En sus comienzos, la aplicación venía a suplir la carencia que acusaba Jan Koum, uno de los creadores, de poder ver un estado al lado de cada uno de los contactos de la agenda de, por aquel entonces, un recién lanzado iPhone. De esta manera, un usuario podría conocer qué estaba haciendo un contacto mediante un texto corto o <<estado>>. Finalmente, el 24 de febrero de 2009, WhatsApp se creó como empresa y producto y, a principios de 2011, ya se encontraba en el top 20 de aplicaciones en la \textit{App Store} de \textit{Apple} en Estados Unidos.
+WhatsApp (figura \ref{fig:whatsapp}) es una de las aplicaciones de mensajería instantánea más usadas a nivel de usuario, quizá porque fue de las primeras en llegar a los \textit{smartphones} o teléfonos inteligentes. En sus comienzos, la aplicación venía a suplir la carencia que acusaba Jan Koum, uno de los creadores, de poder ver un estado al lado de cada uno de los contactos de la agenda de, por aquel entonces, un recién lanzado iPhone. De esta manera, un usuario podría conocer qué estaba haciendo un contacto mediante un texto corto o <<estado>>. Finalmente, el 24 de febrero de 2009, WhatsApp se creó como empresa y producto y a principios de 2011 ya se encontraba en el top 20 de aplicaciones en la \textit{App Store} de \textit{Apple} en Estados Unidos.
 
 \newpage
 
@@ -28,7 +24,7 @@ El 19 de febrero de 2014, la empresa de Mark Zuckerberg, \textit{Facebook}, anun
 WhatsApp, como se ha mencionado anteriormente, permite la comunicación en tiempo real con otros usuarios de la aplicación. Además de eso, algunas de sus características principales a nivel de usuario son \cite{WhatsApp2017}:
 
 \begin{itemize}
-	\item Grupos de <<chat>> de hasta 256 personas para compartir mensajes, fotos y vídeos, con la posibilidad de darles un nombre, silenciarlos, personalizar notificaciones, etc. Cada uno de estos grupos puede tener uno o varios administradores.
+	\item Grupos de <<chat>> de hasta 256 personas para compartir mensajes, fotos y vídeos con la posibilidad de darles un nombre, silenciarlos, personalizar notificaciones, etc. Cada uno de estos grupos puede tener uno o varios administradores.
 	\item Llamadas y videollamadas mediante \acf{VoIP}.
 	\item Posibilidad de continuar una conversación en un navegador web u ordenador personal mediante \textit{WhatsApp Web} o la aplicación de escritorio. En este caso, el teléfono ha de estar conectado a Internet, puesto que hace de <<puente>> reenviando los mensajes al ordenador.
 	\item Cifrado de extremo a extremo mediante el protocolo <<Signal>>.
@@ -36,21 +32,17 @@ WhatsApp, como se ha mencionado anteriormente, permite la comunicación en tiemp
 	\item Envío de mensajes de voz.
 \end{itemize}
 
-\subsection{Funcionalidades para los Desarrolladores}
-Desgraciadamente, WhatsApp no cuenta con una \acs{API} abierta que pueda ser utilizada por los desarrolladores para crear otras aplicaciones basadas en la original. WhatsApp es multiplataforma, encontrándose en diferentes sistemas operativos (además de poder usarse desde un navegador web): Android, iOS, Windows Phone, Nokia Symbian S40, BlackBerry, Windows y MacOS.
+%TODO: Mirar si metemos referencias en los sistemas operativos móviles
 
-El número de usuarios que pueden participar en un único grupo, por el momento, es de 256. Además, cada cuenta de WhatsApp ha de estar vinculada obligatoriamente a un número de teléfono móvil.
+\subsection{Funcionalidades para los Desarrolladores}
+Desgraciadamente, WhatsApp no cuenta con una \acs{API} abierta que pueda ser utilizada por los desarrolladores para crear otras aplicaciones basadas en la original. WhatsApp es multiplataforma, encontrándose en diferentes sistemas operativos (además de poder usarse desde un navegador web): Android, iOS, Windows Phone, Nokia Symbian S40, BlackBerry, Windows y MacOS. El número de usuarios que pueden participar en un único grupo, por el momento, es de 256. Además, cada cuenta de WhatsApp ha de estar vinculada obligatoriamente a un número de teléfono móvil.
 
 \newpage
-
-%TODO Mirar integración con las bases de datos y demás.
-
-%TODO Poner protocolo Signal
 
 \section{Telegram}
 \label{sec:telegram}
 
-Telegram llegó con varios años de retraso con respecto a su principal rival, WhatsApp, que se encontraba ya en una posición, en cierto modo, cómoda y consolidada. Se lanzó en el año 2013, aunque no sería traducido al español y llevado a los ordenadores hasta pasado un año, en 2014. Esta es una de las principales consecuencias de que Telegram no acapare una cuota de usuarios tan grande, pues actualmente tiene cien millones de usuarios frente a mil millones que tiene WhatsApp \cite{Ramirez2017}. No obstante, esta aplicación ofrece muchas características que WhatsApp no tiene, al menos, por ahora.
+Telegram (figura \ref{fig:telegram}) llegó con varios años de retraso con respecto a su principal rival, WhatsApp, que se encontraba ya en una posición, en cierto modo, cómoda y consolidada. Se lanzó en el año 2013, aunque no sería traducido al español y llevado a los ordenadores hasta pasado un año, en 2014. Esta es una de las principales consecuencias de que Telegram no acapare una cuota de usuarios tan grande, pues actualmente tiene cien millones de usuarios frente a los mil millones que tiene WhatsApp \cite{Ramirez2017}. No obstante, esta aplicación ofrece muchas características que WhatsApp no tiene, al menos, por ahora.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -67,7 +59,7 @@ Telegram posee un rango de características algo más amplio, siendo éstas las 
 	\item Coordinar grupos de <<chat>> de hasta 10.000 miembros (<<supergrupos>>).
 	\item Existen también los <<canales>>, donde los usuarios pueden unirse e interactuar con él mediante sólo lectura, no pudiendo enviar ningún tipo de mensaje o archivo.
 	\item Los historiales y conversaciones se almacenan en un servidor externo, no dependiendo del teléfono móvil.
-	\item Posibilidad de enviar archivos de hasta 1.5 \acf{GB}.
+	\item Posibilidad de enviar archivos de hasta 1,5 \acs{GB}.
 	\item Cifrado de mensajes mediante el protocolo propietario de Telegram: \textit{MTProto}.
 	\item Borrado de mensajes no sólo en el dispositivo de origen, sino también en el de destino dentro de una conversación.
 	\item Capacidad de hacer las veces de <<nube personal>> ilimitada, al poder enviarse a un mismo usuario los archivos o mensajes que quiera conservar.
@@ -79,19 +71,14 @@ Telegram posee un rango de características algo más amplio, siendo éstas las 
 
 \begin{itemize}
 	\item Se trata de un software \textit{Open Source}. Esto quiere decir que el código del cliente se encuentra disponible, aunque no pasa lo mismo con el código del servidor.
-	\item Existe una \acs{API}, accesible desde su página web. Existen dos tipos de \acs{API}: una para desarrollar aplicaciones basadas en Telegram y otra para realizar \textit{Bots}, que son como asistentes a los que se pueden realizar consultas.
+	\item Existen dos tipos de \acs{API}: una para desarrollar aplicaciones basadas en Telegram y otra para realizar \textit{Bots}, que son como asistentes a los que se pueden realizar consultas.
 	\item Es un servicio multiplataforma, disponible en los siguientes sistemas operativos (además de tener una versión web): Android, iOS, Firefox OS, Windows, MacOS y Linux.
-	\item Posibilidad de tener <<supergrupos>> de hasta 10.000 usuarios, facilitando la gestión y coordinación de grandes comunidades.
 \end{itemize}
-
-%TODO Mirar compatibilidad con bases de datos.
-
-%TODO Poner protocolo MTProto
 
 \section{Slack}
 \label{sec:slack}
 
-Slack es una aplicación destinada a los conjuntos de personas que trabajan sobre un mismo tema, es decir, principalmente, a equipos y grupos de trabajo. Ha introducido un concepto algo diferente en el ámbito de la mensajería instantánea, mejorando el conocido correo electrónico, puesto que se pueden mantener conversaciones privadas, crear canales públicos o compartir archivos. Originalmente se trataba de una herramienta interna que se comenzó a usar para el desarrollo de un juego en \textit{flash}, llamado \textit{Glitch}. Más tarde, Stewart Butterfield, su fundador, confesó que fracasaron al realizar el juego. A finales de 2012, Butterfield comunicó en \textit{Twitter} que no continuarían con el juego, aunque la empresa, \textit{Tiny Speck}, seguiría <<viva>> \cite{Thomas2015}. Slack se lanzó en febrero de 2014 con alrededor de 15.000 usuarios, para finales de ese año eran 285.000 y la cifra ha ido subiendo hasta los más de tres millones que posee actualmente \cite{PyMEs2017}.
+Slack (figura \ref{fig:slack}) es una aplicación destinada a los conjuntos de personas que trabajan sobre un mismo tema, es decir, principalmente, a equipos y grupos de trabajo. Ha introducido un concepto algo diferente en el ámbito de la mensajería instantánea, mejorando el conocido correo electrónico, puesto que se pueden mantener conversaciones privadas, crear canales públicos o compartir archivos. Originalmente se trataba de una herramienta interna que se comenzó a usar para el desarrollo de un juego en \textit{flash}, llamado \textit{Glitch}. Más tarde, Stewart Butterfield, su fundador, confesó que fracasaron al realizar el juego. A finales de 2012, Butterfield comunicó en \textit{Twitter} que no continuarían con el juego, aunque la empresa, \textit{Tiny Speck}, seguiría <<viva>> \cite{Thomas2015}. Slack se lanzó en febrero de 2014 con alrededor de 15.000 usuarios, para finales de ese año eran 285.000 y la cifra ha ido subiendo hasta los más de tres millones que posee actualmente \cite{PyMEs2017}.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -106,7 +93,7 @@ Esta aplicación integra de manera eficiente otros servicios como Google Drive, 
 Posee varias formas de tarificación:
 
 \begin{itemize}
-	\item \textbf{\textit{Free}}. Para equipos pequeños y de uso por tiempo ilimitado. Como limitaciones tiene que sólo se pueden buscar mensajes entre los 10.000 últimos, integración con un máximo de 10 aplicaciones de terceros o videollamadas de 1 a 1. \textbf{Precio:} gratuito.
+	\item \textbf{\textit{Free}}. Para equipos pequeños y de uso por tiempo ilimitado. Como restricciones tiene que sólo se pueden buscar mensajes entre los 10.000 últimos, integración con un máximo de 10 aplicaciones de terceros o videollamadas de uno a uno. \textbf{Precio:} gratuito.
 	\item \textbf{\textit{Standard}}. Ofrece más ventajas como integración ilimitada con aplicaciones de terceros, videoconferencias de hasta 15 personas o 10 \acs{GB} por miembro de equipo. \textbf{Precio:} 6.25\euro{} por usuario, al mes, si se contrata anualmente.
 	\item \textbf{\textit{Plus}}. Ofrece todas las características disponibles de Slack, así como una disponibilidad del servicio muy alta o 20 \acs{GB}. \textbf{Precio:} 11.75\euro{} por usuario, al mes, si se contrata anualmente.
 \end{itemize}
@@ -126,16 +113,14 @@ Las características de Slack están más enfocadas al uso corporativo, siendo e
 \end{itemize}
 
 \subsection{Funcionalidades para los Desarrolladores}
-Al igual que sucede con Telegram, Slack también cuenta con una \acs{API}. No obstante, se trata de una aplicación que no es \textit{Open Source}.
-
-Slack puede instalarse en diversas plataformas y sistemas operativos: Android, iOS, Windows Phone, Windows, MacOS y Linux.
+Al igual que sucede con Telegram, Slack también cuenta con una \acs{API}. No obstante, se trata de una aplicación que no es \textit{Open Source}. Slack puede instalarse en diversas plataformas y sistemas operativos: Android, iOS, Windows Phone, Windows, MacOS y Linux.
 
 \newpage
 
 \section{Skype}
 \label{sec:skype}
 
-Skype es una de las aplicaciones de mensajería, llamadas y videollamadas más conocidas en el entorno del ordenador personal.
+Skype (figura \ref{fig:skype}) es una de las aplicaciones de mensajería, llamadas y videollamadas más conocidas en el entorno del ordenador personal.
 El 29 de agosto de 2003 se lanzaba la primera beta, tratándose de un cliente \acf{P2P} gratuito cuyo código fuente no era abierto. Más tarde, en 2005, fue adquirida por eBay por 2.600 millones de dólares \cite{Velasco2013}.
 
 Posteriormente, en mayo de 2011, se anuncia la compra de Skype por parte de Microsoft por la cifra de 8.500 millones de dólares y, en noviembre de 2012, sería esta aplicación la que sustituiría al conocido \textit{Messenger} \cite{Ramirez2013}.
@@ -177,7 +162,7 @@ En la página web de Skype únicamente se ofrece una limitada cantidad de posibi
 \section{Signal}
 \label{sec:signal}
 
-Signal es la aplicación de mensajería conocida por el llamado <<Caso Snowden>>, en el que Edward Snowden filtró los casos de espionaje de la \acf{NSA}. El propio Snowden fue el que recomendó esta aplicación mediante un \textit{tweet} (ver figura \ref{fig:tweetsnowden}) en su cuenta de \textit{Twitter} debido a la gran seguridad y privacidad que ofrecía su método de encriptación, cifrando de punto a punto las conversaciones. Más tarde, WhatsApp adoptaría este método de cifrado, incluyéndolo por defecto en todas las conversaciones de su aplicación.
+Signal (figura \ref{fig:signal}) es la aplicación de mensajería conocida por el llamado <<Caso Snowden>>, en el que Edward Snowden filtró los casos de espionaje de la \acf{NSA}. El propio Snowden fue el que recomendó esta aplicación mediante un \textit{tweet} (ver figura \ref{fig:tweetsnowden}) en su cuenta de \textit{Twitter} debido a la gran seguridad y privacidad que ofrecía su método de encriptación, cifrando de punto a punto las conversaciones. Más tarde, WhatsApp adoptaría este método de cifrado, incluyéndolo por defecto en todas las conversaciones de su aplicación.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -214,19 +199,19 @@ Al contrario que sucede con WhatsApp, Signal es de código abierto, por lo que e
 
 \begin{itemize}
 	\item Ofrece el protocolo de la \acs{API}.
-	\item Se encuentra en los siguientes sistemas operativos: Android, iOS mediante aplicación nativa y Windows, MacOS, Linux y ChromeOS mediante una aplicación para el navegador web \textit{Google Chrome}).
+	\item Se encuentra en los siguientes sistemas operativos: Android, iOS mediante aplicación nativa y Windows, MacOS, Linux y ChromeOS mediante una aplicación para el navegador web \textit{Google Chrome}.
 \end{itemize}
 
 \section{Wickr}
 \label{sec:wickr}
 
-Wickr fue lanzada en junio de 2012 originalmente sólo para iOS, el sistema operativo de los dispositivos de \textit{Apple}. No obstante, posteriormente fueron apareciendo más versiones. Últimamente ha tenido una mayor repercusión debido a que aparece en una de las más recientes series: \textit{Mr. Robot} \cite{Elio2016}. Al igual que Signal (ver capítulo \ref{sec:signal}), su principal premisa es la seguridad y privacidad de las conversaciones de los usuarios, siendo su diseño bastante austero. No es necesario registrar el número de teléfono o una dirección de correo electrónico para comunicarse, al menos, en \textit{Wickr Me}, no guardando <<metadato>> alguno. Posee diferentes modalidades de tarificación, diferenciándose, principalmente, en el peso máximo de los archivos, el tiempo de expiración de los mensajes o controles administrativos \cite{Wickr2017}:
+Wickr fue lanzada en junio de 2012 originalmente sólo para iOS, el sistema operativo de los dispositivos de \textit{Apple}. No obstante, posteriormente fueron apareciendo más versiones. Últimamente ha tenido una mayor repercusión debido a que aparece en una serie de televisión: \textit{Mr. Robot} \cite{Elio2016}. Al igual que Signal, su principal premisa es la seguridad y privacidad de las conversaciones de los usuarios, siendo su diseño bastante austero. No es necesario registrar el número de teléfono o una dirección de correo electrónico para comunicarse, al menos, en \textit{Wickr Me}. Además, no se guarda <<metadato>> alguno. Posee diferentes modalidades de tarificación diferenciándose principalmente en el peso máximo de los archivos, el tiempo de expiración de los mensajes y controles administrativos \cite{Wickr2017}:
 
 \begin{itemize}
 	\item \textbf{\textit{Wickr Me}}. \textbf{Precio}: gratuito.
 	
 	\begin{itemize}
-		\item Tiempo máximo de desaparición de mensajes de 6 días.
+		\item Tiempo máximo de desaparición de mensajes de seis días.
 		\item Tamaño máximo de los archivos de 10 \acs{MB}.
 		\item No dispone de \textit{Secure Rooms} (equipos y proyectos de hasta 50 usuarios), controles administrativos o <<chat>> de voz y vídeo.		
 	\end{itemize}
@@ -244,7 +229,7 @@ Wickr fue lanzada en junio de 2012 originalmente sólo para iOS, el sistema oper
 	\item \textbf{\textit{Wickr Enterprise}}. \textbf{Precio}: se debe contactar con el departamento de ventas.
 
 	\begin{itemize}
-		\item Tiempo máximo de desaparición de mensajes de 1 año.
+		\item Tiempo máximo de desaparición de mensajes de un año.
 		\item Tamaño máximo de los archivos de 5\acs{GB}.
 		\item Dispone de todos los controles administrativos.
 	\end{itemize}
@@ -252,7 +237,7 @@ Wickr fue lanzada en junio de 2012 originalmente sólo para iOS, el sistema oper
 	\item \textbf{\textit{Wickr Pro}}. \textbf{Precio}: 25\$ por usuario al mes, unos 21\euro{}.
 
 	\begin{itemize}
-		\item Tiempo máximo de desaparición de mensajes de 1 año.
+		\item Tiempo máximo de desaparición de mensajes de un año.
 		\item Tamaño máximo de los archivos de 5\acs{GB}.
 		\item Dispone de algunos controles administrativos (equilibrio entre \textit{Wickr Plus} y \textit{Wickr Enterprise}).
 	\end{itemize}
@@ -278,35 +263,7 @@ Las principales características que Wickr ofrece a sus usuarios son:
 \end{itemize}
 
 \subsection{Funcionalidades para los Desarrolladores}
-Desafortunadamente, Wickr no tiene disponible más que una implementación en C del protocolo de envío de mensajes en su página de \textit{GitHub}.
-
-Wickr se encuentra disponible en los siguientes sistemas operativos: Android, iOS, Windows, MacOS y Ubuntu.
-
-\section{Papás 2.0}
-
-Por último, se ha querido incluir esta plataforma puesto que, de todas las mencionadas anteriormente, se encuentra más enfocada al sector docente, al igual que la aplicación que se pretende desarrollar.
-
-Papás 2.0 es una plataforma educativa perteneciente a la Consejería de Educación, Cultura y Deportes de la \acf{JCCM}. Facilita la gestión administrativa y establece una vía de comunicación entre los centros educativos y las familias, ofreciendo información en tiempo real \cite{JCCM2017}. Además, permite llevar un seguimiento sobre las tareas, trabajos, controles, exámenes, faltas de asistencia y cualquier otro tipo de información que sea asignada a los hijos \cite{JCCM2010}.
-
-\begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/logo_papas_20}
-		\caption{Logo de Papás 2.0}
-		\label{fig:papas20}
-	\end{center}
-\end{figure}
-
-\subsection{Funcionalidades para los Usuarios}
-Papás 2.0 ofrece una cierta cantidad de características para los padres, siendo éstas las más destacadas \cite{JCCM2010}:
-
-\begin{itemize}
-	\item Visualizar los profesores que dan clase a los hijos con sus datos y posibilidad de escribir un mensaje directamente a cualquiera de ellos.
-	\item Consultar las citas concertadas con los profesores, junto con la fecha, hora y motivo de la visita.
-	\item Consultar el horario escolar.
-	\item Consultar las faltas de asistencia, con la posibilidad de ser notificado vía SMS o correo electrónico. Del mismo modo, se podrá registrar una notificación cuando se sepa que el hijo va a faltar a ciertas horas.
-	\item Consultar trabajos y tareas de cada hijo, así como ver las fechas de los exámenes y sus notas del curso y su trayectoria escolar.
-	\item Envío y recepción de mensajes mediante grupos, como el de madres y padres, pudiendo adjuntar archivos de tamaño no superior a 1\acs{MB} y con un máximo de 3\acs{MB} en total.
-\end{itemize}
+Desafortunadamente, Wickr no tiene disponible más que una implementación en C del protocolo de envío de mensajes en su página de \textit{GitHub}. Wickr se encuentra disponible en los siguientes sistemas operativos: Android, iOS, Windows, MacOS y Ubuntu.
 
 \newpage
 
@@ -314,9 +271,7 @@ Papás 2.0 ofrece una cierta cantidad de características para los padres, siend
 Papás 2.0 no ofrece su código, \acs{API} o algún otro recurso que pueda ser utilizado por los desarrolladores.
 
 \section{Comparación de Alternativas}
-Finalmente, se van a comparar las dos alternativas más populares frente a frente en una tabla con las funcionalidades más destacadas.
-
-\subsection{WhatsApp vs Telegram}
+Finalmente, en la tabla \ref{tab:whatsappvstelegram}, se van a comparar las dos alternativas más populares mostrándose sus funcionalidades más destacadas.
 
 \begin{table}[hp]
 	\centering
@@ -330,222 +285,43 @@ Finalmente, se van a comparar las dos alternativas más populares frente a frent
 
 \newpage
 
-\section{Problemas comunes con las aplicaciones de mensajería}
-Aunque existen diversas soluciones para la comunicación entre los padres y el centro en el que se encuentren sus hijos, muchas veces se pueden producir malentendidos cuando se hace uso de la mensajería instantánea, entre otros problemas. Además, también se producen situaciones poco deseables entre los padres.
+\section{Aplicaciones Especializadas}
+En esta sección se hablará de ciertas aplicaciones que, a diferencia de las mencionadas anteriormente, han sido específicamente desarrolladas enfocándose en el sector educativo.
 
-\subsection{Celebraciones desafortunadas}
-En este caso, un grupo de madres se negaba a llevar a sus hijos al colegio debido a que a la clase de éstos acudía un niño que sufría síndrome de Asperger. Sucedió en Buenos Aires, Argentina y pronto se dio a conocer en Internet.
-En las capturas de la conversación \ref{fig:whatasper} se puede ver cómo las madres se alegran de que este chico fuera cambiado de clase. <<Una buenísima noticia>>, según indicaba una de las madres \cite{Vanguardia2017}.
+\subsection{miColegioApp}
+Esta aplicación ofrece un canal de comunicación directo, oficial, inmediato y seguro entre centros escolares y familias. Para los colegios tiene una serie de ventajas como enviar circulares, mensajes personalizados, fotos o documentos pdf; conocer estadísticas en tiempo real sobre la lectura de notificaciones o la aplicación de filtros en el envío: por alumno, grupo, curso, actividad. Para los padres tiene otras ventajas como confirmar citas o firmar autorizaciones. Está disponible para dispositivos Android, iOS y cuenta con una versión web \cite{creaTactil}.
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{/whatsapp_asperger}
-		\caption{Captura conversación madres}
-		\label{fig:whatasper}
+		\includegraphics[width=0.16\textwidth]{/micolegioapp_logo.png}
+		\caption{Logo de miColegioApp}
+		\label{fig:micolegioapp}
 	\end{center}
 \end{figure}
 
-\subsection{Uso de los grupos para compartir deberes hechos}
-Más allá de los problemas que puedan surgir entre los padres, los grupos pueden llegar incluso a dañar a los propios hijos. Esto puede suceder puesto que hay padres que comparten los deberes ya hechos para que otros niños o padres puedan beneficiarse de ello. Esta práctica puede repercutir en un mal aprendizaje del niño y, por tanto, en un decrecimiento de su rendimiento escolar. Incluso pueden llegar a compartir fotos de los regalos colocados debajo del árbol en la época navideña \cite{Alias2017}.
+\subsection{BabyNotez}
+<<BabyNotez>> \ref{fig:babynotez} está pensada para los centros de educación infantil y sus usuarios/as. Principalmente, sustituye a la clásica agenda, introduciendo característica adicionales. Además, cuenta con una mensajería instantánea bidireccional. Cada día se recibirá una notificación con el informe de estado del alumno para conocer qué tal ha ido el día en el centro. Los padres podrán acceder a estos informes y escribir mensajes para el centro. Se trata de una aplicación gratuita para las familias, pero con un coste para el centro por la activación de la intranet. Se encuentra disponible para iOS y Android \cite{Educo2016}.
 
-Por todo esto se debe establecer de manera firme y consensuada la figura del administrador del grupo, que será quien se encargue del cumplimiento y gestión de las normas para que la relación y saber estar de los padres no se quede solo en el trato presencial sino que se extrapole a las nuevas soluciones digitales.
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{/babynotez_logo.png}
+		\caption{Logo de BabyNotez}
+		\label{fig:babynotez}
+	\end{center}
+\end{figure}
 
-\subsection{Grupos escolares para hablar de todo}
-En este caso, una madre de una niña mandó una carta a la autora de la noticia. Sucedió en Argentina y en ella explica cómo, a raíz de abandonar el grupo de madres, éstas la tratan de una manera diferente. El motivo principal era que en dicho grupo se hablaba demasiado, llegando a ser <<insoportables>>, decía la madre. Lo que pensaba se confirmó al necesitar a una madre para que recogiera a su hija, asegurando que le devolvería el favor la próxima vez. Esta madre leyó e ignoró el mensaje y, posteriormente, alegó que no se había dado cuenta \cite{Consuelo2017}.
+\newpage
 
-%\subsection{¿Qué pasa en los grupos de WhatsApp de los padres del colegio?}
+\subsection{TokApp School}
+Esta plataforma \ref{fig:tokapp} dispone de una gestión online desde la que el centro realiza toda la organización de las funciones, como dar de alta y gestionar alumnos y clases. Para los padres y alumnos permite enviar mensajes y notificaciones y comunicarse con el centro y otros estudiantes. Para el profesorado, se evita el envío de circulares o documentos en papel puesto que la aplicación permite el envío de archivos adjuntos. Es gratuita para los padres pero para los centros tiene un coste no especificado en su web \cite{Educo2016}.
 
-
-%Debido a su continuo uso, se muestra entre paréntesis la combinación del modo
-%\texttt{auctex} de GNU Emacs para incluir el comando \LaTeX{} correspondiente.
-%
-%\begin{itemize}
-%\item Normal.
-%\item \textbf{Negrita} (C-c-f-b).
-%\item \textit{Itálica} (C-c-f-i).
-%\item \emph{Enfatizada} (C-c-f-e). Fíjate que el estilo que se obtiene al
-%  enfatizar depende del estilo del texto en el que se incluya: \textit{texto en
-%    itálica y \emph{enfatizado} en medio}.
-%\item \texttt{Monoespaciada} (C-c-f-t)
-%\end{itemize}
-%
-%Otros de menos uso:
-%
-%\begin{itemize}
-%\item \textsc{Versalita} (C-c-f-c).
-%\item \textsf{Serifa}, es decir, sin remates o paloseco (C-c-f-f).
-%\item \textrm{Romana} (C-c-f-r).
-%\end{itemize}
-
-%\newpage
-%\section{Viñetas y enumerados}
-%
-%En \LaTeX{} hay tres tipos básicos de viñetas:
-%
-%\begin{itemize}
-%\item itemize.
-%\item enumerate.
-%\item description.
-%\end{itemize}
-%
-%
-%Es posible hacer viñetas (como la siguiente) cambiando márgenes u otras
-%propiedades gracias al paquete
-%\href{http://mirror.ctan.org/macros/latex/contrib/enumitem/enumitem.pdf}{\emph{enumitem}}
-%(ya incluido en \esitfg).
-%
-%\begin{itemize}[noitemsep, label=$\triangleright$]
-%\item esto es
-%\item una pequeña
-%\item muestra
-%\end{itemize}
-%
-%El paquete \emph{enumitem} ofrece muchas otras posibilidades para personalizar
-%las viñetas (individual o globalmente) o crear nuevas.
-%
-%
-%\section{Figuras}
-%
-%Las figuras se referencian así (ver Figura~\ref{fig:informatica}). Recuerda que
-%no tienen porqué aparecer en el lugar donde se ponen (mira un libro de
-%verdad). \LaTeX{} las colocará donde mejor queden, No te empeñes en
-%contradecirle, él sabe mucho de tipografía.
-%
-%\begin{figure}[!h]
-%\begin{center}
-%\includegraphics[width=0.2\textwidth]{/informatica_gray.pdf}
-%\caption{Escudo oficial de informática}
-%\label{fig:informatica}
-%\end{center}
-%\end{figure}
-%
-%Por cierto, los títulos de tablas, figuras y otro elementos flotantes (los
-%\texttt{caption}) no deben acabar en punto~\cite{sousa}.
-%
-%
-%\section{Cuadros}
-%\label{sec:uncuadro}
-%
-%Se denominan «tablas» cuando contienen datos con relaciones numéricas. El
-%término genérico (que debe usarse cuando en los demás casos) es
-%«cuadro»~\cite{sousa}. Si las columnas están bien alineadas, las líneas
-%verticales estorban más que ayudan (no las pongas). Los cuadros se referencian
-%de este modo (ver Cuadro~\ref{tab:rpc-semantics}).
-%
-%\begin{table}[hp]
-%  \centering
-%  {\small
-%  \input{tables/RPC-semantics.tex}
-%  }
-%  \caption[Semánticas de \acs{RPC} en presencia de distintos fallos]
-%  {Semánticas de \acs{RPC} en presencia de distintos fallos
-%    (\textsc{Puder}~\cite{puder05:_distr_system_archit})}
-%  \label{tab:rpc-semantics}
-%\end{table}
-%
-%
-%\section{Listados de código}
-%\label{sec:listado}
-%
-%Puedes referenciar un listado así (ver Listado~\ref{code:hello}). Éste es un
-%listado flotante, pero también pueden ser «no flotantes» quitando el parámetro
-%\texttt{float} (mira el fuente de este documento o la referencia del paquete
-%\href{http://www.ctan.org/get/macros/latex/contrib/listings/listings.pdf}{«listings»}).
-%
-%\begin{listing}[
-%  float=ht,
-%  language = C,
-%  caption  = {«Hola mundo» en C},
-%  label    = code:hello]
-%#include <stdio.h>
-%int main(int argc, char *argv[]) {
-%    puts("Hola mundo\n");
-%}
-%\end{listing}
-%
-%\noindent
-%Puedes incluir un fichero de código fuente (o un fragmento) con \texttt{lstinputlisting}:
-%
-%\lstinputlisting[language=C, firstline=3, texcl]{code/hello.c}
-%
-%\noindent
-%Y también existe un comando \texttt{console} para representar ejecución de
-%comandos:
-%
-%\begin{console}
-%$ uname --operating-system
-%GNU/Linux
-%\end{console} %$
-%
-%Puedes modificar el estilo por defecto para tus listados añadiendo un comando
-%\texcmd{lstset} en tu \texttt{custom.sty}. El código \LaTeX{} del listado
-%\ref{code:custom-listings} añade un fondo gris claro y una línea en el margen
-%izquierdo.
-%
-%\begin{listing}[
-%  float=h!,
-%  caption  = {Personalizando los listados de código},
-%  label    = code:custom-listings]
-%\lstset{%
-%  backgroundcolor = \color{gray95},
-%  rulesepcolor    = \color{black},
-%}
-%\end{listing}
-%
-%En cualquier caso, si lo necesitas siempre es mejor que redefinas los comandos y entornos
-%existentes o crees entornos nuevos, en lugar de añadir los mismos cambios en
-%muchas partes del documento.
-%
-%
-%
-%\section{Citas y referencias cruzadas}
-%
-%Puedes ver aquí una cita~\cite{design_patterns} y una referencia a la segunda sección
-%(véase \S\,\ref{sec:uncuadro}). Para hacer referencias debes definir etiquetas en el punto
-%que quieras referenciar (normalmente justo debajo). Es útil que los nombres de las
-%etiquetas (comando label) tengan los siguientes prefijos (incluyendo los dos puntos ``:''
-%del final):
-%
-%\begin{description}
-%\item[chap:] para los capítulos. Ej: ``\texttt{chap:objetivos}''.
-%\item[sec:] para secciones, subsecciones, etc.
-%\item[fig:] para las figuras.
-%\item[tab:] para las tablas.
-%\item[code:] para los listados de código.
-%\end{description}
-%
-%Si estás viendo la versión PDF de este documento puedes pinchar la cita o el número de
-%sección. Son hiper-enlaces que llevan al elemento correspondiente. Todos los elementos que
-%hacen referencia a otra cosa (figuras, tablas, listados, secciones, capítulos, citas,
-%páginas web, etc.) son «pinchables» gracias al paquete
-%\href{http://latex.tugraz.at/_media/docs/hyperref.pdf}{\emph{hyperref}}.
-%
-%Para citar páginas web usa el comando \texttt{url} como en: \url{http://www.uclm.es}
-%
-%
-%\section{Páginas}
-%\label{sec:paginas}
-%
-%La normativa aconseja imprimir el documento a doble cara, pero si el número de
-%páginas es bajo puede imprimirse a una cara. Como eso es bastante subjetivo, mi
-%consejo es que ronde las 100 \textbf{hojas}. Una hoja impresa a doble cara
-%contiene 2 páginas, a una cara contiene una. Es decir, si el documento tiene más
-%de 200 páginas imprímelo a doble cara, si tiene menos imprímelo a una.
-%
-%Por defecto, \esitfg{} imprime a una cara (oneside), si quieres imprimir a doble cara,
-%escribe en el preámbulo:
-%
-%\begin{listing}
-%  \documentclass[twoside]{esi-tfg}
-%\end{listing}
-%
-%Esto es importante porque a doble cara los márgenes son simétricos y a una cara
-%no. Si llevas el TFG a la copistería y pides que te lo impriman de modo
-%diferente al generado, quedará mal ¡Cuidado!
-%
-%Tal como indica la normativa, los capítulos siempre empiezan en la página
-%derecha, la impar cuando se usa doble cara.
-
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.25\textwidth]{/tokapp_logo.jpg}
+		\caption{Logo de TokApp School}
+		\label{fig:tokapp}
+	\end{center}
+\end{figure}
 
 % Local Variables:
 %  coding: utf-8

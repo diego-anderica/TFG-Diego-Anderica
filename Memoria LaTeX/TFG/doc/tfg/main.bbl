@@ -7,12 +7,27 @@ Marina Alias.
 \newblock url:
   \url{http://www.vozpopuli.com/altavoz/educacion/reglas-escritas-grupos-WhatsApp-colegio-redes-sociales-padres_0_1059194995.html}.
 
+\bibitem[And]{AndroidStudio}
+Android.
+\newblock Android Studio.
+\newblock url: \url{https://developer.android.com/studio/index.html}.
+
 \bibitem[Con17]{Consuelo2017}
 Consuelo.
 \newblock <<Me fui del grupo de WhatsApp y ahora me tratan con distancia en la
   vida real>>, Agosto 2017.
 \newblock url:
   \url{http://www.lanacion.com.ar/2050884-me-fui-del-grupo-de-whatsapp-y-ahora-me-tratan-con-distancia-en-la-vida-real}.
+
+\bibitem[cre]{creaTactil}
+creaTáctil.
+\newblock miColegioApp.
+\newblock url: \url{http://micolegioapp.com/wordpress/}.
+
+\bibitem[Edu16]{Educo2016}
+Educo.
+\newblock Las 5 mejores apps para colegios, Noviembre 2016.
+\newblock url: \url{http://www.educo.es/las-5-mejores-apps-para-colegios/}.
 
 \bibitem[Eli16]{Elio2016}
 Javier Elio.
@@ -21,10 +36,25 @@ Javier Elio.
 \newblock url:
   \url{https://elandroidelibre.elespanol.com/2016/09/wickr-me.html}.
 
+\bibitem[Gooa]{Andro}
+Google.
+\newblock Android.
+\newblock url: \url{https://www.android.com/}.
+
+\bibitem[Goob]{GooFirebase}
+Google.
+\newblock Firebase.
+\newblock url: \url{https://firebase.google.com/?hl=es-419}.
+
 \bibitem[GoGdlHdD17]{Gomez2017}
-Carmen~Lasa Gómez, Alonso Álvarez García, y Rafael de~las Heras~del Dedo.
+Carmen~Lasa Gomez, Alonso Álvarez García, y Rafael de~las Heras~del Dedo.
 \newblock {\em Métodos Ágiles: Scrum, Kanban, Lean}.
 \newblock Anaya Multimedia, 2017.
+
+\bibitem[IBM]{IBM}
+IBM.
+\newblock Watson.
+\newblock url: \url{https://www.ibm.com/cloud-computing/bluemix/es/watson}.
 
 \bibitem[JCC10]{JCCM2010}
 JCCM.
@@ -37,10 +67,10 @@ JCCM.
 \newblock Papás 2.0, Febrero 2017.
 \newblock url: \url{http://www.educa.jccm.es/alumnado/es/papas}.
 
-\bibitem[{Mar}08]{sousa}
-J.~{Martínez de Sousa}.
-\newblock {\em Ortografía y ortotipografía del español actual}.
-\newblock Trea, 2008.
+\bibitem[Mic]{Microsoft}
+Microsoft.
+\newblock Windows.
+\newblock url: \url{https://www.microsoft.com/es-es/windows/}.
 
 \bibitem[Nov14]{Novoa2014}
 Jaime Novoa.
@@ -48,6 +78,11 @@ Jaime Novoa.
   Facebook, Febrero 2014.
 \newblock url:
   \url{https://www.genbeta.com/movil/la-historia-de-whatsapp-de-la-nada-absoluta-a-ser-comprados-por-facebook}.
+
+\bibitem[Ora]{Java}
+Oracle.
+\newblock Java.
+\newblock url: \url{https://www.java.com/es/about/}.
 
 \bibitem[PyM17]{PyMEs2017}
 Caso de Estudio real: cómo Slack se ha convertido en la iniciativa empresarial
@@ -104,6 +139,11 @@ Telegram.
 Telegram.
 \newblock What can you do with Telegram?, 2017.
 \newblock url: \url{https://telegram.org}.
+
+\bibitem[The]{TheLatexProject}
+The{\ }Latex{\ }Project.
+\newblock An introduction to LaTeX.
+\newblock url: \url{https://www.latex-project.org/about/}.
 
 \bibitem[Tho15]{Thomas2015}
 Knowlton Thomas.
