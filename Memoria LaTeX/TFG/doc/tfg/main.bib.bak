@@ -100,6 +100,15 @@
   Url                      = {https://firebase.google.com/?hl=es-419}
 }
 
+@Misc{IBM,
+  Title                    = {Watson},
+
+  Author                   = {IBM},
+
+  Timestamp                = {2018-02-18},
+  Url                      = {https://www.ibm.com/cloud-computing/bluemix/es/watson}
+}
+
 @Misc{JCCM2017,
   Title                    = {Papás 2.0},
 
@@ -155,6 +164,15 @@
 
   Timestamp                = {2018-02-15},
   Url                      = {https://www.java.com/es/about/}
+}
+
+@Misc{proyectosagiles.org,
+  Title                    = {Desarrollo iterativo e incremental},
+
+  Author                   = {proyectosagiles.org},
+
+  Timestamp                = {2018-02-21},
+  Url                      = {https://proyectosagiles.org/desarrollo-iterativo-incremental/}
 }
 
 @Book{puder05:_distr_system_archit,
