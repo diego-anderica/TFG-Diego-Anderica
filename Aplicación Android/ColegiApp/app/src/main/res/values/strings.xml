@@ -1,19 +1,22 @@
 <resources>
     <string name="app_name">ColegiApp</string>
     <string name="action_settings">Settings</string>
+
+    <!--ActivityLogin-->
     <string name="lblBienvenida">¡Bienvenid@ a ColegiApp!</string>
     <string name="lblEntrada">Selecciona el método de entrada...</string>
-    <string name="lblTelefono">Tfno.</string>
-    <string name="lblLoginAlternativo">...o mediante correo electrónico y contraseña...</string>
-    <string name="txtCorreo">ejemplo@ejemplo.com</string>
-    <string name="txtContrasena">Contraseña...</string>
     <string name="btnEntrarCTfno">Nº de teléfono</string>
+    <string name="btnEntrarCCorreo">Correo y contraseña</string>
+    <!--ActivityLogin-->
+
+    <!--PhoneActivityLogin-->
+    <string name="lblEntradaTelefono">Introduce un nº de teléfono...</string>
     <string name="lblInfoTfno">Te enviaremos un SMS con un código de verificación</string>
+    <string name="lblTelefono">Tfno.</string>
     <string name="btnEnviarCodigo">Enviar Código</string>
     <string name="lblIntroducirCodigo">Introduce el código que te hemos mandado...</string>
     <string name="txtCodigo">Código...</string>
     <string name="btnValidarCodigo">Validar código</string>
-    <string name="btnEntrarCCorreo">Correo y contraseña</string>
     <string name="lblConfirmar">Confirmar</string>
     <string name="msgConfirmarTelefono">¿El número de teléfono es</string>
     <string name="msgIntroducirNumeroTfno">Introduce un número de teléfono</string>
@@ -23,4 +26,11 @@
     <string name="msgIdentificacionOK">Se ha identificado correctamente</string>
     <string name="msgErrorIdentificacion">Hubo un error con la identificación</string>
     <string name="lblCancelar">Cancelar</string>
+    <string name="msgUsuarioNoEncontrado">El usuario no se ha encontrado en la base de datos</string>
+    <!--PhoneActivityLogin-->
+
+    <string name="lblLoginAlternativo">...o mediante correo electrónico y contraseña...</string>
+    <string name="txtCorreo">ejemplo@ejemplo.com</string>
+    <string name="txtContrasena">Contraseña...</string>
+
 </resources>

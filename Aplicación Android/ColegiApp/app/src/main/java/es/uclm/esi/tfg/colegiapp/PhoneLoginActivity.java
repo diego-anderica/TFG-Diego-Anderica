@@ -1,5 +1,6 @@
 package es.uclm.esi.tfg.colegiapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,6 +22,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.concurrent.TimeUnit;
 
@@ -42,8 +47,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
     private String mVerificationId;
 
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
+
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +65,12 @@ public class PhoneLoginActivity extends AppCompatActivity {
         txtCodigo = (EditText) findViewById(R.id.txtCodigo);
         btnValidarCodigo = (Button) findViewById(R.id.btnValidarCodigo);
 
+        db = FirebaseFirestore.getInstance();
+
         modificarVisibilidadSegundaParte(INVISIBLE);
+
+        txtTelefono.requestFocus();
+        mostrarTeclado();
 
         btnEnviarCodigo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +87,16 @@ public class PhoneLoginActivity extends AppCompatActivity {
         });
 
         mAuth = FirebaseAuth.getInstance();
+    }
+
+    private void mostrarTeclado() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+    }
+
+    private void ocultarTeclado(EditText txt) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(txt.getWindowToken(), 0);
     }
 
     private void modificarVisibilidadPrimeraParte(int modo) {
@@ -107,7 +128,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
     private void enviarCodigo() {
         //TODO: Controlar prefijos telefónicos
         String numTelefono = txtTelefono.getText().toString();
-
 
         numTelefono = "+34" + numTelefono;
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
@@ -158,6 +178,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgIdentificacionOK), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(PhoneLoginActivity.this, MainActivity.class);
                     startActivity(intent);
+                    ocultarTeclado(txtCodigo);
                     finish();
                 } else {
                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -168,7 +189,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
         });
     }
 
-    public void validarCodigo() {
+    private void validarCodigo() {
         String code = txtCodigo.getText().toString();
 
         if (TextUtils.isEmpty(code)) {
@@ -200,11 +221,31 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
-    public void aceptar() {
-        enviarCodigo();
+    private void aceptar() {
+
+        db.collection("Usuarios")
+                .whereEqualTo("Telefono", "+34" + txtTelefono.getText().toString())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(Task<QuerySnapshot> task) {
+                        if (task.getResult().isEmpty()) {
+                            Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgUsuarioNoEncontrado), Toast.LENGTH_SHORT).show();
+                        } else {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("Nombre"), Toast.LENGTH_SHORT).show();
+                                enviarCodigo();
+                            } else {
+                                Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+                });
+
     }
 
-    public void cancelar() {
+    private void cancelar() {
 
     }
+
 }
