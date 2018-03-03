@@ -33,14 +33,14 @@ public class PhoneLoginActivity extends AppCompatActivity {
     private final int INVISIBLE = 0;
     private final int VISIBLE = 1;
 
-    TextView lblEntradaTfno;
-    TextView lblInfoTfno;
-    EditText txtTelefono;
-    Button btnEnviarCodigo;
+    private TextView lblEntradaTfno;
+    private TextView lblInfoTfno;
+    private EditText txtTelefono;
+    private Button btnEnviarCodigo;
 
-    TextView lblIntroducirCodigo;
-    EditText txtCodigo;
-    Button btnValidarCodigo;
+    private TextView lblIntroducirCodigo;
+    private EditText txtCodigo;
+    private Button btnValidarCodigo;
 
     private String numTelefono;
 
@@ -49,7 +49,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
 
-    FirebaseFirestore db;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -200,16 +200,18 @@ public class PhoneLoginActivity extends AppCompatActivity {
     }
 
     private void preguntarUsuario() {
-        if (TextUtils.isEmpty(txtTelefono.getText().toString())) {
+        final String telefono = txtTelefono.getText().toString();
+
+        if (TextUtils.isEmpty(telefono)) {
             Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgIntroducirNumeroTfno), Toast.LENGTH_SHORT).show();
         } else {
             AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
             dialogo1.setTitle(getString(R.string.lblConfirmar));
-            dialogo1.setMessage(getString(R.string.msgConfirmarTelefono) + " " + txtTelefono.getText().toString() + "?");
+            dialogo1.setMessage(getString(R.string.msgConfirmarTelefono) + " " + telefono + "?");
             dialogo1.setCancelable(false);
             dialogo1.setPositiveButton(getString(R.string.lblConfirmar), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialogo1, int id) {
-                    aceptar();
+                    aceptar(telefono);
                 }
             });
             dialogo1.setNegativeButton(getString(R.string.lblCancelar), new DialogInterface.OnClickListener() {
@@ -221,10 +223,10 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
-    private void aceptar() {
+    private void aceptar(String telefono) {
 
         db.collection("Usuarios")
-                .whereEqualTo("Telefono", "+34" + txtTelefono.getText().toString())
+                .whereEqualTo("Telefono", "+34" + telefono)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -241,7 +243,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 
     private void cancelar() {

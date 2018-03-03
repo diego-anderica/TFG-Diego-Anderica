@@ -30,7 +30,22 @@
     <!--PhoneActivityLogin-->
 
     <string name="lblLoginAlternativo">...o mediante correo electrónico y contraseña...</string>
+
+    <!--EmailActivityLogin-->
+    <string name="lblEmailLogin">Introduce tu correo y contraseña...</string>
     <string name="txtCorreo">ejemplo@ejemplo.com</string>
     <string name="txtContrasena">Contraseña...</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="msgIntroduceCorreo">Introduce una dirección de correo válida</string>
+    <string name="msgIntroduceContrasena">Introduce una contraseña válida</string>
+    <string name="msgContrasenaDebil">La contraseña debe contener al menos 6 caracteres</string>
+    <string name="lblOlvidoContrasena">¿Has olvidado tu contraseña?</string>
+    <string name="btnEnviarCorreo">Enviar correo</string>
+    <string name="lblIntroducirCorreo">Introduce tu correo...</string>
+    <string name="btnVolver">Volver</string>
+    <string name="msgConfirmarCorreo">¿La dirección de correo es</string>
+    <string name="msgCorreoEnviado">Se ha enviado un correo de recuperación a</string>
+    <string name="msgErrorEnvioCorreo">Se ha producido un error al enviar el correo</string>
+    <!--EmailActivityLogin-->
 
 </resources>
