@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+<!-- 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+		<script src="http://pajhome.org.uk/crypt/md5/2.2/md5-min.js"></script>
+		
+		<!-- BootStrap v4.0 -->
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<!-- BootStrap v4.0 -->
+		
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+		<!-- Firebase -->
+		
+		<title>Iniciar Sesión</title>
+	</head>
+	
+	<body>
+		<div class="container" id="divLogin">
+			<div class="jumbotron">
+				<h1>Iniciar sesión en el sistema</h1>
+			</div>
+			<div class="container">
+				<div class="row">
+					<form class="col-lg-6" style="margin: 0 auto;">
+						<div class="form-group">
+							<label for="lblCorreo">Correo Electrónico</label><input
+									type="text" class="form-control" id="txtCorreo"
+									placeholder="ejemplo@ejemplo.com"
+									title="Introduzca tu dirección de correo o nombre">
+						</div>
+						<div class="form-group">
+							<label for="lblContrasena">Contraseña</label> <input type="password"
+								class="form-control" id="txtContrasena"
+								placeholder="···········" title="Contraseña">
+						</div>
+						<p id="lblError" style="color: red">
+						<br>
+						<button onclick="login()" class="btn btn-primary" type="button" id="btnLogin">Iniciar sesión</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			function login() {
+				var txtCorreo = document.getElementById("txtCorreo");
+				var txtContrasena = document.getElementById("txtContrasena");
+				var md5 = hex_md5(txtContrasena.value);
+				txtCorreo.style.borderColor = "initial";
+				txtContrasena.style.borderColor = "initial";
+				
+				
+				if (comprobarCampos (txtCorreo, txtContrasena)) {
+					var docRef = firestore.collection("UsuariosWeb");
+					var query = docRef.where("Correo", "==", txtCorreo.value.toString());
+					var myData = null;
+					var encontrado = false;
+					
+					query.get().then(function(querySnapshot){
+						querySnapshot.forEach(function(doc) {
+							myData = doc.data();
+				            if (myData.Correo == txtCorreo.value) {
+				            		encontrado = true;
+				            		if (md5 == myData.Contrasena) {
+				            			alert("Bienvenido, " + myData.Correo);
+				            			sessionStorage.setItem("Correo", myData.Correo);
+				            			pasarVariable("index.html", "login");
+				            		} else {
+				            			alert("La contraseña para " + myData.Correo + " es incorrecta");
+				            		}
+				            }
+				        })
+				        if (encontrado == false) {
+							alert("El correo " + txtCorreo.value + " no se encuentra en la base de datos");
+						}
+					});
+					
+				}
+				
+			}
+			
+			function comprobarCampos(txtCorreo, txtContrasena) {
+				var lblError = document.getElementById("lblError");
+				
+				if (txtCorreo.value == "") {
+					alert("El campo de correo electrónico no puede estar vacío");
+					txtCorreo.style.borderColor = "red";
+				} else if (txtCorreo.value.indexOf('@') == -1) {
+					alert("La dirección de correo introducida no es válida");
+					txtCorreo.style.borderColor = "red";
+				} else if (txtContrasena.value == "") {
+					alert("El campo de contraseña no puede estar vacío");
+					txtContrasena.style.borderColor = "red";
+				} else {
+					return true;
+				}
+				
+				return false;
+			}
+			
+			function pasarVariable(pagina, procedencia) {
+				pagina += "?";
+				pagina += "p=" + procedencia;
+				location.href = pagina;
+			}
+		</script>
+		
+		<script src="scripts/conectarFirebase.js"></script>
+		
+	</body>
+	
+</html>
