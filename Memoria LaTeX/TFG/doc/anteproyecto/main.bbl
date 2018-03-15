@@ -1,0 +1,87 @@
+\begin{thebibliography}{GGdlHdD17}
+
+\bibitem[And]{AndroidStudio}
+Android.
+\newblock Android studio.
+\newblock \url{https://developer.android.com/studio/index.html}.
+
+\bibitem[ARC]{ARCO}
+ARCO.
+\newblock esi-tfg.
+\newblock \url{https://bitbucket.org/arco_group/esi-tfg}.
+
+\bibitem[Ecl18]{EclipseFoundation2018}
+Eclipse{\ }Foundation.
+\newblock Eclipse.
+\newblock \url{https://www.eclipse.org}, January 2018.
+
+\bibitem[GGdlHdD17]{Gomez2017}
+Carmen~Lasa G{\'o}mez, Alonso~{\'A}lvarez Garc{\'i}a, and Rafael de~las
+  Heras~del Dedo.
+\newblock {\em Métodos Ágiles: Scrum, Kanban, Lean}.
+\newblock Anaya Multimedia, 2017.
+
+\bibitem[Gooa]{Andro}
+Google.
+\newblock Android.
+\newblock \url{https://www.android.com/}.
+
+\bibitem[Goob]{GooFirebase}
+Google.
+\newblock Firebase.
+\newblock \url{https://firebase.google.com/?hl=es-419}.
+
+\bibitem[IBM]{IBM}
+IBM.
+\newblock Watson.
+\newblock \url{https://www.ibm.com/cloud-computing/bluemix/es/watson}.
+
+\bibitem[JCC17]{JCCM2017}
+JCCM.
+\newblock Papás 2.0.
+\newblock \url{http://www.educa.jccm.es/alumnado/es/papas}, February 2017.
+
+\bibitem[Jus17]{Justo2017}
+David Justo.
+\newblock El uso de 'smartphones' en españa se duplica en los últimos cinco
+  años.
+\newblock
+  \url{http://cadenaser.com/ser/2017/02/28/ciencia/1488281552_888684.html},
+  February 2017.
+
+\bibitem[Mic]{Microsoft}
+Microsoft.
+\newblock Windows.
+\newblock \url{https://www.microsoft.com/es-es/windows/}.
+
+\bibitem[Ora]{Java}
+Oracle.
+\newblock Java.
+\newblock \url{https://www.java.com/es/about/}.
+
+\bibitem[Sig]{Signal}
+Signal.
+\newblock Signal.
+\newblock \url{https://www.signal.org/}.
+
+\bibitem[Sut17]{Schwaber2017}
+Ken Schwaber;~Jeff Sutherland.
+\newblock {\em The Scrum Guide}.
+\newblock Scrum, November 2017.
+
+\bibitem[Tel17]{Telegram2017}
+Telegram.
+\newblock Telegram messenger.
+\newblock \url{https://telegram.org}, 2017.
+
+\bibitem[The]{TheLatexProject}
+The{\ }Latex{\ }Project.
+\newblock An introduction to latex.
+\newblock \url{https://www.latex-project.org/about/}.
+
+\bibitem[Wha17]{WhatsApp}
+WhatsApp{\ }Inc.
+\newblock Whatsapp.
+\newblock \url{https://www.whatsapp.com}, 2017.
+
+\end{thebibliography}
