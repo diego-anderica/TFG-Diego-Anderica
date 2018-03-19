@@ -130,7 +130,7 @@
   title     = {Métodos Ágiles: Scrum, Kanban, Lean},
   publisher = {Anaya Multimedia},
   year      = {2017},
-  author    = {Carmen Lasa G{\'o}mez; Alonso {\'A}lvarez Garc{\'i}a; Rafael de las Heras del Dedo},
+  author    = {Carmen Lasa G{\'o}mez and Alonso {\'A}lvarez Garc{\'i}a and Rafael de las Heras del Dedo},
   isbn      = {978-84-415-3888-7},
 }
 
@@ -157,7 +157,7 @@
 
 @Misc{ARCO,
   author       = {ARCO},
-  title        = {esi-tfg},
+  title        = {Clase esi-tfg},
   howpublished = {\url{https://bitbucket.org/arco_group/esi-tfg}},
   timestamp    = {2018-02-24},
 }

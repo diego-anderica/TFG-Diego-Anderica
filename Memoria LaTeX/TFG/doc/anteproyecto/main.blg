@@ -5,37 +5,37 @@ The style file: alpha.bst
 Database file #1: main.bib
 You've used 16 entries,
             2543 wiz_defined-function locations,
-            630 strings with 5789 characters,
-and the built_in function-call counts, 4366 in all, are:
-= -- 413
+            639 strings with 6089 characters,
+and the built_in function-call counts, 4486 in all, are:
+= -- 439
 > -- 145
 < -- 15
 + -- 42
 - -- 39
-* -- 193
-:= -- 701
-add.period$ -- 48
+* -- 179
+:= -- 726
+add.period$ -- 63
 call.type$ -- 16
-change.case$ -- 80
+change.case$ -- 81
 chr.to.int$ -- 15
 cite$ -- 16
-duplicate$ -- 182
-empty$ -- 397
+duplicate$ -- 180
+empty$ -- 401
 format.name$ -- 70
-if$ -- 915
+if$ -- 946
 int.to.chr$ -- 2
 int.to.str$ -- 0
 missing$ -- 2
-newline$ -- 83
+newline$ -- 98
 num.names$ -- 48
-pop$ -- 160
+pop$ -- 197
 preamble$ -- 1
 purify$ -- 98
 quote$ -- 0
-skip$ -- 164
+skip$ -- 121
 stack$ -- 0
 substring$ -- 114
-swap$ -- 17
+swap$ -- 16
 text.length$ -- 15
 text.prefix$ -- 15
 top$ -- 0
@@ -43,4 +43,4 @@ type$ -- 124
 warning$ -- 0
 while$ -- 33
 width$ -- 18
-write$ -- 185
+write$ -- 211

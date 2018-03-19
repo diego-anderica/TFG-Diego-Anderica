@@ -144,7 +144,7 @@
   \renewcommand{\@advisorSecond}{#1}}
 \newcommand{\@putAdvisorSecond}{
   \ifdefempty{\@advisorSecond}{}{
-  Director:\helpfootnote{Sólo en el caso de que haya un segundo director.} \@advisorSecond\par}}
+  Director: \@advisorSecond\par}}
 
 \newcommand{\@advisorDepartment}{}
 \newcommand{\advisorDepartment}[1]{\renewcommand{\@advisorDepartment}{#1}}
