@@ -1,86 +1,19 @@
 % Encoding: UTF-8
-@Article{Bow93,
-  author = 	 {Bowman, M. and Debray, S.K.and Peterson, L.L.},
-  title = 	 {Reasoning about naming systems},
-  journal = 	 {ACM Trans. Program. Lang. Syst.},
-  year = 	 {1993},
-  OPTkey = 	 {},
-  volume = 	 {15},
-  number = 	 {5},
-  pages = 	 {795--825},
-  month = 	 {Nov},
-}
-
-@TechReport{Ding97,
-  author = 	 {Ding, W. and Marchionini, G.},
-  title = 	 {A Study on Video Browsing Strategies. Technical Report},
-  institution =  {University of Maryland at College Park},
-  year = 	 {1997},
-}
-
-@Book{Tavel07,
-  author = 	 {Tavel, P.},
-  title = 	 {Modeling and Simulation Design},
-  publisher = 	 {AK Peters Ltd.},
-  year = 	 {2007},
-  address = 	 {Natick, MA, USA},
-}
-
-@InBook{Greiner99,
-  author = 	 {Greiner, R.},
-  ALTeditor = 	 {},
-  title = 	 {The Encyclopedia of Cognitive Science},
-  chapter = 	 {Explanation-based learning},
-  publisher = 	 {MIT Press},
-  year = 	 {1999},
-  address = 	 {Cambridge, MA, USA.},
-  pages = 	 {301-303},
-}
-
-@InProceedings{Frohlic00,
-  author = 	 {Fr\"ohlich, B. and Plate, J.},
-  title = 	 {The cubic mouse: a new device for three-dimensional input},
-  booktitle =    {Proceedings of the SIGCHI Conference on Human Factors in Computing Systems},
-  year = 	 {2000},
-  pages = 	 {526-531},
-  month = 	 {April},
-  address = 	 {The Hague, The Netherlands},
-  organization = {ACM},
-  note = 	 {DOI= \url{http://doi.acm.org/10.1145/332040.332491}},
-}
-
-@Misc{Steele04,
-  author = 	 {Steele, B.},
-  title = 	 {Look, Ma, no wires! Cornell class project tests wireless  networking},
-  howpublished = {\url{http://www.news.cornell.edu/Chronicle/00/5.18.00/wireless_class.html}},
-  month = 	 {February},
-  year = 	 {2004},
-  note = 	 {Cornell Chronicle, 31 from Columbia University},
-}
-
-@Misc{Oxygen,
-  title = 	 {MIT Project Oxygen: Overview},
-  howpublished = {\url{http://oxygen.lcs.mit.edu/Overview.html}},
-  year = 	 {2004},
-  note = 	 {Computer Science and Artificial Intelligence Laboratory, Massachusetts Institute of Technology},
-}
 
 @Misc{Justo2017,
   author       = {David Justo},
   title        = {El uso de 'smartphones' en España se duplica en los últimos cinco años},
   howpublished = {\url{http://cadenaser.com/ser/2017/02/28/ciencia/1488281552_888684.html}},
-  month        = feb,
-  year         = {2017},
   timestamp    = {2018-03-08},
+  note       =    {Última visita: 08-03-18},
 }
 
 @Misc{JCCM2017,
   author       = {JCCM},
   title        = {Papás 2.0},
   howpublished = {\url{http://www.educa.jccm.es/alumnado/es/papas}},
-  month        = feb,
-  year         = {2017},
   timestamp    = {2018-03-08},
+  note        =    {Última visita: 08-09-17},
 }
 
 @Misc{WhatsApp,
@@ -89,6 +22,7 @@
   howpublished = {\url{https://www.whatsapp.com}},
   year         = {2017},
   timestamp    = {2018-03-08},
+  note         =    {Última visita: 04-09-17},
 }
 
 @Misc{Telegram2017,
@@ -97,12 +31,14 @@
   howpublished = {\url{https://telegram.org}},
   year         = {2017},
   timestamp    = {2018-03-08},
+  note         =    {Última visita: 05-09-17},
 }
 
 @Misc{Signal,
   author       = {Signal},
   title        = {Signal},
   howpublished = {\url{https://www.signal.org/}},
+  note         =    {Última visita: 07-09-17},
 }
 
 @Misc{Microsoft,
@@ -110,6 +46,7 @@
   title        = {Windows},
   howpublished = {\url{https://www.microsoft.com/es-es/windows/}},
   timestamp    = {2018-02-15},
+  note         =    {Última visita: 15-02-18},
 }
 
 @Misc{Andro,
@@ -117,6 +54,7 @@
   title        = {Android},
   howpublished = {\url{https://www.android.com/}},
   timestamp    = {2018-02-15},
+  note         =    {Última visita: 15-02-18},
 }
 
 @Misc{Java,
@@ -124,6 +62,7 @@
   title        = {Java},
   howpublished = {\url{https://www.java.com/es/about/}},
   timestamp    = {2018-02-15},
+  note         =    {Última visita: 15-02-18},
 }
 
 @Book{Gomez2017,
@@ -139,6 +78,7 @@
   title        = {Android Studio},
   howpublished = {\url{https://developer.android.com/studio/index.html}},
   timestamp    = {2018-02-15},
+  note         =    {Última visita: 15-02-18},
 }
 
 @Misc{GooFirebase,
@@ -146,6 +86,7 @@
   title        = {Firebase},
   howpublished = {\url{https://firebase.google.com/?hl=es-419}},
   timestamp    = {2018-02-15},
+  note         =    {Última visita: 15-02-18},
 }
 
 @Misc{IBM,
@@ -153,13 +94,15 @@
   title        = {Watson},
   howpublished = {\url{https://www.ibm.com/cloud-computing/bluemix/es/watson}},
   timestamp    = {2018-02-18},
+  note         =    {Última visita: 18-02-18},
 }
 
 @Misc{ARCO,
   author       = {ARCO},
-  title        = {Clase esi-tfg},
+  title        = {Plantilla esi-tfg},
   howpublished = {\url{https://bitbucket.org/arco_group/esi-tfg}},
   timestamp    = {2018-02-24},
+  note         =    {Última visita: 24-02-18},
 }
 
 @Misc{TheLatexProject,
@@ -167,24 +110,23 @@
   title        = {An introduction to LaTeX},
   howpublished = {\url{https://www.latex-project.org/about/}},
   timestamp    = {2018-02-18},
+  note         =    {Última visita: 18-02-18},
 }
 
 @Misc{EclipseFoundation2018,
   author       = {Eclipse{\ }Foundation},
   title        = {Eclipse},
   howpublished = {\url{https://www.eclipse.org}},
-  month        = jan,
-  year         = {2018},
+  note         =    {Última visita: 15-02-18},
 }
 
-@Manual{Schwaber2017,
+@Misc{Schwaber2017,
   title        = {The Scrum Guide},
   author       = {Ken Schwaber; Jeff Sutherland},
   organization = {Scrum},
-  month        = nov,
-  year         = {2017},
   timestamp    = {2018-02-05},
-  url          = {http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf},
+  note         = {Última visita: 05-02-18},
+  howpublished = {\url{http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf}},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

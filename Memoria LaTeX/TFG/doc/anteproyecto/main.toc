@@ -1,4 +1,4 @@
-\babel@toc {spanish}{}
+\select@language {spanish}
 \contentsline {section}{\numberline {1}INTRODUCCI\IeC {\'O}N}{2}{section.1}
 \contentsline {section}{\numberline {2}TECNOLOG\IeC {\'I}A ESPEC\IeC {\'I}FICA}{3}{section.2}
 \contentsline {section}{\numberline {3}OBJETIVOS}{4}{section.3}
