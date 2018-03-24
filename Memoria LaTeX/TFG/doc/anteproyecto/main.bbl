@@ -81,10 +81,10 @@ Ken Schwaber;~Jeff Sutherland.
   \url{http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf}.
 \newblock Última visita: 05-02-18.
 
-\bibitem[Tel17]{Telegram2017}
+\bibitem[Tel]{Telegram2017}
 Telegram.
 \newblock Telegram messenger.
-\newblock \url{https://telegram.org}, 2017.
+\newblock \url{https://telegram.org}.
 \newblock Última visita: 05-09-17.
 
 \bibitem[The]{TheLatexProject}
@@ -93,10 +93,10 @@ The{\ }Latex{\ }Project.
 \newblock \url{https://www.latex-project.org/about/}.
 \newblock Última visita: 18-02-18.
 
-\bibitem[Wha17]{WhatsApp}
+\bibitem[Wha]{WhatsApp}
 WhatsApp{\ }Inc.
 \newblock Whatsapp.
-\newblock \url{https://www.whatsapp.com}, 2017.
+\newblock \url{https://www.whatsapp.com}.
 \newblock Última visita: 04-09-17.
 
 \end{thebibliography}
