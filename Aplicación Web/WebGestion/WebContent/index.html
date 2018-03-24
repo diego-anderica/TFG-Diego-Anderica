@@ -17,17 +17,17 @@
 		<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
 		<!-- Firebase -->
 		
-		<!-- Comprobar procedencia -->
+		<!-- Comprobar logueo -->
 		<script>
-			p = location.search.substring(1, location.search.length);
-			arrayp = p.split("=");
-			if (sessionStorage.Correo == undefined || arrayp[1] != "login") {
-				window.location.href = "login.html";
-			} else {
-				
+			if (sessionStorage.sesion == undefined || sessionStorage.correo == undefined) {
+				window.location.replace("login.html");
 			}
 		</script>
-		<!-- Comprobar procedencia -->
+		<!-- Comprobar logueo -->
+		
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- JQuery -->
 		
 		<title>Gestión de Usuarios</title>
 	</head>
@@ -45,7 +45,7 @@
 							<a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Dar de Alta</a>
+							<a class="nav-link" href="#Services" data-toggle="tab">Dar de Alta</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Dar de Baja</a>
@@ -98,10 +98,17 @@
 			</div>
 		</div>
 		
+		<div class="tab-content" >
+		<div id="Services" class="tab-pane fade">
+           <p>These are the contents of Services </p>
+        </div>
+        </div>
+		
 		<script>
 			function cerrarSesion(){
-				if (confirm("¿Desea realmente cerrar su sesión, " + sessionStorage.getItem("Correo") + "?")) {
-					sessionStorage.removeItem("Correo");
+				if (confirm("¿Desea realmente cerrar su sesión, " + sessionStorage.getItem("correo") + "?")) {
+					sessionStorage.removeItem("sesion");
+					sessionStorage.removeItem("correo");
 					window.location.href = "login.html";
 				} else {
 				    
