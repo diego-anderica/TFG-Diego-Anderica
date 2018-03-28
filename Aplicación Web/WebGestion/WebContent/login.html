@@ -3,9 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		
-<!-- 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-
-		<script src="http://pajhome.org.uk/crypt/md5/2.2/md5-min.js"></script>
+<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 		
 		<!-- BootStrap v4.0 -->
  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -65,6 +63,7 @@
 				var txtCifrada = null;
 				txtCorreo.style.borderColor = "initial";
 				txtContrasena.style.borderColor = "initial";
+				document.body.style.cursor = "progress";
 				
 				if (comprobarCampos(txtCorreo, txtContrasena)) {
 					var reqLogin = new XMLHttpRequest();
@@ -110,6 +109,7 @@
 			            if (myData.Correo == txtCorreo.value) {
 			            		encontrado = true;
 			            		if (txtCifrada == myData.Contrasena) {
+			            			document.body.style.cursor = "auto";
 			            			alert("Bienvenido, " + myData.Correo);
 			            			sessionStorage.setItem("sesion", sesion);
 			            			sessionStorage.setItem("correo", txtCorreo.value);
@@ -123,43 +123,6 @@
 						alert("El correo " + txtCorreo.value + " no se encuentra en la base de datos");
 			        }
 				});				
-			}
-		
-			function login() {
-				var txtCorreo = document.getElementById("txtCorreo");
-				var txtContrasena = document.getElementById("txtContrasena");
-				var md5 = hex_md5(txtContrasena.value);
-				txtCorreo.style.borderColor = "initial";
-				txtContrasena.style.borderColor = "initial";
-				
-				
-				if (comprobarCampos (txtCorreo, txtContrasena)) {
-					var docRef = firestore.collection("UsuariosWeb");
-					var query = docRef.where("Correo", "==", txtCorreo.value.toString());
-					var myData = null;
-					var encontrado = false;
-					
-					query.get().then(function(querySnapshot){
-						querySnapshot.forEach(function(doc) {
-							myData = doc.data();
-				            if (myData.Correo == txtCorreo.value) {
-				            		encontrado = true;
-				            		if (md5 == myData.Contrasena) {
-				            			alert("Bienvenido, " + myData.Correo);
-				            			sessionStorage.setItem("Correo", myData.Correo);
-				            			pasarVariable("index.html", "login");
-				            		} else {
-				            			alert("La contraseña para " + myData.Correo + " es incorrecta");
-				            		}
-				            }
-				        })
-				        if (encontrado == false) {
-							alert("El correo " + txtCorreo.value + " no se encuentra en la base de datos");
-						}
-					});
-					
-				}
-				
 			}
 			
 			function comprobarCampos(txtCorreo, txtContrasena) {

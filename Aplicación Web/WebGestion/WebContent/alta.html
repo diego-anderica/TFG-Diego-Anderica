@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<!-- BootStrap v4.0 -->
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<!-- BootStrap v4.0 -->
+		
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+		<!-- Firebase -->
+		
+		<!-- Comprobar logueo -->
+		<script>
+			if (sessionStorage.sesion == undefined || sessionStorage.correo == undefined) {
+				window.location.replace("login.html");
+			}
+		</script>
+		<!-- Comprobar logueo -->
+		
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- JQuery -->
+		
+		<title>Gestión de Usuarios - Dar de Alta</title>
+	</head>
+	
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+				<a class="navbar-brand" href="index.html">Gestión de Usuarios</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Inicio</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Dar de Alta<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="baja.html">Dar de Baja</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="consulta.html">Consultar Usuarios</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="modificar.html">Modificar Usuarios</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<button class="btn btn-primary float-right" onclick="cerrarSesion()">Cerrar Sesión
+								<img src="icons/logout.png"><!--<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+							</button>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		
+		<div class="container">
+			<h2>Dar de Alta a un Usuario/Familia</h2>
+			<p>
+				Rellene el siguiente formulario para dar de alta a un usuario o una familia en la base de datos. Al escribir el teléfono, por favor, introduzca el código de país
+				(ejemplo para España: +34012345678).
+			</p>
+			<div class="row">
+				<div class="col">
+					<form>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Nombre de la familia:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtFamilia" placeholder="Nombre de la familia..." disabled>
+							</div>
+						</div>
+						<h4 align="center"> Datos del Tutor 1</h4>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Nombre:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtNombreT1" placeholder="Nombre del Tutor 1...">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Primer Apellido:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtApellido1T1" placeholder="Primer apellido...">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Segundo Apellido:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtApellido2T1" placeholder="Segundo apellido...">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Número de Teléfono:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtTfnoT1" placeholder="+34012345678">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Correo Electrónico:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtCorreoT1" placeholder="ejemplo@ejemplo.com">
+							</div>
+						</div>
+						<h4 id="lblT2" align="center"> Datos del Tutor 2</h4>
+						<div class="form-group row" id="divNombreT2">
+							<label class="col-sm-2 col-form-label">Nombre:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtNombreT2" placeholder="Nombre del Tutor 2..." disabled>
+							</div>
+						</div>
+						<div class="form-group row" id="divApellido1T2">
+							<label class="col-sm-2 col-form-label">Primer Apellido:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtApellido1T2" placeholder="Primer apellido..." disabled>
+							</div>
+						</div>
+						<div class="form-group row" id="divApellido2T2">
+							<label class="col-sm-2 col-form-label">Segundo Apellido:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtApellido2T2" placeholder="Segundo apellido..." disabled>
+							</div>
+						</div>
+						<div class="form-group row" id="divTfnoT2">
+							<label class="col-sm-2 col-form-label">Número de Teléfono:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtTfnoT2" placeholder="+34012345678" disabled>
+							</div>
+						</div>
+						<div class="form-group row" id="divCorreoT2">
+							<label class="col-sm-2 col-form-label">Correo Electrónico:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtCorreoT2" placeholder="ejemplo@ejemplo.com" disabled>
+							</div>
+						</div>
+						<button class="btn btn-secondary btn-block" id="btnT2" onclick="habilitarDatosT2()" type="button">Habilitar Campos Tutor 2</button>
+						<button class="btn btn-info btn-block" id="btnGenerarFamilia" onclick="generarFamilia()" type="button">Generar Nombre de Familia</button>
+						<button class="btn btn-success btn-block" id="btnAlta" onclick="darDeAlta()" type="button" >Dar de Alta Usuario/Familia</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<script src="scripts/darDeAlta.js"></script>
+		
+		<script src="scripts/cerrarSesion.js"></script>
+		
+		<script src="scripts/conectarFirebase.js"></script>
+	</body>
+	
+</html>
