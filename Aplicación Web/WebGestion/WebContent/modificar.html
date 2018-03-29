@@ -30,7 +30,7 @@
 		<title>Gestión de Usuarios - Modificación</title>
 	</head>
 
-	<body>
+	<body onload="rellenarLista()">
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 				<a class="navbar-brand" href="index.html">Gestión de Usuarios</a>
@@ -65,6 +65,93 @@
 				</div>
 			</nav>
 		</header>
+		
+		<div class="container">
+			<h2>Modificar una Familia/Usuario</h2>
+			<p>
+				Para modificar una Familia o Usuario seleccione uno de la lista desplegable, aparecerán sus datos en los huecos y podrá proceder a su modificación.
+			</p>
+			<div class="row">
+				<div class="col">
+					<form>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Familia:</label>
+							<div class="col-sm-10">
+								<select class="form-control" id="cbFamilias" onchange="rellenarDatos(this)">
+									
+								</select>
+							</div>
+						</div>
+						<h4 align="center"> Datos del Tutor 1</h4>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Nombre:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtNombreT1" placeholder="Nombre del Tutor 1..." disabled>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Primer Apellido:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtApellido1T1" placeholder="Primer apellido..." disabled>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Segundo Apellido:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtApellido2T1" placeholder="Segundo apellido..." disabled>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Número de Teléfono:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtTfnoT1" placeholder="+34012345678" disabled>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Correo Electrónico:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtCorreoT1" placeholder="ejemplo@ejemplo.com" disabled>
+							</div>
+						</div>
+						<h4 id="lblT2" align="center"> Datos del Tutor 2</h4>
+						<div class="form-group row" id="divNombreT2">
+							<label class="col-sm-2 col-form-label">Nombre:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtNombreT2" placeholder="Nombre del Tutor 2..." disabled>
+							</div>
+						</div>
+						<div class="form-group row" id="divApellido1T2">
+							<label class="col-sm-2 col-form-label">Primer Apellido:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtApellido1T2" placeholder="Primer apellido..." disabled>
+							</div>
+						</div>
+						<div class="form-group row" id="divApellido2T2">
+							<label class="col-sm-2 col-form-label">Segundo Apellido:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtApellido2T2" placeholder="Segundo apellido..." disabled>
+							</div>
+						</div>
+						<div class="form-group row" id="divTfnoT2">
+							<label class="col-sm-2 col-form-label">Número de Teléfono:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtTfnoT2" placeholder="+34012345678" disabled>
+							</div>
+						</div>
+						<div class="form-group row" id="divCorreoT2">
+							<label class="col-sm-2 col-form-label">Correo Electrónico:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtCorreoT2" placeholder="ejemplo@ejemplo.com" disabled>
+							</div>
+						</div>
+						<button class="btn btn-primary btn-block" id="btnModificar" onclick="modificarUsuario(this)" type="button" >Modificar Usuario/Familia</button>
+						<button class="btn btn-danger btn-block invisible" id="btnCancelar" onclick="cancelarModificacion(this)" type="button" >Cancelar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<script src="scripts/modificar.js"></script>
 		
 		<script src="scripts/cerrarSesion.js"></script>
 		

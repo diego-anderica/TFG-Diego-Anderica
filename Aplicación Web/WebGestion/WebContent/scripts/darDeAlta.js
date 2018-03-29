@@ -1,4 +1,3 @@
-
 /* var txtFamilia = document.getElementById("txtFamilia");
 var txtApellido1T1 = document.getElementById("txtApellido1T1");
 var valFamilia = null; */
