@@ -1,7 +1,3 @@
-/* var txtFamilia = document.getElementById("txtFamilia");
-var txtApellido1T1 = document.getElementById("txtApellido1T1");
-var valFamilia = null; */
-
 window.onbeforeunload = function() {
 	return "¿Desea realmente abandonar la página?";
 }
@@ -47,25 +43,7 @@ function generarFamilia() {
 	txtFamilia.value = "familia" + txtApellido1T1.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "") + txtApellido1T2.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 }
 
-/* function rellenarFamilia(id) {
-	if (id == "txtApellido1T1") {
-		if (txtApellido1T1.value == "") {
-			txtFamilia.value = null;
-		} else {
-			if (txtApellido1T2.value == "") {
-				//https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
-				txtFamilia.value = "familia" + txtApellido1T1.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-				valFamilia = "familia" + txtApellido1T1.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-			} else {
-
-			}
-		}
-	} else if (id == "txtApellido1T2") {
-		txtFamilia.value = valFamilia + txtApellido1T2.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-	}
-} */
-
-function darDeAlta() {
+function darDeAlta() {	
 	if(comprobarCampos()) {
 		if (confirm("¿Los datos introducidos son correctos?")) {
 			document.body.style.cursor = "progress";
@@ -97,7 +75,7 @@ function comprobarCampos() {
 				alert ("Escriba un código de país válido para el número de teléfono del Tutor 1.");
 			} else {
 				if (txtCorreoT1.value != "" && txtCorreoT1.value.indexOf("@") == -1) {
-					alert ("Escriba una dirección de correo válida para el número de teléfono del Tutor 1.");
+					alert ("Escriba una dirección de correo válida para el Tutor 1.");
 				} else {
 					if (txtNombreT2.disabled == false) {
 						if (txtNombreT2.value == "" || txtApellido1T2.value == "") {
@@ -110,7 +88,7 @@ function comprobarCampos() {
 									alert ("Escriba un código de país válido para el número de teléfono del Tutor 2.");
 								} else {
 									if (txtCorreoT2.value != "" && txtCorreoT2.value.indexOf("@") == -1) {
-										alert ("Escriba una dirección de correo válida para el número de teléfono del Tutor 2.");
+										alert ("Escriba una dirección de correo válida para Tutor 2.");
 									} else {
 										continuar = true;
 									}
@@ -168,7 +146,7 @@ function crearDocumento(familia, i) {
 	    		}).then(function() {
 				    alert ("Se ha creado el usuario " + familia + i);
 				    document.body.style.cursor = "auto";
-				    location.reload();
+				    document.getElementById("frmManual").reset();
 					});
 	    }
 	});

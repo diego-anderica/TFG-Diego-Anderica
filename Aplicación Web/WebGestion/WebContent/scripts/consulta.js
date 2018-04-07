@@ -33,9 +33,11 @@ function rellenarFila(nombreFamilia, datos) {
 	
 	familia.value = nombreFamilia;
 	nombreT1.value = datos.NombreTutor1 + " " + datos.Apellido1Tutor1 + " " + datos.Apellido2Tutor1;
+	
 	if (datos.NombreTutor2 != ""){
 		nombreT2.value = datos.NombreTutor2 + " " + datos.Apellido1Tutor2 + " " + datos.Apellido2Tutor2;
 	}
+	
 	tfnoT1.value = datos.TelefonoTutor1;
 	tfnoT2.value = datos.TelefonoTutor2;
 	correoT1.value = datos.CorreoTutor1;
@@ -51,9 +53,8 @@ function addFila() {
 	var tfnoT2 = "<td><input type='text' name='tfnoT2' id='tfnoT2" + (i + 1) + "' placeholder='Tfno. Tutor 2' class='form-control' disabled /></td>";
 	var correoT1 = "<td><input type='text' name='correoT1' id='correoT1" + (i + 1) + "' placeholder='Correo Tutor 1' class='form-control' disabled /></td>";
 	var correoT2 = "<td><input type='text' name='correoT2' id='correoT2" + (i + 1) + "' placeholder='Correo Tutor 2' class='form-control' disabled /></td>";
-	//var btnModificar = "<td><button class='btn btn-primary float-right' id='btnModificar" + (i + 1) + "' onclick='modificarUsuario(this.id)'>Modificar</button></td>";
 	
-	$('#addr' + i).html(numero + familia + nombreT1 + nombreT2 + tfnoT1 + tfnoT2 + correoT1 + correoT2);
+	$('#addr' + i).html(numero + familia + nombreT1 + tfnoT1 + correoT1 + nombreT2 + tfnoT2 + correoT2);
 	$('#tblResultados').append('<tr id="addr' + (i + 1) + '"></tr>');
 	
 	i++; 
@@ -137,18 +138,3 @@ function buscarConFiltro(filtro, txtBusqueda){
 	}
 	
 }
-
-/* function modificarUsuario(btnId) {
-	var rowNumber = btnId.substring(12, btnId.length);
-	var btnModificar = document.getElementById(btnId);
-	
-	var familia = document.getElementById("familia" + rowNumber);
-	var nombreT1 = document.getElementById("nombreT1" + rowNumber);
-	var nombreT2 = document.getElementById("nombreT2" + rowNumber);
-	var tfnoT1 = document.getElementById("tfnoT1" + rowNumber);
-	var tfnoT2 = document.getElementById("tfnoT2" + rowNumber);
-	var correoT1 = document.getElementById("correoT1" + rowNumber);
-	var correoT2 = document.getElementById("correoT2" + rowNumber);
-	
-	familia.disabled = false;
-} */

@@ -52,6 +52,7 @@ function darDeBaja(){
 	if(confirm("¿Realmente desea eliminar el usuario " + familia + "?")) {
 		firestore.collection("Usuarios").doc(familia).delete().then(function() {
 		    alert("El usuario " + familia + " se ha borrado correctamente de la base de datos.");
+		    location.reload();
 		}).catch(function(error) {
 		    alert("Ha ocurrido un problema al eliminar el usuario");
 		});
