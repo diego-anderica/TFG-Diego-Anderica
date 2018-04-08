@@ -1,48 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: es-alpha.bst
 Database file #1: main.bib
 Warning--to sort, need author or key in PyMEs2017
-You've used 33 entries,
+You've used 35 entries,
             2580 wiz_defined-function locations,
-            725 strings with 8363 characters,
-and the built_in function-call counts, 9195 in all, are:
-= -- 853
-> -- 274
-< -- 31
-+ -- 77
-- -- 71
-* -- 463
-:= -- 1403
-add.period$ -- 99
-call.type$ -- 33
-change.case$ -- 133
-chr.to.int$ -- 30
-cite$ -- 35
-duplicate$ -- 403
-empty$ -- 915
-format.name$ -- 134
-if$ -- 1970
+            735 strings with 8587 characters,
+and the built_in function-call counts, 9744 in all, are:
+= -- 904
+> -- 290
+< -- 33
++ -- 81
+- -- 75
+* -- 488
+:= -- 1486
+add.period$ -- 105
+call.type$ -- 35
+change.case$ -- 141
+chr.to.int$ -- 32
+cite$ -- 37
+duplicate$ -- 427
+empty$ -- 971
+format.name$ -- 142
+if$ -- 2089
 int.to.chr$ -- 4
 int.to.str$ -- 0
 missing$ -- 2
-newline$ -- 168
-num.names$ -- 96
-pop$ -- 332
+newline$ -- 178
+num.names$ -- 102
+pop$ -- 353
 preamble$ -- 1
-purify$ -- 199
+purify$ -- 211
 quote$ -- 0
-skip$ -- 386
+skip$ -- 409
 stack$ -- 0
-substring$ -- 235
-swap$ -- 35
-text.length$ -- 31
-text.prefix$ -- 31
+substring$ -- 249
+swap$ -- 37
+text.length$ -- 33
+text.prefix$ -- 33
 top$ -- 0
-type$ -- 260
+type$ -- 276
 warning$ -- 1
-while$ -- 65
-width$ -- 37
-write$ -- 388
+while$ -- 69
+width$ -- 39
+write$ -- 411
 (There was 1 warning)

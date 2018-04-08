@@ -11,11 +11,11 @@
 \BOOKMARK [0][-]{chapter.2}{Objetivos}{}% 11
 \BOOKMARK [1][-]{section.2.1}{Objetivo general}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.2}{Objetivos espec\355ficos}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.1}{Objetivo I: Gesti\363n de los Usuarios}{section.2.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.2}{Objetivo II: Aplicaci\363n multiplataforma}{section.2.2}% 15
-\BOOKMARK [2][-]{subsection.2.2.3}{Objetivo III: Monitorizaci\363n de los mensajes}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.1}{Objetivo I: Implementar un marco de gesti\363n de usuarios vinculado al contexto educativo}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.2}{Objetivo II: Proporcionar un entorno de ejecuci\363n multiplataforma}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.3}{Objetivo III: Implementar un mecanismo de monitorizaci\363n activa del tipo y contenido de los mensajes}{section.2.2}% 16
 \BOOKMARK [2][-]{subsection.2.2.4}{Objetivo IV: Integraci\363n de la aplicaci\363n con Google Calendar}{section.2.2}% 17
-\BOOKMARK [2][-]{subsection.2.2.5}{Objetivo V: Comunicaci\363n privada}{section.2.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.5}{Objetivo V: Implementar mecanismos que permitan comunicaciones personales profesor-tutores del alumno y viceversa}{section.2.2}% 18
 \BOOKMARK [0][-]{chapter.3}{Antecedentes}{}% 19
 \BOOKMARK [1][-]{section.3.1}{WhatsApp}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.1.1}{Funcionalidades a nivel de Usuario}{section.3.1}% 21
@@ -52,6 +52,11 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Recursos Hardware}{section.4.3}% 52
 \BOOKMARK [2][-]{subsection.4.3.2}{Recursos Software}{section.4.3}% 53
 \BOOKMARK [0][-]{chapter.5}{Resultados}{}% 54
-\BOOKMARK [1][-]{section.5.1}{Ejemplo Historia de Usuario}{chapter.5}% 55
-\BOOKMARK [0][-]{appendix*.17}{Un anexo de ejemplo}{}% 56
-\BOOKMARK [0][-]{appendix*.18}{Referencias}{}% 57
+\BOOKMARK [1][-]{section.5.1}{Planificaci\363n inicial}{chapter.5}% 55
+\BOOKMARK [2][-]{subsection.5.1.1}{Pila de Producto}{section.5.1}% 56
+\BOOKMARK [1][-]{section.5.2}{Sprint 1: Dise\361o de una plataforma Web para la gesti\363n de los usuarios}{chapter.5}% 57
+\BOOKMARK [2][-]{subsection.5.2.1}{Planificaci\363n del Sprint}{section.5.2}% 58
+\BOOKMARK [2][-]{subsection.5.2.2}{Resultados del Sprint}{section.5.2}% 59
+\BOOKMARK [1][-]{section.5.3}{Ejemplo Historia de Usuario}{chapter.5}% 60
+\BOOKMARK [0][-]{appendix*.17}{Un anexo de ejemplo}{}% 61
+\BOOKMARK [0][-]{appendix*.18}{Referencias}{}% 62

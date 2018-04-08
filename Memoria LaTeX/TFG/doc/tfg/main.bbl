@@ -1,4 +1,4 @@
-\begin{thebibliography}{GoGdlHdD17}
+\begin{thebibliography}{GGdlHdD17}
 
 \bibitem[Ali17]{Alias2017}
 Marina Alias.
@@ -17,6 +17,11 @@ ARCO.
 \newblock esi-tfg.
 \newblock url: \url{https://bitbucket.org/arco_group/esi-tfg}.
 
+\bibitem[Boo]{Bootstrap}
+Bootstrap.
+\newblock Bootstrap - The most popular HTML, CSS, and JS library in the world.
+\newblock url: \url{https://getbootstrap.com/}.
+
 \bibitem[Con17]{Consuelo2017}
 Consuelo.
 \newblock <<Me fui del grupo de WhatsApp y ahora me tratan con distancia en la
@@ -28,6 +33,11 @@ Consuelo.
 creaTáctil.
 \newblock miColegioApp.
 \newblock url: \url{http://micolegioapp.com/wordpress/}.
+
+\bibitem[Ecl18]{EclipseFoundation2018}
+Eclipse{\ }Foundation.
+\newblock Eclipse.
+\newblock \url{https://www.eclipse.org}, Enero 2018.
 
 \bibitem[Edu16]{Educo2016}
 Educo.
@@ -41,6 +51,12 @@ Javier Elio.
 \newblock url:
   \url{https://elandroidelibre.elespanol.com/2016/09/wickr-me.html}.
 
+\bibitem[GGdlHdD17]{Gomez2017}
+Carmen~Lasa G{\'o}mez, Alonso~{\'A}lvarez Garc{\'i}a, y Rafael de~las Heras~del
+  Dedo.
+\newblock {\em Métodos Ágiles: Scrum, Kanban, Lean}.
+\newblock Anaya Multimedia, 2017.
+
 \bibitem[Gooa]{Andro}
 Google.
 \newblock Android.
@@ -50,11 +66,6 @@ Google.
 Google.
 \newblock Firebase.
 \newblock url: \url{https://firebase.google.com/?hl=es-419}.
-
-\bibitem[GoGdlHdD17]{Gomez2017}
-Carmen~Lasa Gomez, Alonso Álvarez García, y Rafael de~las Heras~del Dedo.
-\newblock {\em Métodos Ágiles: Scrum, Kanban, Lean}.
-\newblock Anaya Multimedia, 2017.
 
 \bibitem[IBM]{IBM}
 IBM.

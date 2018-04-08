@@ -20,18 +20,16 @@
   author       = {WhatsApp{\ }Inc.},
   title        = {WhatsApp},
   howpublished = {\url{https://www.whatsapp.com}},
-  year         = {2017},
+  note         = {Última visita: 04-09-17},
   timestamp    = {2018-03-08},
-  note         =    {Última visita: 04-09-17},
 }
 
 @Misc{Telegram2017,
   author       = {Telegram},
   title        = {Telegram Messenger},
   howpublished = {\url{https://telegram.org}},
-  year         = {2017},
+  note         = {Última visita: 05-09-17},
   timestamp    = {2018-03-08},
-  note         =    {Última visita: 05-09-17},
 }
 
 @Misc{Signal,

@@ -1,9 +1,27 @@
 \chapter{Resultados}
 \label{chap:resultados}
 
-\drop{E}{ste} capítulo servirá para mostrar los resultados obtenidos de acuerdo a la planificación.
+\drop{D}{urante} el desarrollo de este capítulo se mostrarán los resultados obtenidos de seguir la planificación usando la metodología de desarrollo detallada en el capítulo anterior, por lo que el avance se dividirá en Sprints. Cada uno de ellos tendrá, al menos, una historia de usuario asignada que deberá quedar implementada al final del desarrollo.
 
-\section{Ejemplo Historia de Usuario}
+Debido a que el equipo de Scrum, en este caso, es reducido, se han tenido que realizar diversos ajustes para adoptar esta metodología al trabajo que se va a desarrollar. Por tanto, el equipo identificado queda de la siguiente manera:
+
+\begin{itemize}
+	\item \textbf{Dueño del Producto:} Luis Rodríguez Benítez.
+	\item \textbf{Maestro de Scrum:} Luis Jiménez Linares.
+	\item \textbf{Equipo de Scrum:} Diego Andérica Richard.
+\end{itemize}
+
+Este capítulo constará de los diferentes Sprints en los que se ha dividido el proyecto, así como su planificación, resultados y reajustes necesarios, si los hubiese. Antes de comenzar con el primer Sprint se ha de tener en cuenta uno de los principales artefactos de la metodología escogida, como es la Pila de Producto.
+
+\section{Planificación inicial}
+\subsection{Pila de Producto}
+La Pila de Producto, como se ha explicado con anterioridad, se trata de una lista de todo lo que puede ser necesario en el producto. En este caso, la Pila de Producto es la siguiente:
+
+\section{Sprint 1: Diseño de una plataforma Web para la gestión de los usuarios}
+Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación Android. De esta manera, se busca que el hecho de realizar tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulte mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma de mensajería instantánea que se pretende desarrollar, puesto que ofrecerá una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore.
+
+\subsection{Planificación del Sprint}
+Se ha elegido una única historia de usuario para la consecución de este Sprint durante la reunión inicial, representada en la Tabla \ref{tab:historia1}.
 
 \begin{table}[hp]
 	\centering
@@ -13,4 +31,35 @@
 	\caption[Historia de Usuario 1]
 	{Historia de Usuario 1}
 	\label{tab:historia1}
+\end{table}
+
+%TODO: Mencionar LOPD?
+\subsection{Resultados del Sprint}
+En el centro habrá uno o varios administradores de la aplicación que se encargarán de gestionar los usuarios de la aplicación. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido usar Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JS. Del mismo modo, se ha nrequerido incluir Firebase y las referencias a la base de datos de Firestore del proyecto.
+
+Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada con el algoritmo MD5. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo por lo que, si alguno de estos campos se encuentra sin definir en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión.
+
+Una vez se ha accedido, el administrador puede realizar cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios. En los siguientes apartados se llevará a cabo una explicación de cada uno.
+
+\subsubsection{Dar de Alta}
+
+
+\subsubsection{Dar de Baja}
+
+
+\subsubsection{Consultar Usuarios}
+
+
+\subsubsection{Modificar Usuarios}
+
+\section{Ejemplo Historia de Usuario}
+
+\begin{table}[hp]
+	\centering
+	{\small
+		\input{tables/historias_de_usuario/historia_1.tex}
+	}
+	\caption[Historia de Usuario 2]
+	{Historia de Usuario 2}
+	\label{tab:historia2}
 \end{table}
