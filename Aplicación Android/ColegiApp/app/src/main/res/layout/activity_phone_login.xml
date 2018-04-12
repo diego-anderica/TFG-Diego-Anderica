@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lblInfoTfno" />
 
     <Button
-        android:id="@+id/btnEnviarCodigo"
+        android:id="@+id/btnEntrarCTfno"
         android:layout_width="200dp"
         android:layout_height="47dp"
         android:layout_marginEnd="20dp"
@@ -106,7 +106,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEnviarCodigo" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrarCTfno" />
 
     <EditText
         android:id="@+id/txtCodigo"

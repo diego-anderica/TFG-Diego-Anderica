@@ -7,6 +7,7 @@
     <string name="lblEntrada">Selecciona el método de entrada...</string>
     <string name="btnEntrarCTfno">Nº de teléfono</string>
     <string name="btnEntrarCCorreo">Correo y contraseña</string>
+    <string name="btnDocente">Soy Docente</string>
     <!--ActivityLogin-->
 
     <!--PhoneActivityLogin-->
@@ -46,6 +47,7 @@
     <string name="msgConfirmarCorreo">¿La dirección de correo es</string>
     <string name="msgCorreoEnviado">Se ha enviado un correo de recuperación a</string>
     <string name="msgErrorEnvioCorreo">Se ha producido un error al enviar el correo</string>
+    <string name="title_activity_docente_login">DocenteLoginActivity</string>
     <!--EmailActivityLogin-->
 
 </resources>

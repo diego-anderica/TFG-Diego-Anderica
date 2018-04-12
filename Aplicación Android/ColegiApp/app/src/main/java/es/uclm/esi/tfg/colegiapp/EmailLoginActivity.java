@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -45,10 +46,21 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     private FirebaseUser user;
 
+    private Boolean docente;
+    private String coleccion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_login);
+
+        docente = getIntent().getExtras().getBoolean("docente");
+
+        if (docente) {
+            coleccion = "Docentes";
+        } else {
+            coleccion = "Usuarios";
+        }
 
         txtCorreo = (EditText) findViewById(R.id.txtCorreo);
         txtContrasena = (EditText) findViewById(R.id.txtContrasena);
@@ -93,8 +105,8 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     private void registrarUsuario(final String correo, final String contrasena, boolean registroFinal) {
 
-        if (!registroFinal && credencialesValidas(correo, contrasena)) {
-            db.collection("Usuarios")
+        if (!registroFinal && credencialesValidas(correo, contrasena) && coleccion == "Docentes") {
+            db.collection(coleccion)
                     .whereEqualTo("Correo", correo)
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -113,6 +125,8 @@ public class EmailLoginActivity extends AppCompatActivity {
                         }
                     });
 
+        } else if (!registroFinal && credencialesValidas(correo, contrasena) && coleccion == "Usuarios") {
+            buscarFamiliaBBDD (correo, contrasena, 1);
         } else if (registroFinal) {
             mAuth.createUserWithEmailAndPassword(correo, contrasena)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -135,6 +149,49 @@ public class EmailLoginActivity extends AppCompatActivity {
                                 Toast.makeText(EmailLoginActivity.this, getString(R.string.msgContrasenaDebil), Toast.LENGTH_LONG).show();
                             } catch (Exception e) {
                                 e.printStackTrace();
+                            }
+                        }
+                    });
+        }
+    }
+
+    private void buscarFamiliaBBDD(final String correo, final String contrasena, int pasada) {
+
+        if (pasada == 1) {
+            db.collection(coleccion)
+                    .whereEqualTo("CorreoTutor1", correo)
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(Task<QuerySnapshot> task) {
+                            if (task.getResult().isEmpty()) {
+                                buscarFamiliaBBDD(correo, contrasena, 2);
+                            } else {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(EmailLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor1"), Toast.LENGTH_SHORT).show();
+                                    registrarUsuario(correo, contrasena, true);
+                                } else {
+                                    Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    });
+        } else if (pasada == 2) {
+            db.collection(coleccion)
+                    .whereEqualTo("CorreoTutor2", correo)
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(Task<QuerySnapshot> task) {
+                            if (task.getResult().isEmpty()) {
+                                Toast.makeText(EmailLoginActivity.this, getString(R.string.msgUsuarioNoEncontrado), Toast.LENGTH_SHORT).show();
+                            } else {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(EmailLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor2"), Toast.LENGTH_SHORT).show();
+                                    registrarUsuario(correo, contrasena, true);
+                                } else {
+                                    Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
                     });

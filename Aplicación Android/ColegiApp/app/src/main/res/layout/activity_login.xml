@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lblBienvenida" />
 
     <Button
-        android:id="@+id/btnEnviarCodigo"
+        android:id="@+id/btnEntrarCTfno"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginEnd="40dp"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEnviarCodigo" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrarCTfno" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guiaV_1"
@@ -93,5 +93,27 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="106dp" />
+
+    <Button
+        android:id="@+id/btnEntrarDocente"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/btnentrarshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/btnDocente"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrarCCorreo" />
 
 </android.support.constraint.ConstraintLayout>

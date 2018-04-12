@@ -22,7 +22,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -51,15 +50,26 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
 
+    private Boolean docente;
+    private String coleccion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_login);
 
+        docente = getIntent().getExtras().getBoolean("docente");
+
+        if (docente) {
+            coleccion = "Docentes";
+        } else {
+            coleccion = "Usuarios";
+        }
+
         lblEntradaTfno = (TextView) findViewById(R.id.lblEntradaTfno);
         lblInfoTfno = (TextView) findViewById(R.id.lblInfoTfno);
         txtTelefono = (EditText) findViewById(R.id.txtTelefono);
-        btnEnviarCodigo = (Button) findViewById(R.id.btnEnviarCodigo);
+        btnEnviarCodigo = (Button) findViewById(R.id.btnEntrarCTfno);
 
         lblIntroducirCodigo = (TextView) findViewById(R.id.lblIntroducirCodigo);
         txtCodigo = (EditText) findViewById(R.id.txtCodigo);
@@ -223,26 +233,72 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
-    private void aceptar(String telefono) {
+    private void aceptar(final String telefono) {
 
-        db.collection("Usuarios")
-                .whereEqualTo("Telefono", "+34" + telefono)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(Task<QuerySnapshot> task) {
-                        if (task.getResult().isEmpty()) {
-                            Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgUsuarioNoEncontrado), Toast.LENGTH_SHORT).show();
-                        } else {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("Nombre"), Toast.LENGTH_SHORT).show();
-                                enviarCodigo();
+        if (coleccion == "Docentes") {
+            db.collection(coleccion)
+                    .whereEqualTo("Telefono", "+34" + telefono)
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(Task<QuerySnapshot> task) {
+                            if (task.getResult().isEmpty()) {
+                                Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgUsuarioNoEncontrado), Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("Nombre"), Toast.LENGTH_SHORT).show();
+                                    enviarCodigo();
+                                } else {
+                                    Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
-                    }
-                });
+                    });
+        } else if (coleccion == "Usuarios") {
+            buscarFamiliaEnBBDD (telefono, 1);
+        }
+    }
+
+    private void buscarFamiliaEnBBDD(final String telefono, int pasada) {
+        if (pasada == 1) {
+            db.collection(coleccion)
+                    .whereEqualTo("TelefonoTutor1", "+34" + telefono)
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(Task<QuerySnapshot> task) {
+                            if (task.getResult().isEmpty()) {
+                                buscarFamiliaEnBBDD(telefono, 2);
+                            } else {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor1"), Toast.LENGTH_SHORT).show();
+                                    enviarCodigo();
+                                } else {
+                                    Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    });
+        } else if (pasada == 2) {
+            db.collection(coleccion)
+                    .whereEqualTo("TelefonoTutor2", "+34" + telefono)
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(Task<QuerySnapshot> task) {
+                            if (task.getResult().isEmpty()) {
+                                Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgUsuarioNoEncontrado), Toast.LENGTH_SHORT).show();
+                            } else {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor2"), Toast.LENGTH_SHORT).show();
+                                    enviarCodigo();
+                                } else {
+                                    Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    });
+        }
     }
 
     private void cancelar() {
