@@ -33,24 +33,30 @@ Se ha elegido una única historia de usuario para la consecución de este Sprint
 	\label{tab:historia1}
 \end{table}
 
-%TODO: Mencionar LOPD?
+%TODO: Extracto código algoritmo MD5
+%TODO: LOPD
 \subsection{Resultados del Sprint}
-En el centro habrá uno o varios administradores de la aplicación que se encargarán de gestionar los usuarios de la aplicación. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido usar Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JS. Del mismo modo, se ha nrequerido incluir Firebase y las referencias a la base de datos de Firestore del proyecto.
+\subsubsection{Tarea de diseño de la base de datos}
+Firebase Firestore ofrece una base de datos no relacional, lo que significa que no existen relaciones ni tablas como sí existen en las relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas. En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores del sitio Web y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat.
 
-Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada con el algoritmo MD5. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo por lo que, si alguno de estos campos se encuentra sin definir en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión.
+En cuanto a contraseñas, no es necesario guardarlas en la base de datos, a excepción de las de los administradores puesto que, al hacer uso de la funcionalidad de Firebase \textit{Authentication}, éstas se guardan internamente en el proyecto y únicamente son conocidas por la herramienta, asignando además un identificador único de usuario a cada uno.
 
-Una vez se ha accedido, el administrador puede realizar cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios. En los siguientes apartados se llevará a cabo una explicación de cada uno.
+\subsubsection{Tareas de implementación de la plataforma Web}
+En el centro habrá uno o varios administradores de la aplicación que se encargarán de gestionar los usuarios de la aplicación. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido usar Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha requerido incluir Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo MD5. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo por lo que, si alguno de estos campos se encuentra sin definir en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión. Una vez se ha accedido, el administrador accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios. En los siguientes apartados se llevará a cabo una explicación de cada uno.
 
-\subsubsection{Dar de Alta}
+\noindent \underline{Dar de Alta} \newline
+En esta primera funcionalidad, el administrador tiene la opción de rellenar un sencillo formulario para introducir un nuevo usuario en la base de datos que se puede rellenar con los datos de un único tutor legal del alumno o, si lo hubiese, también con los del segundo tutor. Los datos que se han especificado para cada tutor son: nombre, primer apellido, segundo apellido, número de teléfono y correo electrónico. Por último, para identificar a este usuario en la base de datos, se le asignará un identificador compuesto de los apellidos de ambos tutores o, en su defecto, del único tutor, añadiendo un número al final. Es decir, si dos familias diferentes poseen los mismos apellidos, se añadirá un número al final de la composición de sus apellidos para el identificador, por lo que quedarán representadas de manera única en la base de datos.
 
+Por otra parte, además de tener el formulario para introducir nuevos usuarios, el administrador también tiene la posibilidad de importar un archivo \acs{CSV} para realizar esta tarea de una manera más sencilla y automatizada. Este archivo debe tener un formato específico detallado en la primera línea del mismo y que consta, principalmente, de los mismos datos que en el formulario pero separados por comas y sin espacios entre ellos, separando los usuarios por un salto de línea.
 
-\subsubsection{Dar de Baja}
+\noindent \underline{Dar de Baja} \newline
+Al entrar en esta página, se dispone de una lista desplegable en la que se cargarán todos los usuarios registrados en la base de datos Web el diseño se basa en tener una lista desplegable con todos los usuarios de la base de datos. Al seleccionar uno de ellos, automáticamente se cargarán en una tabla los datos del mismo para poder ver el usuario que se desea eliminar. Como medida adicional contra el borrado accidental, se preguntará si realmente se desea borrar el usuario seleccionado.
 
+\noindent \underline{Consultar Usuarios} \newline
+De manera similar al apartado anterior, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos. Si se pulsa el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
 
-\subsubsection{Consultar Usuarios}
-
-
-\subsubsection{Modificar Usuarios}
+\noindent \underline{Modificar Usuarios} \newline
+Esta funcionalidad se ha implementado mediante el uso de una lista desplegable que carga todos los usuarios de la base de datos y un formulario que inicialmente se muestra bloqueado para no escribir de manera no intencionada y modificar los datos. Al seleccionar uno de estos usuarios, su información se carga en el formulario para realizar una primera inspección de la misma y, al pulsar el botón de modificar, se habilitan los campos para la escritura. Cuando el administrador finalice la modificación de la información, pulsará de nuevo un botón, siendo preguntado sobre si quiere realmente llevar a cabo la modificación. En caso positivo, se sobreescribirá la información el el usuario seleccionado de la base de datos.
 
 \section{Ejemplo Historia de Usuario}
 
