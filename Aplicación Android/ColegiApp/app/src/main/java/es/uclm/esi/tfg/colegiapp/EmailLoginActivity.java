@@ -96,7 +96,10 @@ public class EmailLoginActivity extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                modificarVisibilidad(LOGIN);
+                Intent login = new Intent(EmailLoginActivity.this, LoginActivity.class);
+                ocultarTeclado(txtCorreo);
+                startActivity(login);
+                finish();
             }
         });
 
@@ -137,6 +140,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                                     user = mAuth.getCurrentUser();
                                     Toast.makeText(EmailLoginActivity.this, getString(R.string.msgIdentificacionOK), Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(EmailLoginActivity.this, MainActivity.class);
+                                    intent.putExtra("docente", docente);
                                     startActivity(intent);
                                     ocultarTeclado(txtContrasena);
                                     finish();
@@ -249,6 +253,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(EmailLoginActivity.this, getString(R.string.msgIdentificacionOK), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(EmailLoginActivity.this, MainActivity.class);
+                            intent.putExtra("docente", docente);
                             startActivity(intent);
                             ocultarTeclado(txtContrasena);
                             finish();

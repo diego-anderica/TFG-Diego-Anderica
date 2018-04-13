@@ -1,6 +1,8 @@
 <resources>
+    <!--Menu-->
     <string name="app_name">ColegiApp</string>
-    <string name="action_settings">Settings</string>
+    <string name="mnuBtnCrearGrupo">Crear grupo...</string>
+    <!--Menu-->
 
     <!--ActivityLogin-->
     <string name="lblBienvenida">¡Bienvenid@ a ColegiApp!</string>
@@ -30,8 +32,6 @@
     <string name="msgUsuarioNoEncontrado">El usuario no se ha encontrado en la base de datos</string>
     <!--PhoneActivityLogin-->
 
-    <string name="lblLoginAlternativo">...o mediante correo electrónico y contraseña...</string>
-
     <!--EmailActivityLogin-->
     <string name="lblEmailLogin">Introduce tu correo y contraseña...</string>
     <string name="txtCorreo">ejemplo@ejemplo.com</string>
@@ -49,5 +49,9 @@
     <string name="msgErrorEnvioCorreo">Se ha producido un error al enviar el correo</string>
     <string name="title_activity_docente_login">DocenteLoginActivity</string>
     <!--EmailActivityLogin-->
+
+    <!--MainActivity-->
+
+    <!--MainActivity-->
 
 </resources>
