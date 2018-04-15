@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -141,13 +142,22 @@ public class MainActivity extends AppCompatActivity {
                             for (DocumentSnapshot document : task.getResult()) {
                                 if (!document.getId().equals("Control")) {
                                     String nombre = document.getString("Nombre");
-                                    chatsGrupales.add(nombre);
+                                    HashMap<String, Object> administrador = ((HashMap<String, Object>) document.get("Administrador"));
+
+                                    if (identificadorUsuario.equals(administrador.get("Correo").toString()) ||
+                                            identificadorUsuario.equals(administrador.get("Telefono").toString())) {
+                                        chatsGrupales.add(nombre);
+                                    }
+
                                 }
                             }
+
                             adaptador.notifyDataSetChanged();
                             progressDialog.dismiss();
-                        } else {
 
+                        } else {
+                            Toast.makeText(MainActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_LONG).show();
+                            finish();
                         }
                     }
                 });

@@ -13,36 +13,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ee" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Docente" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39c124bd-d237-44ec-858f-ae0e363c7f90" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_2_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/AdaptadorListaChats.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/AdaptadorListaFamilias.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/ChatGrupal.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/CrearGrupoActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/Mensaje.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/grupo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/lst_chats_item.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/AdaptadorLista.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/CrearGrupo.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/Docente.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/Docente.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/EmailLoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/EmailLoginActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/PhoneLoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/PhoneLoginActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/Usuario.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/Familia.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_crear_grupo.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_crear_grupo.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/lst_usuarios_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/lst_familias_item.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -195,8 +172,8 @@
       <file leaf-file-name="CrearGrupoActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/CrearGrupoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="124" column="61" lean-forward="false" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
+            <state relative-caret-position="454">
+              <caret line="173" column="33" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="173" selection-end-column="33" />
               <folding>
                 <element signature="e#2395#2434#0" expanded="true" />
                 <element signature="e#2713#3199#0" expanded="true" />
@@ -250,13 +227,14 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="154" column="61" lean-forward="true" selection-start-line="154" selection-start-column="61" selection-end-line="154" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3833#3869#0" expanded="true" />
-                <element signature="e#4352#5135#0" expanded="true" />
-                <element signature="e#5134#5135#0" expanded="true" />
+                <element signature="e#3862#3898#0" expanded="true" />
+                <element signature="e#4381#5722#0" expanded="true" />
+                <element signature="e#5569#5590#0" expanded="true" />
+                <element signature="e#5721#5722#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2447,7 +2425,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="Nexus_5X_API_27" />
     <property name="extract.method.default.visibility" value="public" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1523815565537" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1523817536116" />
     <property name="android.profiler.active" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
   </component>
@@ -2844,7 +2822,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="984" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3310,18 +3287,20 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/AdaptadorListaFamilias.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/AdaptadorListaChats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-          <folding />
+        <state relative-caret-position="426">
+          <caret line="38" column="24" lean-forward="false" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/CrearGrupoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="124" column="61" lean-forward="false" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
+        <state relative-caret-position="454">
+          <caret line="173" column="33" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="173" selection-end-column="33" />
           <folding>
             <element signature="e#2395#2434#0" expanded="true" />
             <element signature="e#2713#3199#0" expanded="true" />
@@ -3348,25 +3327,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/AdaptadorListaChats.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/AdaptadorListaFamilias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="38" column="24" lean-forward="false" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="154" column="61" lean-forward="true" selection-start-line="154" selection-start-column="61" selection-end-line="154" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3833#3869#0" expanded="true" />
-            <element signature="e#4352#5135#0" expanded="true" />
-            <element signature="e#5134#5135#0" expanded="true" />
+            <element signature="e#3862#3898#0" expanded="true" />
+            <element signature="e#4381#5722#0" expanded="true" />
+            <element signature="e#5569#5590#0" expanded="true" />
+            <element signature="e#5721#5722#0" expanded="true" />
           </folding>
         </state>
       </provider>
