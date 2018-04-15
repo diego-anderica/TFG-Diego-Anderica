@@ -50,7 +50,7 @@
     <!--EmailActivityLogin-->
 
     <!--MainActivity-->
-
+    <string name="msgCargandoChats">Cargando chats...</string>
     <!--MainActivity-->
 
     <!--ActivityCrearGrupo-->
@@ -58,6 +58,11 @@
     <string name="btnCrearGrupo">Crear Grupo</string>
     <string name="lblIntegrantes">Integrantes del grupo:</string>
     <string name="msgErrorBBDD">Ha ocurrido un error al comunicar con la base de datos</string>
+    <string name="msgConfirmarGrupo">¿Crear nuevo grupo?</string>
+    <string name="msgCargandoUsuarios">Cargando usuarios...</string>
+    <string name="msgCreandoGrupo">Creando nuevo grupo...</string>
+    <string name="msgNombreGrupoError">El nombre del grupo no es válido</string>
+    <string name="msgGrupoNuevo">Ha creado un nuevo grupo</string>
     <!--ActivityCrearGrupo-->
 
 </resources>

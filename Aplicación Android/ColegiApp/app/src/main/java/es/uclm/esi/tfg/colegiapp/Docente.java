@@ -11,6 +11,10 @@ public class Docente implements Parcelable{
     private String correo;
     private String telefono;
 
+    public Docente() {
+
+    }
+
     public Docente(String id, String nombre, String apellido1, String apellido2, String correo,
                    String telefono) {
         this.id = id;

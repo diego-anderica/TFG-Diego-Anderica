@@ -1,10 +1,12 @@
 package es.uclm.esi.tfg.colegiapp;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,15 +15,19 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,19 +38,26 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
+    private FirebaseFirestore db;
 
-    Boolean isDocente;
-    String correo;
-    String telefono;
-    String procedencia;
+    private Boolean isDocente;
+    private String identificadorUsuario;
 
-    private Menu optMenu;
+    private ListView lstChats;
 
-    private Object usuarioJava;
+    private Docente usuarioJavaDocente;
+    private Familia usuarioJavaFamilia;
+
+    private ArrayList<String> chatsGrupales;
+    private AdaptadorListaChats adaptador;
+
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        onResume();
 
         setContentView(R.layout.activity_main);
 
@@ -52,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mUsername = ANONYMOUS;
+
+        db = FirebaseFirestore.getInstance();
 
         // Inicializar Firebase Auth
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -69,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 mPhotoUrl = mFirebaseUser.getPhotoUrl().toString();
             }*/
 
-
         }
 
         if (getIntent().getExtras() != null) {
@@ -77,35 +91,66 @@ public class MainActivity extends AppCompatActivity {
                 isDocente = getIntent().getExtras().getBoolean("docente");
             }
 
-            if (getIntent().getExtras().containsKey("procedencia")) {
-                procedencia = getIntent().getExtras().getString("procedencia");
+            if (mFirebaseUser.getEmail() != null) {
+                identificadorUsuario = mFirebaseUser.getEmail();
+            } else if (mFirebaseUser.getPhoneNumber() != null) {
+                identificadorUsuario = mFirebaseUser.getPhoneNumber();
+            }
 
-                if (getIntent().getExtras().getString("procedencia").equalsIgnoreCase("correo")) {
-                    correo = getIntent().getExtras().getString("correo");
-                } else if (getIntent().getExtras().getString("procedencia").equalsIgnoreCase("telefono")) {
-                    telefono = getIntent().getExtras().getString("telefono");
-                }
+            if (isDocente && getIntent().getExtras().containsKey("usuarioJava")) {
+                usuarioJavaDocente = getIntent().getParcelableExtra("usuarioJava");
+            } else if (!isDocente && getIntent().getExtras().containsKey("usuarioJava")) {
+                usuarioJavaFamilia = getIntent().getParcelableExtra("usuarioJava");
             }
 
             guardarEstado();
         }
 
-        Log.d("Datos", correo + " " + telefono);
+        lstChats = (ListView) findViewById(R.id.lstChats);
+        chatsGrupales = new ArrayList<String>();
+        adaptador = new AdaptadorListaChats(this, chatsGrupales);
+        lstChats.setAdapter(adaptador);
+
+        progressDialog = ProgressDialog.show(MainActivity.this, "",
+                getString(R.string.msgCargandoChats), true);
+        obtenerChats();
 
         invalidateOptionsMenu();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
+    }
+
+    private void obtenerChats() {
+        if (isDocente) {
+            poblarChatsDocente();
+        } else {
+            //poblarChatsFamilia();
+        }
+    }
+
+    private void poblarChatsDocente() {
+        db.collection("ChatsGrupales")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot document : task.getResult()) {
+                                if (!document.getId().equals("Control")) {
+                                    String nombre = document.getString("Nombre");
+                                    chatsGrupales.add(nombre);
+                                }
+                            }
+                            adaptador.notifyDataSetChanged();
+                            progressDialog.dismiss();
+                        } else {
+
+                        }
+                    }
+                });
     }
 
     @Override
@@ -117,15 +162,18 @@ public class MainActivity extends AppCompatActivity {
     private void guardarEstado() {
         SharedPreferences sharedPref = (MainActivity.this).getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
+        Gson gson = new Gson();
+        String json;
+
+        if (isDocente) {
+            json = gson.toJson(usuarioJavaDocente);
+        } else {
+            json = gson.toJson(usuarioJavaFamilia);
+        }
 
         editor.putBoolean("docente", isDocente);
-        editor.putString("procedencia", procedencia);
-
-        if (procedencia.equalsIgnoreCase("correo")) {
-            editor.putString("correo", correo);
-        } else if (procedencia.equalsIgnoreCase("telefono")) {
-            editor.putString("telefono", telefono);
-        }
+        editor.putString("identificadorUsuario", identificadorUsuario);
+        editor.putString("usuarioJava", json);
 
         editor.commit();
     }
@@ -134,14 +182,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         SharedPreferences sharedPref = (MainActivity.this).getPreferences(Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json;
 
         isDocente = sharedPref.getBoolean("docente", false);
-        procedencia = sharedPref.getString("procedencia", "");
+        identificadorUsuario = sharedPref.getString("identificadorUsuario", "");
 
-        if (procedencia.equalsIgnoreCase("correo")) {
-            correo = sharedPref.getString("correo", "");
-        } else if (procedencia.equalsIgnoreCase("telefono")) {
-            telefono = sharedPref.getString("telefono", "");
+        json = sharedPref.getString("usuarioJava", "");
+
+        if (isDocente) {
+            usuarioJavaDocente = gson.fromJson(json, Docente.class);
+        } else {
+            usuarioJavaFamilia = gson.fromJson(json, Familia.class);
         }
 
         invalidateOptionsMenu();
@@ -186,15 +238,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void crearGrupo() {
-        Intent intent = new Intent(MainActivity.this, CrearGrupo.class);
+        Intent intent = new Intent(MainActivity.this, CrearGrupoActivity.class);
 
-        if (procedencia.equalsIgnoreCase("correo")) {
-            intent.putExtra("correo", correo);
-        } else if (procedencia.equalsIgnoreCase("telefono")) {
-            intent.putExtra("telefono", telefono);
-        }
-
-        intent.putExtra("procedencia", procedencia);
+        intent.putExtra("identificadorDocente", identificadorUsuario);
+        intent.putExtra("usuarioJavaDocente", usuarioJavaDocente);
 
         startActivity(intent);
     }

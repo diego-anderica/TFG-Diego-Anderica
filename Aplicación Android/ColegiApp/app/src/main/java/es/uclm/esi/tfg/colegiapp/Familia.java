@@ -3,7 +3,7 @@ package es.uclm.esi.tfg.colegiapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Usuario implements Parcelable{
+public class Familia implements Parcelable{
     private String nombreFamilia;
     private String nombreTutor1;
     private String apellido1Tutor1;
@@ -15,9 +15,13 @@ public class Usuario implements Parcelable{
     private String apellido2Tutor2;
     private String correoTutor2;
     private String telefonoTutor2;
-    private boolean box;
+    private boolean checked;
 
-    public Usuario(String nombreFamilia, String nombreTutor1, String apellido1Tutor1,
+    public Familia() {
+
+    }
+
+    public Familia(String nombreFamilia, String nombreTutor1, String apellido1Tutor1,
                    String apellido2Tutor1, String correoTutor1, String telefonoTutor1,
                    String nombreTutor2, String apellido1Tutor2, String apellido2Tutor2,
                    String correoTutor2, String telefonoTutor2) {
@@ -122,10 +126,19 @@ public class Usuario implements Parcelable{
         this.telefonoTutor2 = telefonoTutor2;
     }
 
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
-                "nombreTutor1='" + nombreTutor1 + '\'' +
+                "nombreFamilia='" + nombreFamilia + '\'' +
+                ", nombreTutor1='" + nombreTutor1 + '\'' +
                 ", apellido1Tutor1='" + apellido1Tutor1 + '\'' +
                 ", apellido2Tutor1='" + apellido2Tutor1 + '\'' +
                 ", correoTutor1='" + correoTutor1 + '\'' +
@@ -135,10 +148,11 @@ public class Usuario implements Parcelable{
                 ", apellido2Tutor2='" + apellido2Tutor2 + '\'' +
                 ", correoTutor2='" + correoTutor2 + '\'' +
                 ", telefonoTutor2='" + telefonoTutor2 + '\'' +
+                ", checked=" + checked +
                 '}';
     }
 
-    protected Usuario(Parcel in) {
+    protected Familia(Parcel in) {
         nombreFamilia = in.readString();
         nombreTutor1 = in.readString();
         apellido1Tutor1 = in.readString();
@@ -173,15 +187,15 @@ public class Usuario implements Parcelable{
     }
 
     @SuppressWarnings("unused")
-    public static final Parcelable.Creator<Usuario> CREATOR = new Parcelable.Creator<Usuario>() {
+    public static final Parcelable.Creator<Familia> CREATOR = new Parcelable.Creator<Familia>() {
         @Override
-        public Usuario createFromParcel(Parcel in) {
-            return new Usuario(in);
+        public Familia createFromParcel(Parcel in) {
+            return new Familia(in);
         }
 
         @Override
-        public Usuario[] newArray(int size) {
-            return new Usuario[size];
+        public Familia[] newArray(int size) {
+            return new Familia[size];
         }
     };
 

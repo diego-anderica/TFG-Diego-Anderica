@@ -28,7 +28,7 @@
         <activity
             android:name=".EmailLoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CrearGrupo"></activity>
+        <activity android:name=".CrearGrupoActivity"></activity>
     </application>
 
 </manifest>

@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -54,7 +55,8 @@ public class PhoneLoginActivity extends AppCompatActivity {
     private Boolean docente;
     private String coleccion;
 
-    //private Object usuarioJava;
+    private Docente usuarioJavaDocente;
+    private Familia usuarioJavaFamilia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,14 +207,14 @@ public class PhoneLoginActivity extends AppCompatActivity {
     public void lanzarMainActivity(FirebaseUser user) {
         Intent intent = new Intent(PhoneLoginActivity.this, MainActivity.class);
         intent.putExtra("docente", docente);
-        intent.putExtra("procedencia", "telefono");
-        intent.putExtra("telefono", user.getPhoneNumber());
+        //intent.putExtra("procedencia", "telefono");
+        //intent.putExtra("telefono", user.getPhoneNumber());
 
-        /*if (docente) {
-            intent.putExtra("usuarioJava", (Docente) usuarioJava);
+        if (docente) {
+            intent.putExtra("usuarioJava", usuarioJavaDocente);
         } else {
-            intent.putExtra("usuarioJava", (Usuario) usuarioJava);
-        }*/
+            intent.putExtra("usuarioJava", usuarioJavaFamilia);
+        }
 
         startActivity(intent);
         ocultarTeclado(txtCodigo);
@@ -280,16 +282,16 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
-    /*private void obtenerUsuarioJava(DocumentSnapshot documento) {
+    private void obtenerUsuarioJava(DocumentSnapshot documento) {
         if (docente) {
-            usuarioJava = new Docente(documento.getId(),
+            usuarioJavaDocente = new Docente(documento.getId(),
                     documento.getString("Nombre"),
                     documento.getString("Apellido1"),
                     documento.getString("Apellido2"),
                     documento.getString("Correo"),
                     documento.getString("Telefono"));
         } else {
-            usuarioJava = new Usuario(documento.getId(),
+            usuarioJavaFamilia = new Familia(documento.getId(),
                     documento.getString("NombreTutor1"),
                     documento.getString("Apellido1Tutor1"),
                     documento.getString("Apellido2Tutor1"),
@@ -301,7 +303,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                     documento.getString("CorreoTutor2"),
                     documento.getString("TelefonoTutor2"));
         }
-    }*/
+    }
 
     private void buscarFamiliaEnBBDD(final String telefono, int pasada) {
         if (pasada == 1) {

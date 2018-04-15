@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -47,7 +48,8 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     private Boolean docente;
     private String coleccion;
-    //private Object usuarioJava;
+    private Docente usuarioJavaDocente;
+    private Familia usuarioJavaFamilia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,7 +124,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(EmailLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("Nombre"), Toast.LENGTH_SHORT).show();
-                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
+                                    obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     registrarUsuario(correo, contrasena, true);
                                 } else {
                                     Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -156,16 +158,16 @@ public class EmailLoginActivity extends AppCompatActivity {
         }
     }
 
-    /*private void obtenerUsuarioJava(DocumentSnapshot documento) {
+    private void obtenerUsuarioJava(DocumentSnapshot documento) {
         if (docente) {
-            usuarioJava = new Docente(documento.getId(),
+            usuarioJavaDocente = new Docente(documento.getId(),
                     documento.getString("Nombre"),
                     documento.getString("Apellido1"),
                     documento.getString("Apellido2"),
                     documento.getString("Correo"),
                     documento.getString("Telefono"));
         } else {
-            usuarioJava = new Usuario(documento.getId(),
+            usuarioJavaFamilia = new Familia(documento.getId(),
                     documento.getString("NombreTutor1"),
                     documento.getString("Apellido1Tutor1"),
                     documento.getString("Apellido2Tutor1"),
@@ -177,21 +179,21 @@ public class EmailLoginActivity extends AppCompatActivity {
                     documento.getString("CorreoTutor2"),
                     documento.getString("TelefonoTutor2"));
         }
-    }*/
+    }
 
     public void lanzarMainActivity() {
         user = mAuth.getCurrentUser();
         Toast.makeText(EmailLoginActivity.this, getString(R.string.msgIdentificacionOK), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(EmailLoginActivity.this, MainActivity.class);
         intent.putExtra("docente", docente);
-        intent.putExtra("procedencia", "correo");
-        intent.putExtra("correo", user.getEmail());
+        //intent.putExtra("procedencia", "correo");
+        //intent.putExtra("correo", user.getEmail());
 
-        /*if (docente) {
-            intent.putExtra("usuarioJava", (Docente) usuarioJava);
+        if (docente) {
+            intent.putExtra("usuarioJava", usuarioJavaDocente);
         } else {
-            intent.putExtra("usuarioJava", (Usuario) usuarioJava);
-        }*/
+            intent.putExtra("usuarioJava", usuarioJavaFamilia);
+        }
 
         startActivity(intent);
         ocultarTeclado(txtContrasena);
@@ -212,7 +214,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(EmailLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor1"), Toast.LENGTH_SHORT).show();
-                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
+                                    obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     registrarUsuario(correo, contrasena, true);
                                 } else {
                                     Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -232,7 +234,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(EmailLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor2"), Toast.LENGTH_SHORT).show();
-                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
+                                    obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     registrarUsuario(correo, contrasena, true);
                                 } else {
                                     Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
