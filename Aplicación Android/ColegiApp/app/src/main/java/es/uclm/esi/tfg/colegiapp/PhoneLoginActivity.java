@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -53,17 +54,21 @@ public class PhoneLoginActivity extends AppCompatActivity {
     private Boolean docente;
     private String coleccion;
 
+    //private Object usuarioJava;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_login);
 
-        docente = getIntent().getExtras().getBoolean("docente");
+        if (getIntent().getExtras() != null && getIntent().getExtras().containsKey("docente")) {
+            docente = getIntent().getExtras().getBoolean("docente");
 
-        if (docente) {
-            coleccion = "Docentes";
-        } else {
-            coleccion = "Usuarios";
+            if (docente) {
+                coleccion = "Docentes";
+            } else {
+                coleccion = "Usuarios";
+            }
         }
 
         lblEntradaTfno = (TextView) findViewById(R.id.lblEntradaTfno);
@@ -186,10 +191,8 @@ public class PhoneLoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgIdentificacionOK), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(PhoneLoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    ocultarTeclado(txtCodigo);
-                    finish();
+                    FirebaseUser user = task.getResult().getUser();
+                    lanzarMainActivity(user);
                 } else {
                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
                     modificarVisibilidadPrimeraParte(VISIBLE);
@@ -197,6 +200,23 @@ public class PhoneLoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void lanzarMainActivity(FirebaseUser user) {
+        Intent intent = new Intent(PhoneLoginActivity.this, MainActivity.class);
+        intent.putExtra("docente", docente);
+        intent.putExtra("procedencia", "telefono");
+        intent.putExtra("telefono", user.getPhoneNumber());
+
+        /*if (docente) {
+            intent.putExtra("usuarioJava", (Docente) usuarioJava);
+        } else {
+            intent.putExtra("usuarioJava", (Usuario) usuarioJava);
+        }*/
+
+        startActivity(intent);
+        ocultarTeclado(txtCodigo);
+        finish();
     }
 
     private void validarCodigo() {
@@ -235,7 +255,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
     private void aceptar(final String telefono) {
 
-        if (coleccion == "Docentes") {
+        if (coleccion.equals("Docentes")) {
             db.collection(coleccion)
                     .whereEqualTo("Telefono", "+34" + telefono)
                     .get()
@@ -247,6 +267,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("Nombre"), Toast.LENGTH_SHORT).show();
+                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     enviarCodigo();
                                 } else {
                                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -254,10 +275,33 @@ public class PhoneLoginActivity extends AppCompatActivity {
                             }
                         }
                     });
-        } else if (coleccion == "Usuarios") {
-            buscarFamiliaEnBBDD (telefono, 1);
+        } else if (coleccion.equals("Usuarios")) {
+            buscarFamiliaEnBBDD(telefono, 1);
         }
     }
+
+    /*private void obtenerUsuarioJava(DocumentSnapshot documento) {
+        if (docente) {
+            usuarioJava = new Docente(documento.getId(),
+                    documento.getString("Nombre"),
+                    documento.getString("Apellido1"),
+                    documento.getString("Apellido2"),
+                    documento.getString("Correo"),
+                    documento.getString("Telefono"));
+        } else {
+            usuarioJava = new Usuario(documento.getId(),
+                    documento.getString("NombreTutor1"),
+                    documento.getString("Apellido1Tutor1"),
+                    documento.getString("Apellido2Tutor1"),
+                    documento.getString("CorreoTutor1"),
+                    documento.getString("TelefonoTutor1"),
+                    documento.getString("NombreTutor2"),
+                    documento.getString("Apellido1Tutor2"),
+                    documento.getString("Apellido2Tutor2"),
+                    documento.getString("CorreoTutor2"),
+                    documento.getString("TelefonoTutor2"));
+        }
+    }*/
 
     private void buscarFamiliaEnBBDD(final String telefono, int pasada) {
         if (pasada == 1) {
@@ -272,6 +316,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor1"), Toast.LENGTH_SHORT).show();
+                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     enviarCodigo();
                                 } else {
                                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -291,6 +336,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor2"), Toast.LENGTH_SHORT).show();
+                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     enviarCodigo();
                                 } else {
                                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();

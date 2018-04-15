@@ -8,7 +8,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -48,18 +47,21 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     private Boolean docente;
     private String coleccion;
+    //private Object usuarioJava;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_login);
 
-        docente = getIntent().getExtras().getBoolean("docente");
+        if (getIntent().getExtras() != null && getIntent().getExtras().containsKey("docente")) {
+            docente = getIntent().getExtras().getBoolean("docente");
 
-        if (docente) {
-            coleccion = "Docentes";
-        } else {
-            coleccion = "Usuarios";
+            if (docente) {
+                coleccion = "Docentes";
+            } else {
+                coleccion = "Usuarios";
+            }
         }
 
         txtCorreo = (EditText) findViewById(R.id.txtCorreo);
@@ -108,7 +110,7 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     private void registrarUsuario(final String correo, final String contrasena, boolean registroFinal) {
 
-        if (!registroFinal && credencialesValidas(correo, contrasena) && coleccion == "Docentes") {
+        if (!registroFinal && credencialesValidas(correo, contrasena) && coleccion.equals("Docentes")) {
             db.collection(coleccion)
                     .whereEqualTo("Correo", correo)
                     .get()
@@ -120,6 +122,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(EmailLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("Nombre"), Toast.LENGTH_SHORT).show();
+                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     registrarUsuario(correo, contrasena, true);
                                 } else {
                                     Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -128,8 +131,8 @@ public class EmailLoginActivity extends AppCompatActivity {
                         }
                     });
 
-        } else if (!registroFinal && credencialesValidas(correo, contrasena) && coleccion == "Usuarios") {
-            buscarFamiliaBBDD (correo, contrasena, 1);
+        } else if (!registroFinal && credencialesValidas(correo, contrasena) && coleccion.equals("Usuarios")) {
+            buscarFamiliaBBDD(correo, contrasena, 1);
         } else if (registroFinal) {
             mAuth.createUserWithEmailAndPassword(correo, contrasena)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -137,13 +140,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             try {
                                 if (task.isSuccessful()) {
-                                    user = mAuth.getCurrentUser();
-                                    Toast.makeText(EmailLoginActivity.this, getString(R.string.msgIdentificacionOK), Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(EmailLoginActivity.this, MainActivity.class);
-                                    intent.putExtra("docente", docente);
-                                    startActivity(intent);
-                                    ocultarTeclado(txtContrasena);
-                                    finish();
+                                    lanzarMainActivity();
                                 } else {
                                     throw task.getException();
                                 }
@@ -157,6 +154,48 @@ public class EmailLoginActivity extends AppCompatActivity {
                         }
                     });
         }
+    }
+
+    /*private void obtenerUsuarioJava(DocumentSnapshot documento) {
+        if (docente) {
+            usuarioJava = new Docente(documento.getId(),
+                    documento.getString("Nombre"),
+                    documento.getString("Apellido1"),
+                    documento.getString("Apellido2"),
+                    documento.getString("Correo"),
+                    documento.getString("Telefono"));
+        } else {
+            usuarioJava = new Usuario(documento.getId(),
+                    documento.getString("NombreTutor1"),
+                    documento.getString("Apellido1Tutor1"),
+                    documento.getString("Apellido2Tutor1"),
+                    documento.getString("CorreoTutor1"),
+                    documento.getString("TelefonoTutor1"),
+                    documento.getString("NombreTutor2"),
+                    documento.getString("Apellido1Tutor2"),
+                    documento.getString("Apellido2Tutor2"),
+                    documento.getString("CorreoTutor2"),
+                    documento.getString("TelefonoTutor2"));
+        }
+    }*/
+
+    public void lanzarMainActivity() {
+        user = mAuth.getCurrentUser();
+        Toast.makeText(EmailLoginActivity.this, getString(R.string.msgIdentificacionOK), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(EmailLoginActivity.this, MainActivity.class);
+        intent.putExtra("docente", docente);
+        intent.putExtra("procedencia", "correo");
+        intent.putExtra("correo", user.getEmail());
+
+        /*if (docente) {
+            intent.putExtra("usuarioJava", (Docente) usuarioJava);
+        } else {
+            intent.putExtra("usuarioJava", (Usuario) usuarioJava);
+        }*/
+
+        startActivity(intent);
+        ocultarTeclado(txtContrasena);
+        finish();
     }
 
     private void buscarFamiliaBBDD(final String correo, final String contrasena, int pasada) {
@@ -173,6 +212,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(EmailLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor1"), Toast.LENGTH_SHORT).show();
+                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     registrarUsuario(correo, contrasena, true);
                                 } else {
                                     Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -192,6 +232,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(EmailLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor2"), Toast.LENGTH_SHORT).show();
+                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     registrarUsuario(correo, contrasena, true);
                                 } else {
                                     Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -250,13 +291,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(EmailLoginActivity.this, getString(R.string.msgIdentificacionOK), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(EmailLoginActivity.this, MainActivity.class);
-                            intent.putExtra("docente", docente);
-                            startActivity(intent);
-                            ocultarTeclado(txtContrasena);
-                            finish();
+                            lanzarMainActivity();
                         } else {
                             Toast.makeText(EmailLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
                         }

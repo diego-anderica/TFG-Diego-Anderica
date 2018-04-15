@@ -47,11 +47,17 @@
     <string name="msgConfirmarCorreo">¿La dirección de correo es</string>
     <string name="msgCorreoEnviado">Se ha enviado un correo de recuperación a</string>
     <string name="msgErrorEnvioCorreo">Se ha producido un error al enviar el correo</string>
-    <string name="title_activity_docente_login">DocenteLoginActivity</string>
     <!--EmailActivityLogin-->
 
     <!--MainActivity-->
 
     <!--MainActivity-->
+
+    <!--ActivityCrearGrupo-->
+    <string name="txtNombreGrupo">Nombre del grupo...</string>
+    <string name="btnCrearGrupo">Crear Grupo</string>
+    <string name="lblIntegrantes">Integrantes del grupo:</string>
+    <string name="msgErrorBBDD">Ha ocurrido un error al comunicar con la base de datos</string>
+    <!--ActivityCrearGrupo-->
 
 </resources>

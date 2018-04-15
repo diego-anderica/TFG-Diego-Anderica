@@ -10,7 +10,7 @@
         app:showAsAction="never"></item>
 
     <item
-        android:id="@+id/mnubtnSalir"
+        android:id="@+id/mnuBtnSalir"
         android:orderInCategory="100"
         android:title="Salir"
         app:showAsAction="never" />

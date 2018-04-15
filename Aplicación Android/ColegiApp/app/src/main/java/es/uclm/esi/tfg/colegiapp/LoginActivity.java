@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent activityTfno = new Intent(LoginActivity.this, PhoneLoginActivity.class);
         Toast.makeText(this, "Entrando con número de teléfono...", Toast.LENGTH_SHORT).show();
 
-        if (docente == true) {
+        if (docente) {
             activityTfno.putExtra("docente", true);
         } else {
             activityTfno.putExtra("docente", false);
@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent activityCorreo = new Intent(LoginActivity.this, EmailLoginActivity.class);
         Toast.makeText(this, "Entrando con correo y contraseña...", Toast.LENGTH_SHORT).show();
 
-        if (docente == true) {
+        if (docente) {
             activityCorreo.putExtra("docente", true);
         } else {
             activityCorreo.putExtra("docente", false);

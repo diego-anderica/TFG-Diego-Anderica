@@ -33,15 +33,22 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
 
-    Boolean docente;
+    Boolean isDocente;
+    String correo;
+    String telefono;
+    String procedencia;
 
     private Menu optMenu;
+
+    private Object usuarioJava;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        setTitle("Chats");
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mUsername = ANONYMOUS;
@@ -63,13 +70,27 @@ public class MainActivity extends AppCompatActivity {
             }*/
 
 
-
         }
 
         if (getIntent().getExtras() != null) {
-            docente = getIntent().getExtras().getBoolean("docente");
+            if (getIntent().getExtras().containsKey("docente")) {
+                isDocente = getIntent().getExtras().getBoolean("docente");
+            }
+
+            if (getIntent().getExtras().containsKey("procedencia")) {
+                procedencia = getIntent().getExtras().getString("procedencia");
+
+                if (getIntent().getExtras().getString("procedencia").equalsIgnoreCase("correo")) {
+                    correo = getIntent().getExtras().getString("correo");
+                } else if (getIntent().getExtras().getString("procedencia").equalsIgnoreCase("telefono")) {
+                    telefono = getIntent().getExtras().getString("telefono");
+                }
+            }
+
             guardarEstado();
         }
+
+        Log.d("Datos", correo + " " + telefono);
 
         invalidateOptionsMenu();
 
@@ -97,7 +118,15 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPref = (MainActivity.this).getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("docente", docente);
+        editor.putBoolean("docente", isDocente);
+        editor.putString("procedencia", procedencia);
+
+        if (procedencia.equalsIgnoreCase("correo")) {
+            editor.putString("correo", correo);
+        } else if (procedencia.equalsIgnoreCase("telefono")) {
+            editor.putString("telefono", telefono);
+        }
+
         editor.commit();
     }
 
@@ -106,14 +135,21 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences sharedPref = (MainActivity.this).getPreferences(Context.MODE_PRIVATE);
 
-        docente = sharedPref.getBoolean("docente", false);
+        isDocente = sharedPref.getBoolean("docente", false);
+        procedencia = sharedPref.getString("procedencia", "");
+
+        if (procedencia.equalsIgnoreCase("correo")) {
+            correo = sharedPref.getString("correo", "");
+        } else if (procedencia.equalsIgnoreCase("telefono")) {
+            telefono = sharedPref.getString("telefono", "");
+        }
 
         invalidateOptionsMenu();
     }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        menu.findItem(R.id.mnuBtnCrearGrupo).setVisible(docente);
+        menu.findItem(R.id.mnuBtnCrearGrupo).setVisible(isDocente);
 
         return super.onPrepareOptionsMenu(menu);
     }
@@ -129,11 +165,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.mnubtnSalir:
+            case R.id.mnuBtnCrearGrupo:
+                crearGrupo();
+                return true;
+            case R.id.mnuBtnSalir:
                 salir();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+
     }
 
     private void salir() {
@@ -142,5 +183,19 @@ public class MainActivity extends AppCompatActivity {
         mUsername = ANONYMOUS;
         startActivity(new Intent(this, LoginActivity.class));
         finish();
+    }
+
+    private void crearGrupo() {
+        Intent intent = new Intent(MainActivity.this, CrearGrupo.class);
+
+        if (procedencia.equalsIgnoreCase("correo")) {
+            intent.putExtra("correo", correo);
+        } else if (procedencia.equalsIgnoreCase("telefono")) {
+            intent.putExtra("telefono", telefono);
+        }
+
+        intent.putExtra("procedencia", procedencia);
+
+        startActivity(intent);
     }
 }
