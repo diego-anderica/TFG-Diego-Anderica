@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -33,6 +35,8 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
 
     public static final String ANONYMOUS = "anonymous";
+    public static final int CORREO = 1;
+    public static final int TELEFONO = 2;
 
     private String mUsername;
     private SharedPreferences mSharedPreferences;
@@ -40,16 +44,18 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
     private FirebaseFirestore db;
+    private CollectionReference coleccionChatsGrupales;
 
     private Boolean isDocente;
-    private String identificadorUsuario;
+    private int identificadorUsuario;
 
     private ListView lstChats;
 
     private Docente usuarioJavaDocente;
     private Familia usuarioJavaFamilia;
 
-    private ArrayList<String> chatsGrupales;
+    private ArrayList<ChatGrupal> chatsGrupales;
+    private HashMap<String, String> idNombreChatsGrupales;
     private AdaptadorListaChats adaptador;
 
     private ProgressDialog progressDialog;
@@ -69,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
+        coleccionChatsGrupales = db.collection("ChatsGrupales");
+
         // Inicializar Firebase Auth
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
@@ -87,15 +95,44 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        obtenerExtras();
+
+        lstChats = (ListView) findViewById(R.id.lstChats);
+
+        lstChats.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                lanzarChatActivity(i);
+            }
+        });
+
+        chatsGrupales = new ArrayList<ChatGrupal>();
+        idNombreChatsGrupales = new HashMap<>();
+        adaptador = new AdaptadorListaChats(this, chatsGrupales);
+        lstChats.setAdapter(adaptador);
+
+        progressDialog = ProgressDialog.show(MainActivity.this, "",
+                getString(R.string.msgCargandoChats), true);
+        poblarChats();
+
+        invalidateOptionsMenu();
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+    }
+
+    private void obtenerExtras() {
         if (getIntent().getExtras() != null) {
             if (getIntent().getExtras().containsKey("docente")) {
                 isDocente = getIntent().getExtras().getBoolean("docente");
             }
 
             if (mFirebaseUser.getEmail() != null) {
-                identificadorUsuario = mFirebaseUser.getEmail();
+                identificadorUsuario = CORREO;
             } else if (mFirebaseUser.getPhoneNumber() != null) {
-                identificadorUsuario = mFirebaseUser.getPhoneNumber();
+                identificadorUsuario = TELEFONO;
             }
 
             if (isDocente && getIntent().getExtras().containsKey("usuarioJava")) {
@@ -106,34 +143,26 @@ public class MainActivity extends AppCompatActivity {
 
             guardarEstado();
         }
-
-        lstChats = (ListView) findViewById(R.id.lstChats);
-        chatsGrupales = new ArrayList<String>();
-        adaptador = new AdaptadorListaChats(this, chatsGrupales);
-        lstChats.setAdapter(adaptador);
-
-        progressDialog = ProgressDialog.show(MainActivity.this, "",
-                getString(R.string.msgCargandoChats), true);
-        obtenerChats();
-
-        invalidateOptionsMenu();
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
     }
 
-    private void obtenerChats() {
+    private void lanzarChatActivity(int i) {
+        Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+        intent.putExtra("docente", isDocente);
+
         if (isDocente) {
-            poblarChatsDocente();
+            intent.putExtra("usuarioJava", usuarioJavaDocente);
         } else {
-            //poblarChatsFamilia();
+            intent.putExtra("usuarioJava", usuarioJavaFamilia);
         }
+
+        intent.putExtra("chatID", chatsGrupales.get(i).getId());
+
+        startActivity(intent);
+
     }
 
-    private void poblarChatsDocente() {
-        db.collection("ChatsGrupales")
+    private void poblarChats() {
+        coleccionChatsGrupales
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -141,13 +170,8 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot document : task.getResult()) {
                                 if (!document.getId().equals("Control")) {
-                                    String nombre = document.getString("Nombre");
-                                    HashMap<String, Object> administrador = ((HashMap<String, Object>) document.get("Administrador"));
 
-                                    if (identificadorUsuario.equals(administrador.get("Correo").toString()) ||
-                                            identificadorUsuario.equals(administrador.get("Telefono").toString())) {
-                                        chatsGrupales.add(nombre);
-                                    }
+                                    comprobarPertenencia(document);
 
                                 }
                             }
@@ -159,6 +183,43 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_LONG).show();
                             finish();
                         }
+                    }
+                });
+    }
+
+    private void comprobarPertenencia(DocumentSnapshot document) {
+        if (isDocente) {
+            HashMap<String, Object> administrador = ((HashMap<String, Object>) document.get("Administrador"));
+
+            if (usuarioJavaDocente.getCorreo().equals(administrador.get("Correo").toString()) ||
+                    usuarioJavaDocente.getTelefono().equals(administrador.get("Telefono").toString())) {
+                chatsGrupales.add(new ChatGrupal(document.getId(), document.getString("Nombre")));
+            }
+
+        } else {
+            poblarChatsFamilia(document);
+        }
+    }
+
+    private void poblarChatsFamilia(final DocumentSnapshot documentChat) {
+        coleccionChatsGrupales
+                .document(documentChat.getId())
+                .collection("Familias")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot document : task.getResult()) {
+
+                                if (usuarioJavaFamilia.getNombreFamilia().equals(document.getId())) {
+                                    chatsGrupales.add(new ChatGrupal(documentChat.getId(), documentChat.getString("Nombre")));
+                                }
+
+                                adaptador.notifyDataSetChanged();
+                            }
+                        }
+
                     }
                 });
     }
@@ -182,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         editor.putBoolean("docente", isDocente);
-        editor.putString("identificadorUsuario", identificadorUsuario);
+        editor.putInt("identificadorUsuario", identificadorUsuario);
         editor.putString("usuarioJava", json);
 
         editor.commit();
@@ -196,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
         String json;
 
         isDocente = sharedPref.getBoolean("docente", false);
-        identificadorUsuario = sharedPref.getString("identificadorUsuario", "");
+        identificadorUsuario = sharedPref.getInt("identificadorUsuario", 2);
 
         json = sharedPref.getString("usuarioJava", "");
 

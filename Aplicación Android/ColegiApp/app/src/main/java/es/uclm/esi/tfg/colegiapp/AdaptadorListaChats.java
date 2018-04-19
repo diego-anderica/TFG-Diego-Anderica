@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class AdaptadorListaChats extends ArrayAdapter {
     private Activity context;
-    private ArrayList<String> chatsGrupales;
+    private ArrayList<ChatGrupal> chatsGrupales;
     //private ArrayList<ChatPrivado> chatsPrivados;
 
-    public AdaptadorListaChats(Activity context, ArrayList<String> chatsGrupales) {
+    public AdaptadorListaChats(Activity context, ArrayList<ChatGrupal> chatsGrupales) {
         super(context, R.layout.lst_familias_item, chatsGrupales);
         this.context = context;
         this.chatsGrupales = chatsGrupales;
@@ -41,7 +41,7 @@ public class AdaptadorListaChats extends ArrayAdapter {
         View item = inflater.inflate(R.layout.lst_chats_item, null);
 
         TextView lblNombreGrupo = (TextView)item.findViewById(R.id.lblNombreGrupo);
-        lblNombreGrupo.setText(chatsGrupales.get(position));
+        lblNombreGrupo.setText(chatsGrupales.get(position).getNombre());
 
         /*ImageView imagContacto = (ImageView)item.findViewById(R.id.imagContacto);
         switch (contactos.get(position).getTipo())

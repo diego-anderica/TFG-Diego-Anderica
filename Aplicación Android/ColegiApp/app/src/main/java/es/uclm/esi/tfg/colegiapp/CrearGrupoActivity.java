@@ -26,6 +26,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static es.uclm.esi.tfg.colegiapp.MainActivity.CORREO;
+import static es.uclm.esi.tfg.colegiapp.MainActivity.TELEFONO;
+
 public class CrearGrupoActivity extends AppCompatActivity {
 
     private EditText txtNombreGrupo;
@@ -39,7 +42,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    private String identificadorDocente;
+    private int identificadorDocente;
     private Docente docente;
 
     private ArrayList<Familia> candidatos;
@@ -53,7 +56,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
 
         if (getIntent().getExtras() != null) {
             if (getIntent().getExtras().containsKey("identificadorDocente")) {
-                identificadorDocente = getIntent().getExtras().getString("identificadorDocente");
+                identificadorDocente = getIntent().getExtras().getInt("identificadorDocente");
             }
 
             if (getIntent().getExtras().containsKey("usuarioJavaDocente")) {
@@ -193,6 +196,8 @@ public class CrearGrupoActivity extends AppCompatActivity {
         DocumentReference doc;
         CollectionReference coleccion;
 
+        Mensaje mensaje = null;
+
         for (int i = 0; i < usuarios.size(); i++) {
             if (usuarios.get(i).isChecked()) {
                 candidatos.add(usuarios.get(i));
@@ -228,11 +233,19 @@ public class CrearGrupoActivity extends AppCompatActivity {
 
         coleccion = db.collection("ChatsGrupales").document(chatGrupal.getId()).collection("Mensajes");
 
-        Mensaje mensaje = new Mensaje(identificadorDocente,
-                docente.getNombre(),
-                docente.getApellido1(),
-                docente.getApellido2(),
-                getString(R.string.msgGrupoNuevo));
+        if (identificadorDocente == CORREO) {
+            mensaje = new Mensaje(docente.getCorreo(),
+                    docente.getNombre(),
+                    docente.getApellido1(),
+                    docente.getApellido2(),
+                    getString(R.string.msgGrupoNuevo));
+        } else if (identificadorDocente == TELEFONO) {
+            mensaje = new Mensaje(docente.getTelefono(),
+                    docente.getNombre(),
+                    docente.getApellido1(),
+                    docente.getApellido2(),
+                    getString(R.string.msgGrupoNuevo));
+        }
 
         coleccion.add(mensaje);
 

@@ -13,6 +13,11 @@ public class ChatGrupal {
 
     }
 
+    public ChatGrupal(String id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
     public ChatGrupal(String id, String nombre, Docente administrador, ArrayList<Familia> familias) {
         this.id = id;
         this.nombre = nombre;
