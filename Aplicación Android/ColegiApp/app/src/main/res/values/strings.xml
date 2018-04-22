@@ -64,6 +64,7 @@
     <string name="msgNombreGrupoError">El nombre del grupo no es válido</string>
     <string name="msgGrupoNuevo">Ha creado un nuevo grupo</string>
     <string name="btnEnviar">Enviar</string>
+    <string name="txtMensaje">Mensaje</string>
     <!--ActivityCrearGrupo-->
 
 </resources>

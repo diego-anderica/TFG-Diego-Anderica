@@ -24,8 +24,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.gson.Gson;
 
@@ -113,14 +116,39 @@ public class MainActivity extends AppCompatActivity {
 
         progressDialog = ProgressDialog.show(MainActivity.this, "",
                 getString(R.string.msgCargandoChats), true);
-        poblarChats();
 
         invalidateOptionsMenu();
 
+        coleccionChatsGrupales.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+                if (e != null) {
+                    Toast.makeText(MainActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+
+                for (DocumentChange dc : documentSnapshots.getDocumentChanges()) {
+                    if (!dc.getDocument().getId().equals("Control")) {
+                        switch (dc.getType()) {
+                            case ADDED:
+                                comprobarPertenencia(dc.getDocument());
+                                break;
+                            /*case MODIFIED:
+                                Log.d(TAG, "Modified city: " + dc.getDocument().getData());
+                                break;
+                            case REMOVED:
+                                Log.d(TAG, "Removed city: " + dc.getDocument().getData());
+                                break;*/
+                        }
+                    }
+                }
+                adaptador.notifyDataSetChanged();
+                progressDialog.dismiss();
+            }
+        });
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
     }
 
     private void obtenerExtras() {
@@ -147,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void lanzarChatActivity(int i) {
         Intent intent = new Intent(MainActivity.this, ChatActivity.class);
-        intent.putExtra("docente", isDocente);
+        intent.putExtra("isDocente", isDocente);
 
         if (isDocente) {
             intent.putExtra("usuarioJava", usuarioJavaDocente);
@@ -156,35 +184,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         intent.putExtra("chatID", chatsGrupales.get(i).getId());
+        intent.putExtra("nombreChat", chatsGrupales.get(i).getNombre());
+        intent.putExtra("identificadorUsuario", identificadorUsuario);
 
         startActivity(intent);
 
-    }
-
-    private void poblarChats() {
-        coleccionChatsGrupales
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (DocumentSnapshot document : task.getResult()) {
-                                if (!document.getId().equals("Control")) {
-
-                                    comprobarPertenencia(document);
-
-                                }
-                            }
-
-                            adaptador.notifyDataSetChanged();
-                            progressDialog.dismiss();
-
-                        } else {
-                            Toast.makeText(MainActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_LONG).show();
-                            finish();
-                        }
-                    }
-                });
     }
 
     private void comprobarPertenencia(DocumentSnapshot document) {
@@ -216,8 +220,9 @@ public class MainActivity extends AppCompatActivity {
                                     chatsGrupales.add(new ChatGrupal(documentChat.getId(), documentChat.getString("Nombre")));
                                 }
 
-                                adaptador.notifyDataSetChanged();
+
                             }
+                            adaptador.notifyDataSetChanged();
                         }
 
                     }

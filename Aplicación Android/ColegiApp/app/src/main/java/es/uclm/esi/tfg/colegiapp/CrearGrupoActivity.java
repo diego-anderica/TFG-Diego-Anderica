@@ -23,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -196,7 +197,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
         DocumentReference doc;
         CollectionReference coleccion;
 
-        Mensaje mensaje = null;
+        Mensaje mensaje = new Mensaje();
 
         for (int i = 0; i < usuarios.size(); i++) {
             if (usuarios.get(i).isChecked()) {
@@ -238,13 +239,15 @@ public class CrearGrupoActivity extends AppCompatActivity {
                     docente.getNombre(),
                     docente.getApellido1(),
                     docente.getApellido2(),
-                    getString(R.string.msgGrupoNuevo));
+                    getString(R.string.msgGrupoNuevo),
+                    new Date());
         } else if (identificadorDocente == TELEFONO) {
             mensaje = new Mensaje(docente.getTelefono(),
                     docente.getNombre(),
                     docente.getApellido1(),
                     docente.getApellido2(),
-                    getString(R.string.msgGrupoNuevo));
+                    getString(R.string.msgGrupoNuevo),
+                    new Date());
         }
 
         coleccion.add(mensaje);

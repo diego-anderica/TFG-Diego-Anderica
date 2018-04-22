@@ -11,10 +11,10 @@
     tools:context=".ChatActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/msgRecyclerView"
+        android:id="@+id/recyclerViewMensajes"
         android:layout_width="match_parent"
-        android:layout_above="@+id/linearLayoutChat"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayoutChat">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -28,10 +28,12 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/txtMensaje"
+            android:id="@+id/lblMensaje"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:hint="@string/txtMensaje"
+            android:inputType="text" />
 
         <Button
             android:id="@+id/btnEnviar"
