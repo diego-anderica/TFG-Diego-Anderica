@@ -3,6 +3,7 @@ package es.uclm.esi.tfg.colegiapp;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -48,6 +49,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private EditText txtMensaje;
     private Button btnEnviar;
+    private LinearLayoutManager linearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,8 @@ public class ChatActivity extends AppCompatActivity {
         recyclerViewMensajes = (RecyclerView) findViewById(R.id.recyclerViewMensajes);
         adaptadorListaMensajes = new AdaptadorListaMensajes(ChatActivity.this, lstMensajes);
         recyclerViewMensajes.setAdapter(adaptadorListaMensajes);
-        recyclerViewMensajes.setLayoutManager(new LinearLayoutManager(this));
+        linearLayoutManager = new LinearLayoutManager(this);
+        recyclerViewMensajes.setLayoutManager(linearLayoutManager);
 
         //obtenerMensajes();
 
@@ -201,6 +204,9 @@ public class ChatActivity extends AppCompatActivity {
                 document.getDate("fecha"));
 
         lstMensajes.add(msj);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewMensajes.getContext(),
+                linearLayoutManager.getOrientation());
+        recyclerViewMensajes.addItemDecoration(dividerItemDecoration);
         adaptadorListaMensajes.notifyItemInserted(lstMensajes.size() - 1);
         recyclerViewMensajes.scrollToPosition(lstMensajes.size() - 1);
     }

@@ -30,8 +30,8 @@ public class AdaptadorListaMensajes extends RecyclerView.Adapter<AdaptadorListaM
     public void onBindViewHolder(MyViewHolder itemsViewHolder, int i) {
         itemsViewHolder.lblRemitente.setText(mensajes.get(i).getNombre() + " " + mensajes.get(i).getApellido1() + " " + mensajes.get(i).getApellido2());
         itemsViewHolder.lblMensaje.setText(mensajes.get(i).getMensaje());
-        itemsViewHolder.lblFecha.setText(new SimpleDateFormat("dd-mm-yy").format(mensajes.get(i).getFecha()) + " " +
-                new SimpleDateFormat("hh:mm").format(mensajes.get(i).getFecha()));
+        itemsViewHolder.lblFecha.setText(new SimpleDateFormat("dd-MM-yy").format(mensajes.get(i).getFecha()) + " " +
+                new SimpleDateFormat("HH:mm").format(mensajes.get(i).getFecha()));
     }
 
     @Override
