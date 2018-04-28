@@ -22,6 +22,8 @@
 \tableofcontents
 \renewcommand{\listtablename}{Índice de tablas}
 \renewcommand{\tablename}{Tabla}
+\newcommand{\specialcell}[2][l]{%
+	\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
 \listoftables
 \listoffigures
 \lstlistoflistings
