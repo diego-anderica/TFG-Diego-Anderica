@@ -198,7 +198,7 @@ Por otra parte, si quien quiere acceder a la aplicación es un docente, éste de
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/capturas_app/logindocente.png}
+		\includegraphics[width=0.35\textwidth]{/capturas_app/logindocente.png}
 		\caption{Autenticación docente}
 		\label{fig:logindocente}
 	\end{center}
@@ -208,17 +208,23 @@ Por otra parte, si quien quiere acceder a la aplicación es un docente, éste de
 A la hora de guardar los grupos de chat se debe crear una nueva colección en la base de datos con todos los datos de los mismos cuyo nombre es <<ChatsGrupales>>. En esta colección se encuentra un documento <<Control>> con un campo <<Contador>>, que se trata de un número entero usado para otorgar un identificador único a cada una de las salas de chat en la base de datos y que se irá incrementando a medida que se vayan creando nuevos grupos. Cada uno de ellos contendrá un objeto de tipo <<Administrador>>, que será el docente creador del grupo con todos sus datos; su identificador en la base de datos y el nombre que el docente haya asignado a dicho grupo. Además, contendrá dos colecciones adicionales: <<Familias>> y <<Mensajes>>. La primera incluye los documentos de la colección <<Usuarios>> que el administrador haya incluido en el grupo, es decir, las familias participantes. Por su parte, la colección <<Mensajes>>, incluye documentos con los mensajes que cada integrante ha enviado al grupo, conteniendo cada uno el nombre, apellidos, correo electrónico o teléfono con el que el usuario se identificó, la fecha de envío y, finalmente, el mensaje.
 
 \subsubsection{Diseño de la actividad de creación de grupos}
-Una vez que el docente se ha identificado en el sistema y ha accedido a la actividad principal, podrá crear un nuevo grupo mediante la opción <<Crear grupo>> situada en el menú principal de la aplicación, que se encuentra en el borde superior derecho de la pantalla. Al seleccionar esta opción, se mostrará una nueva actividad en la que se podrá introducir el nombre del grupo y los integrantes del mismo (Figura) mediante una lista en la que se cargarán todas las familias que se encuentren en ese momento en la colección <<Usuarios>>. Para finalizar su creación, se debe pulsar el botón <<Crear Grupo>>, en cuyo caso la aplicación preguntará al docente si realmente desea crear ese grupo y se le devolverá a la actividad principal, donde se muestran los grupos de los que el usuario es miembro.
+Una vez que el docente se ha identificado en el sistema y ha accedido a la actividad principal, podrá crear un nuevo grupo mediante la opción <<Crear grupo>> situada en el menú principal de la aplicación, que se encuentra en el borde superior derecho de la pantalla. Al seleccionar esta opción, se mostrará una nueva actividad en la que se podrá introducir el nombre del grupo y los integrantes del mismo (Figura \ref{fig:creargrupo}) mediante una lista en la que se cargarán todas las familias que se encuentren en ese momento en la colección <<Usuarios>>. Para finalizar su creación, se debe pulsar el botón <<Crear Grupo>>, en cuyo caso la aplicación preguntará al docente si realmente desea crear ese grupo y se le devolverá a la actividad principal, donde se muestran los grupos de los que el usuario es miembro.
 
-//////////////////////
-
-\subsubsection{Diseño de la actividad principal}
-Esta actividad será la primera que el usuario visualice nada más entrar a la aplicación y, por tanto, su principal función reside en mostrar una lista con los grupos de chat de los que sea miembro. Dicha aplicación se conectará a la base de datos y buscará en la colección <<Familias>> de todos los documentos de chats para comprobar su pertenencia a los mismos. Durante este proceso se mostrará al usuario un diálogo de carga que, una vez completada la tarea de búsqueda, mostrará la lista ya cargada con todos los grupos a los que se tiene acceso y en los que el usuario podrá pinchar para acceder a los mismos, abriendo una nueva actividad.
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{/capturas_app/creargrupo.png}
+		\caption{Actividad Crear Grupo}
+		\label{fig:creargrupo}
+	\end{center}
+\end{figure}
 
 \newpage
 
+\subsubsection{Diseño de la actividad principal}
+Esta actividad será la primera que el usuario visualice nada más entrar a la aplicación y, por tanto, su principal función reside en mostrar una lista con los grupos de chat de los que sea miembro. Dicha aplicación se conectará a la base de datos y buscará en la colección <<Familias>> de cada uno de los documentos de chats de la colección <<ChatsGrupales>> para comprobar su pertenencia a los mismos. Durante este proceso se mostrará al usuario un diálogo de carga que, una vez completada la tarea de búsqueda, mostrará la lista ya cargada con todos los grupos a los que se tiene acceso y en los que el usuario podrá pinchar para acceder a ellos, abriendo la actividad responsable de mostrar los mensajes.
+
 \subsubsection{Diseño de la actividad de grupo}
-Por último, la principal función de la actividad de grupo es la de mostrar todos los mensajes que se han ido mandando desde su creación. En este caso, a diferencia de la actividad principal, donde se ha implementado una \textit{ListView}, en la actividad de grupo se ha utilizado una \textit{RecyclerView} (Figura \ref{fig:listview}) pensando en la eficiencia de la aplicación. Una \textit{RecyclerView} es una lista en la que se <<reciclan>> las filas de ésta cuando el usuario se desplaza hacia arriba o hacia abajo y no se están mostrando. Por tanto, el rendimiento aumenta al tener muchas filas o, en este caso, mensajes grupales.
+Por último, la principal función de la actividad de grupo es la de mostrar todos los mensajes que se han ido mandando desde su creación. En este caso, a diferencia de la actividad principal, donde se ha implementado una \textit{ListView}, en la actividad de grupo se ha utilizado una \textit{RecyclerView} (Figura \ref{fig:listview}) pensando en la eficiencia de la aplicación. Una \textit{RecyclerView} es una lista en la que se <<reciclan>> las filas de ésta cuando el usuario se desplaza hacia arriba o hacia abajo y no se están mostrando. Por tanto, el rendimiento aumenta al tener muchas filas o, en este caso, mensajes en un grupo.
 
 \begin{figure}[!h]
 	\begin{center}

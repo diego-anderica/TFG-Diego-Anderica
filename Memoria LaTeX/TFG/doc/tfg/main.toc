@@ -75,7 +75,7 @@
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de acceso}{35}{subsection.5.3.2}
 \contentsline {subsubsection}{Adecuaci\IeC {\'o}n de la base de datos}{38}{figure.5.7}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de creaci\IeC {\'o}n de grupos}{39}{figure.5.7}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad principal}{39}{figure.5.7}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de grupo}{40}{figure.5.7}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad principal}{40}{figure.5.8}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de grupo}{40}{figure.5.8}
 \contentsline {chapter}{Un anexo de ejemplo}{43}{appendix*.17}
 \contentsline {chapter}{Referencias}{45}{appendix*.18}

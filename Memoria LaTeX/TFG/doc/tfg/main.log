@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.27)  28 APR 2018 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.27)  13 MAY 2018 19:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2076,7 +2076,7 @@ Package babel Info: Redefining spanish shorthand "?
 Package acronym Info: Label `acro:JCCM' newly defined as it shall be overridden
 
 although it is yet undefined on input line 6.
-<figures//logo_papas_20.jpg, id=726, 231.9867pt x 65.7657pt>
+<figures//logo_papas_20.jpg, id=728, 231.9867pt x 65.7657pt>
 File: figures//logo_papas_20.jpg Graphic file (type jpg)
 <use figures//logo_papas_20.jpg>
 Package pdftex.def Info: figures//logo_papas_20.jpg  used on input line 10.
@@ -2151,7 +2151,7 @@ been already used, duplicate ignored
                    \relax 
 l.33 \newpage
               [2]
-<figures//whatsapp_asperger.jpeg, id=743, 658.46pt x 370.38374pt>
+<figures//whatsapp_asperger.jpeg, id=745, 658.46pt x 370.38374pt>
 File: figures//whatsapp_asperger.jpeg Graphic file (type jpg)
 <use figures//whatsapp_asperger.jpeg>
 Package pdftex.def Info: figures//whatsapp_asperger.jpeg  used on input line 40
@@ -2491,7 +2491,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 6.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 6.
-<figures//whatsapp_logo.jpg, id=781, 1204.5pt x 632.3625pt>
+<figures//whatsapp_logo.jpg, id=783, 1204.5pt x 632.3625pt>
 File: figures//whatsapp_logo.jpg Graphic file (type jpg)
 <use figures//whatsapp_logo.jpg>
 Package pdftex.def Info: figures//whatsapp_logo.jpg  used on input line 11.
@@ -2586,7 +2586,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 42.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 42.
-<figures//telegram_logo.png, id=802, 236.885pt x 236.885pt>
+<figures//telegram_logo.png, id=804, 236.885pt x 236.885pt>
 File: figures//telegram_logo.png Graphic file (type png)
 <use figures//telegram_logo.png>
 Package pdftex.def Info: figures//telegram_logo.png  used on input line 49.
@@ -2656,7 +2656,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 78.
-<figures//slack_logo.png, id=821, 3764.0625pt x 1220.30907pt>
+<figures//slack_logo.png, id=823, 3764.0625pt x 1220.30907pt>
 File: figures//slack_logo.png Graphic file (type png)
 <use figures//slack_logo.png>
 Package pdftex.def Info: figures//slack_logo.png  used on input line 85.
@@ -2760,7 +2760,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 120.
 Package acronym Info: Label `acro:P2P' newly defined as it shall be overridden
 although it is yet undefined on input line 124.
-<figures//skype_logo.png, id=845, 301.125pt x 133.49875pt>
+<figures//skype_logo.png, id=847, 301.125pt x 133.49875pt>
 File: figures//skype_logo.png Graphic file (type png)
 <use figures//skype_logo.png>
 Package pdftex.def Info: figures//skype_logo.png  used on input line 130.
@@ -2834,12 +2834,12 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 162.
 Package acronym Info: Label `acro:NSA' newly defined as it shall be overridden
 although it is yet undefined on input line 165.
-<figures//tweet_snowden.jpeg, id=862, 505.89pt x 184.69pt>
+<figures//tweet_snowden.jpeg, id=864, 505.89pt x 184.69pt>
 File: figures//tweet_snowden.jpeg Graphic file (type jpg)
 <use figures//tweet_snowden.jpeg>
 Package pdftex.def Info: figures//tweet_snowden.jpeg  used on input line 169.
 (pdftex.def)             Requested size: 308.71106pt x 112.70581pt.
-<figures//signal_logo.png, id=863, 1027.84pt x 1027.84pt>
+<figures//signal_logo.png, id=865, 1027.84pt x 1027.84pt>
 File: figures//signal_logo.png Graphic file (type png)
 <use figures//signal_logo.png>
 Package pdftex.def Info: figures//signal_logo.png  used on input line 179.
@@ -2943,7 +2943,7 @@ Overfull \hbox (0.61469pt too wide) in paragraph at lines 242--243
 -brio en-tre \T1/ptm/m/it/12 Wickr Plus \T1/ptm/m/n/12 y \T1/ptm/m/it/12 Wickr
  []
 
-<figures//wickr_logo.png, id=886, 216.81pt x 57.816pt>
+<figures//wickr_logo.png, id=888, 216.81pt x 57.816pt>
 File: figures//wickr_logo.png Graphic file (type png)
 <use figures//wickr_logo.png>
 Package pdftex.def Info: figures//wickr_logo.png  used on input line 249.
@@ -3096,7 +3096,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 291.
-<figures//micolegioapp_logo.png, id=902, 200.75pt x 200.75pt>
+<figures//micolegioapp_logo.png, id=904, 200.75pt x 200.75pt>
 File: figures//micolegioapp_logo.png Graphic file (type png)
 <use figures//micolegioapp_logo.png>
 Package pdftex.def Info: figures//micolegioapp_logo.png  used on input line 296
@@ -3114,7 +3114,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 302.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 302.
-<figures//babynotez_logo.png, id=905, 441.65pt x 114.4275pt>
+<figures//babynotez_logo.png, id=907, 441.65pt x 114.4275pt>
 File: figures//babynotez_logo.png Graphic file (type png)
 <use figures//babynotez_logo.png>
 Package pdftex.def Info: figures//babynotez_logo.png  used on input line 307.
@@ -3160,7 +3160,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 315.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 315.
-<figures//tokapp_logo.jpg, id=916, 492.84125pt x 492.84125pt>
+<figures//tokapp_logo.jpg, id=918, 492.84125pt x 492.84125pt>
 File: figures//tokapp_logo.jpg Graphic file (type jpg)
 <use figures//tokapp_logo.jpg>
 Package pdftex.def Info: figures//tokapp_logo.jpg  used on input line 320.
@@ -3355,7 +3355,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 62.
-<figures//burndown_chart.jpg, id=946, 292.9344pt x 167.6664pt>
+<figures//burndown_chart.jpg, id=948, 292.9344pt x 167.6664pt>
 File: figures//burndown_chart.jpg Graphic file (type jpg)
 <use figures//burndown_chart.jpg>
 Package pdftex.def Info: figures//burndown_chart.jpg  used on input line 79.
@@ -3462,7 +3462,7 @@ Package acronym Info: Label `acro:GHz' newly defined as it shall be overridden
 although it is yet undefined on input line 101.
 Package acronym Info: Label `acro:GB' newly defined as it shall be overridden
 although it is yet undefined on input line 102.
-<figures//windows_ver.jpg, id=962, 575.14874pt x 161.403pt>
+<figures//windows_ver.jpg, id=964, 575.14874pt x 161.403pt>
 File: figures//windows_ver.jpg Graphic file (type jpg)
 <use figures//windows_ver.jpg>
 Package pdftex.def Info: figures//windows_ver.jpg  used on input line 109.
@@ -3508,7 +3508,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 134.
  [26 <./figures//windows_ver.jpg>]
-<figures//captura_kanban.jpg, id=980, 1844.8925pt x 663.47874pt>
+<figures//captura_kanban.jpg, id=982, 1844.8925pt x 663.47874pt>
 File: figures//captura_kanban.jpg Graphic file (type jpg)
 <use figures//captura_kanban.jpg>
 Package pdftex.def Info: figures//captura_kanban.jpg  used on input line 140.
@@ -3702,7 +3702,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 60.
  [30]
-<figures//captura_login_web.png, id=1013, 1170.3725pt x 522.95375pt>
+<figures//captura_login_web.png, id=1015, 1170.3725pt x 522.95375pt>
 File: figures//captura_login_web.png Graphic file (type png)
 <use figures//captura_login_web.png>
 Package pdftex.def Info: figures//captura_login_web.png  used on input line 81.
@@ -3712,7 +3712,7 @@ Package pdftex.def Info: figures//captura_login_web.png  used on input line 81.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures//captura_index_web.png, id=1014, 1192.455pt x 579.16376pt>
+<figures//captura_index_web.png, id=1016, 1192.455pt x 579.16376pt>
 File: figures//captura_index_web.png Graphic file (type png)
 <use figures//captura_index_web.png>
 Package pdftex.def Info: figures//captura_index_web.png  used on input line 89.
@@ -3879,7 +3879,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 149.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 149.
-<figures//capturas_app/login1.png, id=1037, 371.3875pt x 732.7375pt>
+<figures//capturas_app/login1.png, id=1040, 371.3875pt x 732.7375pt>
 File: figures//capturas_app/login1.png Graphic file (type png)
 <use figures//capturas_app/login1.png>
 Package pdftex.def Info: figures//capturas_app/login1.png  used on input line 1
@@ -3914,13 +3914,13 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 161.
  [35 <./figures//capturas_app/login1.png>]
-<figures//capturas_app/logintfno.png, id=1045, 370.38374pt x 728.7225pt>
+<figures//capturas_app/logintfno.png, id=1047, 370.38374pt x 728.7225pt>
 File: figures//capturas_app/logintfno.png Graphic file (type png)
 <use figures//capturas_app/logintfno.png>
 Package pdftex.def Info: figures//capturas_app/logintfno.png  used on input lin
 e 167.
 (pdftex.def)             Requested size: 176.40439pt x 347.06969pt.
-<figures//capturas_app/logincorreo.png, id=1047, 369.38pt x 733.74126pt>
+<figures//capturas_app/logincorreo.png, id=1049, 369.38pt x 733.74126pt>
 File: figures//capturas_app/logincorreo.png Graphic file (type png)
 <use figures//capturas_app/logincorreo.png>
 Package pdftex.def Info: figures//capturas_app/logincorreo.png  used on input l
@@ -3959,7 +3959,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 183.
 [36 <./figures//capturas_app/logintfno.png>]
-<figures//capturas_app/cambiopass.png, id=1054, 373.395pt x 288.07625pt>
+<figures//capturas_app/cambiopass.png, id=1056, 373.395pt x 288.07625pt>
 File: figures//capturas_app/cambiopass.png Graphic file (type png)
 <use figures//capturas_app/cambiopass.png>
 Package pdftex.def Info: figures//capturas_app/cambiopass.png  used on input li
@@ -3995,76 +3995,85 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 195.
  [37 <./figures//capturas_app/logincorreo.png> <./figures//capturas_app/cambiop
 ass.png>]
-<figures//capturas_app/logindocente.png, id=1063, 375.4025pt x 733.74126pt>
+<figures//capturas_app/logindocente.png, id=1065, 375.4025pt x 733.74126pt>
 File: figures//capturas_app/logindocente.png Graphic file (type png)
 <use figures//capturas_app/logindocente.png>
 Package pdftex.def Info: figures//capturas_app/logindocente.png  used on input 
 line 201.
-(pdftex.def)             Requested size: 176.40439pt x 344.79126pt.
-LaTeX Info: Redefining \. on input line 210.
-LaTeX Info: Redefining \% on input line 210.
-LaTeX Info: Redefining \. on input line 210.
-LaTeX Info: Redefining \% on input line 210.
+(pdftex.def)             Requested size: 154.35889pt x 301.70915pt.
+
+Underfull \vbox (badness 1057) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 212.
+LaTeX Info: Redefining \% on input line 212.
+LaTeX Info: Redefining \. on input line 212.
+LaTeX Info: Redefining \% on input line 212.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 212.
  [38
 
  <./figures//capturas_app/logindocente.png>]
-LaTeX Info: Redefining \. on input line 218.
-LaTeX Info: Redefining \% on input line 218.
-LaTeX Info: Redefining \. on input line 218.
-LaTeX Info: Redefining \% on input line 218.
+<figures//capturas_app/creargrupo.png, id=1072, 368.37625pt x 734.745pt>
+File: figures//capturas_app/creargrupo.png Graphic file (type png)
+<use figures//capturas_app/creargrupo.png>
+Package pdftex.def Info: figures//capturas_app/creargrupo.png  used on input li
+ne 215.
+(pdftex.def)             Requested size: 176.40439pt x 351.84395pt.
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 218.
- [39]
-<figures//listview.png, id=1074, 702.625pt x 578.16pt>
+(babel)             in language  on input line 221.
+ [39 <./figures//capturas_app/creargrupo.png>]
+<figures//listview.png, id=1079, 702.625pt x 578.16pt>
 File: figures//listview.png Graphic file (type png)
 <use figures//listview.png>
-Package pdftex.def Info: figures//listview.png  used on input line 225.
+Package pdftex.def Info: figures//listview.png  used on input line 231.
 (pdftex.def)             Requested size: 220.50887pt x 181.44206pt.
 )
 LaTeX Info: Redefining \. on input line 42.
@@ -4554,10 +4563,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 52.
  ) 
 Here is how much of TeX's memory you used:
- 12967 strings out of 492982
- 183677 string characters out of 6132527
+ 12975 strings out of 492982
+ 183896 string characters out of 6132527
  316588 words of memory out of 5000000
- 15947 multiletter control sequences out of 15000+600000
+ 15953 multiletter control sequences out of 15000+600000
  144310 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,17n,38p,1825b,765s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4576,10 +4585,10 @@ usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2
 017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-
 dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (80 pages, 1468305 bytes).
+Output written on main.pdf (80 pages, 1523312 bytes).
 PDF statistics:
- 1270 PDF objects out of 1440 (max. 8388607)
- 1121 compressed objects within 12 object streams
- 222 named destinations out of 1000 (max. 500000)
- 643 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1276 PDF objects out of 1440 (max. 8388607)
+ 1125 compressed objects within 12 object streams
+ 223 named destinations out of 1000 (max. 500000)
+ 648 words of extra memory for PDF output out of 10000 (max. 10000000)
 
