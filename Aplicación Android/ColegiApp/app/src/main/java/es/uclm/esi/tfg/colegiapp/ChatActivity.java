@@ -1,5 +1,6 @@
 package es.uclm.esi.tfg.colegiapp;
 
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,13 +26,40 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.ibm.watson.developer_cloud.language_translator.v2.LanguageTranslator;
+import com.ibm.watson.developer_cloud.language_translator.v2.model.TranslateOptions;
+import com.ibm.watson.developer_cloud.language_translator.v2.model.TranslationResult;
+import com.ibm.watson.developer_cloud.tone_analyzer.v3.ToneAnalyzer;
+import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneAnalysis;
+import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneOptions;
+import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneScore;
 
+import org.apache.commons.io.IOUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class ChatActivity extends AppCompatActivity {
     public static final int CORREO = 1;
     public static final int TELEFONO = 2;
+
+    final ToneAnalyzer toneAnalyzer = new ToneAnalyzer("2018-05-19");
+    final LanguageTranslator translator = new LanguageTranslator();
+
+    private JSONObject credentials_tone;
+    private JSONObject credentials_tradu;
+    private String username_tone;
+    private String password_tone;
+    private String username_tradu;
+    private String password_tradu;
+
+    final List<String> tonosEmociones = Arrays.asList("anger", "sadness");
+    final List<String> tonosLenguaje = Arrays.asList("tentative");
 
     private FirebaseFirestore db;
     private DocumentReference dbChat;
@@ -56,7 +84,11 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        txtMensaje = (EditText) findViewById(R.id.lblMensaje);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                .permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        txtMensaje = (EditText) findViewById(R.id.txtMensaje);
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
 
         obtenerExtras();
@@ -72,6 +104,26 @@ public class ChatActivity extends AppCompatActivity {
         recyclerViewMensajes.setAdapter(adaptadorListaMensajes);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerViewMensajes.setLayoutManager(linearLayoutManager);
+
+        try {
+            credentials_tone = new JSONObject(IOUtils.toString(getResources().openRawResource(R.raw.credentials_tone_ibm), "UTF-8")); // Convert the file into a JSON object
+            credentials_tradu = new JSONObject(IOUtils.toString(getResources().openRawResource(R.raw.credentials_tradu_ibm), "UTF-8")); // Convert the file into a JSON object
+
+            // Extract the two values
+            username_tone = credentials_tone.getString("username");
+            password_tone = credentials_tone.getString("password");
+
+            // Extract the two values
+            username_tradu = credentials_tradu.getString("username");
+            password_tradu = credentials_tradu.getString("password");
+        }catch (IOException e) {
+            Log.d("Error", "Error en credentials");
+        } catch (JSONException e) {
+            Log.d("Error", "Error al poner strings");
+        }
+
+        toneAnalyzer.setUsernameAndPassword(username_tone, password_tone);
+        translator.setUsernameAndPassword(username_tradu, password_tradu);
 
         //obtenerMensajes();
 
@@ -131,6 +183,57 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void enviarMensaje() {
+        Mensaje mensaje = crearMensaje();
+
+        if (comprobarTonos(mensaje)) {
+
+            dbMensajes.add(mensaje).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentReference> task) {
+                    txtMensaje.setText("");
+                    txtMensaje.setEnabled(true);
+                }
+            });
+        } else {
+            Toast.makeText(this, "Texto no permitido", Toast.LENGTH_SHORT).show();
+            txtMensaje.setText("");
+            txtMensaje.setEnabled(true);
+        }
+    }
+
+    private boolean comprobarTonos(Mensaje mensaje) {
+        List<ToneScore> listaTonos;
+        boolean correcto = true;
+
+        TranslateOptions translateOptions = new TranslateOptions.Builder()
+                .addText(mensaje.getMensaje())
+                .modelId("es-en")
+                .build();
+
+        TranslationResult result = translator.translate(translateOptions)
+                .execute();
+
+        ToneOptions toneOptions = new ToneOptions.Builder().html(result.getTranslations().get(0).getTranslation()).build();
+        ToneAnalysis tone = toneAnalyzer.tone(toneOptions).execute();
+
+        listaTonos = tone.getDocumentTone().getTones();
+
+        if (!listaTonos.isEmpty()) {
+            for (int i = 0; i < listaTonos.size(); i++) {
+                if (tonosEmociones.contains(listaTonos.get(i).getToneId()) ||
+                        tonosLenguaje.contains(listaTonos.get(i).getToneId())) {
+                    correcto = false;
+                    break;
+                }
+            }
+        } else {
+            correcto = true;
+        }
+
+        return correcto;
+    }
+
+    private Mensaje crearMensaje() {
         Mensaje mensaje = new Mensaje();
 
         if (isDocente && identificadorUsuario == CORREO) {
@@ -186,13 +289,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         }
 
-        dbMensajes.add(mensaje).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentReference> task) {
-                txtMensaje.setText("");
-                txtMensaje.setEnabled(true);
-            }
-        });
+        return mensaje;
     }
 
     public void addMensajeLista(DocumentSnapshot document) {

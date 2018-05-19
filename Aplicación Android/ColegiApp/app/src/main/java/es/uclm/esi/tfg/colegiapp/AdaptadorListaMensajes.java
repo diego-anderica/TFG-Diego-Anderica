@@ -1,7 +1,6 @@
 package es.uclm.esi.tfg.colegiapp;
 
 import android.content.Context;
-import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +52,7 @@ public class AdaptadorListaMensajes extends RecyclerView.Adapter<AdaptadorListaM
         public MyViewHolder(View v) {
             super(v);
             lblRemitente = (TextView) v.findViewById(R.id.lblRemitente);
-            lblMensaje = (TextView) v.findViewById(R.id.lblMensaje);
+            lblMensaje = (TextView) v.findViewById(R.id.txtMensaje);
             lblFecha = (TextView) v.findViewById(R.id.lblFecha);
         }
     }

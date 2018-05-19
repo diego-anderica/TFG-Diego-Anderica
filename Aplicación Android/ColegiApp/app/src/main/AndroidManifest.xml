@@ -29,7 +29,9 @@
             android:name=".EmailLoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CrearGrupoActivity" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
