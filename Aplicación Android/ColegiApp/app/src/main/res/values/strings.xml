@@ -65,6 +65,7 @@
     <string name="msgGrupoNuevo">Ha creado un nuevo grupo</string>
     <string name="btnEnviar">Enviar</string>
     <string name="txtMensaje">Mensaje</string>
+    <string name="msgNumeroIntegrantes">No se ha seleccionado ningún integrante</string>
     <!--ActivityCrearGrupo-->
 
 </resources>

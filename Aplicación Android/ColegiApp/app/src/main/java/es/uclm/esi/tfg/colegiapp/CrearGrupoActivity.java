@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -193,18 +194,28 @@ public class CrearGrupoActivity extends AppCompatActivity {
         Map<String, Object> mapContador = new HashMap<>();
         Map<String, Object> mapGrupo = new HashMap<>();
         Map<String, Object> mapDocente = new HashMap<>();
+        Map<String, Object> mapTonos = new HashMap<>();
 
         DocumentReference doc;
         CollectionReference coleccion;
+        CollectionReference tonosCol;
+
+        int numeroIntegrantes = 0;
 
         Mensaje mensaje = new Mensaje();
 
         for (int i = 0; i < usuarios.size(); i++) {
             if (usuarios.get(i).isChecked()) {
                 candidatos.add(usuarios.get(i));
+                numeroIntegrantes += 1;
             }
         }
 
+        if (numeroIntegrantes == 0) {
+            progressDialog.dismiss();
+            Toast.makeText(this, R.string.msgNumeroIntegrantes, Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         ChatGrupal chatGrupal = new ChatGrupal("chatGrupal" + contador,
                 txtNombreGrupo.getText().toString(),
@@ -226,10 +237,15 @@ public class CrearGrupoActivity extends AppCompatActivity {
 
         doc.set(mapGrupo);
 
+        mapTonos.put("PuntuacionTutor1", 50.0);
+        mapTonos.put("PuntuacionTutor2", 50.0);
+
         coleccion = db.collection("ChatsGrupales").document(chatGrupal.getId()).collection("Familias");
+        tonosCol = db.collection("ChatsGrupales").document(chatGrupal.getId()).collection("Tonos");
 
         for (int i = 0; i < candidatos.size(); i++) {
             coleccion.document(candidatos.get(i).getNombreFamilia()).set(candidatos.get(i));
+            tonosCol.document(candidatos.get(i).getNombreFamilia()).set(mapTonos);
         }
 
         coleccion = db.collection("ChatsGrupales").document(chatGrupal.getId()).collection("Mensajes");
