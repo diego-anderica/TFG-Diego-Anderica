@@ -68,4 +68,9 @@
     <string name="msgNumeroIntegrantes">No se ha seleccionado ningún integrante</string>
     <!--ActivityCrearGrupo-->
 
+    <!--ChatActivity-->
+    <string name="msgErrorWatson">Ha ocurrido un error al conectar con el servicio de IBM</string>
+    <string name="msgErrorJSON">Ha ocurrido un error al obtener las credenciales de IBM</string>
+    <!--ChatActivity-->
+
 </resources>

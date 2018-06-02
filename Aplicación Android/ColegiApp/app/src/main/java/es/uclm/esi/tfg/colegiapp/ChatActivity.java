@@ -9,7 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -138,26 +137,24 @@ public class ChatActivity extends AppCompatActivity {
             // Extract the two values
             username_tradu = credentials_tradu.getString("username");
             password_tradu = credentials_tradu.getString("password");
-        }catch (IOException e) {
-            Log.d("Error", "Error en credentials");
+        } catch (IOException e) {
+            Toast.makeText(this, R.string.msgErrorWatson, Toast.LENGTH_SHORT).show();
         } catch (JSONException e) {
-            Log.d("Error", "Error al poner strings");
+            Toast.makeText(this, R.string.msgErrorJSON, Toast.LENGTH_SHORT).show();
         }
 
         toneAnalyzer.setUsernameAndPassword(username_tone, password_tone);
         translator.setUsernameAndPassword(username_tradu, password_tradu);
 
-        //obtenerMensajes();
-
         txtMensaje.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (i2 == 0) {
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                if (txtMensaje.getText().length() == 0) {
                     btnEnviar.setEnabled(false);
                 } else {
                     btnEnviar.setEnabled(true);
@@ -192,12 +189,10 @@ public class ChatActivity extends AppCompatActivity {
                         case ADDED:
                             addMensajeLista(dc.getDocument());
                             break;
-                        /*case MODIFIED:
-                            Log.d(TAG, "Modified city: " + dc.getDocument().getData());
+                        case MODIFIED:
                             break;
                         case REMOVED:
-                            Log.d(TAG, "Removed city: " + dc.getDocument().getData());
-                            break;*/
+                            break;
                     }
                 }
             }
@@ -226,9 +221,6 @@ public class ChatActivity extends AppCompatActivity {
 
     private void analizarMensaje(Mensaje mensaje) {
         List<SentenceAnalysis> listaOraciones;
-        List<ToneScore> listaTonos;
-        boolean correcto = true;
-        double score;
 
         TranslateOptions translateOptions = new TranslateOptions.Builder()
                 .addText(mensaje.getMensaje())
@@ -240,8 +232,6 @@ public class ChatActivity extends AppCompatActivity {
 
         ToneOptions toneOptions = new ToneOptions.Builder().html(result.getTranslations().get(0).getTranslation()).build();
         ToneAnalysis tone = toneAnalyzer.tone(toneOptions).execute();
-
-        //analizarMensaje (tone, mensaje.getRemitenteId());
 
         listaOraciones = tone.getSentencesTone();
 
@@ -255,31 +245,6 @@ public class ChatActivity extends AppCompatActivity {
             }
         }
 
-        //Log.d("ListaOraciones", listaOraciones.toString());
-
-        /*if (listaOraciones != null && !listaOraciones.isEmpty()) {
-            for (int i = 0; i < listaOraciones.size(); i++) {
-                listaTonos = listaOraciones.get(i).getTones();
-
-                for (int j = 0; j < listaTonos.size(); j++) {
-                    if (listaTonos.get(j).getToneId().equalsIgnoreCase(ANGER)) {
-
-                    }
-                }
-            }
-        }*/
-
-        /*if (!listaTonos.isEmpty()) {
-            for (int i = 0; i < listaTonos.size(); i++) {
-                if (tonosEmociones.contains(listaTonos.get(i).getToneId()) ||
-                        tonosLenguaje.contains(listaTonos.get(i).getToneId())) {
-                    correcto = false;
-                    break;
-                }
-            }
-        } else {
-            correcto = true;
-        }*/
     }
 
     private void analizarTonosOraciones(List<SentenceAnalysis> listaOraciones) {
@@ -320,9 +285,9 @@ public class ChatActivity extends AppCompatActivity {
             }
         }
 
-        Log.d("Score", "ScoreUsuario: " + scoreUsuario);
+        /*Log.d("Score", "ScoreUsuario: " + scoreUsuario);
         Log.d("Score", "ScoreMensaje: " + scoreMensaje);
-        Log.d("Score", "ScoreCorrector: " + scoreCorrector);
+        Log.d("Score", "ScoreCorrector: " + scoreCorrector);*/
 
         if (tonoNegativo) {
             scoreUsuario = scoreUsuario + (scoreMensaje - scoreCorrector);
@@ -346,17 +311,17 @@ public class ChatActivity extends AppCompatActivity {
         dbChat.collection("Tonos").document(usuarioJavaFamilia.getNombreFamilia()).update(campo, scoreUsuario).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Log.d ("ActualizarScore", "Se ha actualizado correctamente: " + scoreUsuario);
+                //Log.d ("ActualizarScore", "Se ha actualizado correctamente: " + scoreUsuario);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.d ("ActualizarScore", "Ha ocurrido un error al actualizar Score");
+                //Log.d ("ActualizarScore", "Ha ocurrido un error al actualizar Score");
             }
         });
     }
 
-    private void obtenerScoreActual () {
+    private void obtenerScoreActual() {
 
         if (identificadorUsuario == CORREO) {
             idUsuario = FirebaseAuth.getInstance().getCurrentUser().getEmail();
@@ -382,9 +347,7 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-
-                    scoreUsuario = document.getDouble(campo);
+                    scoreUsuario = task.getResult().getDouble(campo);
                 }
             }
         });
