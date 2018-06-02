@@ -1,5 +1,6 @@
 package es.uclm.esi.tfg.colegiapp;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -83,6 +86,7 @@ public class ChatActivity extends AppCompatActivity {
     private CollectionReference dbMensajes;
 
     private String chatID;
+    private String nombreChat;
     private boolean isDocente;
     private int identificadorUsuario;
     private Docente usuarioJavaDocente;
@@ -432,7 +436,8 @@ public class ChatActivity extends AppCompatActivity {
     private void obtenerExtras() {
         if (getIntent().getExtras() != null) {
             if (getIntent().getExtras().containsKey("nombreChat")) {
-                setTitle(getIntent().getExtras().getString("nombreChat"));
+                nombreChat = getIntent().getExtras().getString("nombreChat");
+                setTitle(nombreChat);
             }
 
             if (getIntent().getExtras().containsKey("isDocente")) {
@@ -453,5 +458,35 @@ public class ChatActivity extends AppCompatActivity {
                 usuarioJavaFamilia = getIntent().getParcelableExtra("usuarioJava");
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_chatactivity, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mnuBtnInfoGrupo:
+                lanzarActivityInfoGrupo();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private void lanzarActivityInfoGrupo() {
+        Intent i = new Intent(this, InfoGrupoActivity.class);
+
+        i.putExtra("chatID", chatID);
+        i.putExtra("isDocente", isDocente);
+        i.putExtra("nombreChat", nombreChat);
+
+        startActivity(i);
     }
 }

@@ -1,8 +1,9 @@
 <resources>
-    <!--Menu-->
+    <!--MenuMain-->
     <string name="app_name">ColegiApp</string>
     <string name="mnuBtnCrearGrupo">Crear grupo...</string>
-    <!--Menu-->
+    <string name="mnuBtnCerrarSesion">Cerrar Sesión...</string>
+    <!--MenuMain-->
 
     <!--ActivityLogin-->
     <string name="lblBienvenida">¡Bienvenid@ a ColegiApp!</string>
@@ -72,5 +73,18 @@
     <string name="msgErrorWatson">Ha ocurrido un error al conectar con el servicio de IBM</string>
     <string name="msgErrorJSON">Ha ocurrido un error al obtener las credenciales de IBM</string>
     <!--ChatActivity-->
+
+    <!--MenuChatActivity-->
+    <string name="mnuBtnInfo">Información del grupo</string>
+    <!--MenuChatActivity-->
+
+    <!--MenuInfoChatActivity-->
+    <string name="btnCambiarImagenGrupo">Cambiar imagen de grupo</string>
+    <string name="mnuBtnEliminarGrupo">Eliminar Grupo...</string>
+    <string name="btnCambiarNombreGrupo">Cambiar nombre de grupo</string>
+    <string name="lblCambiarNombre">Nuevo Nombre de Grupo</string>
+    <string name="msgNombreCambiado">Se ha establecido el nuevo nombre correctamente</string>
+    <string name="lblInfoDeGrupo">Información del grupo</string>
+    <!--MenuInfoChatActivity-->
 
 </resources>

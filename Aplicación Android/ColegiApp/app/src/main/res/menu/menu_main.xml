@@ -7,11 +7,11 @@
         android:orderInCategory="100"
         android:title="@string/mnuBtnCrearGrupo"
         android:visible="false"
-        app:showAsAction="never"></item>
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/mnuBtnSalir"
         android:orderInCategory="100"
-        android:title="Salir"
+        android:title="@string/mnuBtnCerrarSesion"
         app:showAsAction="never" />
 </menu>
