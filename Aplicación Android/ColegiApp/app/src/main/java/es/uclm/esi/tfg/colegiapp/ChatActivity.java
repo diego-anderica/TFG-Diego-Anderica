@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
@@ -30,6 +32,7 @@ import com.ibm.watson.developer_cloud.language_translator.v2.LanguageTranslator;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.TranslateOptions;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.TranslationResult;
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.ToneAnalyzer;
+import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.SentenceAnalysis;
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneAnalysis;
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneOptions;
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneScore;
@@ -40,16 +43,34 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 public class ChatActivity extends AppCompatActivity {
-    public static final int CORREO = 1;
-    public static final int TELEFONO = 2;
+    private static final int CORREO = 1;
+    private static final int TELEFONO = 2;
 
-    final ToneAnalyzer toneAnalyzer = new ToneAnalyzer("2018-05-19");
-    final LanguageTranslator translator = new LanguageTranslator();
+    private final ToneAnalyzer toneAnalyzer = new ToneAnalyzer("2018-05-19");
+    private final LanguageTranslator translator = new LanguageTranslator();
+
+    private final String ANGER = "anger";
+    private final String FEAR = "fear";
+    private final String JOY = "joy";
+    private final String SADNESS = "sadness";
+    private final String CONFIDENT = "confident";
+    private final String TENTATIVE = "tentative";
+    private final String ANALYTICAL = "analytical";
+
+    private static final double POND_ANGER = 33.333333;
+    private static final double POND_FEAR = 29.166666666;
+    private static final double POND_JOY = 8.33333333;
+    private static final double POND_SADNESS = 29.166666666;
+
+    private static final double POND_ANALYTICAL = 0.666666;
+    private static final double POND_CONFIDENT = 0.1666666;
+    private static final double POND_TENTATIVE = 0.1666666;
+
+    private static final int POND_PESO = 10;
 
     private JSONObject credentials_tone;
     private JSONObject credentials_tradu;
@@ -57,9 +78,6 @@ public class ChatActivity extends AppCompatActivity {
     private String password_tone;
     private String username_tradu;
     private String password_tradu;
-
-    final List<String> tonosEmociones = Arrays.asList("anger", "sadness");
-    final List<String> tonosLenguaje = Arrays.asList("tentative");
 
     private FirebaseFirestore db;
     private DocumentReference dbChat;
@@ -70,6 +88,7 @@ public class ChatActivity extends AppCompatActivity {
     private int identificadorUsuario;
     private Docente usuarioJavaDocente;
     private Familia usuarioJavaFamilia;
+    private String idUsuario;
 
     private RecyclerView recyclerViewMensajes;
     private AdaptadorListaMensajes adaptadorListaMensajes;
@@ -78,6 +97,9 @@ public class ChatActivity extends AppCompatActivity {
     private EditText txtMensaje;
     private Button btnEnviar;
     private LinearLayoutManager linearLayoutManager;
+
+    private String campo;
+    private double scoreUsuario = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,30 +202,33 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
+
+        if (!isDocente) {
+            obtenerScoreActual();
+        }
     }
 
     private void enviarMensaje() {
         Mensaje mensaje = crearMensaje();
 
-        if (comprobarTonos(mensaje)) {
+        dbMensajes.add(mensaje).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentReference> task) {
+                txtMensaje.setText("");
+                txtMensaje.setEnabled(true);
+            }
+        });
 
-            dbMensajes.add(mensaje).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentReference> task) {
-                    txtMensaje.setText("");
-                    txtMensaje.setEnabled(true);
-                }
-            });
-        } else {
-            Toast.makeText(this, "Texto no permitido", Toast.LENGTH_SHORT).show();
-            txtMensaje.setText("");
-            txtMensaje.setEnabled(true);
+        if (!isDocente) {
+            analizarMensaje(mensaje);
         }
     }
 
-    private boolean comprobarTonos(Mensaje mensaje) {
+    private void analizarMensaje(Mensaje mensaje) {
+        List<SentenceAnalysis> listaOraciones;
         List<ToneScore> listaTonos;
         boolean correcto = true;
+        double score;
 
         TranslateOptions translateOptions = new TranslateOptions.Builder()
                 .addText(mensaje.getMensaje())
@@ -216,9 +241,35 @@ public class ChatActivity extends AppCompatActivity {
         ToneOptions toneOptions = new ToneOptions.Builder().html(result.getTranslations().get(0).getTranslation()).build();
         ToneAnalysis tone = toneAnalyzer.tone(toneOptions).execute();
 
-        listaTonos = tone.getDocumentTone().getTones();
+        //analizarMensaje (tone, mensaje.getRemitenteId());
 
-        if (!listaTonos.isEmpty()) {
+        listaOraciones = tone.getSentencesTone();
+
+        if (listaOraciones == null) {
+            if (!tone.getDocumentTone().getTones().isEmpty()) {
+                analizarTonos(tone.getDocumentTone().getTones(), true);
+            }
+        } else {
+            if (!tone.getSentencesTone().isEmpty()) {
+                analizarTonosOraciones(listaOraciones);
+            }
+        }
+
+        //Log.d("ListaOraciones", listaOraciones.toString());
+
+        /*if (listaOraciones != null && !listaOraciones.isEmpty()) {
+            for (int i = 0; i < listaOraciones.size(); i++) {
+                listaTonos = listaOraciones.get(i).getTones();
+
+                for (int j = 0; j < listaTonos.size(); j++) {
+                    if (listaTonos.get(j).getToneId().equalsIgnoreCase(ANGER)) {
+
+                    }
+                }
+            }
+        }*/
+
+        /*if (!listaTonos.isEmpty()) {
             for (int i = 0; i < listaTonos.size(); i++) {
                 if (tonosEmociones.contains(listaTonos.get(i).getToneId()) ||
                         tonosLenguaje.contains(listaTonos.get(i).getToneId())) {
@@ -228,9 +279,116 @@ public class ChatActivity extends AppCompatActivity {
             }
         } else {
             correcto = true;
+        }*/
+    }
+
+    private void analizarTonosOraciones(List<SentenceAnalysis> listaOraciones) {
+        for (int i = 0; i < listaOraciones.size(); i++) {
+
+            if (i == (listaOraciones.size() - 1)) {
+                analizarTonos(listaOraciones.get(i).getTones(), true);
+            } else {
+                analizarTonos(listaOraciones.get(i).getTones(), false);
+            }
+
+        }
+    }
+
+    private void analizarTonos(List<ToneScore> listaTonos, boolean actualizarBBDD) {
+        double scoreMensaje = 0.0;
+        double scoreCorrector = 0.0;
+        boolean tonoNegativo = false;
+
+        for (int i = 0; i < listaTonos.size(); i++) {
+            if (listaTonos.get(i).getToneId().equalsIgnoreCase(ANGER)) {
+                scoreMensaje -= listaTonos.get(i).getScore() * POND_ANGER;
+                tonoNegativo = true;
+            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(FEAR)) {
+                scoreMensaje -= listaTonos.get(i).getScore() * POND_FEAR;
+                tonoNegativo = true;
+            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(SADNESS)) {
+                scoreMensaje -= listaTonos.get(i).getScore() * POND_SADNESS;
+                tonoNegativo = true;
+            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(JOY)) {
+                scoreMensaje += listaTonos.get(i).getScore() * POND_JOY;
+            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(ANALYTICAL)) {
+                scoreCorrector += listaTonos.get(i).getScore() * POND_ANALYTICAL * POND_PESO;
+            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(CONFIDENT)) {
+                scoreCorrector += listaTonos.get(i).getScore() * POND_CONFIDENT * POND_PESO;
+            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(TENTATIVE)) {
+                scoreCorrector += listaTonos.get(i).getScore() * POND_TENTATIVE * POND_PESO;
+            }
         }
 
-        return correcto;
+        Log.d("Score", "ScoreUsuario: " + scoreUsuario);
+        Log.d("Score", "ScoreMensaje: " + scoreMensaje);
+        Log.d("Score", "ScoreCorrector: " + scoreCorrector);
+
+        if (tonoNegativo) {
+            scoreUsuario = scoreUsuario + (scoreMensaje - scoreCorrector);
+        } else {
+            scoreUsuario = scoreUsuario + (scoreMensaje + scoreCorrector);
+        }
+
+        if (scoreUsuario < 0.0) {
+            scoreUsuario = 0.0;
+        } else if (scoreUsuario > 100.0) {
+            scoreUsuario = 100.0;
+        }
+
+        if (actualizarBBDD) {
+            actualizarScoreUsuarioBBDD();
+        }
+
+    }
+
+    private void actualizarScoreUsuarioBBDD() {
+        dbChat.collection("Tonos").document(usuarioJavaFamilia.getNombreFamilia()).update(campo, scoreUsuario).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d ("ActualizarScore", "Se ha actualizado correctamente: " + scoreUsuario);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d ("ActualizarScore", "Ha ocurrido un error al actualizar Score");
+            }
+        });
+    }
+
+    private void obtenerScoreActual () {
+
+        if (identificadorUsuario == CORREO) {
+            idUsuario = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
+            if (idUsuario.equals(usuarioJavaFamilia.getCorreoTutor1())) {
+                campo = "PuntuacionTutor1";
+            } else if (idUsuario.equals(usuarioJavaFamilia.getCorreoTutor2())) {
+                campo = "PuntuacionTutor2";
+            }
+
+        } else if (identificadorUsuario == TELEFONO) {
+            idUsuario = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
+
+            if (idUsuario.equals(usuarioJavaFamilia.getTelefonoTutor1())) {
+                campo = "PuntuacionTutor1";
+            } else if (idUsuario.equals(usuarioJavaFamilia.getTelefonoTutor2())) {
+                campo = "PuntuacionTutor2";
+            }
+
+        }
+
+        dbChat.collection("Tonos").document(usuarioJavaFamilia.getNombreFamilia()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+
+                    scoreUsuario = document.getDouble(campo);
+                }
+            }
+        });
+
     }
 
     private Mensaje crearMensaje() {
