@@ -2,6 +2,7 @@ package es.uclm.esi.tfg.colegiapp;
 
 import android.content.Intent;
 import android.os.StrictMode;
+import android.provider.CalendarContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,11 +11,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -78,6 +82,8 @@ public class ChatActivity extends AppCompatActivity {
 
     private static final int POND_PESO = 10;
 
+    private ArrayList<Familia> lstIntegrantes;
+
     private JSONObject credentials_tone;
     private JSONObject credentials_tradu;
     private String username_tone;
@@ -101,6 +107,7 @@ public class ChatActivity extends AppCompatActivity {
     private AdaptadorListaMensajes adaptadorListaMensajes;
     private ArrayList<Mensaje> lstMensajes;
 
+    private ImageView imgAddMensaje;
     private EditText txtMensaje;
     private Button btnEnviar;
     private LinearLayoutManager linearLayoutManager;
@@ -117,6 +124,7 @@ public class ChatActivity extends AppCompatActivity {
                 .permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        imgAddMensaje = (ImageView) findViewById(R.id.imgAddMensaje);
         txtMensaje = (EditText) findViewById(R.id.txtMensaje);
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
 
@@ -127,6 +135,7 @@ public class ChatActivity extends AppCompatActivity {
         dbChat = db.collection("ChatsGrupales").document(chatID);
         dbMensajes = dbChat.collection("Mensajes");
 
+        lstIntegrantes = new ArrayList<Familia>();
         lstMensajes = new ArrayList<Mensaje>();
         recyclerViewMensajes = (RecyclerView) findViewById(R.id.recyclerViewMensajes);
         adaptadorListaMensajes = new AdaptadorListaMensajes(ChatActivity.this, lstMensajes);
@@ -183,10 +192,41 @@ public class ChatActivity extends AppCompatActivity {
         });
 
         if (!isDocente) {
+            imgAddMensaje.setVisibility(View.GONE);
             obtenerScoreActual();
         }
 
+        imgAddMensaje.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addCalendario();
+            }
+        });
+
         iniciarOyentes();
+        obtenerIntegrantes();
+    }
+
+    private void addCalendario() {
+        String correos = "";
+        Intent calendario = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
+
+        for (int i = 0; i < lstIntegrantes.size(); i++) {
+            correos = correos + lstIntegrantes.get(i).getCorreoTutor1();
+
+            if (!lstIntegrantes.get(i).getCorreoTutor2().equals("")) {
+                correos = correos + ", " + lstIntegrantes.get(i).getCorreoTutor2();
+            }
+
+            if (i != lstIntegrantes.size() - 1 && !lstIntegrantes.get(i + 1).getCorreoTutor1().equals("")) {
+                correos = correos + ", ";
+            }
+
+        }
+
+        calendario.putExtra(Intent.EXTRA_EMAIL,correos);
+
+        startActivity(calendario);
     }
 
     private String obtenerJSON(int archivo) {
@@ -527,4 +567,35 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void obtenerIntegrantes() {
+        dbChat.collection("Familias")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot document : task.getResult()) {
+                                Familia usuario = new Familia(document.getId(),
+                                        document.getString("nombreTutor1"),
+                                        document.getString("apellido1Tutor1"),
+                                        document.getString("apellido2Tutor1"),
+                                        document.getString("correoTutor1"),
+                                        document.getString("telefonoTutor1"),
+                                        document.getString("nombreTutor2"),
+                                        document.getString("apellido1Tutor2"),
+                                        document.getString("apellido2Tutor2"),
+                                        document.getString("correoTutor2"),
+                                        document.getString("telefonoTutor2"));
+
+                                lstIntegrantes.add(usuario);
+                            }
+                        } else {
+                            Toast.makeText(ChatActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    }
+                });
+    }
+
 }
