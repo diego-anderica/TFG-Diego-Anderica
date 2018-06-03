@@ -29,6 +29,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.gson.Gson;
 
@@ -119,6 +120,13 @@ public class MainActivity extends AppCompatActivity {
 
         invalidateOptionsMenu();
 
+        iniciarOyentes();
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+    private void iniciarOyentes() {
         coleccionChatsGrupales.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
@@ -133,10 +141,10 @@ public class MainActivity extends AppCompatActivity {
                             case ADDED:
                                 comprobarPertenencia(dc.getDocument());
                                 break;
-                            /*case MODIFIED:
-                                Log.d(TAG, "Modified city: " + dc.getDocument().getData());
+                            case MODIFIED:
+                                refrescarGrupo(dc.getDocument());
                                 break;
-                            case REMOVED:
+                            /*case REMOVED:
                                 Log.d(TAG, "Removed city: " + dc.getDocument().getData());
                                 break;*/
                         }
@@ -146,9 +154,18 @@ public class MainActivity extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
+    }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    private void refrescarGrupo(DocumentSnapshot doc) {
+        String idChat = doc.getId();
+
+        for (int i = 0; i < chatsGrupales.size(); i++) {
+            if (chatsGrupales.get(i).getId().equals(idChat)) {
+                chatsGrupales.get(i).setNombre(doc.getString("Nombre"));
+                break;
+            }
+        }
+        adaptador.notifyDataSetChanged();
     }
 
     private void obtenerExtras() {
@@ -219,7 +236,6 @@ public class MainActivity extends AppCompatActivity {
                                 if (usuarioJavaFamilia.getNombreFamilia().equals(document.getId())) {
                                     chatsGrupales.add(new ChatGrupal(documentChat.getId(), documentChat.getString("Nombre")));
                                 }
-
 
                             }
                             adaptador.notifyDataSetChanged();

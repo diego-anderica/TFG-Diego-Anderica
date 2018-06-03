@@ -43,10 +43,14 @@ import org.apache.commons.io.IOUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class ChatActivity extends AppCompatActivity {
     private static final int CORREO = 1;
@@ -131,8 +135,8 @@ public class ChatActivity extends AppCompatActivity {
         recyclerViewMensajes.setLayoutManager(linearLayoutManager);
 
         try {
-            credentials_tone = new JSONObject(IOUtils.toString(getResources().openRawResource(R.raw.credentials_tone_ibm), "UTF-8")); // Convert the file into a JSON object
-            credentials_tradu = new JSONObject(IOUtils.toString(getResources().openRawResource(R.raw.credentials_tradu_ibm), "UTF-8")); // Convert the file into a JSON object
+            credentials_tone = new JSONObject(obtenerJSON(R.raw.credentials_tone_ibm));
+            credentials_tradu = new JSONObject(obtenerJSON(R.raw.credentials_tradu_ibm));
 
             // Extract the two values
             username_tone = credentials_tone.getString("username");
@@ -141,8 +145,6 @@ public class ChatActivity extends AppCompatActivity {
             // Extract the two values
             username_tradu = credentials_tradu.getString("username");
             password_tradu = credentials_tradu.getString("password");
-        } catch (IOException e) {
-            Toast.makeText(this, R.string.msgErrorWatson, Toast.LENGTH_SHORT).show();
         } catch (JSONException e) {
             Toast.makeText(this, R.string.msgErrorJSON, Toast.LENGTH_SHORT).show();
         }
@@ -180,31 +182,27 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-        dbMensajes.orderBy("fecha").addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                if (e != null) {
-                    Toast.makeText(ChatActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_SHORT).show();
-                    finish();
-                }
-
-                for (DocumentChange dc : documentSnapshots.getDocumentChanges()) {
-                    switch (dc.getType()) {
-                        case ADDED:
-                            addMensajeLista(dc.getDocument());
-                            break;
-                        case MODIFIED:
-                            break;
-                        case REMOVED:
-                            break;
-                    }
-                }
-            }
-        });
-
         if (!isDocente) {
             obtenerScoreActual();
         }
+
+        iniciarOyentes();
+    }
+
+    private String obtenerJSON(int archivo) {
+        InputStream iStream = this.getResources().openRawResource(archivo);
+        ByteArrayOutputStream byteStream = null;
+        try {
+            byte[] buffer = new byte[iStream.available()];
+            iStream.read(buffer);
+            byteStream = new ByteArrayOutputStream();
+            byteStream.write(buffer);
+            byteStream.close();
+            iStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return byteStream.toString();
     }
 
     private void enviarMensaje() {
@@ -486,7 +484,47 @@ public class ChatActivity extends AppCompatActivity {
         i.putExtra("chatID", chatID);
         i.putExtra("isDocente", isDocente);
         i.putExtra("nombreChat", nombreChat);
+        i.putExtra("identificadorUsuario", identificadorUsuario);
+        i.putExtra("usuarioJavaDocente", usuarioJavaDocente);
 
         startActivity(i);
+    }
+
+    private void iniciarOyentes() {
+        dbMensajes.orderBy("fecha").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+                if (e != null) {
+                    Toast.makeText(ChatActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+
+                for (DocumentChange dc : documentSnapshots.getDocumentChanges()) {
+                    switch (dc.getType()) {
+                        case ADDED:
+                            addMensajeLista(dc.getDocument());
+                            break;
+                        case MODIFIED:
+                            break;
+                        case REMOVED:
+                            break;
+                    }
+                }
+            }
+        });
+
+        dbChat.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Toast.makeText(ChatActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+
+                if (documentSnapshot != null && documentSnapshot.exists()) {
+                    setTitle(documentSnapshot.getString("Nombre"));
+                }
+            }
+        });
     }
 }
