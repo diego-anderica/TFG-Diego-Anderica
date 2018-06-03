@@ -165,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
+
         adaptador.notifyDataSetChanged();
     }
 

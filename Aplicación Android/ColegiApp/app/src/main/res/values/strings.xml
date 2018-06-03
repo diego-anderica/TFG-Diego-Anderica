@@ -75,16 +75,17 @@
     <!--ChatActivity-->
 
     <!--MenuChatActivity-->
-    <string name="mnuBtnInfo">Información del grupo</string>
+    <string name="mnuBtnInfo">Info.</string>
     <!--MenuChatActivity-->
 
     <!--MenuInfoChatActivity-->
-    <string name="btnCambiarImagenGrupo">Cambiar imagen de grupo</string>
+    <string name="btnCambiarImagenGrupo">Cambiar imagen</string>
     <string name="mnuBtnEliminarGrupo">Eliminar Grupo...</string>
-    <string name="btnCambiarNombreGrupo">Cambiar nombre de grupo</string>
+    <string name="btnCambiarNombreGrupo">Cambiar nombre</string>
     <string name="lblCambiarNombre">Nuevo Nombre de Grupo</string>
     <string name="msgNombreCambiado">Se ha establecido el nuevo nombre correctamente</string>
     <string name="lblInfoDeGrupo">Información del grupo</string>
+    <string name="btnAniadirIntegrante">Añadir integrante</string>
     <!--MenuInfoChatActivity-->
 
 </resources>

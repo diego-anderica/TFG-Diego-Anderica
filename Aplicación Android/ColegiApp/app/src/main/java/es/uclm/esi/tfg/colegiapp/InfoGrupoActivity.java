@@ -10,20 +10,27 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -44,9 +51,10 @@ public class InfoGrupoActivity extends AppCompatActivity {
     private EditText txtNuevoNombre;
     private Button btnCambiarImagenGrupo;
     private Button btnCambiarNombreGrupo;
+    private ListView lstIntegrantes;
 
     private ArrayList<Familia> integrantesGrupo;
-    private AdaptadorListaFamilias adaptador;
+    private AdaptadorListaIntegrantes adaptador;
 
     private FirebaseFirestore db;
     private DocumentReference dbChat;
@@ -61,6 +69,11 @@ public class InfoGrupoActivity extends AppCompatActivity {
         txtNuevoNombre = (EditText) findViewById(R.id.txtNuevoNombre);
         btnCambiarImagenGrupo = (Button) findViewById(R.id.btnCambiarImagenGrupo);
         btnCambiarNombreGrupo = (Button) findViewById(R.id.btnCambiarNombreGrupo);
+        lstIntegrantes = (ListView) findViewById(R.id.lstIntegrantesGrupo);
+
+        integrantesGrupo = new ArrayList<Familia>();
+        adaptador = new AdaptadorListaIntegrantes(this, integrantesGrupo);
+        lstIntegrantes.setAdapter(adaptador);
 
         obtenerExtras();
 
@@ -88,11 +101,13 @@ public class InfoGrupoActivity extends AppCompatActivity {
                 cambiarNombreGrupo();
             }
         });
+
     }
 
     private void rellenarInfoGrupo() {
         setTitle(R.string.lblInfoDeGrupo);
         txtNombreGrupo.setText(nombreChat);
+        obtenerIntegrantes();
     }
 
     private void cambiarImagenGrupo() {
@@ -193,6 +208,73 @@ public class InfoGrupoActivity extends AppCompatActivity {
                 usuarioJavaDocente = getIntent().getParcelableExtra("usuarioJavaDocente");
             }
         }
+    }
+
+    private void obtenerIntegrantes() {
+        dbChat.collection("Familias")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot document : task.getResult()) {
+                                Familia usuario = new Familia(document.getId(),
+                                        document.getString("nombreTutor1"),
+                                        document.getString("apellido1Tutor1"),
+                                        document.getString("apellido2Tutor1"),
+                                        document.getString("correoTutor1"),
+                                        document.getString("telefonoTutor1"),
+                                        document.getString("nombreTutor2"),
+                                        document.getString("apellido1Tutor2"),
+                                        document.getString("apellido2Tutor2"),
+                                        document.getString("correoTutor2"),
+                                        document.getString("telefonoTutor2"));
+
+                                integrantesGrupo.add(usuario);
+                            }
+
+                            if (isDocente) {
+                                obtenerTonos();
+                            }
+
+                            adaptador.notifyDataSetChanged();
+
+                        } else {
+                            Toast.makeText(InfoGrupoActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    }
+                });
+    }
+
+    private void obtenerTonos() {
+        final DecimalFormat df = new DecimalFormat("#.00");
+
+        dbChat.collection("Tonos")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot document : task.getResult()) {
+                                for (int i = 0; i < integrantesGrupo.size(); i++) {
+                                    if (document.getId().equals(integrantesGrupo.get(i).getNombreFamilia())) {
+                                        integrantesGrupo.get(i).setApellido2Tutor1(integrantesGrupo.get(i).getApellido2Tutor1() + " " + df.format(document.getDouble("PuntuacionTutor1")) + "%");
+
+                                        if (!integrantesGrupo.get(i).getNombreTutor2().equals("")) {
+                                            integrantesGrupo.get(i).setApellido2Tutor2(integrantesGrupo.get(i).getApellido2Tutor2() + " " + df.format(document.getDouble("PuntuacionTutor2")) + "%");
+                                        }
+                                    }
+                                }
+                            }
+
+                            adaptador.notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(InfoGrupoActivity.this, R.string.msgErrorBBDD, Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    }
+                });
     }
 
 }
