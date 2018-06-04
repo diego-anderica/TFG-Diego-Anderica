@@ -25,9 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39c124bd-d237-44ec-858f-ae0e363c7f90" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_info_grupo.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_info_grupo.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_perfil_usuario.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_perfil_usuario.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/InfoGrupoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/InfoGrupoActivity.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -167,7 +165,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/ChatActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="496">
@@ -236,35 +234,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InfoGrupoActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InfoGrupoActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/InfoGrupoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="284" column="110" lean-forward="false" selection-start-line="284" selection-start-column="110" selection-end-line="284" selection-end-column="110" />
+            <state relative-caret-position="171">
+              <caret line="124" column="5" lean-forward="false" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
               <folding>
-                <element signature="e#3286#3443#0" expanded="true" />
-                <element signature="e#3442#3443#0" expanded="true" />
-                <element signature="e#3496#3653#0" expanded="true" />
-                <element signature="e#3652#3653#0" expanded="true" />
-                <element signature="e#3703#3935#0" expanded="true" />
-                <element signature="e#3934#3935#0" expanded="true" />
-                <element signature="e#4506#4529#0" expanded="true" />
-                <element signature="e#5038#5068#0" expanded="true" />
-                <element signature="e#5184#5205#0" expanded="true" />
-                <element signature="e#5223#5507#0" expanded="true" />
-                <element signature="e#5506#5507#0" expanded="true" />
-                <element signature="e#5549#5569#0" expanded="true" />
-                <element signature="e#5587#5784#0" expanded="true" />
-                <element signature="e#5783#5784#0" expanded="true" />
-                <element signature="e#6915#7488#0" expanded="true" />
-                <element signature="e#7188#7209#0" expanded="true" />
-                <element signature="e#7487#7488#0" expanded="true" />
-                <element signature="e#8580#10256#0" expanded="true" />
-                <element signature="e#10103#10124#0" expanded="true" />
-                <element signature="e#10255#10256#0" expanded="true" />
-                <element signature="e#10458#11891#0" expanded="true" />
-                <element signature="e#11738#11759#0" expanded="true" />
-                <element signature="e#11890#11891#0" expanded="true" />
+                <element signature="e#3101#3258#0" expanded="true" />
+                <element signature="e#3257#3258#0" expanded="true" />
+                <element signature="e#3308#3540#0" expanded="true" />
+                <element signature="e#3539#3540#0" expanded="true" />
+                <element signature="e#4111#4134#0" expanded="true" />
+                <element signature="e#4595#4625#0" expanded="true" />
+                <element signature="e#4741#4762#0" expanded="true" />
+                <element signature="e#4780#5064#0" expanded="true" />
+                <element signature="e#5063#5064#0" expanded="true" />
+                <element signature="e#5106#5126#0" expanded="true" />
+                <element signature="e#5144#5341#0" expanded="true" />
+                <element signature="e#5340#5341#0" expanded="true" />
+                <element signature="e#6472#7045#0" expanded="true" />
+                <element signature="e#6745#6766#0" expanded="true" />
+                <element signature="e#7044#7045#0" expanded="true" />
+                <element signature="e#8137#9813#0" expanded="true" />
+                <element signature="e#9660#9681#0" expanded="true" />
+                <element signature="e#9812#9813#0" expanded="true" />
+                <element signature="e#10015#11448#0" expanded="true" />
+                <element signature="e#11295#11316#0" expanded="true" />
+                <element signature="e#11447#11448#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -296,7 +292,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>error</find>
       <find>iden</find>
       <find>log</find>
       <find>ViewHolder</find>
@@ -326,6 +321,7 @@
       <find>perfil</find>
       <find>crearmen</find>
       <find>put</find>
+      <find>imag</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2415,9 +2411,9 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/PerfilUsuarioActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/lst_chats_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/InfoGrupoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_perfil_usuario.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_info_grupo.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/InfoGrupoActivity.java" />
       </list>
     </option>
   </component>
@@ -2498,9 +2494,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="GEVOWOZLHMKFA6ON" />
+    <property name="device.picker.selection" value="Nexus_5X_API_27" />
     <property name="extract.method.default.visibility" value="public" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1528122675246" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1528123853236" />
     <property name="android.profiler.active" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
   </component>
@@ -2908,7 +2904,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="984" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2918,7 +2913,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.50532484" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25346112" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24296963" sideWeight="0.49361023" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24296963" sideWeight="0.49361023" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2575928" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -2926,7 +2921,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18317358" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.4946752" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295838" sideWeight="0.4946752" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3310,38 +3305,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/InfoGrupoActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="284" column="110" lean-forward="false" selection-start-line="284" selection-start-column="110" selection-end-line="284" selection-end-column="110" />
-          <folding>
-            <element signature="e#3286#3443#0" expanded="true" />
-            <element signature="e#3442#3443#0" expanded="true" />
-            <element signature="e#3496#3653#0" expanded="true" />
-            <element signature="e#3652#3653#0" expanded="true" />
-            <element signature="e#3703#3935#0" expanded="true" />
-            <element signature="e#3934#3935#0" expanded="true" />
-            <element signature="e#4506#4529#0" expanded="true" />
-            <element signature="e#5038#5068#0" expanded="true" />
-            <element signature="e#5184#5205#0" expanded="true" />
-            <element signature="e#5223#5507#0" expanded="true" />
-            <element signature="e#5506#5507#0" expanded="true" />
-            <element signature="e#5549#5569#0" expanded="true" />
-            <element signature="e#5587#5784#0" expanded="true" />
-            <element signature="e#5783#5784#0" expanded="true" />
-            <element signature="e#6915#7488#0" expanded="true" />
-            <element signature="e#7188#7209#0" expanded="true" />
-            <element signature="e#7487#7488#0" expanded="true" />
-            <element signature="e#8580#10256#0" expanded="true" />
-            <element signature="e#10103#10124#0" expanded="true" />
-            <element signature="e#10255#10256#0" expanded="true" />
-            <element signature="e#10458#11891#0" expanded="true" />
-            <element signature="e#11738#11759#0" expanded="true" />
-            <element signature="e#11890#11891#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/lst_integrantes_item.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -3399,6 +3362,36 @@
         <state relative-caret-position="496">
           <caret line="205" column="25" lean-forward="false" selection-start-line="205" selection-start-column="25" selection-end-line="205" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uclm/esi/tfg/colegiapp/InfoGrupoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="124" column="5" lean-forward="false" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+          <folding>
+            <element signature="e#3101#3258#0" expanded="true" />
+            <element signature="e#3257#3258#0" expanded="true" />
+            <element signature="e#3308#3540#0" expanded="true" />
+            <element signature="e#3539#3540#0" expanded="true" />
+            <element signature="e#4111#4134#0" expanded="true" />
+            <element signature="e#4595#4625#0" expanded="true" />
+            <element signature="e#4741#4762#0" expanded="true" />
+            <element signature="e#4780#5064#0" expanded="true" />
+            <element signature="e#5063#5064#0" expanded="true" />
+            <element signature="e#5106#5126#0" expanded="true" />
+            <element signature="e#5144#5341#0" expanded="true" />
+            <element signature="e#5340#5341#0" expanded="true" />
+            <element signature="e#6472#7045#0" expanded="true" />
+            <element signature="e#6745#6766#0" expanded="true" />
+            <element signature="e#7044#7045#0" expanded="true" />
+            <element signature="e#8137#9813#0" expanded="true" />
+            <element signature="e#9660#9681#0" expanded="true" />
+            <element signature="e#9812#9813#0" expanded="true" />
+            <element signature="e#10015#11448#0" expanded="true" />
+            <element signature="e#11295#11316#0" expanded="true" />
+            <element signature="e#11447#11448#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

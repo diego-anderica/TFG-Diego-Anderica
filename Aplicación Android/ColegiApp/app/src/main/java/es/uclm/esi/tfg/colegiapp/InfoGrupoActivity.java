@@ -51,7 +51,6 @@ public class InfoGrupoActivity extends AppCompatActivity {
     private ImageView imgGrupo;
     private EditText txtNombreGrupo;
     private EditText txtNuevoNombre;
-    private Button btnCambiarImagenGrupo;
     private Button btnCambiarNombreGrupo;
     private ListView lstIntegrantes;
 
@@ -69,7 +68,6 @@ public class InfoGrupoActivity extends AppCompatActivity {
         imgGrupo = (ImageView) findViewById(R.id.imgGrupo);
         txtNombreGrupo = (EditText) findViewById(R.id.txtNombreGrupo);
         txtNuevoNombre = (EditText) findViewById(R.id.txtNuevoNombre);
-        btnCambiarImagenGrupo = (Button) findViewById(R.id.btnCambiarImagenGrupo);
         btnCambiarNombreGrupo = (Button) findViewById(R.id.btnCambiarNombreGrupo);
         lstIntegrantes = (ListView) findViewById(R.id.lstIntegrantesGrupo);
 
@@ -86,16 +84,8 @@ public class InfoGrupoActivity extends AppCompatActivity {
         iniciarOyente();
 
         if (!isDocente) {
-            btnCambiarImagenGrupo.setVisibility(View.GONE);
             btnCambiarNombreGrupo.setVisibility(View.GONE);
         }
-
-        btnCambiarImagenGrupo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cambiarImagenGrupo();
-            }
-        });
 
         btnCambiarNombreGrupo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,10 +122,6 @@ public class InfoGrupoActivity extends AppCompatActivity {
         setTitle(R.string.lblInfoDeGrupo);
         txtNombreGrupo.setText(nombreChat);
         obtenerIntegrantes();
-    }
-
-    private void cambiarImagenGrupo() {
-
     }
 
     private void cambiarNombreGrupo() {
