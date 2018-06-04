@@ -313,6 +313,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mnuBtnCrearGrupo:
                 crearGrupo();
                 return true;
+            case R.id.mnuBtnPerfil:
+                lanzarActivityPerfil();
+                return true;
             case R.id.mnuBtnSalir:
                 salir();
                 return true;
@@ -337,5 +340,20 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("usuarioJavaDocente", usuarioJavaDocente);
 
         startActivity(intent);
+    }
+
+    private void lanzarActivityPerfil() {
+        Intent perfil = new Intent(this, PerfilUsuarioActivity.class);
+
+        perfil.putExtra("procedencia", "main");
+        perfil.putExtra("isDocente", isDocente);
+
+        if (isDocente) {
+            perfil.putExtra("usuarioJava", usuarioJavaDocente);
+        } else {
+            perfil.putExtra("usuarioJava", usuarioJavaFamilia);
+        }
+
+        startActivity(perfil);
     }
 }

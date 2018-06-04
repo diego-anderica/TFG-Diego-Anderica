@@ -10,7 +10,7 @@
         android:layout_width="133dp"
         android:layout_height="65dp"
         android:layout_weight="1"
-        app:srcCompat="@drawable/grupo" />
+        app:srcCompat="@drawable/grupo64" />
 
     <LinearLayout
         android:layout_width="match_parent"

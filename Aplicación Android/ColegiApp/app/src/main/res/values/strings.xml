@@ -2,6 +2,7 @@
     <!--MenuMain-->
     <string name="app_name">ColegiApp</string>
     <string name="mnuBtnCrearGrupo">Crear grupo...</string>
+    <string name="mnuBtnPerfil">Perfil...</string>
     <string name="mnuBtnCerrarSesion">Cerrar Sesión...</string>
     <!--MenuMain-->
 
@@ -87,5 +88,21 @@
     <string name="lblInfoDeGrupo">Información del grupo</string>
     <string name="btnAniadirIntegrante">Añadir integrante</string>
     <!--MenuInfoChatActivity-->
+
+    <!--PerfilActivity-->
+    <string name="btnCambiarImagenPerfil">Cambiar Imagen de Perfil</string>
+    <string name="lblNombreTutor1">Nombre Tutor 1</string>
+    <string name="lblCorreoTutor1">Correo Tutor 1</string>
+    <string name="lblTelefonoTutor1">Teléfono Tutor 1</string>
+    <string name="lblNombreTutor2">Nombre Tutor 2</string>
+    <string name="lblCorreoTutor2">Correo Tutor 2</string>
+    <string name="lblTelefonoTutor2">Teléfono Tutor 2</string>
+    <string name="lblNombreDocente">Nombre</string>
+    <string name="lblCorreoDocente">Correo</string>
+    <string name="lblTelefonoDocente">Teléfono</string>
+    <string name="tituloPerfilUsuarioActivity">Perfil del Usuario</string>
+    <string name="msgSubiendoImagen">Subiendo imagen...</string>
+    <string name="msgImagenSubida">Imagen cambiada correctamente</string>
+    <!--PerfilActivity-->
 
 </resources>

@@ -2,6 +2,7 @@ package es.uclm.esi.tfg.colegiapp;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -102,6 +104,28 @@ public class InfoGrupoActivity extends AppCompatActivity {
             }
         });
 
+        lstIntegrantes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                lanzarActivityPerfil(position);
+            }
+        });
+
+    }
+
+    private void lanzarActivityPerfil(int position) {
+        Intent perfil = new Intent(this, PerfilUsuarioActivity.class);
+
+        perfil.putExtra("idFamilia", integrantesGrupo.get(position).getNombreFamilia());
+        perfil.putExtra("perfilPropio", false);
+        perfil.putExtra("isDocente", isDocente);
+        perfil.putExtra("procedencia", "infoGrupo");
+
+        if (isDocente) {
+            perfil.putExtra("usuarioJava", usuarioJavaDocente);
+        }
+
+        startActivity(perfil);
     }
 
     private void rellenarInfoGrupo() {

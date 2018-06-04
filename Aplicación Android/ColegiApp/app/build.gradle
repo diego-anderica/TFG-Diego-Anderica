@@ -32,6 +32,8 @@ dependencies {
     compile 'com.google.firebase:firebase-core:16.0.0'
     compile 'com.google.firebase:firebase-auth:16.0.1'
     compile 'com.google.firebase:firebase-firestore:17.0.1'
+    compile 'com.google.firebase:firebase-storage:16.0.1'
+    compile 'com.firebaseui:firebase-ui-storage:0.6.0'
     compile 'com.google.code.gson:gson:2.8.2'
 
     compile 'com.ibm.watson.developer_cloud:java-sdk:5.4.0'

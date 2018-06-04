@@ -10,6 +10,13 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/mnuBtnPerfil"
+        android:orderInCategory="100"
+        android:title="@string/mnuBtnPerfil"
+        android:visible="true"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/mnuBtnSalir"
         android:orderInCategory="100"
         android:title="@string/mnuBtnCerrarSesion"
