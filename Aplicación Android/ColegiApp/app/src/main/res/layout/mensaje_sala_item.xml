@@ -12,35 +12,38 @@
         android:id="@+id/lblRemitente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="John Doe"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtMensaje"
+        android:id="@+id/lblMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:layout_marginTop="1dp"
         android:background="@drawable/rounded_green_item"
         android:maxWidth="200dp"
         android:padding="8dp"
-        android:text="hello, hello!"
-        android:textColor="#ffffff"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="hello, hello"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblRemitente" />
 
     <TextView
         android:id="@+id/lblFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
         android:text="11:40"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtMensaje"
-        app:layout_constraintRight_toLeftOf="@+id/txtMensaje" />
+        app:layout_constraintEnd_toStartOf="@+id/lblMensaje"
+        app:layout_constraintTop_toBottomOf="@+id/lblMensaje" />
 
 </android.support.constraint.ConstraintLayout>

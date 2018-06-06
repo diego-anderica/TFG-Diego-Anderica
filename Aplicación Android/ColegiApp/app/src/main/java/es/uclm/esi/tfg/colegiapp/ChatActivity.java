@@ -18,7 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,7 +43,6 @@ import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneAnalysis;
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneOptions;
 import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneScore;
 
-import org.apache.commons.io.IOUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,6 +51,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -71,16 +71,18 @@ public class ChatActivity extends AppCompatActivity {
     private final String TENTATIVE = "tentative";
     private final String ANALYTICAL = "analytical";
 
-    private static final double POND_ANGER = 33.333333;
-    private static final double POND_FEAR = 29.166666666;
-    private static final double POND_JOY = 8.33333333;
-    private static final double POND_SADNESS = 29.166666666;
+    private double pondAnger;
+    private double pondFear;
+    private double pondJoy;
+    private double pondSadness;
 
-    private static final double POND_ANALYTICAL = 0.666666;
-    private static final double POND_CONFIDENT = 0.1666666;
-    private static final double POND_TENTATIVE = 0.1666666;
+    private double pondAnalytical;
+    private double pondConfident;
+    private double pondTentative;
 
-    private static final int POND_PESO = 10;
+    private int pondPeso;
+
+    private boolean datosObtenidos = false;
 
     private ArrayList<Familia> lstIntegrantes;
 
@@ -106,6 +108,7 @@ public class ChatActivity extends AppCompatActivity {
     private RecyclerView recyclerViewMensajes;
     private AdaptadorListaMensajes adaptadorListaMensajes;
     private ArrayList<Mensaje> lstMensajes;
+    private double tonoUltimoMensaje;
 
     private ImageView imgAddMensaje;
     private EditText txtMensaje;
@@ -125,7 +128,7 @@ public class ChatActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         imgAddMensaje = (ImageView) findViewById(R.id.imgAddMensaje);
-        txtMensaje = (EditText) findViewById(R.id.txtMensaje);
+        txtMensaje = (EditText) findViewById(R.id.txtMensajeAEnviar);
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
 
         obtenerExtras();
@@ -172,7 +175,9 @@ public class ChatActivity extends AppCompatActivity {
                 if (txtMensaje.getText().length() == 0) {
                     btnEnviar.setEnabled(false);
                 } else {
-                    btnEnviar.setEnabled(true);
+                    if (datosObtenidos) {
+                        btnEnviar.setEnabled(true);
+                    }
                 }
             }
 
@@ -194,6 +199,8 @@ public class ChatActivity extends AppCompatActivity {
         if (!isDocente) {
             imgAddMensaje.setVisibility(View.GONE);
             obtenerScoreActual();
+        } else {
+            datosObtenidos = true;
         }
 
         imgAddMensaje.setOnClickListener(new View.OnClickListener() {
@@ -248,6 +255,15 @@ public class ChatActivity extends AppCompatActivity {
     private void enviarMensaje() {
         Mensaje mensaje = crearMensaje();
 
+        if (!isDocente) {
+            tonoUltimoMensaje = 0;
+            analizarMensaje(mensaje);
+        } else {
+            tonoUltimoMensaje = 100.0;
+        }
+
+        mensaje.setTono(tonoUltimoMensaje);
+
         dbMensajes.add(mensaje).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
@@ -256,9 +272,6 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-        if (!isDocente) {
-            analizarMensaje(mensaje);
-        }
     }
 
     private void analizarMensaje(Mensaje mensaje) {
@@ -280,6 +293,8 @@ public class ChatActivity extends AppCompatActivity {
         if (listaOraciones == null) {
             if (!tone.getDocumentTone().getTones().isEmpty()) {
                 analizarTonos(tone.getDocumentTone().getTones(), true);
+            } else {
+                tonoUltimoMensaje = 75.0;
             }
         } else {
             if (!tone.getSentencesTone().isEmpty()) {
@@ -306,41 +321,54 @@ public class ChatActivity extends AppCompatActivity {
         double scoreCorrector = 0.0;
         boolean tonoNegativo = false;
 
+        if (listaTonos.size() == 0) {
+            tonoUltimoMensaje = 75.0;
+        }
+
         for (int i = 0; i < listaTonos.size(); i++) {
             if (listaTonos.get(i).getToneId().equalsIgnoreCase(ANGER)) {
-                scoreMensaje -= listaTonos.get(i).getScore() * POND_ANGER;
+                scoreMensaje -= listaTonos.get(i).getScore() * pondAnger;
                 tonoNegativo = true;
             } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(FEAR)) {
-                scoreMensaje -= listaTonos.get(i).getScore() * POND_FEAR;
+                scoreMensaje -= listaTonos.get(i).getScore() * pondFear;
                 tonoNegativo = true;
             } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(SADNESS)) {
-                scoreMensaje -= listaTonos.get(i).getScore() * POND_SADNESS;
+                scoreMensaje -= listaTonos.get(i).getScore() * pondSadness;
                 tonoNegativo = true;
             } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(JOY)) {
-                scoreMensaje += listaTonos.get(i).getScore() * POND_JOY;
+                scoreMensaje += listaTonos.get(i).getScore() * pondJoy;
             } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(ANALYTICAL)) {
-                scoreCorrector += listaTonos.get(i).getScore() * POND_ANALYTICAL * POND_PESO;
+                scoreCorrector += listaTonos.get(i).getScore() * pondAnalytical * pondPeso;
             } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(CONFIDENT)) {
-                scoreCorrector += listaTonos.get(i).getScore() * POND_CONFIDENT * POND_PESO;
+                scoreCorrector += listaTonos.get(i).getScore() * pondConfident * pondPeso;
             } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(TENTATIVE)) {
-                scoreCorrector += listaTonos.get(i).getScore() * POND_TENTATIVE * POND_PESO;
+                scoreCorrector += listaTonos.get(i).getScore() * pondTentative * pondPeso;
             }
         }
 
-        /*Log.d("Score", "ScoreUsuario: " + scoreUsuario);
-        Log.d("Score", "ScoreMensaje: " + scoreMensaje);
-        Log.d("Score", "ScoreCorrector: " + scoreCorrector);*/
+        Log.d("ScoreMensaje", Double.toString(scoreMensaje));
+        Log.d("ScoreCorrector", Double.toString(scoreCorrector));
 
         if (tonoNegativo) {
             scoreUsuario = scoreUsuario + (scoreMensaje - scoreCorrector);
+            tonoUltimoMensaje = (tonoUltimoMensaje + (scoreMensaje - scoreCorrector)) * 10;
         } else {
             scoreUsuario = scoreUsuario + (scoreMensaje + scoreCorrector);
+            tonoUltimoMensaje = (tonoUltimoMensaje + (scoreMensaje + scoreCorrector)) * 10;
         }
+
+        Log.d("ScoreUltimo", Double.toString(tonoUltimoMensaje));
 
         if (scoreUsuario < 0.0) {
             scoreUsuario = 0.0;
         } else if (scoreUsuario > 100.0) {
             scoreUsuario = 100.0;
+        }
+
+        if (tonoUltimoMensaje < 0.0) {
+            tonoUltimoMensaje = 0.0;
+        } else if (tonoUltimoMensaje > 100.0) {
+            tonoUltimoMensaje = 100.0;
         }
 
         if (actualizarBBDD) {
@@ -390,14 +418,38 @@ public class ChatActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     scoreUsuario = task.getResult().getDouble(campo);
+
+                    obtenerPonderacionTonos();
                 }
             }
         });
 
     }
 
+    private void obtenerPonderacionTonos() {
+        dbChat.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                HashMap<String, Object> ponderacion = ((HashMap<String, Object>) documentSnapshot.get("PonderacionTonos"));
+
+                pondAnger = Double.parseDouble(ponderacion.get("PondAnger").toString());
+                pondFear= Double.parseDouble(ponderacion.get("PondFear").toString());
+                pondJoy= Double.parseDouble(ponderacion.get("PondJoy").toString());
+                pondSadness= Double.parseDouble(ponderacion.get("PondSadness").toString());
+
+                pondAnalytical= Double.parseDouble(ponderacion.get("PondAnalytical").toString());
+                pondConfident= Double.parseDouble(ponderacion.get("PondConfident").toString());
+                pondTentative= Double.parseDouble(ponderacion.get("PondTentative").toString());
+
+                pondPeso = Integer.parseInt(ponderacion.get("PondPeso").toString());
+
+                datosObtenidos = true;
+            }
+        });
+    }
+
     private Mensaje crearMensaje() {
-        Mensaje mensaje = new Mensaje();
+        Mensaje mensaje = null;
 
         if (isDocente && identificadorUsuario == CORREO) {
             mensaje = new Mensaje(usuarioJavaDocente.getCorreo(),
@@ -461,7 +513,11 @@ public class ChatActivity extends AppCompatActivity {
                 document.getString("apellido1"),
                 document.getString("apellido2"),
                 document.getString("mensaje"),
-                document.getDate("fecha"));
+                document.getDate("fecha"),
+                document.getDouble("tono"),
+                isDocente);
+
+        Log.d("MensajeChat", msj.toString());
 
         lstMensajes.add(msj);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewMensajes.getContext(),

@@ -1,6 +1,7 @@
 package es.uclm.esi.tfg.colegiapp;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,19 @@ public class AdaptadorListaMensajes extends RecyclerView.Adapter<AdaptadorListaM
         itemsViewHolder.lblMensaje.setText(mensajes.get(i).getMensaje());
         itemsViewHolder.lblFecha.setText(new SimpleDateFormat("dd-MM-yy").format(mensajes.get(i).getFecha()) + " " +
                 new SimpleDateFormat("HH:mm").format(mensajes.get(i).getFecha()));
+
+        if (mensajes.get(i).isDocente()) {
+            if (mensajes.get(i).getTono() <= 25.0) {
+                itemsViewHolder.lblMensaje.setBackgroundResource(R.drawable.rounded_red_item);
+            } else if (mensajes.get(i).getTono() > 25.0 && mensajes.get(i).getTono() <= 50.0) {
+                itemsViewHolder.lblMensaje.setBackgroundResource(R.drawable.rounded_orange_item);
+            } else if (mensajes.get(i).getTono() > 50.0 && mensajes.get(i).getTono() <= 75.0) {
+                itemsViewHolder.lblMensaje.setBackgroundResource(R.drawable.rounded_yellow_item);
+                itemsViewHolder.lblMensaje.setTextColor(Color.BLACK);
+            } else if (mensajes.get(i).getTono() > 75.0) {
+                itemsViewHolder.lblMensaje.setBackgroundResource(R.drawable.rounded_green_item);
+            }
+        }
     }
 
     @Override
@@ -52,7 +66,7 @@ public class AdaptadorListaMensajes extends RecyclerView.Adapter<AdaptadorListaM
         public MyViewHolder(View v) {
             super(v);
             lblRemitente = (TextView) v.findViewById(R.id.lblRemitente);
-            lblMensaje = (TextView) v.findViewById(R.id.txtMensaje);
+            lblMensaje = (TextView) v.findViewById(R.id.lblMensaje);
             lblFecha = (TextView) v.findViewById(R.id.lblFecha);
         }
     }

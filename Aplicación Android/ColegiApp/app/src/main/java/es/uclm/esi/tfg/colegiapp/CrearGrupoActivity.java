@@ -195,6 +195,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
         Map<String, Object> mapGrupo = new HashMap<>();
         Map<String, Object> mapDocente = new HashMap<>();
         Map<String, Object> mapTonos = new HashMap<>();
+        Map<String, Object> mapPondTonos = new HashMap<>();
 
         DocumentReference doc;
         CollectionReference coleccion;
@@ -235,10 +236,21 @@ public class CrearGrupoActivity extends AppCompatActivity {
 
         mapGrupo.put("Administrador", mapDocente);
 
-        doc.set(mapGrupo);
-
         mapTonos.put("PuntuacionTutor1", 50.0);
         mapTonos.put("PuntuacionTutor2", 50.0);
+
+        mapPondTonos.put("PondAnger", 33.333333);
+        mapPondTonos.put("PondFear", 29.1666666);
+        mapPondTonos.put("PondSadness", 29.1666666);
+        mapPondTonos.put("PondJoy", 8.333333);
+        mapPondTonos.put("PondAnalytical", 0.666666);
+        mapPondTonos.put("PondConfident", 0.1666666);
+        mapPondTonos.put("PondTentative", 0.1666666);
+        mapPondTonos.put("PondPeso", 10);
+
+        mapGrupo.put("PonderacionTonos", mapPondTonos);
+
+        doc.set(mapGrupo);
 
         coleccion = db.collection("ChatsGrupales").document(chatGrupal.getId()).collection("Familias");
         tonosCol = db.collection("ChatsGrupales").document(chatGrupal.getId()).collection("Tonos");
@@ -256,14 +268,16 @@ public class CrearGrupoActivity extends AppCompatActivity {
                     docente.getApellido1(),
                     docente.getApellido2(),
                     getString(R.string.msgGrupoNuevo),
-                    new Date());
+                    new Date(),
+                    100.0);
         } else if (identificadorDocente == TELEFONO) {
             mensaje = new Mensaje(docente.getTelefono(),
                     docente.getNombre(),
                     docente.getApellido1(),
                     docente.getApellido2(),
                     getString(R.string.msgGrupoNuevo),
-                    new Date());
+                    new Date(),
+                    100.0);
         }
 
         coleccion.add(mensaje);

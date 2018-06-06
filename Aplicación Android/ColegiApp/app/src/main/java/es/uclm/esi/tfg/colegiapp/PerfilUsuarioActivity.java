@@ -2,11 +2,11 @@ package es.uclm.esi.tfg.colegiapp;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,7 +28,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.IOException;
+import org.apache.commons.lang3.StringUtils;
 
 public class PerfilUsuarioActivity extends AppCompatActivity {
     //Constante de rastreo de intent
@@ -42,9 +41,11 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
     private String idFamilia;
     private boolean isDocente;
     private String procedencia;
+    private String nombreImagen;
 
     private ImageView imgPerfil;
     private Button btnCambiarImagenPerfil;
+    private Button btnEliminarImagenPerfil;
 
     private TextView lblNombreTutor1;
     private TextView lblCorreoTutor1;
@@ -67,6 +68,7 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
     private Uri rutaImagen;
 
     private FirebaseFirestore db;
+    private FirebaseStorage storage;
     private StorageReference storageReference;
 
     @Override
@@ -76,11 +78,13 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
 
         setTitle(R.string.tituloPerfilUsuarioActivity);
 
-        storageReference = FirebaseStorage.getInstance().getReference();
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
         db = FirebaseFirestore.getInstance();
 
         imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
         btnCambiarImagenPerfil = (Button) findViewById(R.id.btnCambiarImagenPerfil);
+        btnEliminarImagenPerfil = (Button) findViewById(R.id.btnEliminarImagenPerfil);
 
         lblNombreTutor1 = (TextView) findViewById(R.id.lblNombreTutor1);
         lblCorreoTutor1 = (TextView) findViewById(R.id.lblCorreoTutor1);
@@ -106,7 +110,7 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
             btnCambiarImagenPerfil.setVisibility(View.GONE);
         }
 
-        if (isDocente) {
+        if (isDocente && procedencia.equalsIgnoreCase("main")) {
             lblNombreTutor1.setText(R.string.lblNombreDocente);
             lblCorreoTutor1.setText(R.string.lblCorreoDocente);
             lblTelefonoTutor1.setText(R.string.lblTelefonoDocente);
@@ -118,6 +122,13 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 cambiarImagenPerfil();
+            }
+        });
+
+        btnEliminarImagenPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                preguntarUsuario();
             }
         });
 
@@ -168,6 +179,7 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
 
                             if (document.contains("extImagen")) {
                                 mostrarImagenPerfil(document.getString("extImagen"));
+                                nombreImagen = StringUtils.stripAccents(familia.getNombreFamilia()) + "." + document.getString("extImagen");
                             }
 
                             rellenarInformacion();
@@ -188,6 +200,7 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
 
                         if (document.contains("extImagen")) {
                             mostrarImagenPerfil(document.getString("extImagen"));
+                            nombreImagen = StringUtils.stripAccents(usuarioJavaDocente.getId()) + "." + document.getString("extImagen");
                         }
 
                         rellenarInformacion();
@@ -203,6 +216,7 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
 
                         if (document.contains("extImagen")) {
                             mostrarImagenPerfil(document.getString("extImagen"));
+                            nombreImagen = StringUtils.stripAccents(usuarioJavaFamilia.getNombreFamilia()) + "." + document.getString("extImagen");
                         }
 
                         rellenarInformacion();
@@ -212,24 +226,56 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
     }
 
     private void mostrarImagenPerfil(String ext) {
-        StorageReference sRef;
+        String ruta = "perfiles/";
 
-        if (isDocente && familia == null) {
-            sRef = storageReference.child("perfiles/" + usuarioJavaDocente.getId() + "." + ext);
-        } else if (isDocente && familia != null) {
-            sRef = storageReference.child("perfiles/" + familia.getNombreFamilia() + "." + ext);
-        } else {
-            sRef = storageReference.child("perfiles/" + usuarioJavaFamilia.getNombreFamilia() + "." + ext);
+        if (isDocente && procedencia.equalsIgnoreCase("main")) {
+            ruta = ruta + StringUtils.stripAccents(usuarioJavaDocente.getId()) + "." + ext;
+            final String finalRuta = ruta;
+            storageReference.child(ruta).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    btnEliminarImagenPerfil.setEnabled(true);
+                    GlideApp.with(PerfilUsuarioActivity.this /* context */)
+                            .load(storageReference.child(finalRuta))
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+                            .skipMemoryCache(true)
+                            .into(imgPerfil);
+                }
+            });
+        } else if (isDocente && procedencia.equalsIgnoreCase("infoGrupo")) {
+            ruta = ruta + StringUtils.stripAccents(familia.getNombreFamilia()) + "." + ext;
+            final String finalRuta1 = ruta;
+            storageReference.child(ruta).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    btnEliminarImagenPerfil.setEnabled(true);
+                    GlideApp.with(PerfilUsuarioActivity.this /* context */)
+                            .load(storageReference.child(finalRuta1))
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+                            .skipMemoryCache(true)
+                            .into(imgPerfil);
+                }
+            });
+        } else if (!isDocente) {
+            ruta = ruta + StringUtils.stripAccents(usuarioJavaFamilia.getNombreFamilia()) + "." + ext;
+            final String finalRuta2 = ruta;
+            storageReference.child(ruta).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    btnEliminarImagenPerfil.setEnabled(true);
+                    GlideApp.with(PerfilUsuarioActivity.this /* context */)
+                            .load(storageReference.child(finalRuta2))
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+                            .skipMemoryCache(true)
+                            .into(imgPerfil);
+                }
+            });
         }
 
-        Glide.with(this)
-                .using(new FirebaseImageLoader())
-                .load(sRef)
-                .into(imgPerfil);
     }
 
     private void rellenarInformacion() {
-        if (procedencia.equalsIgnoreCase("infoGrupo")) {
+        if (procedencia.equalsIgnoreCase("infoGrupo") && isDocente) {
             txtNombreTutor1.setText(familia.getNombreTutor1() + " " + familia.getApellido1Tutor1() + " " + familia.getApellido2Tutor1());
             txtCorreoTutor1.setText(familia.getCorreoTutor1());
             txtTelefonoTutor1.setText(familia.getTelefonoTutor1());
@@ -291,14 +337,20 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             rutaImagen = data.getData();
 
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), rutaImagen);
-                imgPerfil.setImageBitmap(bitmap);
-                subirImagen();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            subirImagen();
         }
+    }
+
+    private void borrarImagen() {
+        StorageReference imgRef = storageReference.child("perfiles/" + nombreImagen);
+
+        imgRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                imgPerfil.setImageResource(R.drawable.usuario64);
+                Toast.makeText(PerfilUsuarioActivity.this, R.string.msgBorradoImagenCorrecto, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public String getFileExtension(Uri uri) {
@@ -310,17 +362,14 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
     private void subirImagen() {
         if (rutaImagen != null) {
             final StorageReference sRef;
-            final String nombre;
-            final ProgressDialog progressDialog = new ProgressDialog(this);
+            final ProgressDialog progressDialog = new ProgressDialog(PerfilUsuarioActivity.this);
             progressDialog.setTitle(R.string.msgSubiendoImagen);
             progressDialog.show();
 
             if (isDocente) {
-                sRef = storageReference.child("perfiles/" + usuarioJavaDocente.getId() + "." + getFileExtension(rutaImagen));
-                nombre = usuarioJavaDocente.getId();
+                sRef = storageReference.child("perfiles/" + StringUtils.stripAccents(usuarioJavaDocente.getId()) + "." + getFileExtension(rutaImagen));
             } else {
-                sRef = storageReference.child("perfiles/" + usuarioJavaFamilia.getNombreFamilia() + "." + getFileExtension(rutaImagen));
-                nombre = usuarioJavaFamilia.getNombreFamilia();
+                sRef = storageReference.child("perfiles/" + StringUtils.stripAccents(usuarioJavaFamilia.getNombreFamilia()) + "." + getFileExtension(rutaImagen));
             }
 
             //adding the file to reference
@@ -328,17 +377,19 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), R.string.msgImagenSubida, Toast.LENGTH_LONG).show();
 
                             actualizarBBDD(getFileExtension(rutaImagen));
+                            mostrarImagenPerfil(getFileExtension(rutaImagen));
+
+                            progressDialog.dismiss();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception exception) {
                             progressDialog.dismiss();
-                            Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), R.string.msgErrorBBDD, Toast.LENGTH_LONG).show();
                         }
                     })
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
@@ -362,5 +413,25 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
         }
     }
 
+    private void preguntarUsuario() {
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle(getString(R.string.lblPreguntaBorrar));
+        dialogo1.setMessage(getString(R.string.msgPreguntaBorrar));
+        dialogo1.setCancelable(false);
+
+        dialogo1.setPositiveButton(getString(R.string.lblConfirmar), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+                borrarImagen();
+            }
+        });
+
+        dialogo1.setNegativeButton(getString(R.string.lblCancelar), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+
+            }
+        });
+
+        dialogo1.show();
+    }
 
 }

@@ -97,7 +97,9 @@ public class InfoGrupoActivity extends AppCompatActivity {
         lstIntegrantes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                lanzarActivityPerfil(position);
+                if (isDocente) {
+                    lanzarActivityPerfil(position);
+                }
             }
         });
 
@@ -167,14 +169,16 @@ public class InfoGrupoActivity extends AppCompatActivity {
                     usuarioJavaDocente.getApellido1(),
                     usuarioJavaDocente.getApellido2(),
                     texto,
-                    new Date());
+                    new Date(),
+                    100.0);
         } else if (isDocente && identificadorUsuario == TELEFONO) {
             mensaje = new Mensaje(usuarioJavaDocente.getTelefono(),
                     usuarioJavaDocente.getNombre(),
                     usuarioJavaDocente.getApellido1(),
                     usuarioJavaDocente.getApellido2(),
                     texto,
-                    new Date());
+                    new Date(),
+                    100.0);
         }
 
         return mensaje;

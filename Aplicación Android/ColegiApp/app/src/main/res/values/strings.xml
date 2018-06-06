@@ -103,6 +103,11 @@
     <string name="tituloPerfilUsuarioActivity">Perfil del Usuario</string>
     <string name="msgSubiendoImagen">Subiendo imagen...</string>
     <string name="msgImagenSubida">Imagen cambiada correctamente</string>
+    <string name="btnEliminarImagenPerfil">Eliminar imagen de perfil</string>
+    <string name="lblPreguntaBorrar">Borrar imagen de perfil</string>
+    <string name="msgPreguntaBorrar">¿Desea borrar su imagen de perfil?</string>
+    <string name="msgBorradoImagenCorrecto">Se ha borrado la imagen correctamente</string>
+    <string name="msgNoImagen">No se ha definido una imagen previamente</string>
     <!--PerfilActivity-->
 
 </resources>
