@@ -349,7 +349,7 @@ public class EmailLoginActivity extends AppCompatActivity {
             });
             dialogo1.setNegativeButton(getString(R.string.lblCancelar), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialogo1, int id) {
-                    cancelar();
+
                 }
             });
             dialogo1.show();
@@ -368,10 +368,6 @@ public class EmailLoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    private void cancelar() {
-
     }
 
 }

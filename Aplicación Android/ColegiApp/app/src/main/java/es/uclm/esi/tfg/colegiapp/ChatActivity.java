@@ -18,7 +18,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -378,17 +377,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void actualizarScoreUsuarioBBDD() {
-        dbChat.collection("Tonos").document(usuarioJavaFamilia.getNombreFamilia()).update(campo, scoreUsuario).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                //Log.d ("ActualizarScore", "Se ha actualizado correctamente: " + scoreUsuario);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                //Log.d ("ActualizarScore", "Ha ocurrido un error al actualizar Score");
-            }
-        });
+        dbChat.collection("Tonos").document(usuarioJavaFamilia.getNombreFamilia()).update(campo, scoreUsuario);
     }
 
     private void obtenerScoreActual() {
@@ -556,7 +545,6 @@ public class ChatActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_chatactivity, menu);
 
         return true;

@@ -2,16 +2,17 @@ package es.uclm.esi.tfg.colegiapp;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,7 +30,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.gson.Gson;
 
@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String ANONYMOUS = "anonymous";
     public static final int CORREO = 1;
     public static final int TELEFONO = 2;
+    public static final int REFRESCAR = 3;
+    public static final int ELIMINAR = 4;
 
     private String mUsername;
     private SharedPreferences mSharedPreferences;
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private int identificadorUsuario;
 
     private ListView lstChats;
+    private String chatSeleccionado;
 
     private Docente usuarioJavaDocente;
     private Familia usuarioJavaFamilia;
@@ -90,13 +93,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;
-        } else {
-            /*mUsername = mFirebaseUser.getDisplayName();
-
-            if (mFirebaseUser.getPhotoUrl() != null) {
-                mPhotoUrl = mFirebaseUser.getPhotoUrl().toString();
-            }*/
-
         }
 
         obtenerExtras();
@@ -109,6 +105,18 @@ public class MainActivity extends AppCompatActivity {
                 lanzarChatActivity(i);
             }
         });
+
+
+            lstChats.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    chatSeleccionado = chatsGrupales.get(position).getId();
+
+                    eliminarChat();
+
+                    return true;
+                }
+            });
 
         chatsGrupales = new ArrayList<ChatGrupal>();
         idNombreChatsGrupales = new HashMap<>();
@@ -142,11 +150,12 @@ public class MainActivity extends AppCompatActivity {
                                 comprobarPertenencia(dc.getDocument());
                                 break;
                             case MODIFIED:
-                                refrescarGrupo(dc.getDocument());
+                                actualizarLista(dc.getDocument(), REFRESCAR);
                                 break;
-                            /*case REMOVED:
-                                Log.d(TAG, "Removed city: " + dc.getDocument().getData());
-                                break;*/
+                            case REMOVED:
+                                Toast.makeText(MainActivity.this, getString(R.string.msgChatEliminado) + " " + dc.getDocument().getString("Nombre"), Toast.LENGTH_SHORT).show();
+                                actualizarLista(dc.getDocument(), ELIMINAR);
+                                break;
                         }
                     }
                 }
@@ -156,13 +165,18 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void refrescarGrupo(DocumentSnapshot doc) {
+    private void actualizarLista(DocumentSnapshot doc, int accion) {
         String idChat = doc.getId();
 
         for (int i = 0; i < chatsGrupales.size(); i++) {
             if (chatsGrupales.get(i).getId().equals(idChat)) {
-                chatsGrupales.get(i).setNombre(doc.getString("Nombre"));
-                break;
+                if (accion == REFRESCAR) {
+                    chatsGrupales.get(i).setNombre(doc.getString("Nombre"));
+                    break;
+                } else if (accion == ELIMINAR) {
+                    chatsGrupales.remove(i);
+                    break;
+                }
             }
         }
 
@@ -326,11 +340,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void salir() {
-        mFirebaseAuth.signOut();
-        mFirebaseUser = null;
-        mUsername = ANONYMOUS;
-        startActivity(new Intent(this, LoginActivity.class));
-        finish();
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle(getString(R.string.lblDialogoSalir));
+        dialogo1.setMessage(getString(R.string.msgDialogoSalir));
+        dialogo1.setCancelable(false);
+
+        dialogo1.setPositiveButton(getString(R.string.lblConfirmar), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+                mFirebaseAuth.signOut();
+                mFirebaseUser = null;
+                mUsername = ANONYMOUS;
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                finish();
+            }
+        });
+
+        dialogo1.setNegativeButton(getString(R.string.lblCancelar), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+
+            }
+        });
+
+        dialogo1.show();
+
     }
 
     private void crearGrupo() {
@@ -355,5 +387,46 @@ public class MainActivity extends AppCompatActivity {
         }
 
         startActivity(perfil);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater inflater = new MenuInflater(this);
+
+        menu.setHeaderTitle(R.string.lblOpcionesChat);
+        inflater.inflate(R.menu.ctx_menu_chat_item, menu);
+    }
+
+    public boolean onContextItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.mnuEliminarChat:
+                eliminarChat();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void eliminarChat() {
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle(getString(R.string.mnuEliminarChat));
+        dialogo1.setMessage(getString(R.string.msgConfirmarEliminarChat));
+        dialogo1.setCancelable(false);
+
+        dialogo1.setPositiveButton(getString(R.string.lblConfirmar), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+                db.collection("ChatsGrupales").document(chatSeleccionado).delete();
+            }
+        });
+
+        dialogo1.setNegativeButton(getString(R.string.lblCancelar), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+
+            }
+        });
+
+        dialogo1.show();
     }
 }

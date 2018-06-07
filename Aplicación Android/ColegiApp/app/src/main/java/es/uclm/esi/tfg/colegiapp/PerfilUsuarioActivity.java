@@ -400,8 +400,6 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
                             progressDialog.setMessage("Subido " + ((int) progress) + "%...");
                         }
                     });
-        } else {
-            //display an error if no file is selected
         }
     }
 

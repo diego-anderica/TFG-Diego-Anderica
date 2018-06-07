@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -152,7 +151,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
 
         dialogo1.setNegativeButton(getString(R.string.lblCancelar), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogo1, int id) {
-                cancelar();
+
             }
         });
 
@@ -184,10 +183,6 @@ public class CrearGrupoActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void cancelar() {
-
     }
 
     private void crearGrupo(int contador) {

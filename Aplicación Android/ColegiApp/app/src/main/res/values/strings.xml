@@ -9,6 +9,7 @@
     <!--ActivityLogin-->
     <string name="lblBienvenida">¡Bienvenid@ a ColegiApp!</string>
     <string name="lblEntrada">Selecciona el método de entrada...</string>
+    <string name="lblEntradaDocente">Selecciona el método de entrada para docentes</string>
     <string name="btnEntrarCTfno">Nº de teléfono</string>
     <string name="btnEntrarCCorreo">Correo y contraseña</string>
     <string name="btnDocente">Soy Docente</string>
@@ -53,6 +54,12 @@
 
     <!--MainActivity-->
     <string name="msgCargandoChats">Cargando chats...</string>
+    <string name="lblDialogoSalir">Cerrar sesión</string>
+    <string name="msgDialogoSalir">Confirmar cierre de sesión</string>
+    <string name="msgChatEliminado">Se ha eliminado el chat</string>
+    <string name="lblOpcionesChat">Opciones de chat</string>
+    <string name="mnuEliminarChat">Eliminar chat</string>
+    <string name="msgConfirmarEliminarChat">¿Confirmar eliminación del chat?</string>
     <!--MainActivity-->
 
     <!--ActivityCrearGrupo-->

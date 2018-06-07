@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
 
         MenuInflater inflater = new MenuInflater(this);
 
-        menu.setHeaderTitle("Seleccione el método de entrada para docentes");
+        menu.setHeaderTitle(R.string.lblEntradaDocente);
         inflater.inflate(R.menu.ctxmenu_login_docente, menu);
     }
 

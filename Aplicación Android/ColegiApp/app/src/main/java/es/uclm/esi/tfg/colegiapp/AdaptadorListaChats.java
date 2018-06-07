@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class AdaptadorListaChats extends ArrayAdapter {
     private Activity context;
     private ArrayList<ChatGrupal> chatsGrupales;
-    //private ArrayList<ChatPrivado> chatsPrivados;
 
     public AdaptadorListaChats(Activity context, ArrayList<ChatGrupal> chatsGrupales) {
         super(context, R.layout.lst_familias_item, chatsGrupales);
@@ -42,19 +41,6 @@ public class AdaptadorListaChats extends ArrayAdapter {
 
         TextView lblNombreGrupo = (TextView)item.findViewById(R.id.lblNombreGrupo);
         lblNombreGrupo.setText(chatsGrupales.get(position).getNombre());
-
-        /*ImageView imagContacto = (ImageView)item.findViewById(R.id.imagContacto);
-        switch (contactos.get(position).getTipo())
-        {
-            case 0: //Cargar imagen de contactos tipo "familia"
-                imagContacto.setImageResource(R.drawable.familia);
-                break;
-            case 1: //Cargar imagen de los contactos tipo "amigos"
-                imagContacto.setImageResource(R.drawable.amigo);
-                break;
-            case 2: //Cargar imagen de los contactos tipo "trabajo"
-                imagContacto.setImageResource(R.drawable.trabajo);
-        }*/
 
         return(item);
     }

@@ -84,6 +84,4 @@ public class AdaptadorListaFamilias extends ArrayAdapter {
         return (rowView);
     }
 
-    //http://android-er.blogspot.com.es/2017/03/android-listview-with-checkbox.html
-
 }

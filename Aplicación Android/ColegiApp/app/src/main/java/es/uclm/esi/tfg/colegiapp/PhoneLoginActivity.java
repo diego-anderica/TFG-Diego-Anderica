@@ -207,8 +207,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
     public void lanzarMainActivity(FirebaseUser user) {
         Intent intent = new Intent(PhoneLoginActivity.this, MainActivity.class);
         intent.putExtra("docente", docente);
-        //intent.putExtra("procedencia", "telefono");
-        //intent.putExtra("telefono", user.getPhoneNumber());
 
         if (docente) {
             intent.putExtra("usuarioJava", usuarioJavaDocente);
@@ -248,7 +246,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
             });
             dialogo1.setNegativeButton(getString(R.string.lblCancelar), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialogo1, int id) {
-                    cancelar();
+
                 }
             });
             dialogo1.show();
@@ -347,10 +345,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
                         }
                     });
         }
-    }
-
-    private void cancelar() {
-
     }
 
 }
