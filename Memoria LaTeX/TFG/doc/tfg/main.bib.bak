@@ -17,8 +17,8 @@
 
   Author                   = {Android},
 
-  Timestamp                = {2018-02-15},
-  Url                      = {https://developer.android.com/studio/index.html}
+  Url                      = {https://developer.android.com/studio/index.html},
+  note                     = {Última visita: 15-02-18},
 }
 
 @Misc{Consuelo2017,
@@ -29,7 +29,7 @@
   Year                     = {2017},
 
   Timestamp                = {2017-10-01},
-  Url                      = {http://www.lanacion.com.ar/2050884-me-fui-del-grupo-de-whatsapp-y-ahora-me-tratan-con-distancia-en-la-vida-real}
+  Url                      = {http://www.lanacion.com.ar/2050884}
 }
 
 @Misc{creaTactil,
@@ -37,8 +37,8 @@
 
   Author                   = {creaTáctil},
 
-  Timestamp                = {2018-02-13},
-  Url                      = {http://micolegioapp.com/wordpress/}
+  Url                      = {http://micolegioapp.com/wordpress/},
+  note                     = {Última visita: 13-02-18},
 }
 
 @Misc{Educo2016,
@@ -73,11 +73,11 @@
 }
 
 @Book{Gomez2017,
-  title     = {Métodos Ágiles: Scrum, Kanban, Lean},
-  publisher = {Anaya Multimedia},
-  year      = {2017},
-  author    = {Carmen Lasa G{\'o}mez and Alonso {\'A}lvarez Garc{\'i}a and Rafael de las Heras del Dedo},
-  isbn      = {978-84-415-3888-7},
+  title                    = {Métodos Ágiles: Scrum, Kanban, Lean},
+  publisher                = {Anaya Multimedia},
+  year                     = {2017},
+  author                   = {Carmen Lasa G{\'o}mez and Alonso {\'A}lvarez Garc{\'i}a and Rafael de las Heras del Dedo},
+  isbn                     = {978-84-415-3888-7},
 }
 
 @Misc{Andro,
@@ -85,8 +85,8 @@
 
   Author                   = {Google},
 
-  Timestamp                = {2018-02-15},
-  Url                      = {https://www.android.com/}
+  Url                      = {https://www.android.com/},
+  note                     = {Última visita: 15-02-18},
 }
 
 @Misc{GooFirebase,
@@ -95,7 +95,8 @@
   Author                   = {Google},
 
   Timestamp                = {2018-02-15},
-  Url                      = {https://firebase.google.com/?hl=es-419}
+  Url                      = {https://firebase.google.com/?hl=es-419},
+  note                     = {Última visita: 15-02-18},
 }
 
 @Misc{IBM,
@@ -103,8 +104,8 @@
 
   Author                   = {IBM},
 
-  Timestamp                = {2018-02-18},
-  Url                      = {https://www.ibm.com/cloud-computing/bluemix/es/watson}
+  Url                      = {https://www.ibm.com/cloud-computing/bluemix/es/watson},
+  note                     = {Última visita: 18-02-18},
 }
 
 @Misc{JCCM2017,
@@ -114,8 +115,8 @@
   Month                    = feb,
   Year                     = {2017},
 
-  Timestamp                = {2017-09-08},
-  Url                      = {http://www.educa.jccm.es/alumnado/es/papas}
+  Url                      = {http://www.educa.jccm.es/alumnado/es/papas},
+  note                     = {Última visita: 08-09-17},
 }
 
 @Manual{JCCM2010,
@@ -124,8 +125,8 @@
   Month                    = sep,
   Year                     = {2010},
 
-  Timestamp                = {2017-09-08},
-  Url                      = {http://www.ies-ramonycajal.com/files/ManualPadresMadres.pdf}
+  Url                      = {http://www.ies-ramonycajal.com/files/ManualPadresMadres.pdf},
+  note                     = {Última visita: 08-09-17},
 }
 
 @Book{sousa,
@@ -140,8 +141,8 @@
 
   Author                   = {Microsoft},
 
-  Timestamp                = {2018-02-15},
-  Url                      = {https://www.microsoft.com/es-es/windows/}
+  Url                      = {https://www.microsoft.com/es-es/windows/},
+  note                     = {Última visita: 15-02-18},
 }
 
 @Misc{Novoa2014,
@@ -160,17 +161,15 @@
 
   Author                   = {Oracle},
 
-  Timestamp                = {2018-02-15},
-  Url                      = {https://www.java.com/es/about/}
+  Url                      = {https://www.java.com/es/about/},
+  note                     = {Última visita: 15-02-18},
 }
 
 @Misc{proyectosagiles.org,
-  Title                    = {Desarrollo iterativo e incremental},
-
-  Author                   = {proyectosagiles.org},
-
-  Timestamp                = {2018-02-21},
-  Url                      = {https://proyectosagiles.org/desarrollo-iterativo-incremental/}
+  author    = {proyectosagiles.org},
+  title     = {Desarrollo iterativo e incremental},
+  timestamp = {2018-02-21},
+  url       = {https://proyectosagiles.org/desarrollo-iterativo-incremental/},
 }
 
 @Book{puder05:_distr_system_archit,
@@ -208,8 +207,8 @@
   Author                   = {Signal},
   Year                     = {2017},
 
-  Timestamp                = {2017-09-07},
-  Url                      = {https://signal.org}
+  Url                      = {https://signal.org},
+  note                     = {Última visita: 07-09-17},
 }
 
 @Misc{Skype2017,
@@ -237,8 +236,8 @@
   Author                   = {Slack},
   Year                     = {2017},
 
-  Timestamp                = {2017-09-06},
-  Url                      = {https://slack.com/features}
+  Url                      = {https://slack.com/features},
+  note                     = {Última visita: 06-09-17},
 }
 
 @Manual{Schwaber2017,
@@ -248,8 +247,8 @@
   Organization             = {Scrum},
   Year                     = {2017},
 
-  Timestamp                = {2018-02-05},
-  Url                      = {http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf}
+  Url                      = {http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf},
+  note                     = {Última visita: 05-02-18},
 }
 
 @Misc{Telegram2017,
@@ -258,8 +257,8 @@
   Author                   = {Telegram},
   Year                     = {2017},
 
-  Timestamp                = {2017-09-05},
-  Url                      = {https://telegram.org}
+  Url                      = {https://telegram.org},
+  note                     = {Última visita: 05-09-17},
 }
 
 @Misc{Telegram2017a,
@@ -268,17 +267,15 @@
   Author                   = {Telegram},
   Year                     = {2017},
 
-  Timestamp                = {2017-09-06},
-  Url                      = {https://telegram.org/faq/es}
+  Url                      = {https://telegram.org/faq/es},
+  note                     = {Última visita: 06-09-17},
 }
 
 @Misc{TheLatexProject,
-  Title                    = {An introduction to LaTeX},
-
-  Author                   = {The{\ }Latex{\ }Project},
-
-  Timestamp                = {2018-02-18},
-  Url                      = {https://www.latex-project.org/about/}
+  author = {{The Latex Project}},
+  title  = {An introduction to LaTeX},
+  note   = {Última visita: 18-02-18},
+  url    = {https://www.latex-project.org/about/},
 }
 
 @Misc{Thomas2015,
@@ -321,8 +318,8 @@
   Year                     = {2017},
 
   Owner                    = {WhatsApp Inc.},
-  Timestamp                = {2017-09-04},
-  Url                      = {https://www.whatsapp.com/features/}
+  Url                      = {https://www.whatsapp.com/features/},
+  note                     = {Última visita: 04-09-17},
 }
 
 @Misc{Wickr2017,
@@ -331,31 +328,41 @@
   Author                   = {Wickr},
   Year                     = {2017},
 
-  Timestamp                = {2017-09-07},
-  Url                      = {https://www.wickr.com/products}
+  Url                      = {https://www.wickr.com/products},
+  note                     = {Última visita: 07-09-17},
 }
 
 @Misc{PyMEs2017,
-  Title                    = {Caso de Estudio real: cómo Slack se ha convertido en la iniciativa empresarial que más rápido ha crecido de la historia},
-  Year                     = {2017},
-
-  Timestamp                = {2017-09-06},
-  Url                      = {https://www.recursosparapymes.com/premium/caso-de-estudio-real-como-slack-se-ha-convertido-en-la-iniciativa-empresarial-que-mas-rapido-ha-crecido-de-la-historia/}
+  author    = {{Recursos para PyMes}},
+  title     = {Caso de Estudio real: cómo Slack se ha convertido en la iniciativa empresarial que más rápido ha crecido de la historia},
+  month     = jul,
+  year      = {2016},
+  timestamp = {2017-09-06},
+  url       = {https://www.recursosparapymes.com/?p=6164},
 }
 
 @Misc{ARCO,
-  author    = {ARCO},
-  title     = {esi-tfg},
-  timestamp = {2018-02-24},
-  url       = {https://bitbucket.org/arco_group/esi-tfg},
+  author                   = {ARCO},
+  title                    = {esi-tfg},
+  timestamp                = {2018-02-24},
+  url                      = {https://bitbucket.org/arco_group/esi-tfg},
+  note                     = {Última visita: 24-02-18},
 }
 
 @Misc{EclipseFoundation2018,
-  author       = {Eclipse{\ }Foundation},
-  title        = {Eclipse},
-  howpublished = {\url{https://www.eclipse.org}},
-  month        = jan,
-  year         = {2018},
+  author                   = {Eclipse{\ }Foundation},
+  title                    = {Eclipse},
+  howpublished             = {\url{https://www.eclipse.org}},
+  month                    = jan,
+  year                     = {2018},
+  note                     = {Última visita: 15-02-18},
+}
+
+@Misc{Bootstrap,
+  author                   = {Bootstrap},
+  title                    = {Bootstrap - The most popular HTML, CSS, and JS library in the world.},
+  url                      = {https://getbootstrap.com/},
+  note                     = {Última visita: 08-04-18},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

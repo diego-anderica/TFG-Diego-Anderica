@@ -1,4 +1,4 @@
-\begin{thebibliography}{GGdlHdD17}
+\begin{thebibliography}{{Rec}16}
 
 \bibitem[Ali17]{Alias2017}
 Marina Alias.
@@ -10,34 +10,44 @@ Marina Alias.
 \bibitem[And]{AndroidStudio}
 Android.
 \newblock Android Studio.
+\newblock Última visita: 15-02-18.
 \newblock url: \url{https://developer.android.com/studio/index.html}.
 
 \bibitem[ARC]{ARCO}
 ARCO.
 \newblock esi-tfg.
+\newblock Última visita: 24-02-18.
 \newblock url: \url{https://bitbucket.org/arco_group/esi-tfg}.
 
 \bibitem[Boo]{Bootstrap}
 Bootstrap.
 \newblock Bootstrap - The most popular HTML, CSS, and JS library in the world.
+\newblock Última visita: 08-04-18.
 \newblock url: \url{https://getbootstrap.com/}.
+
+\bibitem[CAR17]{Gomez2017}
+{Carmen Lasa G{\'o}mez}, {Alonso {\'A}lvarez Garc{\'i}a}, y {Rafael de las
+  Heras del Dedo}.
+\newblock {\em Métodos Ágiles: Scrum, Kanban, Lean}.
+\newblock Anaya Multimedia, 2017.
 
 \bibitem[Con17]{Consuelo2017}
 Consuelo.
 \newblock <<Me fui del grupo de WhatsApp y ahora me tratan con distancia en la
   vida real>>, Agosto 2017.
-\newblock url:
-  \url{http://www.lanacion.com.ar/2050884-me-fui-del-grupo-de-whatsapp-y-ahora-me-tratan-con-distancia-en-la-vida-real}.
+\newblock url: \url{http://www.lanacion.com.ar/2050884}.
 
 \bibitem[cre]{creaTactil}
 creaTáctil.
 \newblock miColegioApp.
+\newblock Última visita: 13-02-18.
 \newblock url: \url{http://micolegioapp.com/wordpress/}.
 
 \bibitem[Ecl18]{EclipseFoundation2018}
 Eclipse{\ }Foundation.
 \newblock Eclipse.
 \newblock \url{https://www.eclipse.org}, Enero 2018.
+\newblock Última visita: 15-02-18.
 
 \bibitem[Edu16]{Educo2016}
 Educo.
@@ -51,41 +61,41 @@ Javier Elio.
 \newblock url:
   \url{https://elandroidelibre.elespanol.com/2016/09/wickr-me.html}.
 
-\bibitem[GGdlHdD17]{Gomez2017}
-Carmen~Lasa G{\'o}mez, Alonso~{\'A}lvarez Garc{\'i}a, y Rafael de~las Heras~del
-  Dedo.
-\newblock {\em Métodos Ágiles: Scrum, Kanban, Lean}.
-\newblock Anaya Multimedia, 2017.
-
 \bibitem[Gooa]{Andro}
 Google.
 \newblock Android.
+\newblock Última visita: 15-02-18.
 \newblock url: \url{https://www.android.com/}.
 
 \bibitem[Goob]{GooFirebase}
 Google.
 \newblock Firebase.
+\newblock Última visita: 15-02-18.
 \newblock url: \url{https://firebase.google.com/?hl=es-419}.
 
 \bibitem[IBM]{IBM}
 IBM.
 \newblock Watson.
+\newblock Última visita: 18-02-18.
 \newblock url: \url{https://www.ibm.com/cloud-computing/bluemix/es/watson}.
 
 \bibitem[JCC10]{JCCM2010}
 JCCM.
 \newblock {\em Manual Papás 2.0}, Septiembre 2010.
+\newblock Última visita: 08-09-17.
 \newblock url:
   \url{http://www.ies-ramonycajal.com/files/ManualPadresMadres.pdf}.
 
 \bibitem[JCC17]{JCCM2017}
 JCCM.
 \newblock Papás 2.0, Febrero 2017.
+\newblock Última visita: 08-09-17.
 \newblock url: \url{http://www.educa.jccm.es/alumnado/es/papas}.
 
 \bibitem[Mic]{Microsoft}
 Microsoft.
 \newblock Windows.
+\newblock Última visita: 15-02-18.
 \newblock url: \url{https://www.microsoft.com/es-es/windows/}.
 
 \bibitem[Nov14]{Novoa2014}
@@ -98,6 +108,7 @@ Jaime Novoa.
 \bibitem[Ora]{Java}
 Oracle.
 \newblock Java.
+\newblock Última visita: 15-02-18.
 \newblock url: \url{https://www.java.com/es/about/}.
 
 \bibitem[pro]{proyectosagiles.org}
@@ -105,12 +116,6 @@ proyectosagiles.org.
 \newblock Desarrollo iterativo e incremental.
 \newblock url:
   \url{https://proyectosagiles.org/desarrollo-iterativo-incremental/}.
-
-\bibitem[PyM17]{PyMEs2017}
-Caso de Estudio real: cómo Slack se ha convertido en la iniciativa empresarial
-  que más rápido ha crecido de la historia, 2017.
-\newblock url:
-  \url{https://www.recursosparapymes.com/premium/caso-de-estudio-real-como-slack-se-ha-convertido-en-la-iniciativa-empresarial-que-mas-rapido-ha-crecido-de-la-historia/}.
 
 \bibitem[Ram13]{Ramirez2013}
 Iván Ramírez.
@@ -125,9 +130,16 @@ Iván Ramírez.
 \newblock url:
   \url{https://www.xatakandroid.com/comunicacion-y-mensajeria/whatsapp-vs-telegram-en-2017-cual-es-la-mejor-aplicacion-de-mensajeria}.
 
+\bibitem[{Rec}16]{PyMEs2017}
+{Recursos para PyMes}.
+\newblock Caso de Estudio real: cómo Slack se ha convertido en la iniciativa
+  empresarial que más rápido ha crecido de la historia, Julio 2016.
+\newblock url: \url{https://www.recursosparapymes.com/?p=6164}.
+
 \bibitem[Sig17]{Signal2017}
 Signal.
 \newblock Características, 2017.
+\newblock Última visita: 07-09-17.
 \newblock url: \url{https://signal.org}.
 
 \bibitem[Sky17a]{Skype2017}
@@ -143,28 +155,33 @@ Skype.
 \bibitem[Sla17]{Slack2017}
 Slack.
 \newblock Features, 2017.
+\newblock Última visita: 06-09-17.
 \newblock url: \url{https://slack.com/features}.
 
 \bibitem[Sut17]{Schwaber2017}
 Ken Schwaber;~Jeff Sutherland.
 \newblock {\em The Scrum Guide}.
 \newblock Scrum, Noviembre 2017.
+\newblock Última visita: 05-02-18.
 \newblock url:
   \url{http://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf}.
 
 \bibitem[Tel17a]{Telegram2017a}
 Telegram.
 \newblock Preguntas Frecuentes, 2017.
+\newblock Última visita: 06-09-17.
 \newblock url: \url{https://telegram.org/faq/es}.
 
 \bibitem[Tel17b]{Telegram2017}
 Telegram.
 \newblock What can you do with Telegram?, 2017.
+\newblock Última visita: 05-09-17.
 \newblock url: \url{https://telegram.org}.
 
-\bibitem[The]{TheLatexProject}
-The{\ }Latex{\ }Project.
+\bibitem[{The}]{TheLatexProject}
+{The Latex Project}.
 \newblock An introduction to LaTeX.
+\newblock Última visita: 18-02-18.
 \newblock url: \url{https://www.latex-project.org/about/}.
 
 \bibitem[Tho15]{Thomas2015}
@@ -188,11 +205,13 @@ J.J. Velasco.
 \bibitem[Wha17]{WhatsApp2017}
 WhatsApp.
 \newblock Funciones, 2017.
+\newblock Última visita: 04-09-17.
 \newblock url: \url{https://www.whatsapp.com/features/}.
 
 \bibitem[Wic17]{Wickr2017}
 Wickr.
 \newblock Products, 2017.
+\newblock Última visita: 07-09-17.
 \newblock url: \url{https://www.wickr.com/products}.
 
 \end{thebibliography}
