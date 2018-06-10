@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -114,7 +113,7 @@ public class InfoGrupoActivity extends AppCompatActivity {
     }
 
     private void rellenarInfoGrupo() {
-        setTitle(R.string.lblInfoDeGrupo);
+        setTitle(R.string.lblInfoDeChat);
         txtNombreGrupo.setText(nombreChat);
         obtenerIntegrantes();
     }
@@ -126,7 +125,7 @@ public class InfoGrupoActivity extends AppCompatActivity {
         final EditText input = new EditText(this);
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
 
-        alertDialog.setTitle(R.string.btnCambiarNombreGrupo);
+        alertDialog.setTitle(R.string.btnCambiarNombreChat);
         lp.setMargins(50, 50, 50, 50);
         input.setLayoutParams(lp);
 

@@ -1,7 +1,7 @@
 <resources>
     <!--MenuMain-->
     <string name="app_name">ColegiApp</string>
-    <string name="mnuBtnCrearGrupo">Crear grupo...</string>
+    <string name="mnuBtnCrearChat">Crear nuevo chat...</string>
     <string name="mnuBtnPerfil">Perfil...</string>
     <string name="mnuBtnCerrarSesion">Cerrar Sesión...</string>
     <!--MenuMain-->
@@ -62,20 +62,20 @@
     <string name="msgConfirmarEliminarChat">¿Confirmar eliminación del chat?</string>
     <!--MainActivity-->
 
-    <!--ActivityCrearGrupo-->
-    <string name="txtNombreGrupo">Nombre del grupo...</string>
-    <string name="btnCrearGrupo">Crear Grupo</string>
-    <string name="lblIntegrantes">Integrantes del grupo:</string>
+    <!--ActivityCrearChat-->
+    <string name="txtNombreChat">Nombre del chat...</string>
+    <string name="btnCrearChat">Crear chat</string>
+    <string name="lblIntegrantes">Integrantes del chat:</string>
     <string name="msgErrorBBDD">Ha ocurrido un error al comunicar con la base de datos</string>
-    <string name="msgConfirmarGrupo">¿Crear nuevo grupo?</string>
+    <string name="msgConfirmarChat">¿Crear nuevo chat?</string>
     <string name="msgCargandoUsuarios">Cargando usuarios...</string>
-    <string name="msgCreandoGrupo">Creando nuevo grupo...</string>
-    <string name="msgNombreGrupoError">El nombre del grupo no es válido</string>
-    <string name="msgGrupoNuevo">Ha creado un nuevo grupo</string>
+    <string name="msgCreandoChat">Creando nuevo chat...</string>
+    <string name="msgNombreChatError">El nombre del chat no es válido</string>
+    <string name="msgChatNuevo">Ha creado un nuevo chat</string>
     <string name="btnEnviar">Enviar</string>
     <string name="txtMensaje">Mensaje</string>
     <string name="msgNumeroIntegrantes">No se ha seleccionado ningún integrante</string>
-    <!--ActivityCrearGrupo-->
+    <!--ActivityCrearChat-->
 
     <!--ChatActivity-->
     <string name="msgErrorWatson">Ha ocurrido un error al conectar con el servicio de IBM</string>
@@ -87,12 +87,12 @@
     <!--MenuChatActivity-->
 
     <!--MenuInfoChatActivity-->
-    <string name="btnCambiarImagenGrupo">Cambiar imagen</string>
-    <string name="mnuBtnEliminarGrupo">Eliminar Grupo...</string>
-    <string name="btnCambiarNombreGrupo">Cambiar nombre</string>
-    <string name="lblCambiarNombre">Nuevo Nombre de Grupo</string>
+    <string name="btnCambiarImagenChat">Cambiar imagen</string>
+    <string name="mnuBtnEliminarChat">Eliminar chat...</string>
+    <string name="btnCambiarNombreChat">Cambiar nombre</string>
+    <string name="lblCambiarNombre">Nuevo Nombre de Chat</string>
     <string name="msgNombreCambiado">Se ha establecido el nuevo nombre correctamente</string>
-    <string name="lblInfoDeGrupo">Información del grupo</string>
+    <string name="lblInfoDeChat">Información del chat</string>
     <string name="btnAniadirIntegrante">Añadir integrante</string>
     <!--MenuInfoChatActivity-->
 

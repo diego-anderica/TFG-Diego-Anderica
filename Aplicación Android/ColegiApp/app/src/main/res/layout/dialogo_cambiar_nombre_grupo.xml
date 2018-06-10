@@ -20,6 +20,6 @@
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif"
-        android:hint="@string/txtNombreGrupo"
+        android:hint="@string/txtNombreChat"
         android:inputType="text" />
 </LinearLayout>

@@ -67,7 +67,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
-        setTitle("Nuevo Chat Grupal");
+        setTitle("Nuevo Chat");
 
         txtNombreGrupo = (EditText) findViewById(R.id.txtNombreGrupo);
         lstFamilias = (ListView) findViewById(R.id.lstFamilias);
@@ -88,7 +88,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (txtNombreGrupo.getText().toString().equalsIgnoreCase("") ||
                         txtNombreGrupo.getText().toString().length() < 3) {
-                    Toast.makeText(CrearGrupoActivity.this, getString(R.string.msgNombreGrupoError), Toast.LENGTH_LONG).show();
+                    Toast.makeText(CrearGrupoActivity.this, getString(R.string.msgNombreChatError), Toast.LENGTH_LONG).show();
                 } else {
                     preguntarUsuario();
                 }
@@ -140,7 +140,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
     private void preguntarUsuario() {
         AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
         dialogo1.setTitle(getString(R.string.lblConfirmar));
-        dialogo1.setMessage(getString(R.string.msgConfirmarGrupo));
+        dialogo1.setMessage(getString(R.string.msgConfirmarChat));
         dialogo1.setCancelable(false);
 
         dialogo1.setPositiveButton(getString(R.string.lblConfirmar), new DialogInterface.OnClickListener() {
@@ -160,7 +160,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
 
     private void aceptar() {
         progressDialog = ProgressDialog.show(CrearGrupoActivity.this, "",
-                getString(R.string.msgCreandoGrupo), true);
+                getString(R.string.msgCreandoChat), true);
         obtenerContador();
     }
 
@@ -262,7 +262,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
                     docente.getNombre(),
                     docente.getApellido1(),
                     docente.getApellido2(),
-                    getString(R.string.msgGrupoNuevo),
+                    getString(R.string.msgChatNuevo),
                     new Date(),
                     100.0);
         } else if (identificadorDocente == TELEFONO) {
@@ -270,7 +270,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
                     docente.getNombre(),
                     docente.getApellido1(),
                     docente.getApellido2(),
-                    getString(R.string.msgGrupoNuevo),
+                    getString(R.string.msgChatNuevo),
                     new Date(),
                     100.0);
         }
