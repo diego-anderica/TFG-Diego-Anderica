@@ -79,6 +79,13 @@ IBM.
 \newblock Última visita: 18-02-18.
 \newblock url: \url{https://www.ibm.com/cloud-computing/bluemix/es/watson}.
 
+\bibitem[IBM18]{IBM2018}
+IBM.
+\newblock Using the general-purpose endpoint, Mayo 2018.
+\newblock Última visita: 10-06-18.
+\newblock url:
+  \url{https://console.bluemix.net/docs/services/tone-analyzer/using-tone.html#using-the-general-purpose-endpoint}.
+
 \bibitem[JCC10]{JCCM2010}
 JCCM.
 \newblock {\em Manual Papás 2.0}, Septiembre 2010.

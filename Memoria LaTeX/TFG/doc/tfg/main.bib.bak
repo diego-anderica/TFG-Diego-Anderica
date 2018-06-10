@@ -73,11 +73,11 @@
 }
 
 @Book{Gomez2017,
-  title                    = {Métodos Ágiles: Scrum, Kanban, Lean},
-  publisher                = {Anaya Multimedia},
-  year                     = {2017},
-  author                   = {Carmen Lasa G{\'o}mez and Alonso {\'A}lvarez Garc{\'i}a and Rafael de las Heras del Dedo},
-  isbn                     = {978-84-415-3888-7},
+  title     = {Métodos Ágiles: Scrum, Kanban, Lean},
+  publisher = {Anaya Multimedia},
+  year      = {2017},
+  author    = {{Carmen Lasa G{\'o}mez} and {Alonso {\'A}lvarez Garc{\'i}a} and {Rafael de las Heras del Dedo}},
+  isbn      = {978-84-415-3888-7},
 }
 
 @Misc{Andro,
@@ -363,6 +363,16 @@
   title                    = {Bootstrap - The most popular HTML, CSS, and JS library in the world.},
   url                      = {https://getbootstrap.com/},
   note                     = {Última visita: 08-04-18},
+}
+
+@Misc{,
+  author    = {IBM},
+  title     = {Using the general-purpose endpoint},
+  month     = may,
+  year      = {2018},
+  note      = {Última visita: 10-06-18.},
+  timestamp = {2018-06-10},
+  url       = {https://console.bluemix.net/docs/services/tone-analyzer/using-tone.html#using-the-general-purpose-endpoint},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -65,16 +65,27 @@
 \contentsline {subsection}{\numberline {5.1.1}Pila de Producto}{31}{subsection.5.1.1}
 \contentsline {section}{\numberline {5.2}Sprint 1: Dise\IeC {\~n}o de una plataforma Web para la gesti\IeC {\'o}n de los usuarios}{31}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Planificaci\IeC {\'o}n del Sprint}{32}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Resultados del Sprint}{32}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Tareas del Sprint}{32}{subsection.5.2.2}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la base de datos}{32}{subsection.5.2.2}
 \contentsline {subsubsection}{Implementaci\IeC {\'o}n de la plataforma Web}{33}{subsection.5.2.2}
 \contentsline {section}{\numberline {5.3}Sprint 2: Creaci\IeC {\'o}n de la aplicaci\IeC {\'o}n Android y creaci\IeC {\'o}n de chats grupales}{35}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Planificaci\IeC {\'o}n del Sprint}{36}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Resultados del Sprint}{37}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.2}Tareas del Sprint}{37}{subsection.5.3.2}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de acceso}{37}{subsection.5.3.2}
 \contentsline {subsubsection}{Adecuaci\IeC {\'o}n de la base de datos}{40}{figure.5.7}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de creaci\IeC {\'o}n de grupos}{41}{figure.5.7}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad principal}{42}{figure.5.8}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de grupo}{42}{figure.5.8}
-\contentsline {chapter}{Un anexo de ejemplo}{45}{appendix*.17}
-\contentsline {chapter}{Referencias}{47}{appendix*.18}
+\contentsline {section}{\numberline {5.4}Sprint 3: Integraci\IeC {\'o}n con los servicios Watson de IBM}{43}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Planificaci\IeC {\'o}n del Sprint}{43}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Tareas del Sprint}{43}{subsection.5.4.2}
+\contentsline {subsubsection}{Creaci\IeC {\'o}n e integraci\IeC {\'o}n de los servicios de IBM Bluemix}{43}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Sprint 4: Integraci\IeC {\'o}n con Google Calendar y otras mejoras}{46}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Planificaci\IeC {\'o}n del Sprint}{46}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Tareas del Sprint}{47}{subsection.5.5.2}
+\contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{47}{subsection.5.5.2}
+\contentsline {subsubsection}{Creaci\IeC {\'o}n y modificaci\IeC {\'o}n del perfil}{47}{figure.5.11}
+\contentsline {subsubsection}{Eliminar y cambiar nombre de un chat}{47}{figure.5.12}
+\contentsline {subsubsection}{Visualizar informaci\IeC {\'o}n de los integrantes}{47}{figure.5.13}
+\contentsline {chapter}{Un anexo de ejemplo}{53}{appendix*.17}
+\contentsline {chapter}{Referencias}{55}{appendix*.18}
