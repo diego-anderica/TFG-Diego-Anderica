@@ -23,17 +23,19 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Informaci\IeC {\'o}n de Windows}}{26}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Tablero Kanban en GitHub}}{27}{figure.4.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Login de la Web}}{34}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces P\IeC {\'a}gina Principal de la Web}}{34}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Actividad inicial}}{37}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Actividad \textit {login} con tel\IeC {\'e}fono}}{38}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Actividad \textit {login} con correo y contrase\IeC {\~n}a}}{39}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Cambio de contrase\IeC {\~n}a}}{39}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Autenticaci\IeC {\'o}n docente}}{40}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Actividad Crear Grupo}}{41}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces \textit {ListView} vs \textit {RecyclerView}}}{42}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Ejemplo de un grupo}}{42}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Bot\IeC {\'o}n para crear evento}}{47}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Men\IeC {\'u} principal}}{47}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Di\IeC {\'a}logo para borrar un chat}}{48}{figure.5.13}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Planificaci\IeC {\'o}n Temporal}}{33}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Login de la Web}}{35}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces P\IeC {\'a}gina Principal de la Web}}{36}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Actividad inicial}}{39}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Actividad \textit {login} con tel\IeC {\'e}fono}}{40}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Actividad \textit {login} con correo y contrase\IeC {\~n}a}}{40}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Cambio de contrase\IeC {\~n}a}}{40}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Autenticaci\IeC {\'o}n docente}}{41}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Actividad Crear Grupo}}{42}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces \textit {ListView} vs \textit {RecyclerView}}}{43}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Ejemplo de un grupo}}{43}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Bot\IeC {\'o}n para crear evento}}{48}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Men\IeC {\'u} principal}}{48}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Di\IeC {\'a}logo para borrar un chat}}{49}{figure.5.14}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {15}{\ignorespaces Dise\IeC {\~n}o de la base de datos no relacional}}{53}{figure.Alph0.15}

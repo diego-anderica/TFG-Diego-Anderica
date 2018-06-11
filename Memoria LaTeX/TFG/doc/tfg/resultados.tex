@@ -11,11 +11,39 @@ Debido a que el equipo de Scrum es reducido, se han tenido que realizar diversos
 	\item \textbf{Equipo de Scrum:} Diego Andérica Richard.
 \end{itemize}
 
-Este capítulo constará de los diferentes Sprints en los que se ha dividido el proyecto, así como su planificación, resultados y reajustes necesarios, si los hubiese. Antes de comenzar con el primer Sprint se ha de tener en cuenta uno de los principales artefactos de la metodología escogida como es la Pila de Producto, puesto que es un elemento fundamental en la metodología de Scrum ya que es donde se reflejan todas las características y requisitos que debe poseer la aplicación final.
+Este capítulo constará de los diferentes Sprints en los que se ha dividido el proyecto, así como su planificación y correspondientes resultados de la realización de las tareas. Antes de comenzar con el primer Sprint se ha de tener en cuenta uno de los artefactos más importantes de la metodología escogida como es la Pila de Producto, puesto que es un elemento fundamental en la metodología de Scrum ya que es donde se reflejan todas las características y requisitos que debe poseer la aplicación final, siendo elaborada en el Sprint 0 con la ayuda del dueño del producto.
 
-\section{Planificación inicial}
+\clearpage
+
+\section{Planificación inicial (Sprint 0)}
+Durante este primer Sprint se realizan tareas de vital importancia como fijar qué elementos debe poseer la solución final (Pila de Producto), el coste de llevar a cabo el proyecto o la planificación de este. También se debe realizar una tarea de estudio e investigación acerca de la arquitectura que se tiene pensado utilizar junto con las diferentes alternativas que pueden existir actualmente. Para construir la Pila de Producto se realizan diversas reuniones con el dueño del producto, con el fin de establecer las diferentes historias de usuario y las tareas que deberán abordarse para completar cada una de ellas.
+
 \subsection{Pila de Producto}
-La Pila de Producto, como se ha explicado con anterioridad, se trata de una lista de todo lo que puede ser necesario en el producto. En este caso, la Pila de Producto es la siguiente:
+La Pila de Producto, como se ha explicado con anterioridad, se trata de una lista de todo lo que puede ser necesario en el producto. Durante las reuniones que se han producido antes de comenzar el proyecto, el equipo de Scrum ha fijado las historias de usuario, así como su duración estimada y la prioridad para cada una. En este caso, la Pila de Producto es la que se muestra en la Tabla \ref{tab:pilaproducto}:
+
+\begin{table}[!htbp]
+	\centering
+	{\small
+		\input{tables/product_backlog.tex}
+	}
+	\caption[Pila de Producto]
+	{Pila de Producto}
+	\label{tab:pilaproducto}
+\end{table}
+
+\subsection{Costes del proyecto}
+Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solución, aplicación o producto suele conllevar determinados costes que han de ser estudiados y abordados antes del comienzo de los mismos. En este caso, debido a la tecnología y servicios escogidos, el proyecto no implica realizar un desembolso en nuevos materiales, productos o hardware de terceros, por lo que únicamente se deberán tener en cuenta los costes derivados del desarrollo de las soluciones en cuanto a software se refiere. Por tanto, en referencia a lo publicado en el \acf{BOE} con fecha 18 de enero de 2017, en base a la tabla de niveles salariales acordada en el XVIII Convenio Colectivo Nacional de Empresas De Ingeniería Y Oficinas de Estudios Técnicos, el coste estimado del desarrollo del presente proyecto es el mostrado en la Tabla:
+
+\subsection{Planificación temporal}
+A continuación se presenta un gráfico sencillo (Figura \ref{fig:plantempo}) que representa la planificación temporal estimada para cada uno de los Sprints en un primer momento.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{/Planificacion_Temporal.png}
+		\caption{Planificación Temporal}
+		\label{fig:plantempo}
+	\end{center}
+\end{figure}
 
 \section{Sprint 1: Diseño de una plataforma Web para la gestión de los usuarios}
 Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulte mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que ofrecerá una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore.
@@ -23,7 +51,7 @@ Este primer Sprint está enfocado a diseñar e implementar una plataforma Web pa
 \subsection{Planificación del Sprint}
 Se ha elegido una única historia de usuario para la consecución de este Sprint durante la reunión inicial, representada en la Tabla \ref{tab:historia1}.
 
-\begin{table}[hp]
+\begin{table}[!htbp]
 	\centering
 	{\small
 		\input{tables/historias_de_usuario/sprint_1/historia_1.tex}
@@ -32,6 +60,8 @@ Se ha elegido una única historia de usuario para la consecución de este Sprint
 	{Historia de Usuario 1}
 	\label{tab:historia1}
 \end{table}
+
+\clearpage
 
 %TODO: Extracto código algoritmo MD5
 %TODO: LOPD
@@ -100,6 +130,8 @@ En esta primera funcionalidad, el administrador tiene la opción de rellenar un 
 \noindent \underline{Dar de Baja} \newline
 Al entrar en esta página, se dispone de una lista desplegable en la que se cargarán todas las familias registradas en la base de datos. Al seleccionar una de ellas, se cargarán automáticamente en una tabla los datos de la misma. Como medida adicional contra el borrado accidental, la página pedirá al usuario que confirme la acción de borrado solicitada antes de ser llevada a cabo.
 
+\clearpage
+
 \noindent \underline{Consultar Usuarios} \newline
 De manera similar, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos. Si se pulsa el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
 
@@ -109,12 +141,10 @@ Esta funcionalidad se ha implementado mediante el uso de una lista desplegable q
 \section{Sprint 2: Creación de la aplicación Android y creación de chats grupales}
 Este Sprint está dedicado íntegramente a la aplicación para dispositivos móviles, con lo que esto conlleve en cuanto a las tareas de diseño y comunicación con la base de datos. De esta manera, los docentes (que serán los administradores de los chats) serán los únicos capaces de crear uno y las familias podrán ver todos a los que han sido añadidas. También cada uno de los usuarios de las familias será capaz de enviar mensajes que aparecerán en el grupo acompañados de su nombre junto con la fecha y hora de envío.
 
-\newpage
-
 \subsection{Planificación del Sprint}
 Para este segundo Sprint se han seleccionado las siguientes historias de usuario:
 
-\begin{table}[hp]
+\begin{table}[!htbp]
 	\centering
 	{\small
 		\input{tables/historias_de_usuario/sprint_2/historia_1.tex}
@@ -124,7 +154,7 @@ Para este segundo Sprint se han seleccionado las siguientes historias de usuario
 	\label{tab:historia2}
 \end{table}
 
-\begin{table}[hp]
+\begin{table}[!htbp]
 	\centering
 	{\small
 		\input{tables/historias_de_usuario/sprint_2/historia_2.tex}
@@ -134,7 +164,7 @@ Para este segundo Sprint se han seleccionado las siguientes historias de usuario
 	\label{tab:historia3}
 \end{table}
 
-\begin{table}[hp]
+\begin{table}[!htbp]
 	\centering
 	{\small
 		\input{tables/historias_de_usuario/sprint_2/historia_3.tex}
@@ -152,7 +182,7 @@ Esta tarea requiere de la integración previa de Firebase con la aplicación And
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/capturas_app/login1.png}
+		\includegraphics[width=0.3\textwidth]{/capturas_app/login1.png}
 		\caption{Actividad inicial}
 		\label{fig:login1}
 	\end{center}
@@ -164,7 +194,7 @@ En el caso de seleccionar el número de teléfono como método de entrada, la ap
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/capturas_app/logintfno.png}
+		\includegraphics[width=0.3\textwidth]{/capturas_app/logintfno.png}
 		\caption{Actividad \textit{login} con teléfono}
 		\label{fig:logintfno}
 	\end{center}
@@ -172,24 +202,22 @@ En el caso de seleccionar el número de teléfono como método de entrada, la ap
 
 Por el contrario, si el usuario decide entrar a la aplicación mediante un correo electrónico y una contraseña, este deberá introducir ambos campos (Figura \ref{fig:logincorreo}) y, de nuevo, se realizará una primera comprobación de su existencia en la base de datos. En caso de que sea la primera vez que se accede a la aplicación no tendrá contraseña asignada, por lo que la contraseña que se introduzca por primera vez será la que el sistema utilizará para su identificación en futuras ocasiones.
 
-\begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/capturas_app/logincorreo.png}
-		\caption{Actividad \textit{login} con correo y contraseña}
-		\label{fig:logincorreo}
-	\end{center}
-\end{figure}
-
-\newpage
-
 Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo mediante la función <<¿Has olvidado tu contraseña?>>, en la que deberá introducir su correo y, acto seguido, el sistema enviará un mensaje de recuperación a la dirección indicada siempre que se encuentre registrada en la base de datos. Dicho mensaje contendrá una dirección Web a la que el usuario debe ir para introducir su nueva contraseña (Figura \ref{fig:cambiopass}). Una vez finalizado el proceso, podrá acceder al sistema con su nueva clave.
 
 \begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=0.3\textwidth]{/capturas_app/cambiopass.png}
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.6\textwidth]{/capturas_app/logincorreo.png}
+		\caption{Actividad \textit{login} con correo y contraseña}
+		\label{fig:logincorreo}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.7\textwidth]{/capturas_app/cambiopass.png}
 		\caption{Cambio de contraseña}
 		\label{fig:cambiopass}
-	\end{center}
+	\end{minipage}
 \end{figure}
 
 \clearpage
@@ -322,7 +350,7 @@ En este Sprint se han seleccionado las siguientes historias de usuario:
 	\label{tab:historia8}
 \end{table}
 
-\begin{table}[hp]
+\begin{table}[!htbp]
 	\centering
 	{\small
 		\input{tables/historias_de_usuario/sprint_4/historia_4.tex}
