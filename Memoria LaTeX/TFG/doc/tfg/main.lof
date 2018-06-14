@@ -4,38 +4,39 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Logotipo de <<Pap\IeC {\'a}s 2.0>>}}{1}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Captura conversaci\IeC {\'o}n madres}}{3}{figure.1.2}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Logotipo de <<Pap\IeC {\'a}s 2.0>>\relax }}{1}{figure.caption.11}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Captura conversaci\IeC {\'o}n inadecuada\relax }}{3}{figure.caption.14}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Imagotipo de WhatsApp}}{9}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Isotipo de Telegram}}{11}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Imagotipo de Slack}}{12}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Isologo de Skype}}{14}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Isotipo de Signal}}{15}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Tweet} de Snowden sobre Signal}}{15}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Imagotipo de Wickr}}{17}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Isologo de miColegioApp}}{19}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Isologo de BabyNotez}}{19}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Isotipo de TokApp School}}{20}{figure.3.10}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Imagotipo de WhatsApp\relax }}{9}{figure.caption.16}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Isotipo de Telegram\relax }}{11}{figure.caption.17}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Imagotipo de Slack\relax }}{12}{figure.caption.19}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Isologo de Skype\relax }}{14}{figure.caption.21}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Isotipo de Signal\relax }}{15}{figure.caption.23}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Tweet} de Snowden sobre Signal\relax }}{15}{figure.caption.24}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Imagotipo de Wickr\relax }}{17}{figure.caption.25}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Isologo de miColegioApp\relax }}{19}{figure.caption.27}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Isologo de BabyNotez\relax }}{19}{figure.caption.28}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Isotipo de TokApp School\relax }}{20}{figure.caption.29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Burn-down chart}}{25}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Informaci\IeC {\'o}n de Windows}}{26}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Tablero Kanban en GitHub}}{27}{figure.4.3}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Gr\IeC {\'a}fico \textit {Burn-down}\relax }}{25}{figure.caption.30}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Informaci\IeC {\'o}n de Windows\relax }}{26}{figure.caption.32}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Tablero Kanban en GitHub\relax }}{27}{figure.caption.33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Planificaci\IeC {\'o}n Temporal}}{33}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Login de la Web}}{35}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces P\IeC {\'a}gina Principal de la Web}}{36}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Actividad inicial}}{39}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Actividad \textit {login} con tel\IeC {\'e}fono}}{40}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Actividad \textit {login} con correo y contrase\IeC {\~n}a}}{40}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Cambio de contrase\IeC {\~n}a}}{40}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Autenticaci\IeC {\'o}n docente}}{41}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Actividad Crear Grupo}}{42}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces \textit {ListView} vs \textit {RecyclerView}}}{43}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Ejemplo de un grupo}}{43}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Bot\IeC {\'o}n para crear evento}}{48}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Men\IeC {\'u} principal}}{48}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Di\IeC {\'a}logo para borrar un chat}}{49}{figure.5.14}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Planificaci\IeC {\'o}n Temporal\relax }}{33}{figure.caption.37}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Login de la Web\relax }}{36}{figure.caption.39}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces P\IeC {\'a}gina Principal de la Web\relax }}{36}{figure.caption.40}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Actividad inicial\relax }}{39}{figure.caption.44}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Actividad \textit {login} con tel\IeC {\'e}fono\relax }}{40}{figure.caption.45}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Actividad \textit {login} con correo y contrase\IeC {\~n}a\relax }}{41}{figure.caption.46}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Cambio de contrase\IeC {\~n}a\relax }}{41}{figure.caption.46}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Autenticaci\IeC {\'o}n del docente\relax }}{42}{figure.caption.47}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Actividad Crear Grupo\relax }}{43}{figure.caption.48}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces \textit {ListView} vs \textit {RecyclerView}\relax }}{44}{figure.caption.49}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Ejemplo de un grupo\relax }}{44}{figure.caption.49}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Bot\IeC {\'o}n para crear evento\relax }}{49}{figure.caption.55}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Men\IeC {\'u} principal\relax }}{49}{figure.caption.56}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Di\IeC {\'a}logo para borrar un chat\relax }}{50}{figure.caption.57}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {15}{\ignorespaces Dise\IeC {\~n}o de la base de datos no relacional}}{53}{figure.Alph0.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Dise\IeC {\~n}o de la Base de Datos no Relacional\relax }}{55}{figure.caption.59}

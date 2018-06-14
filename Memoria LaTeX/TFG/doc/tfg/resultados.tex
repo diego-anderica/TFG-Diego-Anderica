@@ -31,10 +31,22 @@ La Pila de Producto, como se ha explicado con anterioridad, se trata de una list
 	\label{tab:pilaproducto}
 \end{table}
 
-\subsection{Costes del proyecto}
-Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solución, aplicación o producto suele conllevar determinados costes que han de ser estudiados y abordados antes del comienzo de los mismos. En este caso, debido a la tecnología y servicios escogidos, el proyecto no implica realizar un desembolso en nuevos materiales, productos o hardware de terceros, por lo que únicamente se deberán tener en cuenta los costes derivados del desarrollo de las soluciones en cuanto a software se refiere. Por tanto, en referencia a lo publicado en el \acf{BOE} con fecha 18 de enero de 2017, en base a la tabla de niveles salariales acordada en el XVIII Convenio Colectivo Nacional de Empresas De Ingeniería Y Oficinas de Estudios Técnicos, el coste estimado del desarrollo del presente proyecto es el mostrado en la Tabla:
+\clearpage
 
-\subsection{Planificación temporal}
+\subsection{Costes del Proyecto}
+Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solución, aplicación o producto suele conllevar determinados costes que han de ser estudiados y abordados antes del comienzo de los mismos. En este caso, debido a la tecnología y servicios escogidos, el proyecto no implica realizar un desembolso en nuevos materiales, productos o hardware de terceros, por lo que únicamente se deberán tener en cuenta los costes derivados del desarrollo de las soluciones en cuanto a software se refiere. Por tanto, en referencia a lo publicado en el \acf{BOE} con fecha 18 de enero de 2017, en base a la tabla de niveles salariales acordada en el XVIII Convenio Colectivo Nacional de Empresas De Ingeniería Y Oficinas de Estudios Técnicos \cite{BOE2017}, el coste estimado del desarrollo del presente proyecto es el mostrado en la Tabla \ref{tab:costesproyecto}:
+
+\begin{table}[!htbp]
+	\centering
+	{\small
+		\input{tables/costes_proyecto.tex}
+	}
+	\caption[Coste del Proyecto]
+	{Coste del Proyecto}
+	\label{tab:costesproyecto}
+\end{table}
+
+\subsection{Planificación Temporal}
 A continuación se presenta un gráfico sencillo (Figura \ref{fig:plantempo}) que representa la planificación temporal estimada para cada uno de los Sprints en un primer momento.
 
 \begin{figure}[!h]
@@ -44,6 +56,8 @@ A continuación se presenta un gráfico sencillo (Figura \ref{fig:plantempo}) qu
 		\label{fig:plantempo}
 	\end{center}
 \end{figure}
+
+\clearpage
 
 \section{Sprint 1: Diseño de una plataforma Web para la gestión de los usuarios}
 Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulte mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que ofrecerá una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore.
@@ -60,8 +74,6 @@ Se ha elegido una única historia de usuario para la consecución de este Sprint
 	{Historia de Usuario 1}
 	\label{tab:historia1}
 \end{table}
-
-\clearpage
 
 %TODO: Extracto código algoritmo MD5
 %TODO: LOPD
@@ -130,8 +142,6 @@ En esta primera funcionalidad, el administrador tiene la opción de rellenar un 
 \noindent \underline{Dar de Baja} \newline
 Al entrar en esta página, se dispone de una lista desplegable en la que se cargarán todas las familias registradas en la base de datos. Al seleccionar una de ellas, se cargarán automáticamente en una tabla los datos de la misma. Como medida adicional contra el borrado accidental, la página pedirá al usuario que confirme la acción de borrado solicitada antes de ser llevada a cabo.
 
-\clearpage
-
 \noindent \underline{Consultar Usuarios} \newline
 De manera similar, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos. Si se pulsa el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
 
@@ -182,7 +192,7 @@ Esta tarea requiere de la integración previa de Firebase con la aplicación And
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.3\textwidth]{/capturas_app/login1.png}
+		\includegraphics[width=0.31\textwidth]{/capturas_app/login1.png}
 		\caption{Actividad inicial}
 		\label{fig:login1}
 	\end{center}
@@ -194,7 +204,7 @@ En el caso de seleccionar el número de teléfono como método de entrada, la ap
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.3\textwidth]{/capturas_app/logintfno.png}
+		\includegraphics[width=0.35\textwidth]{/capturas_app/logintfno.png}
 		\caption{Actividad \textit{login} con teléfono}
 		\label{fig:logintfno}
 	\end{center}
@@ -202,13 +212,15 @@ En el caso de seleccionar el número de teléfono como método de entrada, la ap
 
 Por el contrario, si el usuario decide entrar a la aplicación mediante un correo electrónico y una contraseña, este deberá introducir ambos campos (Figura \ref{fig:logincorreo}) y, de nuevo, se realizará una primera comprobación de su existencia en la base de datos. En caso de que sea la primera vez que se accede a la aplicación no tendrá contraseña asignada, por lo que la contraseña que se introduzca por primera vez será la que el sistema utilizará para su identificación en futuras ocasiones.
 
+\clearpage
+
 Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo mediante la función <<¿Has olvidado tu contraseña?>>, en la que deberá introducir su correo y, acto seguido, el sistema enviará un mensaje de recuperación a la dirección indicada siempre que se encuentre registrada en la base de datos. Dicho mensaje contendrá una dirección Web a la que el usuario debe ir para introducir su nueva contraseña (Figura \ref{fig:cambiopass}). Una vez finalizado el proceso, podrá acceder al sistema con su nueva clave.
 
 \begin{figure}[!h]
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.6\textwidth]{/capturas_app/logincorreo.png}
+		\includegraphics[width=0.7\textwidth]{/capturas_app/logincorreo.png}
 		\caption{Actividad \textit{login} con correo y contraseña}
 		\label{fig:logincorreo}
 	\end{minipage}%
@@ -227,7 +239,7 @@ Por otra parte, si quien quiere acceder a la aplicación es un docente, este deb
 \begin{figure}[!h]
 	\begin{center}
 		\includegraphics[width=0.35\textwidth]{/capturas_app/logindocente.png}
-		\caption{Autenticación docente}
+		\caption{Autenticación del docente}
 		\label{fig:logindocente}
 	\end{center}
 \end{figure}
@@ -240,7 +252,7 @@ Una vez que el docente se ha identificado en el sistema y ha accedido a la activ
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/capturas_app/creargrupo.png}
+		\includegraphics[width=0.35\textwidth]{/capturas_app/creargrupo.png}
 		\caption{Actividad Crear Grupo}
 		\label{fig:creargrupo}
 	\end{center}
@@ -260,7 +272,7 @@ Por último, la principal función de la actividad de grupo es la de mostrar tod
 		\centering
 		\includegraphics[width=1\linewidth]{listview.png}
 		\caption{\textit{ListView} vs \textit{RecyclerView}}
-		\label{fig:listview}
+		\label{fig:listview}{\url{https://goo.gl/2DreNc} (\url{www.medium.com})}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
@@ -308,7 +320,7 @@ El servicio \textit{Tone Analyzer} puede analizar una única oración o un conju
 
 Por tanto, en cuanto a tonos relacionados con las emociones, se han considerado como negativos el enfado, el miedo y la tristeza, quedando la felicidad como único tono positivo o deseable dentro de una conversación de chat. Por otra parte, en cuanto a los tonos del lenguaje, se han considerado como tonos de <<refuerzo>> para los tonos emocionales. Es decir, si se ha detectado tristeza con tono de seguridad, agravará la puntuación del mensaje y, por consiguiente, la puntuación total del usuario en el chat. Lo mismo ocurriría con la combinación de enfado y analítico aunque, en este caso, el tono analítico tendría menos peso que el de seguridad ya que se han asignado diferentes pesos por defecto a cada uno de los tonos. Puesto que se ha considerado el enfado como el menos deseable, se le ha asignado un 33.333\%; a la tristeza, un 29.166\%; al miedo, un 29.166\%; y a la alegría, un 8.333\%. De esta manera, los tonos considerados como <<negativos>> bajarán más rápidamente la puntuación del usuario y sus mensajes, siendo más difícil aumentarla. En cuanto a los pesos en tanto por uno de los tonos del lenguaje se han determinado los siguientes valores: para el analítico, un 0.666; para el de seguridad, un 0.166; y para el tentativo, un 0.166. Para estos últimos tonos también se dispone de otro valor para especificar el peso máximo que se puede añadir o sustraer a los tonos emocionales siendo, por defecto, de un 10\%. Es decir, los tonos del lenguaje podrán sustraer o añadir hasta un máximo de 10 unidades a la puntuación obtenida de los tonos emocionales. Todos estos valores se especifican por defecto al crear un chat y son independientes entre los diferentes documentos de chat de la base de datos, siendo posible su modificación, asignando diferentes pesos en cada uno de los chats.
 
-Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de cada mensaje (Figura ). Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje mediante una actividad que informa acerca de los datos del chat, en la que se visualiza su nombre y una lista de sus integrantes (Figura ).
+Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de cada mensaje (Figura ). Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje mediante una actividad que se desarrollará en el siguiente Sprint cuya principal función será la de informar acerca de los datos del chat como el nombre (también se podrá modificar) y una lista de sus integrantes.
 
 \clearpage
 
@@ -387,7 +399,7 @@ Esta funcionalidad está disponible para todos los usuarios desde la actividad p
 \end{figure}
 
 \subsubsection{Eliminar y cambiar nombre de un chat}
-Mediante estas opciones se facilita la tarea de gestión de los chats a los administradores de los mismos. Para eliminar un chat bastará con dejarlo pulsado en la lista de la actividad principal y se mostrará un cuadro de diálogo confirmando la eliminación (Figura \ref{fig:borrarchat}).
+Mediante estas opciones se facilita la tarea de gestión de los chats a los administradores de los mismos. Para eliminar un chat bastará con dejarlo pulsado en la lista de la actividad principal y se mostrará un cuadro de diálogo confirmando la eliminación (Figura \ref{fig:borrarchat}). Por otra parte, si lo que se desea es cambiar el nombre de un chat, habrá que entrar en el mismo y pulsar en el botón <<Info.>>, que se encuentra en la parte superior derecha. Inmediatamente se accederá a la actividad de información de grupo que se ha desarrollado para, además de cambiar el nombre, poder observar qué familias lo conforman mediante una lista. Además, al lado de cada usuario se puede consultar un número en forma de porcentaje que representa el tono general que ha empleado en el grupo, siendo el 100\% el mejor valor posible, como se ha detallado en el Sprint anterior.
 
 \begin{figure}[!h]
 	\begin{center}
