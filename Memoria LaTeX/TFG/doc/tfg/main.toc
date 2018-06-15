@@ -68,16 +68,16 @@
 \contentsline {section}{\numberline {5.2}Sprint 1: Dise\IeC {\~n}o de una plataforma Web para la gesti\IeC {\'o}n de los usuarios}{34}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Planificaci\IeC {\'o}n del Sprint}{34}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Tareas del Sprint}{34}{subsection.5.2.2}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la base de datos}{34}{subsection.5.2.2}
+\contentsline {subsubsection}{Dise\IeC {\~n}o inicial de la base de datos}{34}{subsection.5.2.2}
 \contentsline {subsubsection}{Implementaci\IeC {\'o}n de la plataforma Web}{35}{subsection.5.2.2}
 \contentsline {section}{\numberline {5.3}Sprint 2: Creaci\IeC {\'o}n de la aplicaci\IeC {\'o}n Android y creaci\IeC {\'o}n de chats grupales}{38}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Planificaci\IeC {\'o}n del Sprint}{38}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Tareas del Sprint}{39}{subsection.5.3.2}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de acceso}{39}{subsection.5.3.2}
 \contentsline {subsubsection}{Adecuaci\IeC {\'o}n de la base de datos}{42}{figure.caption.47}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de creaci\IeC {\'o}n de grupos}{43}{figure.caption.47}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de creaci\IeC {\'o}n de chats}{43}{figure.caption.47}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad principal}{44}{figure.caption.48}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de grupo}{44}{figure.caption.48}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la actividad de chat}{44}{figure.caption.48}
 \contentsline {section}{\numberline {5.4}Sprint 3: Integraci\IeC {\'o}n con los servicios Watson de IBM}{45}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Planificaci\IeC {\'o}n del Sprint}{45}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Tareas del Sprint}{45}{subsection.5.4.2}
