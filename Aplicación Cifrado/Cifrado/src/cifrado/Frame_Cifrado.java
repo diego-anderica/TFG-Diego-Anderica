@@ -93,8 +93,8 @@ public class Frame_Cifrado extends javax.swing.JFrame {
                             .addComponent(lblContrasena))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtResultado)
-                            .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE))
+                            .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                            .addComponent(txtResultado))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCopiar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -168,22 +168,22 @@ public class Frame_Cifrado extends javax.swing.JFrame {
         if (txtPass.getPassword().length == 0) {
             JOptionPane.showMessageDialog(this, "¡El campo de contraseña no puede estar vacío!");
         } else {
-            try {
-                MessageDigest md = MessageDigest.getInstance("MD5");
-                byte[] messageDigest = md.digest(txtPass.getText().getBytes());
-                BigInteger number = new BigInteger(1, messageDigest);
-                String hashtext = number.toString(16);
+            try{
+                MessageDigest md = MessageDigest.getInstance("SHA1");
+                StringBuffer sb = new StringBuffer();
+                byte[] result = md.digest(txtPass.getText().getBytes());
 
-                while (hashtext.length() < 32) {
-                    hashtext = "0" + hashtext;
+                for (int i = 0; i < result.length; i++) {
+                    sb.append(Integer.toString((result[i] & 0xff) + 0x100, 16).substring(1));
                 }
 
-                txtResultado.setText(hashtext);
-            }catch (NoSuchAlgorithmException e) {
+                txtResultado.setText(sb.toString());
+                
+            }catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
-            //http://www.yoelprogramador.com/como-encriptar-contrasenas-en-md5-en-java/
+            
+            //http://www.sha1-online.com/sha1-java/
         }
     }//GEN-LAST:event_btnCifrarActionPerformed
 

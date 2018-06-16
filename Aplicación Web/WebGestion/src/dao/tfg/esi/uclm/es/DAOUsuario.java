@@ -3,18 +3,19 @@ package dao.tfg.esi.uclm.es;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
-public class DAOUsuario {
+import javax.xml.bind.DatatypeConverter;
+
+public class DAOUsuario {	
 	public static String encriptar(String pwd) throws Exception {
-		MessageDigest md = MessageDigest.getInstance("MD5");
-		byte[] messageDigest = md.digest(pwd.getBytes());
-		BigInteger number = new BigInteger(1, messageDigest);
-		String hashtext = number.toString(16);
+		MessageDigest md = MessageDigest.getInstance("SHA1");
+        StringBuffer sb = new StringBuffer();
+        
+        byte[] result = md.digest(pwd.getBytes());
 
-		while (hashtext.length() < 32) {
-			hashtext = "0" + hashtext;
-		}
-		
-		return hashtext;
+        for (int i = 0; i < result.length; i++) {
+            sb.append(Integer.toString((result[i] & 0xff) + 0x100, 16).substring(1));
+        }
 
+        return sb.toString();
 	}
 }
