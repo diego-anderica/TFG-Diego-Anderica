@@ -116,11 +116,6 @@ function comprobarCampos() {
 		}
 	}
 	
-	if ((txtFamilia.value == "familia" || txtFamilia.value == "") && continuar) {
-		alert ("No se ha generado un nombre de familia válido. Se asignará uno automáticamente.");
-		
-	}
-	
 	generarFamilia();
 	
 	return continuar;

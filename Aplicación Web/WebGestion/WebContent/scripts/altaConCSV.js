@@ -1,7 +1,7 @@
 function comprobarCompatibilidad() {
-	// Check for the various File API support.
+	
 	if (window.FileReader) {
-		// FileReader are supported.
+		
 	} else {
 		alert("Su navegador no soporta la carga de archivos.");
 		$("#csvFile").prop("disabled", true);

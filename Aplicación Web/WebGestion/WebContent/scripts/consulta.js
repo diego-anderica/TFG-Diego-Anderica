@@ -111,9 +111,9 @@ function buscarConFiltro(filtro, txtBusqueda){
 	} else if (filtro == "Nombre Tutor 2") {
 		campoConsulta = "NombreTutor2";
 	} else if (filtro == "Apellido 1 Tutor 2") {
-		campoConsulta = "Apellido1Tutor1";
+		campoConsulta = "Apellido1Tutor2";
 	} else if (filtro == "Apellido 2 Tutor 2") {
-		campoConsulta = "Apellido1Tutor1";
+		campoConsulta = "Apellido2Tutor2";
 	} else if (filtro == "Tfno. Tutor 1") {
 		campoConsulta = "TelefonoTutor1";
 	} else if (filtro == "Tfno. Tutor 2") {
@@ -127,10 +127,14 @@ function buscarConFiltro(filtro, txtBusqueda){
 	if (campoConsulta != null){
 		usuariosRef.where(campoConsulta, "==", txtBusqueda).get()
 	    .then(function(querySnapshot) {
-	        querySnapshot.forEach(function(doc) {
-		    		myData = doc.data();
-		        rellenarFila(doc.id, myData);
-	        });
+	    		if (querySnapshot.size == 0) {
+	    			alert("No se ha encontrado ningún usuario con los datos especificados.");
+	    		} else {
+		        querySnapshot.forEach(function(doc) {
+			    		myData = doc.data();
+			        rellenarFila(doc.id, myData);
+		        });
+	    		}
 	    })
 	    .catch(function(error) {
 		    alert("Ha ocurrido un error en la comunicación con el servidor de base de datos.");
