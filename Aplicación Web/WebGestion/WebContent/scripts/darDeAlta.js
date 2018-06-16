@@ -47,9 +47,22 @@ function darDeAlta() {
 	if(comprobarCampos()) {
 		if (confirm("¿Los datos introducidos son correctos?")) {
 			document.body.style.cursor = "progress";
+			desactivarFormularios(true);
 			crearDocumento(document.getElementById("txtFamilia").value, 0);
 		}
 	}
+}
+
+function desactivarFormularios(valor) {
+	if (valor == true) {
+		$('#frmManual').find('input, textarea, button, select').prop('disabled', valor);
+		$('#frmCSV').find('input, textarea, button, select').prop('disabled',valor);
+	} else {
+		$('#frmManual').find('input, textarea, button, select').prop('disabled', valor);
+		$('#txtFamilia').prop('disabled', true);
+		$('#frmCSV').find('input, textarea, button, select').prop('disabled', valor);
+	}
+	
 }
 
 function comprobarCampos() {
@@ -65,7 +78,7 @@ function comprobarCampos() {
 	var txtTfnoT2 = document.getElementById("txtTfnoT2");
 	var txtCorreoT2 = document.getElementById("txtCorreoT2");
 	
-	if (txtNombreT1.value == "" || txtApellido1T1.value == "") {
+	if (txtNombreT1.value == "" || txtApellido1T1.value == "" || txtApellido2T1.value == "") {
 		alert ("Escriba nombre y apellidos válidos en los campos del Tutor 1.");
 	} else {
 		if (txtTfnoT1.value == "" && txtCorreoT1.value == "") {
@@ -147,7 +160,9 @@ function crearDocumento(familia, i) {
 				    alert ("Se ha creado el usuario " + familia + i);
 				    document.body.style.cursor = "auto";
 				    document.getElementById("frmManual").reset();
+				    desactivarFormularios(false);
 					});
+
 	    }
 	});
 
