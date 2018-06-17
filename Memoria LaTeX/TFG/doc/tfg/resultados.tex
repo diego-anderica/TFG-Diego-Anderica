@@ -60,10 +60,10 @@ A continuación se presenta un gráfico sencillo (Figura \ref{fig:plantempo}) qu
 \clearpage
 
 \section{Sprint 1: Diseño de una plataforma Web para la gestión de los usuarios}
-Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulte mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore.
+Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulte mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que nadie conozca la contraseña en claro del nuevo administrador.
 
 \subsection{Planificación del Sprint}
-Se ha elegido una única historia de usuario para la consecución de este Sprint durante la reunión inicial, representada en la Tabla \ref{tab:historia1}.
+Se han elegido las dos primeras historias de usuario para la consecución de este Sprint durante la reunión inicial (Tablas \ref{tab:historia1} y \ref{tab:historia2}).
 
 \begin{table}[!htbp]
 	\centering
@@ -73,6 +73,16 @@ Se ha elegido una única historia de usuario para la consecución de este Sprint
 	\caption[Historia de Usuario 1]
 	{Historia de Usuario 1}
 	\label{tab:historia1}
+\end{table}
+
+\begin{table}[!htbp]
+	\centering
+	{\small
+		\input{tables/historias_de_usuario/sprint_1/historia_2.tex}
+	}
+	\caption[Historia de Usuario 2]
+	{Historia de Usuario 2}
+	\label{tab:historia2}
 \end{table}
 
 %TODO: Extracto código algoritmo MD5
@@ -108,7 +118,7 @@ Firebase Firestore ofrece una base de datos no relacional, lo que significa que 
 	\item \textbf{UsuariosWeb}.
 		\begin{itemize}
 			\item Correo electrónico.
-			\item Contraseña MD5.
+			\item Contraseña.
 		\end{itemize}
 		
 \end{itemize}
@@ -116,7 +126,7 @@ Firebase Firestore ofrece una base de datos no relacional, lo que significa que 
 En cuanto a la gestión de contraseñas, no es necesario guardarlas en la base de datos, a excepción de las de los administradores con acceso al sitio Web puesto que, al hacer uso de la funcionalidad de Firebase \textit{Authentication}, éstas se guardan internamente en el proyecto y únicamente son conocidas por la herramienta, asignando además un identificador único de usuario a cada uno de los usuarios registrados.
 
 \subsubsection{Implementación de la plataforma Web}
-En el centro educativo existirá uno o varios administradores con acceso a la página Web que se encargarán de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo MD5. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en la página Web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una explicación de cada uno.
+En el centro educativo existirá uno o varios administradores con acceso a la página Web que se encargarán de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo SHA-1, que se obtendrá gracias a una aplicación desarrollada en la siguiente historia de usuario. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en la página Web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una explicación de cada uno.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -142,15 +152,28 @@ En esta primera funcionalidad, el administrador tiene la opción de rellenar un 
 \noindent \underline{Dar de Baja} \newline
 Al entrar en esta página, se dispone de una lista desplegable en la que se cargarán todas las familias registradas en la base de datos. Al seleccionar una de ellas, se cargarán automáticamente en una tabla los datos de la misma. Como medida adicional contra el borrado accidental, la página pedirá al usuario que confirme la acción de borrado solicitada antes de ser llevada a cabo.
 
+\clearpage
+
 \noindent \underline{Consultar Usuarios} \newline
 De manera similar, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos. Si se pulsa el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
 
 \noindent \underline{Modificar Usuarios} \newline
 Esta funcionalidad se ha implementado mediante el uso de una lista desplegable que carga todas las familias de la base de datos y un formulario que inicialmente se muestra bloqueado para prevenir una modificación accidental de los datos. Al seleccionar uno de estos registros, su información se carga en dicho formulario y al hacer clic sobre el botón de modificar se habilitan los campos para la escritura. Cuando el administrador finalice la modificación de la información, deberá hacer clic de nuevo en un botón para terminar la modificación, siendo preguntado sobre si realmente desea llevarla a cabo. En caso positivo, se sobrescribirá la información de la familia seleccionada en la base de datos.
 
-\clearpage
-
 Como medida adicional de seguridad y en prevención de corrupción de datos, el sitio Web preguntará siempre al usuario si desea salir de la página en la que se encuentre, a excepción de la página de consulta de usuarios, puesto que no implica modificación alguna de datos.
+
+\subsubsection{Desarrollo de una Aplicación Java de Cifrado}
+Ya que un administrador será el responsable de registrar a nuevos administradores en la base de datos, deberá conocer el correo electrónico y la contraseña del nuevo administrador. Para mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java cuya principal función sea la de cifrar la contraseña utilizando el cifrado SHA-1 de este nuevo administrador, que será la que se introduzca en la base de datos. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada. Además, se dispone de un botón para copiarla en el portapapeles.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{/cifrador}
+		\caption{Aplicación de Cifrado}
+		\label{fig:cifrador}
+	\end{center}
+\end{figure}
+
+\clearpage
 
 \section{Sprint 2: Creación de la aplicación Android y creación de chats grupales}
 Este Sprint está dedicado íntegramente a la aplicación para dispositivos móviles, con lo que esto conlleve en cuanto a las tareas de diseño y comunicación con la base de datos. De esta manera, los docentes (que serán los administradores de los chats) serán los únicos capaces de crear uno y las familias podrán ver todos a los que han sido añadidas. También cada uno de los usuarios de las familias será capaz de enviar mensajes que aparecerán en el grupo acompañados de su nombre junto con la fecha y hora de envío.
@@ -163,16 +186,6 @@ Para este segundo Sprint se han seleccionado las siguientes historias de usuario
 	{\small
 		\input{tables/historias_de_usuario/sprint_2/historia_1.tex}
 	}
-	\caption[Historia de Usuario 2]
-	{Historia de Usuario 2}
-	\label{tab:historia2}
-\end{table}
-
-\begin{table}[!htbp]
-	\centering
-	{\small
-		\input{tables/historias_de_usuario/sprint_2/historia_2.tex}
-	}
 	\caption[Historia de Usuario 3]
 	{Historia de Usuario 3}
 	\label{tab:historia3}
@@ -181,11 +194,21 @@ Para este segundo Sprint se han seleccionado las siguientes historias de usuario
 \begin{table}[!htbp]
 	\centering
 	{\small
-		\input{tables/historias_de_usuario/sprint_2/historia_3.tex}
+		\input{tables/historias_de_usuario/sprint_2/historia_2.tex}
 	}
 	\caption[Historia de Usuario 4]
 	{Historia de Usuario 4}
 	\label{tab:historia4}
+\end{table}
+
+\begin{table}[!htbp]
+	\centering
+	{\small
+		\input{tables/historias_de_usuario/sprint_2/historia_3.tex}
+	}
+	\caption[Historia de Usuario 5]
+	{Historia de Usuario 5}
+	\label{tab:historia5}
 \end{table}
 
 \newpage
@@ -299,9 +322,9 @@ En este tercer Sprint se ha seleccionado la siguiente historia de usuario para c
 	{\small
 		\input{tables/historias_de_usuario/sprint_3/historia_1.tex}
 	}
-	\caption[Historia de Usuario 5]
-	{Historia de Usuario 5}
-	\label{tab:historia5}
+	\caption[Historia de Usuario 6]
+	{Historia de Usuario 6}
+	\label{tab:historia6}
 \end{table}
 
 \subsection{Tareas del Sprint}
@@ -345,16 +368,6 @@ En este Sprint se han seleccionado las siguientes historias de usuario:
 	{\small
 		\input{tables/historias_de_usuario/sprint_4/historia_1.tex}
 	}
-	\caption[Historia de Usuario 6]
-	{Historia de Usuario 6}
-	\label{tab:historia6}
-\end{table}
-
-\begin{table}[hp]
-	\centering
-	{\small
-		\input{tables/historias_de_usuario/sprint_4/historia_2.tex}
-	}
 	\caption[Historia de Usuario 7]
 	{Historia de Usuario 7}
 	\label{tab:historia7}
@@ -363,11 +376,21 @@ En este Sprint se han seleccionado las siguientes historias de usuario:
 \begin{table}[hp]
 	\centering
 	{\small
-		\input{tables/historias_de_usuario/sprint_4/historia_3.tex}
+		\input{tables/historias_de_usuario/sprint_4/historia_2.tex}
 	}
 	\caption[Historia de Usuario 8]
 	{Historia de Usuario 8}
 	\label{tab:historia8}
+\end{table}
+
+\begin{table}[hp]
+	\centering
+	{\small
+		\input{tables/historias_de_usuario/sprint_4/historia_3.tex}
+	}
+	\caption[Historia de Usuario 9]
+	{Historia de Usuario 9}
+	\label{tab:historia9}
 \end{table}
 
 \begin{table}[!htbp]
@@ -375,9 +398,9 @@ En este Sprint se han seleccionado las siguientes historias de usuario:
 	{\small
 		\input{tables/historias_de_usuario/sprint_4/historia_4.tex}
 	}
-	\caption[Historia de Usuario 9]
-	{Historia de Usuario 9}
-	\label{tab:historia9}
+	\caption[Historia de Usuario 10]
+	{Historia de Usuario 10}
+	\label{tab:historia10}
 \end{table}
 
 \subsection{Tareas del Sprint}
