@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "352882689555",
+    "firebase_url": "https://tfg-diego-anderica.firebaseio.com",
+    "project_id": "tfg-diego-anderica",
+    "storage_bucket": "tfg-diego-anderica.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352882689555:android:3750eede1ca4ff0e",
+        "android_client_info": {
+          "package_name": "es.uclm.esi.tfg.educhat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352882689555-3j13cikhol0a43u38qmv2a8huo8ohoa2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "es.uclm.esi.tfg.educhat",
+            "certificate_hash": "2d95925890bc676ede6227a2674fa5cadbc61f15"
+          }
+        },
+        {
+          "client_id": "352882689555-0h3al143ntfd13c41pu4pp1hchvcic85.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "352882689555-0h3al143ntfd13c41pu4pp1hchvcic85.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu-mE_XhdnZm8bgFgqd8IFiY5e3_MlIUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352882689555-0h3al143ntfd13c41pu4pp1hchvcic85.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

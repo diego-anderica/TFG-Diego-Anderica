@@ -1,0 +1,120 @@
+<resources>
+    <!--MenuMain-->
+    <string name="app_name">EduChat</string>
+    <string name="mnuBtnCrearChat">Crear nuevo chat...</string>
+    <string name="mnuBtnPerfil">Perfil...</string>
+    <string name="mnuBtnCerrarSesion">Cerrar Sesión...</string>
+    <!--MenuMain-->
+
+    <!--ActivityLogin-->
+    <string name="lblBienvenida">¡Bienvenid@ a EduChat!</string>
+    <string name="lblEntrada">Selecciona el método de entrada...</string>
+    <string name="lblEntradaDocente">Selecciona el método de entrada para docentes</string>
+    <string name="btnEntrarCTfno">Nº de teléfono</string>
+    <string name="btnEntrarCCorreo">Correo y contraseña</string>
+    <string name="btnDocente">Soy Docente</string>
+    <!--ActivityLogin-->
+
+    <!--PhoneActivityLogin-->
+    <string name="lblEntradaTelefono">Introduce un nº de teléfono...</string>
+    <string name="lblInfoTfno">Te enviaremos un SMS con un código de verificación</string>
+    <string name="lblTelefono">Tfno.</string>
+    <string name="btnEnviarCodigo">Enviar Código</string>
+    <string name="lblIntroducirCodigo">Introduce el código que te hemos mandado...</string>
+    <string name="txtCodigo">Código...</string>
+    <string name="btnValidarCodigo">Validar código</string>
+    <string name="lblConfirmar">Confirmar</string>
+    <string name="msgConfirmarTelefono">¿El número de teléfono es</string>
+    <string name="msgIntroducirNumeroTfno">Introduce un número de teléfono</string>
+    <string name="msgIntroduceCodigo">Introduce un código</string>
+    <string name="msgFalloAutenticacion">Ha fallado la autenticación</string>
+    <string name="msgTiempoEsperaAgotado">Ha expirado el tiempo de espera</string>
+    <string name="msgIdentificacionOK">Se ha identificado correctamente</string>
+    <string name="msgErrorIdentificacion">Hubo un error con la identificación</string>
+    <string name="lblCancelar">Cancelar</string>
+    <string name="msgUsuarioNoEncontrado">El usuario no se ha encontrado en la base de datos</string>
+    <!--PhoneActivityLogin-->
+
+    <!--EmailActivityLogin-->
+    <string name="lblEmailLogin">Introduce tu correo y contraseña...</string>
+    <string name="txtCorreo">ejemplo@ejemplo.com</string>
+    <string name="txtContrasena">Contraseña...</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="msgIntroduceCorreo">Introduce una dirección de correo válida</string>
+    <string name="msgIntroduceContrasena">Introduce una contraseña válida</string>
+    <string name="msgContrasenaDebil">La contraseña debe contener al menos 6 caracteres</string>
+    <string name="lblOlvidoContrasena">¿Has olvidado tu contraseña?</string>
+    <string name="btnEnviarCorreo">Enviar correo</string>
+    <string name="lblIntroducirCorreo">Introduce tu correo...</string>
+    <string name="btnVolver">Volver</string>
+    <string name="msgConfirmarCorreo">¿La dirección de correo es</string>
+    <string name="msgCorreoEnviado">Se ha enviado un correo de recuperación a</string>
+    <string name="msgErrorEnvioCorreo">Se ha producido un error al enviar el correo</string>
+    <!--EmailActivityLogin-->
+
+    <!--MainActivity-->
+    <string name="msgCargandoChats">Cargando chats...</string>
+    <string name="lblDialogoSalir">Cerrar sesión</string>
+    <string name="msgDialogoSalir">Confirmar cierre de sesión</string>
+    <string name="msgChatEliminado">Se ha eliminado el chat</string>
+    <string name="lblOpcionesChat">Opciones de chat</string>
+    <string name="mnuEliminarChat">Eliminar chat</string>
+    <string name="msgConfirmarEliminarChat">¿Confirmar eliminación del chat?</string>
+    <!--MainActivity-->
+
+    <!--ActivityCrearChat-->
+    <string name="txtNombreChat">Nombre del chat...</string>
+    <string name="btnCrearChat">Crear chat</string>
+    <string name="lblIntegrantes">Integrantes del chat:</string>
+    <string name="msgErrorBBDD">Ha ocurrido un error al comunicar con la base de datos</string>
+    <string name="msgConfirmarChat">¿Crear nuevo chat?</string>
+    <string name="msgCargandoUsuarios">Cargando usuarios...</string>
+    <string name="msgCreandoChat">Creando nuevo chat...</string>
+    <string name="msgNombreChatError">El nombre del chat no es válido</string>
+    <string name="msgChatNuevo">Ha creado un nuevo chat</string>
+    <string name="btnEnviar">Enviar</string>
+    <string name="txtMensaje">Mensaje</string>
+    <string name="msgNumeroIntegrantes">No se ha seleccionado ningún integrante</string>
+    <!--ActivityCrearChat-->
+
+    <!--ChatActivity-->
+    <string name="msgErrorWatson">Ha ocurrido un error al conectar con el servicio de IBM</string>
+    <string name="msgErrorJSON">Ha ocurrido un error al obtener las credenciales de IBM</string>
+    <!--ChatActivity-->
+
+    <!--MenuChatActivity-->
+    <string name="mnuBtnInfo">Info.</string>
+    <!--MenuChatActivity-->
+
+    <!--MenuInfoChatActivity-->
+    <string name="btnCambiarImagenChat">Cambiar imagen</string>
+    <string name="mnuBtnEliminarChat">Eliminar chat...</string>
+    <string name="btnCambiarNombreChat">Cambiar nombre</string>
+    <string name="lblCambiarNombre">Nuevo Nombre de Chat</string>
+    <string name="msgNombreCambiado">Se ha establecido el nuevo nombre correctamente</string>
+    <string name="lblInfoDeChat">Información del chat</string>
+    <string name="btnAniadirIntegrante">Añadir integrante</string>
+    <!--MenuInfoChatActivity-->
+
+    <!--PerfilActivity-->
+    <string name="btnCambiarImagenPerfil">Cambiar Imagen de Perfil</string>
+    <string name="lblNombreTutor1">Nombre Tutor 1</string>
+    <string name="lblCorreoTutor1">Correo Tutor 1</string>
+    <string name="lblTelefonoTutor1">Teléfono Tutor 1</string>
+    <string name="lblNombreTutor2">Nombre Tutor 2</string>
+    <string name="lblCorreoTutor2">Correo Tutor 2</string>
+    <string name="lblTelefonoTutor2">Teléfono Tutor 2</string>
+    <string name="lblNombreDocente">Nombre</string>
+    <string name="lblCorreoDocente">Correo</string>
+    <string name="lblTelefonoDocente">Teléfono</string>
+    <string name="tituloPerfilUsuarioActivity">Perfil del Usuario</string>
+    <string name="msgSubiendoImagen">Subiendo imagen...</string>
+    <string name="msgImagenSubida">Imagen cambiada correctamente</string>
+    <string name="btnEliminarImagenPerfil">Eliminar imagen de perfil</string>
+    <string name="lblPreguntaBorrar">Borrar imagen de perfil</string>
+    <string name="msgPreguntaBorrar">¿Desea borrar su imagen de perfil?</string>
+    <string name="msgBorradoImagenCorrecto">Se ha borrado la imagen correctamente</string>
+    <string name="msgNoImagen">No se ha definido una imagen previamente</string>
+    <!--PerfilActivity-->
+
+</resources>
