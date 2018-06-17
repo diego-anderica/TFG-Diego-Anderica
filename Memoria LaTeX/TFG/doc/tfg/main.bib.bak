@@ -385,4 +385,21 @@
   url       = {https://boe.es/boe/dias/2017/01/18/pdfs/BOE-A-2017-542.pdf},
 }
 
+@Misc{Firebase2018,
+  author = {Firebase},
+  title  = {Privacidad y Seguridad en Firebase},
+  month  = apr,
+  year   = {2018},
+  note   = {Última visita: 16-06-2018},
+  url    = {https://firebase.google.com/support/privacy/?hl=es-419},
+}
+
+@Misc{,
+  author    = {Oracle},
+  title     = {NetBeans},
+  year      = {2018},
+  timestamp = {2018-06-17},
+  url       = {https://netbeans.org/},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

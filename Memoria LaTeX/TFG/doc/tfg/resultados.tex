@@ -16,7 +16,7 @@ Este capítulo constará de los diferentes Sprints en los que se ha dividido el 
 \clearpage
 
 \section{Planificación inicial (Sprint 0)}
-Durante este primer Sprint se realizan tareas de vital importancia como fijar qué elementos debe poseer la solución final (Pila de Producto), el coste de llevar a cabo el proyecto o la planificación de este. También se debe realizar una tarea de estudio e investigación acerca de la arquitectura que se tiene pensado utilizar junto con las diferentes alternativas que pueden existir actualmente. Para construir la Pila de Producto se realizan diversas reuniones con el dueño del producto, con el fin de establecer las diferentes historias de usuario y las tareas que deberán abordarse para completar cada una de ellas.
+Durante este primer Sprint se realizan tareas de vital importancia como fijar qué elementos debe poseer la solución final (Pila de Producto), el coste de llevar a cabo el proyecto o la planificación temporal de este. También se debe realizar una tarea de estudio e investigación acerca de la arquitectura que se tiene pensado utilizar junto con las diferentes alternativas que pueden existir actualmente. Para construir la Pila de Producto se realizan diversas reuniones con el dueño del producto, con el fin de establecer las diferentes historias de usuario y las tareas que deberán abordarse para completar cada una de ellas.
 
 \subsection{Pila de Producto}
 La Pila de Producto, como se ha explicado con anterioridad, se trata de una lista de todo lo que puede ser necesario en el producto. Durante las reuniones que se han producido antes de comenzar el proyecto, el equipo de Scrum ha fijado las historias de usuario, así como su duración estimada y la prioridad para cada una. En este caso, la Pila de Producto es la que se muestra en la Tabla \ref{tab:pilaproducto}:
@@ -34,7 +34,7 @@ La Pila de Producto, como se ha explicado con anterioridad, se trata de una list
 \clearpage
 
 \subsection{Costes del Proyecto}
-Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solución, aplicación o producto suele conllevar determinados costes que han de ser estudiados y abordados antes del comienzo de los mismos. En este caso, debido a la tecnología y servicios escogidos, el proyecto no implica realizar un desembolso en nuevos materiales, productos o hardware de terceros, por lo que únicamente se deberán tener en cuenta los costes derivados del desarrollo de las soluciones en cuanto a software se refiere. Por tanto, en referencia a lo publicado en el \acf{BOE} con fecha 18 de enero de 2017, en base a la tabla de niveles salariales acordada en el XVIII Convenio Colectivo Nacional de Empresas De Ingeniería Y Oficinas de Estudios Técnicos \cite{BOE2017}, el coste estimado del desarrollo del presente proyecto es el mostrado en la Tabla \ref{tab:costesproyecto}:
+Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solución, aplicación o producto suele conllevar determinados costes que han de ser estudiados y abordados antes del comienzo de los mismos. En este caso, debido a la tecnología y servicios escogidos, el proyecto no implica realizar un desembolso en nuevos materiales, productos o hardware de terceros, por lo que únicamente se deberán tener en cuenta los costes derivados del desarrollo de las soluciones en cuanto a software se refiere. Por tanto, en referencia a lo publicado en el \acf{BOE} con fecha 18 de enero de 2017, y en base a la tabla de niveles salariales acordada en el XVIII Convenio Colectivo Nacional de Empresas De Ingeniería Y Oficinas de Estudios Técnicos \cite{BOE2017}, el coste estimado del desarrollo del presente proyecto es el mostrado en la Tabla \ref{tab:costesproyecto}:
 
 \begin{table}[!htbp]
 	\centering
@@ -47,7 +47,7 @@ Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solu
 \end{table}
 
 \subsection{Planificación Temporal}
-A continuación se presenta un gráfico sencillo (Figura \ref{fig:plantempo}) que representa la planificación temporal estimada para cada uno de los Sprints en un primer momento.
+El siguiente gráfico (Figura \ref{fig:plantempo}) que representa la planificación temporal estimada para cada uno de los Sprints en un primer momento.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -60,7 +60,7 @@ A continuación se presenta un gráfico sencillo (Figura \ref{fig:plantempo}) qu
 \clearpage
 
 \section{Sprint 1: Diseño de una plataforma Web para la gestión de los usuarios}
-Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulte mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que nadie conozca la contraseña en claro del nuevo administrador.
+Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulte mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que las contraseñas de estos no sean conocidas por terceras personas, manteniéndolas seguras.
 
 \subsection{Planificación del Sprint}
 Se han elegido las dos primeras historias de usuario para la consecución de este Sprint durante la reunión inicial (Tablas \ref{tab:historia1} y \ref{tab:historia2}).
@@ -88,7 +88,7 @@ Se han elegido las dos primeras historias de usuario para la consecución de est
 %TODO: Extracto código algoritmo MD5
 %TODO: LOPD
 \subsection{Tareas del Sprint}
-\subsubsection{Diseño inicial de la base de datos}
+\subsubsection{Diseño Inicial de la Base de Datos}
 Firebase Firestore ofrece una base de datos no relacional, lo que significa que no existen relaciones ni tablas, como sí ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas. En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio Web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
 
 \begin{itemize}
@@ -123,9 +123,9 @@ Firebase Firestore ofrece una base de datos no relacional, lo que significa que 
 		
 \end{itemize}
 
-En cuanto a la gestión de contraseñas, no es necesario guardarlas en la base de datos, a excepción de las de los administradores con acceso al sitio Web puesto que, al hacer uso de la funcionalidad de Firebase \textit{Authentication}, éstas se guardan internamente en el proyecto y únicamente son conocidas por la herramienta, asignando además un identificador único de usuario a cada uno de los usuarios registrados.
+En cuanto a la gestión de contraseñas, a excepción de las de los administradores con acceso al sitio Web, no es necesario guardarlas en la base de datos  puesto que, al hacer uso de la funcionalidad de Firebase \textit{Authentication}, estas se guardan internamente en el proyecto y únicamente son conocidas por la herramienta, asignando además un identificador único de usuario a cada uno de los usuarios registrados.
 
-\subsubsection{Implementación de la plataforma Web}
+\subsubsection{Implementación de la Plataforma Web}
 En el centro educativo existirá uno o varios administradores con acceso a la página Web que se encargarán de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo SHA-1, que se obtendrá gracias a una aplicación desarrollada en la siguiente historia de usuario. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en la página Web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una explicación de cada uno.
 
 \begin{figure}[!h]
@@ -163,7 +163,7 @@ Esta funcionalidad se ha implementado mediante el uso de una lista desplegable q
 Como medida adicional de seguridad y en prevención de corrupción de datos, el sitio Web preguntará siempre al usuario si desea salir de la página en la que se encuentre, a excepción de la página de consulta de usuarios, puesto que no implica modificación alguna de datos.
 
 \subsubsection{Desarrollo de una Aplicación Java de Cifrado}
-Ya que un administrador será el responsable de registrar a nuevos administradores en la base de datos, deberá conocer el correo electrónico y la contraseña del nuevo administrador. Para mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java cuya principal función sea la de cifrar la contraseña utilizando el cifrado SHA-1 de este nuevo administrador, que será la que se introduzca en la base de datos. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada. Además, se dispone de un botón para copiarla en el portapapeles.
+Ya que un administrador será el responsable de registrar a nuevos administradores en la base de datos, deberá conocer el correo electrónico y la contraseña del nuevo administrador. Para mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java Swing cuya principal función sea la de cifrar la contraseña de los nuevos administradores utilizando el cifrado SHA-1, que será la que se introduzca en la base de datos. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada. Además, se dispone de un botón para copiarla en el portapapeles.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -214,13 +214,13 @@ Para este segundo Sprint se han seleccionado las siguientes historias de usuario
 \newpage
 
 \subsection{Tareas del Sprint}
-\subsubsection{Diseño de la actividad de acceso}
+\subsubsection{Diseño de la Actividad de Acceso}
 Esta tarea requiere de la integración previa de Firebase con la aplicación Android, por lo que se han seguido los pasos necesarios indicados por la propia herramienta gracias a su integración con Android Studio para que dicha aplicación pueda comunicarse con los servicios que ofrece la plataforma de Google. Una vez hecho esto, se procede a diseñar la actividad de acceso desde la que los usuarios podrán identificarse en el sistema antes de poder visualizar o enviar mensajes al mismo. Desde un primer momento se ha separado la identificación de los usuarios mediante un \textit{login} <<normal>> y otro específico para docentes, que se muestra mediante un botón independiente, como se puede ver en la Figura \ref{fig:login1}.
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.31\textwidth]{/capturas_app/login1.png}
-		\caption{Actividad inicial}
+		\includegraphics[width=0.3\textwidth]{/capturas_app/inicioapp}
+		\caption{Actividad de Inicio de Sesión}
 		\label{fig:login1}
 	\end{center}
 \end{figure}
@@ -232,7 +232,7 @@ En el caso de seleccionar el número de teléfono como método de entrada, la ap
 \begin{figure}[!h]
 	\begin{center}
 		\includegraphics[width=0.35\textwidth]{/capturas_app/logintfno.png}
-		\caption{Actividad \textit{login} con teléfono}
+		\caption{Actividad \textit{login} con Teléfono}
 		\label{fig:logintfno}
 	\end{center}
 \end{figure}
@@ -248,13 +248,13 @@ Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo medi
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=0.7\textwidth]{/capturas_app/logincorreo.png}
-		\caption{Actividad \textit{login} con correo y contraseña}
+		\caption{Actividad \textit{login} con Correo y Contraseña}
 		\label{fig:logincorreo}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=0.7\textwidth]{/capturas_app/cambiopass.png}
-		\caption{Cambio de contraseña}
+		\caption{Cambio de Contraseña}
 		\label{fig:cambiopass}
 	\end{minipage}
 \end{figure}
@@ -266,31 +266,31 @@ Por otra parte, si quien quiere acceder a la aplicación es un docente, este deb
 \begin{figure}[!h]
 	\begin{center}
 		\includegraphics[width=0.35\textwidth]{/capturas_app/logindocente.png}
-		\caption{Autenticación del docente}
+		\caption{Autenticación del Docente}
 		\label{fig:logindocente}
 	\end{center}
 \end{figure}
 
-\subsubsection{Adecuación de la base de datos}
-A la hora de guardar los grupos de chat, se debe crear una nueva colección en la base de datos con todos los datos de los mismos a la que se le ha asignado el nombre de <<ChatsGrupales>>. En esta colección se encuentra un documento <<Control>> con un campo <<Contador>>, que se trata de un número entero usado para otorgar un identificador único a cada una de las salas de chat en la base de datos y que se irá incrementando a medida que se vayan creando nuevas. Cada uno de dichos documentos contendrá elementos como un objeto de tipo <<Administrador>>, que representará al docente creador del grupo con todos sus datos; su identificador en la base de datos y el nombre que el docente haya asignado a dicho grupo. Además, contendrá colecciones adicionales como <<Familias>> y <<Mensajes>>. La primera incluye los documentos de la colección <<Usuarios>> que el administrador haya incluido en el grupo, es decir, las familias participantes. Por su parte, la colección <<Mensajes>>, incluye documentos con los mensajes que cada integrante ha enviado al chat, conteniendo cada uno información del remitente, así como la fecha y hora de envío.
+\subsubsection{Adecuación de la Base de Datos}
+A la hora de guardar los grupos de chat, se debe crear una nueva colección en la base de datos con todos los datos de los mismos a la que se le ha asignado el nombre de \mbox{<<ChatsGrupales>>}. En esta colección se encuentra un documento <<Control>> con un campo <<Contador>>, que se trata de un número entero usado para otorgar un identificador único a cada una de las salas de chat en la base de datos y que se irá incrementando a medida que se vayan creando nuevas. Cada uno de dichos documentos contendrá elementos como un objeto de tipo <<Administrador>>, que representará al docente creador del grupo con todos sus datos; su identificador en la base de datos y el nombre que el docente haya asignado a dicho grupo. Además, contendrá colecciones adicionales como <<Familias>> y <<Mensajes>>. La primera incluye los documentos de la colección <<Usuarios>> que el administrador haya incluido en el grupo, es decir, las familias participantes. Por su parte, la colección <<Mensajes>>, incluye documentos con los mensajes que cada integrante ha enviado al chat, conteniendo cada uno información del remitente, así como la fecha y hora de envío.
 
-\subsubsection{Diseño de la actividad de creación de chats}
-Esta funcionalidad está disponible únicamente para los docentes identificados en la aplicación, puesto que son los únicos usuarios con capacidad para iniciar nuevos chats. Una vez que el docente se ha identificado en el sistema y ha accedido a la actividad principal, podrá crear un nuevo chat mediante la opción <<Crear nuevo chat>> situada en el menú principal de la aplicación, que se encuentra en la esquina superior derecha de la pantalla. Al seleccionar esta opción, se mostrará una nueva actividad en la que se podrá introducir el nombre del grupo y los integrantes del mismo (Figura \ref{fig:creargrupo}) mediante una lista en la que se mostrarán todas las familias que se encuentren en ese momento en la colección <<Usuarios>> de la base de datos. Para finalizar su creación, se debe pulsar el botón <<Crear Chat>>, en cuyo caso la aplicación preguntará al docente si realmente desea crear ese grupo y se le devolverá a la actividad principal, donde se muestran los grupos de los que el usuario es miembro.
+\subsubsection{Diseño de la Actividad de Creación de Chats}
+Esta funcionalidad está disponible únicamente para los docentes identificados en la aplicación, puesto que son los únicos usuarios con capacidad para iniciar nuevos chats. Una vez que el docente se ha identificado en el sistema y ha accedido a la actividad principal, podrá crear un nuevo chat mediante la opción <<Crear nuevo chat...>> situada en el menú principal de la aplicación, que se encuentra en la esquina superior derecha de la pantalla. Al seleccionar esta opción, se mostrará una nueva actividad en la que se podrá introducir el nombre del grupo y los integrantes del mismo (Figura \ref{fig:creargrupo}) mediante una lista en la que se mostrarán todas las familias que se encuentren en ese momento en la colección <<Usuarios>> de la base de datos. Para finalizar su creación, se debe pulsar el botón <<Crear Chat>>, en cuyo caso la aplicación preguntará al docente si realmente desea crear ese grupo y se le devolverá a la actividad principal, donde se muestran los grupos de los que el usuario es miembro.
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.35\textwidth]{/capturas_app/creargrupo.png}
-		\caption{Actividad Crear Chat}
+		\includegraphics[width=0.35\textwidth]{/capturas_app/crearchat}
+		\caption{Actividad de Crear Chat}
 		\label{fig:creargrupo}
 	\end{center}
 \end{figure}
 
 \newpage
 
-\subsubsection{Diseño de la actividad principal}
+\subsubsection{Diseño de la Actividad Principal}
 Esta actividad será la primera que el usuario visualice nada más entrar a la aplicación y, por tanto, su principal función reside en mostrar una lista con los chats de los que sea miembro. Dicha actividad se conectará a la base de datos y buscará en la colección <<Familias>> de cada uno de los documentos de chats de la colección <<ChatsGrupales>> para comprobar su pertenencia a los mismos. Durante este rápido proceso, puesto que en las pruebas nunca ha durado más de 2 segundos, se mostrará al usuario un diálogo de carga que, una vez completada la tarea de búsqueda, mostrará la lista ya cargada con todos los grupos a los que se tiene acceso y en los que el usuario podrá pulsar para acceder a ellos, abriendo la actividad responsable de mostrar los mensajes.
 
-\subsubsection{Diseño de la actividad de chat}
+\subsubsection{Diseño de la Actividad de Chat}
 Por último, la principal función de la actividad de chat es la de mostrar todos los mensajes que se han ido mandando desde su creación. En este caso, a diferencia de la actividad principal, donde se ha implementado una \textit{ListView}, en la actividad de grupo se ha utilizado una \textit{RecyclerView} (Figura \ref{fig:listview}) pensando en la eficiencia de la aplicación. Una \textit{RecyclerView} es una lista en la que se <<reciclan>> las filas de esta cuando el usuario se desplaza hacia arriba o hacia abajo y no se están mostrando. Por tanto, el rendimiento aumenta al tener muchas filas o, en este caso, mensajes en un grupo. El siguiente ejemplo representa un ejemplo de un posible grupo (Figura \ref{fig:ejemplogrupo}) 
 
 \begin{figure}[!h]
@@ -304,7 +304,7 @@ Por último, la principal función de la actividad de chat es la de mostrar todo
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=0.65\linewidth]{/capturas_app/ejemplogrupo.png}
-		\caption{Ejemplo de un grupo}
+		\caption{Ejemplo de un Chat}
 		\label{fig:ejemplogrupo}
 	\end{minipage}
 \end{figure}
@@ -328,7 +328,7 @@ En este tercer Sprint se ha seleccionado la siguiente historia de usuario para c
 \end{table}
 
 \subsection{Tareas del Sprint}
-\subsubsection{Creación e integración de los servicios de IBM Bluemix}
+\subsubsection{Creación e Integración de los Servicios de IBM Bluemix}
 En primer lugar, se deben crear los servicios en la nube de IBM. Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona actualmente soporte para los idiomas inglés y francés a la hora de realizar consultas directamente, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones HTML en ambos servicios. De esta manera, el texto que introduzcan los usuarios de las familias sufrirá una traducción al idioma inglés y, posteriormente, un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes que se manden, así como para computar el porcentaje total del usuario dentro de un chat que, en cierto modo, reflejará el estado de ánimo de este. Estas puntuaciones oscilarán entre valores que van del 0\% al 100\%, siendo el 0 el valor menos deseable y el 100 el valor óptimo o más deseable.
 
 \clearpage
@@ -383,6 +383,8 @@ En este Sprint se han seleccionado las siguientes historias de usuario:
 	\label{tab:historia8}
 \end{table}
 
+\clearpage
+
 \begin{table}[hp]
 	\centering
 	{\small
@@ -406,43 +408,79 @@ En este Sprint se han seleccionado las siguientes historias de usuario:
 \subsection{Tareas del Sprint}
 %TODO: Poner imagen correo integrantes.
 \subsubsection{Integración con Google Calendar}
-Para esta funcionalidad se ha añadido un botón (+) (Figura \ref{fig:crearevento}) que lanzará la aplicación de Google Calendar y permitirá al administrador del chat crear un nuevo evento al que serán añadidos los correos electrónicos de los integrantes como <<invitados>> del mismo. Este botón únicamente será visible para los administradores del chat, no mostrándose al resto de integrantes.
+Para esta funcionalidad se ha añadido un botón (+) (Figura \ref{fig:crearevento}) que lanzará la aplicación de Google Calendar y permitirá al administrador del chat crear un nuevo evento al que serán añadidos los correos electrónicos de los integrantes como <<invitados>> del mismo (Figura \ref{fig:invitados}). Este botón únicamente será visible para los administradores del chat, no mostrándose al resto de integrantes.
 
 \begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/capturas_app/calendario.png}
-		\caption{Botón para crear evento}
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.65\textwidth]{/capturas_app/calendario.png}
+		\caption{Botón para Crear un Evento}
 		\label{fig:crearevento}
-	\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.65\linewidth]{/capturas_app/invitados}
+		\caption{Ejemplo de Inserción de <<Invitados>>}
+		\label{fig:invitados}
+	\end{minipage}
 \end{figure}
 
-\subsubsection{Creación y modificación del perfil}
-Esta funcionalidad está disponible para todos los usuarios desde la actividad principal mediante una opción en el menú (Figura \ref{fig:menuppal}). Esta opción lanzará una nueva actividad desde la que se podrá editar la imagen de perfil, pudiendo seleccionar una desde la galería o retirarla para establecer la imagen por defecto. Del mismo modo, se muestra al usuario sus datos personales que se encuentran en la base de datos.
+\clearpage
 
-%TODO: Poner captura info perfil
+\subsubsection{Creación y Modificación del Perfil}
+Esta funcionalidad está disponible para todos los usuarios desde la actividad principal mediante una opción en el menú (Figura \ref{fig:menuppal}). Esta opción lanzará una nueva actividad desde la que se podrá editar la imagen de perfil, pudiendo seleccionar una desde la galería o retirarla para establecer la imagen por defecto mediante el uso de los botones que se muestran (Figura \ref{fig:perfil}). Del mismo modo, se muestra al usuario sus datos personales que se encuentran en la base de datos.
 
 \begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=0.3\textwidth]{/capturas_app/menuppal.png}
-		\caption{Menú principal}
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.6\textwidth]{/capturas_app/menuppal.png}
+		\caption{Menú Principal}
 		\label{fig:menuppal}
-	\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.65\linewidth]{/capturas_app/perfil}
+		\caption{Actividad de Perfil}
+		\label{fig:perfil}
+	\end{minipage}
 \end{figure}
+
+\clearpage
 
 \subsubsection{Eliminar y cambiar nombre de un chat}
-Mediante estas opciones se facilita la tarea de gestión de los chats a los administradores de los mismos. Para eliminar un chat bastará con dejarlo pulsado en la lista de la actividad principal mostrándose un cuadro de diálogo confirmando la eliminación (Figura \ref{fig:borrarchat}). Por otra parte, si lo que se desea es cambiar el nombre de un chat, primero se deberá entrar en el mismo y pulsar en el botón <<Info.>>, que se encuentra en la parte superior derecha. Inmediatamente se accederá a la actividad de información de grupo que se ha desarrollado para, además de cambiar el nombre, poder observar qué familias lo conforman mediante una lista. Además, al lado de cada usuario se puede consultar un número en forma de porcentaje que representa el tono general que ha empleado en el grupo, siendo el 100\% el mejor valor posible, como se ha detallado en el Sprint anterior.
+Mediante estas opciones se facilita la tarea de gestión de los chats a los administradores de los mismos. Para eliminar un chat bastará con dejarlo pulsado en la lista de la actividad principal mostrándose un cuadro de diálogo confirmando la eliminación (Figura \ref{fig:borrarchat}). Por otra parte, si lo que se desea es cambiar el nombre de un chat, primero se deberá entrar en el mismo y pulsar en el botón <<Info.>>, que se encuentra en la parte superior derecha. Inmediatamente se accederá a la actividad de información de grupo que se ha desarrollado para, además de cambiar el nombre, poder observar qué familias lo conforman mediante una lista (Figura ). Además, al lado de cada usuario se puede consultar un número en forma de porcentaje que representa el tono general que ha empleado en el grupo, siendo 100\% el mejor valor posible, como se ha detallado en el Sprint anterior.
 
 \begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/capturas_app/borrarchat.png}
-		\caption{Diálogo para borrar un chat}
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.7\textwidth]{/capturas_app/eliminar}
+		\caption{Diálogo para Borrar un Chat}
 		\label{fig:borrarchat}
-	\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.65\linewidth]{/capturas_app/infochat}
+		\caption{Actividad de Información de Chat}
+		\label{fig:infochat}
+	\end{minipage}
 \end{figure}
+
+\clearpage
 
 %TODO: Insertar captura info familia.
 \subsubsection{Visualizar información de los integrantes}
-Para el administrador de un chat, probablemente sea de utilidad proporcionar la información de cada uno de los integrantes del chat. Por este motivo se ha decidido implementar esta funcionalidad, que será accesible desde la actividad de información de chat, pulsando sobre alguno de los integrantes. De esta manera, se lanzará la actividad de perfil desde la que se podrá acceder a la información de la familia, así como a la foto de perfil, si estuviera definida.
+Para el administrador de un chat, probablemente sea de utilidad proporcionar la información de cada uno de los integrantes del chat. Por este motivo se ha decidido implementar esta funcionalidad, que será accesible desde la actividad de información de chat, pulsando sobre alguno de los integrantes. De esta manera, se lanzará la actividad de perfil desde la que se podrá acceder a la información de la familia, así como a la foto de perfil, si estuviera definida (Figura \ref{fig:infointegrante}).
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{/capturas_app/infointegrante}
+		\caption{Actividad de Información de Integrante}
+		\label{fig:infointegrante}
+	\end{center}
+\end{figure}
 
 
 
