@@ -108,6 +108,7 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
 
         if (procedencia.equalsIgnoreCase("infoGrupo")) {
             btnCambiarImagenPerfil.setVisibility(View.GONE);
+            btnEliminarImagenPerfil.setVisibility(View.GONE);
         }
 
         if (isDocente && procedencia.equalsIgnoreCase("main")) {

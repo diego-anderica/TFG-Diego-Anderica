@@ -107,16 +107,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-            lstChats.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-                @Override
-                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        lstChats.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                if (isDocente) {
                     chatSeleccionado = chatsGrupales.get(position).getId();
 
                     eliminarChat();
-
-                    return true;
                 }
-            });
+
+                return true;
+            }
+        });
 
         chatsGrupales = new ArrayList<ChatGrupal>();
         idNombreChatsGrupales = new HashMap<>();

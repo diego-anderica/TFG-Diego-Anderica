@@ -267,7 +267,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("Nombre"), Toast.LENGTH_SHORT).show();
-                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
+                                    obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     enviarCodigo();
                                 } else {
                                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -316,7 +316,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor1"), Toast.LENGTH_SHORT).show();
-                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
+                                    obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     enviarCodigo();
                                 } else {
                                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
@@ -336,7 +336,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                             } else {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(PhoneLoginActivity.this, "Hola, " + task.getResult().getDocuments().get(0).get("NombreTutor2"), Toast.LENGTH_SHORT).show();
-                                    //obtenerUsuarioJava(task.getResult().getDocuments().get(0));
+                                    obtenerUsuarioJava(task.getResult().getDocuments().get(0));
                                     enviarCodigo();
                                 } else {
                                     Toast.makeText(PhoneLoginActivity.this, getString(R.string.msgErrorIdentificacion), Toast.LENGTH_SHORT).show();
