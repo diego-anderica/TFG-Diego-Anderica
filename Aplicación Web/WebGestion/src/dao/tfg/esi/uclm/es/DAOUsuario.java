@@ -1,9 +1,6 @@
 package dao.tfg.esi.uclm.es;
 
-import java.math.BigInteger;
 import java.security.MessageDigest;
-
-import javax.xml.bind.DatatypeConverter;
 
 public class DAOUsuario {	
 	public static String encriptar(String pwd) throws Exception {
