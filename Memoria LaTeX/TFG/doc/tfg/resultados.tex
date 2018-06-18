@@ -126,7 +126,7 @@ Firebase Firestore ofrece una base de datos no relacional, lo que significa que 
 En cuanto a la gestión de contraseñas, a excepción de las de los administradores con acceso al sitio Web, no es necesario guardarlas en la base de datos  puesto que, al hacer uso de la funcionalidad de Firebase \textit{Authentication}, estas se guardan internamente en el proyecto y únicamente son conocidas por la herramienta, asignando además un identificador único de usuario a cada uno de los usuarios registrados.
 
 \subsubsection{Implementación de la Plataforma Web}
-En el centro educativo existirá uno o varios administradores con acceso a la página Web que se encargarán de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo SHA-1, que se obtendrá gracias a una aplicación desarrollada en la siguiente historia de usuario. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en la página Web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una explicación de cada uno.
+En el centro educativo existirá uno o varios administradores con acceso a la página Web que se encargarán de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo SHA-1, que se obtendrá gracias a una aplicación desarrollada en la siguiente historia de usuario. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en la página Web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una explicación de cada una.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -147,31 +147,82 @@ En el centro educativo existirá uno o varios administradores con acceso a la p�
 \newpage
 
 \noindent \underline{Dar de Alta} \newline
-En esta primera funcionalidad, el administrador tiene la opción de rellenar un formulario para registrar una nueva familia en la base de datos, en el que se pueden incluir los datos de un único tutor legal del alumno o, si lo hubiese, también los del segundo tutor. Los datos que se han especificado para cada tutor son: nombre, primer apellido, segundo apellido, número de teléfono y correo electrónico. Por último, para identificar a este usuario en la base de datos, se le asignará un identificador compuesto del primer apellido de ambos tutores o, en su defecto, del único tutor, concatenando un número al final. Es decir, si dos familias diferentes poseen los mismos apellidos, se añadirá un número al final de la composición de sus apellidos para el identificador, por lo que quedarán representadas de manera única en la base de datos. Por otra parte, además de disponer del formulario para introducir nuevos usuarios, el administrador también tiene la posibilidad de importar un archivo \acs{CSV} para realizar esta tarea de una manera más sencilla y automatizada. Este archivo debe tener un formato específico detallado en la primera línea del mismo y que consta, principalmente, de los mismos datos que en el formulario separados por comas y sin espacios entre ellos, separando cada familia por un salto de línea.
+En esta primera funcionalidad, el administrador tiene la opción de rellenar un formulario para registrar una nueva familia en la base de datos, en el que se pueden incluir los datos de un único tutor legal del alumno o, si lo hubiese, también los del segundo tutor (Figura \ref{fig:alta}). Los datos que se han especificado para cada tutor son: nombre, primer apellido, segundo apellido, número de teléfono y correo electrónico. Por último, para identificar a este usuario en la base de datos, se le asignará un identificador compuesto del primer apellido de ambos tutores o, en su defecto, del único tutor, concatenando un número al final. Es decir, si dos familias diferentes poseen los mismos apellidos, se añadirá un número al final de la composición de sus apellidos para el identificador, por lo que quedarán representadas de manera única en la base de datos. Por otra parte, además de disponer del formulario para introducir nuevos usuarios, el administrador también tiene la posibilidad de importar un archivo \acs{CSV} para realizar esta tarea de una manera más sencilla y automatizada. Este archivo debe tener un formato específico detallado en la primera línea del mismo y que consta, principalmente, de los mismos datos que en el formulario separados por comas y sin espacios entre ellos, separando cada familia por un salto de línea.
+
+\clearpage
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{/alta}
+		\caption{Página de Alta}
+		\label{fig:alta}
+	\end{center}
+\end{figure}
 
 \noindent \underline{Dar de Baja} \newline
-Al entrar en esta página, se dispone de una lista desplegable en la que se cargarán todas las familias registradas en la base de datos. Al seleccionar una de ellas, se cargarán automáticamente en una tabla los datos de la misma. Como medida adicional contra el borrado accidental, la página pedirá al usuario que confirme la acción de borrado solicitada antes de ser llevada a cabo.
+Al entrar en esta página, se dispone de una lista desplegable en la que se cargarán todas las familias registradas en la base de datos (Figura \ref{fig:baja}). Al seleccionar una de ellas, se cargarán automáticamente en una tabla los datos de la misma. Como medida adicional contra el borrado accidental, la página pedirá al usuario que confirme la acción de borrado solicitada antes de ser llevada a cabo.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{/baja}
+		\caption{Página de Baja}
+		\label{fig:baja}
+	\end{center}
+\end{figure}
 
 \clearpage
 
 \noindent \underline{Consultar Usuarios} \newline
-De manera similar, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos. Si se pulsa el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
-
-\noindent \underline{Modificar Usuarios} \newline
-Esta funcionalidad se ha implementado mediante el uso de una lista desplegable que carga todas las familias de la base de datos y un formulario que inicialmente se muestra bloqueado para prevenir una modificación accidental de los datos. Al seleccionar uno de estos registros, su información se carga en dicho formulario y al hacer clic sobre el botón de modificar se habilitan los campos para la escritura. Cuando el administrador finalice la modificación de la información, deberá hacer clic de nuevo en un botón para terminar la modificación, siendo preguntado sobre si realmente desea llevarla a cabo. En caso positivo, se sobrescribirá la información de la familia seleccionada en la base de datos.
-
-Como medida adicional de seguridad y en prevención de corrupción de datos, el sitio Web preguntará siempre al usuario si desea salir de la página en la que se encuentre, a excepción de la página de consulta de usuarios, puesto que no implica modificación alguna de datos.
-
-\subsubsection{Desarrollo de una Aplicación Java de Cifrado}
-Ya que un administrador será el responsable de registrar a nuevos administradores en la base de datos, deberá conocer el correo electrónico y la contraseña del nuevo administrador. Para mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java Swing cuya principal función sea la de cifrar la contraseña de los nuevos administradores utilizando el cifrado SHA-1, que será la que se introduzca en la base de datos. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada. Además, se dispone de un botón para copiarla en el portapapeles.
+De manera similar, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos (Figura \ref{fig:consulta}). Si se pulsa el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{/cifrador}
+		\includegraphics[width=0.85\textwidth]{/consulta}
+		\caption{Página de Consulta}
+		\label{fig:consulta}
+	\end{center}
+\end{figure}
+
+\noindent \underline{Modificar Usuarios} \newline
+Esta funcionalidad se ha implementado mediante el uso de una lista desplegable que carga todas las familias de la base de datos y un formulario que inicialmente se muestra bloqueado para prevenir una modificación accidental de los datos (Figura \ref{fig:modificar}). Al seleccionar uno de estos registros, su información se carga en dicho formulario y al hacer clic sobre el botón de modificar se habilitan los campos para la escritura. Cuando el administrador finalice la modificación de la información, deberá hacer clic de nuevo en un botón para terminar la modificación, siendo preguntado sobre si realmente desea llevarla a cabo. En caso positivo, se sobrescribirá la información de la familia seleccionada en la base de datos.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{/modificar}
+		\caption{Página de Modificación}
+		\label{fig:modificar}
+	\end{center}
+\end{figure}
+
+Como medida adicional de seguridad y en prevención de corrupción de datos, el sitio Web preguntará siempre al usuario si desea salir de la página en la que se encuentre, siempre y cuando se se trate de una página en la que existan campos en los que el administrador pueda escribir (Figura \ref{fig:preguntaweb}).
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{/preguntaweb}
+		\caption{Pregunta para Abandonar una Página}
+		\label{fig:preguntaweb}
+	\end{center}
+\end{figure}
+
+\clearpage
+
+\subsubsection{Desarrollo de una Aplicación Java de Cifrado}
+Ya que un administrador será el responsable de registrar a nuevos administradores en la base de datos, necesitará conocer el correo electrónico y la contraseña del nuevo administrador para introducir esta información en la base de datos. Para mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java Swing cuya principal función sea la de cifrar la contraseña de los nuevos administradores utilizando el cifrado SHA-1, siendo el resultado el que será introducido en la base de datos. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada. Además, se dispone de un botón para copiarla en el portapapeles. El algoritmo de cifrado que se ha implementado en esta aplicación y en el servidor Web es el mostrado en el Listado de Código \ref{code:sha1}.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{/cifrador}
 		\caption{Aplicación de Cifrado}
 		\label{fig:cifrador}
 	\end{center}
 \end{figure}
+
+\lstinputlisting[language = JAVA,
+						firstline=0,
+						texcl,
+						caption = Código de Cifrado de Contraseñas,
+						label = code:sha1]
+						{code/sha1.java}
 
 \clearpage
 
@@ -329,9 +380,22 @@ En este tercer Sprint se ha seleccionado la siguiente historia de usuario para c
 
 \subsection{Tareas del Sprint}
 \subsubsection{Creación e Integración de los Servicios de IBM Bluemix}
-En primer lugar, se deben crear los servicios en la nube de IBM. Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona actualmente soporte para los idiomas inglés y francés a la hora de realizar consultas directamente, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones HTML en ambos servicios. De esta manera, el texto que introduzcan los usuarios de las familias sufrirá una traducción al idioma inglés y, posteriormente, un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes que se manden, así como para computar el porcentaje total del usuario dentro de un chat que, en cierto modo, reflejará el estado de ánimo de este. Estas puntuaciones oscilarán entre valores que van del 0\% al 100\%, siendo el 0 el valor menos deseable y el 100 el valor óptimo o más deseable.
+En primer lugar, se han de crear los servicios en la nube de IBM. Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona actualmente soporte para los idiomas inglés y francés a la hora de realizar consultas directamente, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones HTML en ambos servicios. Por tanto, el flujo de llamadas a estos servicios de IBM será el que se detalla en la Figura \ref{fig:diaflujo}. De esta manera, el texto que introduzcan los usuarios de las familias sufrirá una traducción al idioma inglés y, posteriormente, un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes enviados, así como para computar el porcentaje total del usuario dentro de un chat que, en cierto modo, reflejará el estado de ánimo de este. Estas puntuaciones oscilarán entre valores que van del 0\% al 100\%, siendo el 0 el valor menos deseable y el 100 el valor óptimo o más deseable. Dicho análisis de tono es recibido por la aplicación en formato \acf{JSON}, por lo que debe ser interpretado para realizar el cálculo de la puntuación. En el Listado de Código \ref{code:jsonwatson} se ilustra un ejemplo del resultado que recibe la aplicación por parte de Watson \textit{Tone Analyzer}.
 
-\clearpage
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{/diagrama_flujo_watson}
+		\caption{Diagrama de Flujo de Llamadas a los Servicios de Watson}
+		\label{fig:diaflujo}
+	\end{center}
+\end{figure}
+
+\lstinputlisting[language = json,
+						firstline=0,
+						texcl,
+						caption = Ejemplo de Código \acs{JSON} de Análisis de Watson \textit{Tone Analyzer},
+						label = code:jsonwatson]
+						{code/example.json}
 
 El servicio \textit{Tone Analyzer} puede analizar una única oración o un conjunto de ellas. Por tanto, en caso de que un usuario envíe un texto en el que se incluyan varias oraciones, se analizarán por separado y se calculará el resultado final teniendo en cuenta los resultados individuales. Asimismo, puede devolver diferentes tonos, cada uno con una <<puntuación>> que variará entre 0.5 y 1. Este valor no comienza en 0 puesto que IBM ha determinado que hay una mayor probabilidad de que se perciba el tono devuelto a partir de 0.5; por debajo de esa puntuación no se reconoce tono alguno, pues podría ser demasiado ambiguo o no determinante. \textit{Tone Analyzer} distingue entre tonos emocionales y tonos del lenguaje, siendo los siguientes los diferentes tonos que puede devolver este servicio \cite{IBM2018}:
 
@@ -351,13 +415,13 @@ Por tanto, en cuanto a tonos relacionados con las emociones, se han considerado 
 
 Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de cada mensaje (Figura ). Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje (siendo el 0\% el peor valor y el 100\% el mejor o más deseable) mediante una actividad que se desarrollará en el siguiente Sprint cuya principal función será la de informar acerca de los datos del chat como el nombre (también se podrá modificar) y una lista de sus integrantes.
 
-Debido a la inclusión de los tonos por mensaje y por usuario en la base de datos se ha tenido que llevar a cabo una ligera modificación de esta en lo que a la colección <<ChatsGrupales>> respecta. En cada uno de los chats se ha agregado un objeto <<PonderaciónTonos>>, que recogerá los pesos de cada uno de los tonos para cada chat y una colección adicional <<Tonos>>, que contendrá los tonos de cada uno de los integrantes del chat.
+Debido a la inclusión de los tonos por mensaje y por usuario en la base de datos se ha tenido que llevar a cabo una ligera modificación de esta en lo que a la colección \mbox{<<ChatsGrupales>>} respecta. En cada uno de los chats se ha agregado un objeto <<PonderaciónTonos>>, que recogerá los pesos de cada uno de los tonos para cada chat y una colección adicional <<Tonos>>, que contendrá los tonos de cada uno de los integrantes del chat.
 
 \clearpage
 
-%TODO: Insertar imágenes de chat con colores y actividad de información de grupo.
+%TODO: Insertar imágenes de chat con colores
 
-\section{Sprint 4: Integración con Google Calendar y otras mejoras}
+\section{Sprint 4: Integración con Google Calendar y Otras Mejoras}
 Este último Sprint se ha dedicado a añadir funcionalidades a las ya existentes de cara a completar la aplicación final, puesto que la principal función de comunicación ya ha sido implementada en Sprints anteriores. Algunas de estas mejoras son la integración con Google Calendar o la posibilidad de editar el perfil de un usuario de la aplicación.
 
 \subsection{Planificación del Sprint}
@@ -470,7 +534,6 @@ Mediante estas opciones se facilita la tarea de gestión de los chats a los admi
 
 \clearpage
 
-%TODO: Insertar captura info familia.
 \subsubsection{Visualizar información de los integrantes}
 Para el administrador de un chat, probablemente sea de utilidad proporcionar la información de cada uno de los integrantes del chat. Por este motivo se ha decidido implementar esta funcionalidad, que será accesible desde la actividad de información de chat, pulsando sobre alguno de los integrantes. De esta manera, se lanzará la actividad de perfil desde la que se podrá acceder a la información de la familia, así como a la foto de perfil, si estuviera definida (Figura \ref{fig:infointegrante}).
 

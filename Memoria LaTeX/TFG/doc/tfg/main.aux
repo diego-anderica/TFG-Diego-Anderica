@@ -39,6 +39,7 @@
 \@writefile{toc}{\contentsline {chapter}{\IeC {\'I}ndice de tablas}{\es@scroman  {xvii}}{chapter*.6}}
 \@writefile{toc}{\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman  {xix}}{chapter*.7}}
 \@writefile{toc}{\contentsline {chapter}{\IeC {\'I}ndice de listados}{\es@scroman  {xxiii}}{chapter*.8}}
+\acronymused{JSON}
 \@writefile{toc}{\contentsline {chapter}{Listado de acr\IeC {\'o}nimos}{\es@scroman  {xxv}}{chapter*.9}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -61,6 +62,7 @@
 \newacro{TFG}[\AC@hyperlink{TFG}{TFG}]{Trabajo Fin de Grado}
 \newacro{LOPD}[\AC@hyperlink{LOPD}{LOPD}]{Ley Org\IeC {\'a}nica de Protecci\IeC {\'o}n de Datos}
 \newacro{RGPD}[\AC@hyperlink{RGPD}{RGPD}]{Reglamento General de Protecci\IeC {\'o}n de Datos}
+\newacro{JSON}[\AC@hyperlink{JSON}{JSON}]{JavaScript Object Notation}
 \citation{JCCM2017}
 \citation{JCCM2010}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}}
@@ -299,169 +301,189 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces P\IeC {\'a}gina Principal de la Web\relax }}{37}{figure.caption.41}}
 \newlabel{fig:index_web}{{5.3}{37}{Página Principal de la Web\relax }{figure.caption.41}{}}
 \acronymused{CSV}
-\@writefile{toc}{\contentsline {subsubsection}{Desarrollo de una Aplicaci\IeC {\'o}n Java de Cifrado}{38}{figure.caption.41}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Aplicaci\IeC {\'o}n de Cifrado\relax }}{38}{figure.caption.42}}
-\newlabel{fig:cifrador}{{5.4}{38}{Aplicación de Cifrado\relax }{figure.caption.42}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Sprint 2: Creaci\IeC {\'o}n de la aplicaci\IeC {\'o}n Android y creaci\IeC {\'o}n de chats grupales}{39}{section.5.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Planificaci\IeC {\'o}n del Sprint}{39}{subsection.5.3.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Historia de Usuario 3}}{39}{table.caption.43}}
-\newlabel{tab:historia3}{{5.5}{39}{Historia de Usuario 3}{table.caption.43}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Historia de Usuario 4}}{39}{table.caption.44}}
-\newlabel{tab:historia4}{{5.6}{39}{Historia de Usuario 4}{table.caption.44}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Historia de Usuario 5}}{40}{table.caption.45}}
-\newlabel{tab:historia5}{{5.7}{40}{Historia de Usuario 5}{table.caption.45}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Tareas del Sprint}{40}{subsection.5.3.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Acceso}{40}{subsection.5.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Actividad de Inicio de Sesi\IeC {\'o}n\relax }}{40}{figure.caption.46}}
-\newlabel{fig:login1}{{5.5}{40}{Actividad de Inicio de Sesión\relax }{figure.caption.46}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces P\IeC {\'a}gina de Alta\relax }}{38}{figure.caption.42}}
+\newlabel{fig:alta}{{5.4}{38}{Página de Alta\relax }{figure.caption.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces P\IeC {\'a}gina de Baja\relax }}{38}{figure.caption.43}}
+\newlabel{fig:baja}{{5.5}{38}{Página de Baja\relax }{figure.caption.43}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces P\IeC {\'a}gina de Consulta\relax }}{39}{figure.caption.44}}
+\newlabel{fig:consulta}{{5.6}{39}{Página de Consulta\relax }{figure.caption.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces P\IeC {\'a}gina de Modificaci\IeC {\'o}n\relax }}{40}{figure.caption.45}}
+\newlabel{fig:modificar}{{5.7}{40}{Página de Modificación\relax }{figure.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Pregunta para Abandonar una P\IeC {\'a}gina\relax }}{40}{figure.caption.46}}
+\newlabel{fig:preguntaweb}{{5.8}{40}{Pregunta para Abandonar una Página\relax }{figure.caption.46}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Desarrollo de una Aplicaci\IeC {\'o}n Java de Cifrado}{41}{figure.caption.46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Aplicaci\IeC {\'o}n de Cifrado\relax }}{41}{figure.caption.47}}
+\newlabel{fig:cifrador}{{5.9}{41}{Aplicación de Cifrado\relax }{figure.caption.47}{}}
+\newlabel{code:sha1}{{5.1}{41}{Código de Cifrado de Contraseñas}{lstlisting.5.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.1}C\IeC {\'o}digo de Cifrado de Contrase\IeC {\~n}as}{41}{lstlisting.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Sprint 2: Creaci\IeC {\'o}n de la aplicaci\IeC {\'o}n Android y creaci\IeC {\'o}n de chats grupales}{42}{section.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Planificaci\IeC {\'o}n del Sprint}{42}{subsection.5.3.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Historia de Usuario 3}}{42}{table.caption.48}}
+\newlabel{tab:historia3}{{5.5}{42}{Historia de Usuario 3}{table.caption.48}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Historia de Usuario 4}}{42}{table.caption.49}}
+\newlabel{tab:historia4}{{5.6}{42}{Historia de Usuario 4}{table.caption.49}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Historia de Usuario 5}}{43}{table.caption.50}}
+\newlabel{tab:historia5}{{5.7}{43}{Historia de Usuario 5}{table.caption.50}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Tareas del Sprint}{43}{subsection.5.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Acceso}{43}{subsection.5.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Actividad de Inicio de Sesi\IeC {\'o}n\relax }}{43}{figure.caption.51}}
+\newlabel{fig:login1}{{5.10}{43}{Actividad de Inicio de Sesión\relax }{figure.caption.51}{}}
 \acronymused{SMS}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Actividad \textit  {login} con Tel\IeC {\'e}fono\relax }}{41}{figure.caption.47}}
-\newlabel{fig:logintfno}{{5.6}{41}{Actividad \textit {login} con Teléfono\relax }{figure.caption.47}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Actividad \textit  {login} con Correo y Contrase\IeC {\~n}a\relax }}{42}{figure.caption.48}}
-\newlabel{fig:logincorreo}{{5.7}{42}{Actividad \textit {login} con Correo y Contraseña\relax }{figure.caption.48}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Cambio de Contrase\IeC {\~n}a\relax }}{42}{figure.caption.48}}
-\newlabel{fig:cambiopass}{{5.8}{42}{Cambio de Contraseña\relax }{figure.caption.48}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Autenticaci\IeC {\'o}n del Docente\relax }}{43}{figure.caption.49}}
-\newlabel{fig:logindocente}{{5.9}{43}{Autenticación del Docente\relax }{figure.caption.49}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Adecuaci\IeC {\'o}n de la Base de Datos}{43}{figure.caption.49}}
-\@writefile{toc}{\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Creaci\IeC {\'o}n de Chats}{44}{figure.caption.49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Actividad de Crear Chat\relax }}{44}{figure.caption.50}}
-\newlabel{fig:creargrupo}{{5.10}{44}{Actividad de Crear Chat\relax }{figure.caption.50}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad Principal}{45}{figure.caption.50}}
-\@writefile{toc}{\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Chat}{45}{figure.caption.50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces \textit  {ListView} vs \textit  {RecyclerView}\relax }}{45}{figure.caption.51}}
-\newlabel{fig:listview}{{5.11}{45}{\textit {ListView} vs \textit {RecyclerView}\relax }{figure.caption.51}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Ejemplo de un Chat\relax }}{45}{figure.caption.51}}
-\newlabel{fig:ejemplogrupo}{{5.12}{45}{Ejemplo de un Chat\relax }{figure.caption.51}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Sprint 3: Integraci\IeC {\'o}n con los servicios Watson de IBM}{46}{section.5.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Planificaci\IeC {\'o}n del Sprint}{46}{subsection.5.4.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Historia de Usuario 6}}{46}{table.caption.52}}
-\newlabel{tab:historia6}{{5.8}{46}{Historia de Usuario 6}{table.caption.52}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Tareas del Sprint}{46}{subsection.5.4.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Creaci\IeC {\'o}n e Integraci\IeC {\'o}n de los Servicios de IBM Bluemix}{46}{subsection.5.4.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Actividad \textit  {login} con Tel\IeC {\'e}fono\relax }}{44}{figure.caption.52}}
+\newlabel{fig:logintfno}{{5.11}{44}{Actividad \textit {login} con Teléfono\relax }{figure.caption.52}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Actividad \textit  {login} con Correo y Contrase\IeC {\~n}a\relax }}{45}{figure.caption.53}}
+\newlabel{fig:logincorreo}{{5.12}{45}{Actividad \textit {login} con Correo y Contraseña\relax }{figure.caption.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Cambio de Contrase\IeC {\~n}a\relax }}{45}{figure.caption.53}}
+\newlabel{fig:cambiopass}{{5.13}{45}{Cambio de Contraseña\relax }{figure.caption.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Autenticaci\IeC {\'o}n del Docente\relax }}{46}{figure.caption.54}}
+\newlabel{fig:logindocente}{{5.14}{46}{Autenticación del Docente\relax }{figure.caption.54}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Adecuaci\IeC {\'o}n de la Base de Datos}{46}{figure.caption.54}}
+\@writefile{toc}{\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Creaci\IeC {\'o}n de Chats}{47}{figure.caption.54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Actividad de Crear Chat\relax }}{47}{figure.caption.55}}
+\newlabel{fig:creargrupo}{{5.15}{47}{Actividad de Crear Chat\relax }{figure.caption.55}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad Principal}{48}{figure.caption.55}}
+\@writefile{toc}{\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Chat}{48}{figure.caption.55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces \textit  {ListView} vs \textit  {RecyclerView}\relax }}{48}{figure.caption.56}}
+\newlabel{fig:listview}{{5.16}{48}{\textit {ListView} vs \textit {RecyclerView}\relax }{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Ejemplo de un Chat\relax }}{48}{figure.caption.56}}
+\newlabel{fig:ejemplogrupo}{{5.17}{48}{Ejemplo de un Chat\relax }{figure.caption.56}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Sprint 3: Integraci\IeC {\'o}n con los servicios Watson de IBM}{49}{section.5.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Planificaci\IeC {\'o}n del Sprint}{49}{subsection.5.4.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Historia de Usuario 6}}{49}{table.caption.57}}
+\newlabel{tab:historia6}{{5.8}{49}{Historia de Usuario 6}{table.caption.57}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Tareas del Sprint}{49}{subsection.5.4.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Creaci\IeC {\'o}n e Integraci\IeC {\'o}n de los Servicios de IBM Bluemix}{49}{subsection.5.4.2}}
+\AC@undonewlabel{acro:JSON}
+\newlabel{acro:JSON}{{5.4.2}{50}{Creación e Integración de los Servicios de IBM Bluemix}{section*.58}{}}
+\acronymused{JSON}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Diagrama de Flujo de Llamadas a los Servicios de Watson\relax }}{50}{figure.caption.59}}
+\newlabel{fig:diaflujo}{{5.18}{50}{Diagrama de Flujo de Llamadas a los Servicios de Watson\relax }{figure.caption.59}{}}
+\newlabel{code:jsonwatson}{{5.2}{50}{Ejemplo de Código \acs {JSON} de Análisis de Watson \textit {Tone Analyzer}}{lstlisting.5.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.2}Ejemplo de C\IeC {\'o}digo \acs {JSON} de An\IeC {\'a}lisis de Watson \textit  {Tone Analyzer}}{50}{lstlisting.5.2}}
+\acronymused{JSON}
 \citation{IBM2018}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Sprint 4: Integraci\IeC {\'o}n con Google Calendar y otras mejoras}{49}{section.5.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Planificaci\IeC {\'o}n del Sprint}{49}{subsection.5.5.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Historia de Usuario 7}}{49}{table.caption.53}}
-\newlabel{tab:historia7}{{5.9}{49}{Historia de Usuario 7}{table.caption.53}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces Historia de Usuario 8}}{49}{table.caption.54}}
-\newlabel{tab:historia8}{{5.10}{49}{Historia de Usuario 8}{table.caption.54}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces Historia de Usuario 9}}{50}{table.caption.55}}
-\newlabel{tab:historia9}{{5.11}{50}{Historia de Usuario 9}{table.caption.55}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces Historia de Usuario 10}}{50}{table.caption.56}}
-\newlabel{tab:historia10}{{5.12}{50}{Historia de Usuario 10}{table.caption.56}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Tareas del Sprint}{50}{subsection.5.5.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{50}{subsection.5.5.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Bot\IeC {\'o}n para Crear un Evento\relax }}{50}{figure.caption.57}}
-\newlabel{fig:crearevento}{{5.13}{50}{Botón para Crear un Evento\relax }{figure.caption.57}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Ejemplo de Inserci\IeC {\'o}n de <<Invitados>>\relax }}{50}{figure.caption.57}}
-\newlabel{fig:invitados}{{5.14}{50}{Ejemplo de Inserción de <<Invitados>>\relax }{figure.caption.57}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Creaci\IeC {\'o}n y Modificaci\IeC {\'o}n del Perfil}{51}{figure.caption.57}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Men\IeC {\'u} Principal\relax }}{51}{figure.caption.58}}
-\newlabel{fig:menuppal}{{5.15}{51}{Menú Principal\relax }{figure.caption.58}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Actividad de Perfil\relax }}{51}{figure.caption.58}}
-\newlabel{fig:perfil}{{5.16}{51}{Actividad de Perfil\relax }{figure.caption.58}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Eliminar y cambiar nombre de un chat}{52}{figure.caption.58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Di\IeC {\'a}logo para Borrar un Chat\relax }}{52}{figure.caption.59}}
-\newlabel{fig:borrarchat}{{5.17}{52}{Diálogo para Borrar un Chat\relax }{figure.caption.59}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Chat\relax }}{52}{figure.caption.59}}
-\newlabel{fig:infochat}{{5.18}{52}{Actividad de Información de Chat\relax }{figure.caption.59}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Visualizar informaci\IeC {\'o}n de los integrantes}{53}{figure.caption.59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Integrante\relax }}{53}{figure.caption.60}}
-\newlabel{fig:infointegrante}{{5.19}{53}{Actividad de Información de Integrante\relax }{figure.caption.60}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusiones y Trabajos Futuros}{55}{chapter.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Sprint 4: Integraci\IeC {\'o}n con Google Calendar y Otras Mejoras}{53}{section.5.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Planificaci\IeC {\'o}n del Sprint}{53}{subsection.5.5.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Historia de Usuario 7}}{53}{table.caption.60}}
+\newlabel{tab:historia7}{{5.9}{53}{Historia de Usuario 7}{table.caption.60}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces Historia de Usuario 8}}{53}{table.caption.61}}
+\newlabel{tab:historia8}{{5.10}{53}{Historia de Usuario 8}{table.caption.61}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces Historia de Usuario 9}}{54}{table.caption.62}}
+\newlabel{tab:historia9}{{5.11}{54}{Historia de Usuario 9}{table.caption.62}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces Historia de Usuario 10}}{54}{table.caption.63}}
+\newlabel{tab:historia10}{{5.12}{54}{Historia de Usuario 10}{table.caption.63}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Tareas del Sprint}{54}{subsection.5.5.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{54}{subsection.5.5.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Bot\IeC {\'o}n para Crear un Evento\relax }}{54}{figure.caption.64}}
+\newlabel{fig:crearevento}{{5.19}{54}{Botón para Crear un Evento\relax }{figure.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Ejemplo de Inserci\IeC {\'o}n de <<Invitados>>\relax }}{54}{figure.caption.64}}
+\newlabel{fig:invitados}{{5.20}{54}{Ejemplo de Inserción de <<Invitados>>\relax }{figure.caption.64}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Creaci\IeC {\'o}n y Modificaci\IeC {\'o}n del Perfil}{55}{figure.caption.64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Men\IeC {\'u} Principal\relax }}{55}{figure.caption.65}}
+\newlabel{fig:menuppal}{{5.21}{55}{Menú Principal\relax }{figure.caption.65}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Actividad de Perfil\relax }}{55}{figure.caption.65}}
+\newlabel{fig:perfil}{{5.22}{55}{Actividad de Perfil\relax }{figure.caption.65}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Eliminar y cambiar nombre de un chat}{56}{figure.caption.65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Di\IeC {\'a}logo para Borrar un Chat\relax }}{56}{figure.caption.66}}
+\newlabel{fig:borrarchat}{{5.23}{56}{Diálogo para Borrar un Chat\relax }{figure.caption.66}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Chat\relax }}{56}{figure.caption.66}}
+\newlabel{fig:infochat}{{5.24}{56}{Actividad de Información de Chat\relax }{figure.caption.66}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Visualizar informaci\IeC {\'o}n de los integrantes}{57}{figure.caption.66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.25}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Integrante\relax }}{57}{figure.caption.67}}
+\newlabel{fig:infointegrante}{{5.25}{57}{Actividad de Información de Integrante\relax }{figure.caption.67}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusiones y Trabajos Futuros}{59}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:conclusiones}{{6}{55}{Conclusiones y Trabajos Futuros}{chapter.6}{}}
+\newlabel{chap:conclusiones}{{6}{59}{Conclusiones y Trabajos Futuros}{chapter.6}{}}
 \acronymused{TFG}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Conclusiones}{55}{section.6.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Trabajos Futuros}{56}{section.6.2}}
-\@writefile{toc}{\contentsline {chapter}{Dise\IeC {\~n}o de la Base de Datos}{59}{appendix*.61}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Conclusiones}{59}{section.6.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Trabajos Futuros}{60}{section.6.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Dise\IeC {\~n}o de la Base de Datos}{63}{appendix.Alph1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:bbdd}{{6.2}{59}{Diseño de la Base de Datos}{appendix*.61}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Dise\IeC {\~n}o de la Base de Datos no Relacional\relax }}{59}{figure.caption.62}}
-\newlabel{fig:bbddfirestore}{{1}{59}{Diseño de la Base de Datos no Relacional\relax }{figure.caption.62}{}}
+\newlabel{chap:bbdd}{{A}{63}{Diseño de la Base de Datos}{appendix.Alph1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Dise\IeC {\~n}o de la Base de Datos no Relacional\relax }}{63}{figure.caption.68}}
+\newlabel{fig:bbddfirestore}{{A.1}{63}{Diseño de la Base de Datos no Relacional\relax }{figure.caption.68}{}}
 \citation{Firebase2018}
-\@writefile{toc}{\contentsline {chapter}{Protecci\IeC {\'o}n de Datos de Car\IeC {\'a}cter Personal}{61}{appendix*.63}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Protecci\IeC {\'o}n de Datos de Car\IeC {\'a}cter Personal}{65}{appendix.Alph2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:lopd}{{6.2}{61}{Protección de Datos de Carácter Personal}{appendix*.63}{}}
+\newlabel{chap:lopd}{{B}{65}{Protección de Datos de Carácter Personal}{appendix.Alph2}{}}
 \AC@undonewlabel{acro:LOPD}
-\newlabel{acro:LOPD}{{6.2}{61}{Protección de Datos de Carácter Personal}{section*.64}{}}
+\newlabel{acro:LOPD}{{B}{65}{Protección de Datos de Carácter Personal}{section*.69}{}}
 \acronymused{LOPD}
 \acronymused{LOPD}
 \acronymused{RGPD}
-\@writefile{toc}{\contentsline {chapter}{Manuales de Usuario}{63}{appendix*.65}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Manuales de Usuario}{67}{appendix.Alph3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:manuales}{{6.2}{63}{Manuales de Usuario}{appendix*.65}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces P\IeC {\'a}gina de Inicio del Proyecto de Firebase\relax }}{63}{figure.caption.66}}
-\newlabel{fig:iniciofirebase}{{2}{63}{Página de Inicio del Proyecto de Firebase\relax }{figure.caption.66}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces P\IeC {\'a}gina de Inicio de la Base de Datos\relax }}{64}{figure.caption.67}}
-\newlabel{fig:iniciobbdd}{{3}{64}{Página de Inicio de la Base de Datos\relax }{figure.caption.67}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Ejemplo Colecci\IeC {\'o}n Docentes\relax }}{65}{figure.caption.68}}
-\newlabel{fig:bbdddocentes}{{4}{65}{Ejemplo Colección Docentes\relax }{figure.caption.68}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A\IeC {\~n}adir Nuevo Documento\relax }}{65}{figure.caption.69}}
-\newlabel{fig:adddocente}{{5}{65}{Añadir Nuevo Documento\relax }{figure.caption.69}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Ejemplo de Creaci\IeC {\'o}n de un Nuevo Docente\relax }}{66}{figure.caption.70}}
-\newlabel{fig:ejemploocente}{{6}{66}{Ejemplo de Creación de un Nuevo Docente\relax }{figure.caption.70}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Documento Existente\relax }}{66}{figure.caption.71}}
-\newlabel{fig:errordocente}{{7}{66}{Documento Existente\relax }{figure.caption.71}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Alta de Nuevo Docente Finalizada\relax }}{67}{figure.caption.72}}
-\newlabel{fig:finadddocente}{{8}{67}{Alta de Nuevo Docente Finalizada\relax }{figure.caption.72}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Bot\IeC {\'o}n para Establecer un Filtro\relax }}{67}{figure.caption.73}}
-\newlabel{fig:filtrodocente}{{9}{67}{Botón para Establecer un Filtro\relax }{figure.caption.73}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Eliminar Docente\relax }}{68}{figure.caption.74}}
-\newlabel{fig:eliminardocente}{{10}{68}{Eliminar Docente\relax }{figure.caption.74}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Colecci\IeC {\'o}n <<UsuariosWeb>>\relax }}{69}{figure.caption.75}}
-\newlabel{fig:bbdduweb}{{11}{69}{Colección <<UsuariosWeb>>\relax }{figure.caption.75}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces P\IeC {\'a}gina de Inicio de Sesi\IeC {\'o}n\relax }}{70}{figure.caption.76}}
-\newlabel{fig:loginweb}{{12}{70}{Página de Inicio de Sesión\relax }{figure.caption.76}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces P\IeC {\'a}gina Principal\relax }}{70}{figure.caption.77}}
-\newlabel{fig:indexweb}{{13}{70}{Página Principal\relax }{figure.caption.77}{}}
+\newlabel{chap:manuales}{{C}{67}{Manuales de Usuario}{appendix.Alph3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.1}{\ignorespaces P\IeC {\'a}gina de Inicio del Proyecto de Firebase\relax }}{67}{figure.caption.70}}
+\newlabel{fig:iniciofirebase}{{C.1}{67}{Página de Inicio del Proyecto de Firebase\relax }{figure.caption.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.2}{\ignorespaces P\IeC {\'a}gina de Inicio de la Base de Datos\relax }}{68}{figure.caption.71}}
+\newlabel{fig:iniciobbdd}{{C.2}{68}{Página de Inicio de la Base de Datos\relax }{figure.caption.71}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.3}{\ignorespaces Ejemplo Colecci\IeC {\'o}n Docentes\relax }}{69}{figure.caption.72}}
+\newlabel{fig:bbdddocentes}{{C.3}{69}{Ejemplo Colección Docentes\relax }{figure.caption.72}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.4}{\ignorespaces A\IeC {\~n}adir Nuevo Documento\relax }}{69}{figure.caption.73}}
+\newlabel{fig:adddocente}{{C.4}{69}{Añadir Nuevo Documento\relax }{figure.caption.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.5}{\ignorespaces Ejemplo de Creaci\IeC {\'o}n de un Nuevo Docente\relax }}{70}{figure.caption.74}}
+\newlabel{fig:ejemploocente}{{C.5}{70}{Ejemplo de Creación de un Nuevo Docente\relax }{figure.caption.74}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.6}{\ignorespaces Documento Existente\relax }}{70}{figure.caption.75}}
+\newlabel{fig:errordocente}{{C.6}{70}{Documento Existente\relax }{figure.caption.75}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.7}{\ignorespaces Alta de Nuevo Docente Finalizada\relax }}{71}{figure.caption.76}}
+\newlabel{fig:finadddocente}{{C.7}{71}{Alta de Nuevo Docente Finalizada\relax }{figure.caption.76}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.8}{\ignorespaces Bot\IeC {\'o}n para Establecer un Filtro\relax }}{71}{figure.caption.77}}
+\newlabel{fig:filtrodocente}{{C.8}{71}{Botón para Establecer un Filtro\relax }{figure.caption.77}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.9}{\ignorespaces Eliminar Docente\relax }}{72}{figure.caption.78}}
+\newlabel{fig:eliminardocente}{{C.9}{72}{Eliminar Docente\relax }{figure.caption.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.10}{\ignorespaces Colecci\IeC {\'o}n <<UsuariosWeb>>\relax }}{73}{figure.caption.79}}
+\newlabel{fig:bbdduweb}{{C.10}{73}{Colección <<UsuariosWeb>>\relax }{figure.caption.79}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.11}{\ignorespaces P\IeC {\'a}gina de Inicio de Sesi\IeC {\'o}n\relax }}{74}{figure.caption.80}}
+\newlabel{fig:loginweb}{{C.11}{74}{Página de Inicio de Sesión\relax }{figure.caption.80}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.12}{\ignorespaces P\IeC {\'a}gina Principal\relax }}{74}{figure.caption.81}}
+\newlabel{fig:indexweb}{{C.12}{74}{Página Principal\relax }{figure.caption.81}{}}
 \acronymused{CSV}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces P\IeC {\'a}gina para Dar de Alta a Nuevos Usuarios\relax }}{71}{figure.caption.78}}
-\newlabel{fig:altaweb}{{14}{71}{Página para Dar de Alta a Nuevos Usuarios\relax }{figure.caption.78}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces P\IeC {\'a}gina de Baja de Familias\relax }}{72}{figure.caption.79}}
-\newlabel{fig:bajaweb}{{15}{72}{Página de Baja de Familias\relax }{figure.caption.79}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces P\IeC {\'a}gina de Consulta\relax }}{72}{figure.caption.80}}
-\newlabel{fig:consultaweb}{{16}{72}{Página de Consulta\relax }{figure.caption.80}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces P\IeC {\'a}gina de Modificaci\IeC {\'o}n de Usuarios\relax }}{73}{figure.caption.81}}
-\newlabel{fig:modificaweb}{{17}{73}{Página de Modificación de Usuarios\relax }{figure.caption.81}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Pantalla de Inicio de EduChat\relax }}{74}{figure.caption.82}}
-\newlabel{fig:inicioappdocente}{{18}{74}{Pantalla de Inicio de EduChat\relax }{figure.caption.82}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Pregunta de Inicio de Sesi\IeC {\'o}n\relax }}{74}{figure.caption.82}}
-\newlabel{fig:preguntadocente}{{19}{74}{Pregunta de Inicio de Sesión\relax }{figure.caption.82}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.13}{\ignorespaces P\IeC {\'a}gina para Dar de Alta a Nuevos Usuarios\relax }}{75}{figure.caption.82}}
+\newlabel{fig:altaweb}{{C.13}{75}{Página para Dar de Alta a Nuevos Usuarios\relax }{figure.caption.82}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.14}{\ignorespaces P\IeC {\'a}gina de Baja de Familias\relax }}{76}{figure.caption.83}}
+\newlabel{fig:bajaweb}{{C.14}{76}{Página de Baja de Familias\relax }{figure.caption.83}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.15}{\ignorespaces P\IeC {\'a}gina de Consulta\relax }}{76}{figure.caption.84}}
+\newlabel{fig:consultaweb}{{C.15}{76}{Página de Consulta\relax }{figure.caption.84}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.16}{\ignorespaces P\IeC {\'a}gina de Modificaci\IeC {\'o}n de Usuarios\relax }}{77}{figure.caption.85}}
+\newlabel{fig:modificarweb}{{C.16}{77}{Página de Modificación de Usuarios\relax }{figure.caption.85}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.17}{\ignorespaces Pantalla de Inicio de EduChat\relax }}{78}{figure.caption.86}}
+\newlabel{fig:inicioappdocente}{{C.17}{78}{Pantalla de Inicio de EduChat\relax }{figure.caption.86}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.18}{\ignorespaces Pregunta de Inicio de Sesi\IeC {\'o}n\relax }}{78}{figure.caption.86}}
+\newlabel{fig:preguntadocente}{{C.18}{78}{Pregunta de Inicio de Sesión\relax }{figure.caption.86}{}}
 \acronymused{SMS}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Pantalla de Inicio con N\IeC {\'u}mero   de Tfno.\relax }}{75}{figure.caption.83}}
-\newlabel{fig:iniciotfnodocente}{{20}{75}{Pantalla de Inicio con Número \\ de Tfno.\relax }{figure.caption.83}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Pantalla de Inicio con Correo y Contrase\IeC {\~n}a\relax }}{75}{figure.caption.83}}
-\newlabel{fig:iniciocorreodocente}{{21}{75}{Pantalla de Inicio con Correo y Contraseña\relax }{figure.caption.83}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Pantalla de Creaci\IeC {\'o}n de Chat\relax }}{76}{figure.caption.84}}
-\newlabel{fig:crearchat}{{22}{76}{Pantalla de Creación de Chat\relax }{figure.caption.84}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Confirmaci\IeC {\'o}n de Borrado de Chat\relax }}{76}{figure.caption.84}}
-\newlabel{fig:eliminarchat}{{23}{76}{Confirmación de Borrado de Chat\relax }{figure.caption.84}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Pantalla de Perfil\relax }}{77}{figure.caption.85}}
-\newlabel{fig:perfildocente}{{24}{77}{Pantalla de Perfil\relax }{figure.caption.85}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Pantalla de Informaci\IeC {\'o}n   del Chat\relax }}{78}{figure.caption.86}}
-\newlabel{fig:infochatdocente}{{25}{78}{Pantalla de Información \\ del Chat\relax }{figure.caption.86}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Pantalla de Informaci\IeC {\'o}n de   Integrante\relax }}{78}{figure.caption.86}}
-\newlabel{fig:infointegrantedocente}{{26}{78}{Pantalla de Información de \\ Integrante\relax }{figure.caption.86}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Bot\IeC {\'o}n para Crear Evento\relax }}{78}{figure.caption.87}}
-\newlabel{fig:creareventodocente}{{27}{78}{Botón para Crear Evento\relax }{figure.caption.87}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Pantalla Inicio de la Aplicaci\IeC {\'o}n\relax }}{79}{figure.caption.88}}
-\newlabel{fig:inicioappfamilia}{{28}{79}{Pantalla Inicio de la Aplicación\relax }{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.19}{\ignorespaces Pantalla de Inicio con N\IeC {\'u}mero   de Tfno.\relax }}{79}{figure.caption.87}}
+\newlabel{fig:iniciotfnodocente}{{C.19}{79}{Pantalla de Inicio con Número \\ de Tfno.\relax }{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.20}{\ignorespaces Pantalla de Inicio con Correo y Contrase\IeC {\~n}a\relax }}{79}{figure.caption.87}}
+\newlabel{fig:iniciocorreodocente}{{C.20}{79}{Pantalla de Inicio con Correo y Contraseña\relax }{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.21}{\ignorespaces Pantalla de Creaci\IeC {\'o}n de Chat\relax }}{80}{figure.caption.88}}
+\newlabel{fig:crearchat}{{C.21}{80}{Pantalla de Creación de Chat\relax }{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.22}{\ignorespaces Confirmaci\IeC {\'o}n de Borrado de Chat\relax }}{80}{figure.caption.88}}
+\newlabel{fig:eliminarchat}{{C.22}{80}{Confirmación de Borrado de Chat\relax }{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.23}{\ignorespaces Pantalla de Perfil\relax }}{81}{figure.caption.89}}
+\newlabel{fig:perfildocente}{{C.23}{81}{Pantalla de Perfil\relax }{figure.caption.89}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.24}{\ignorespaces Pantalla de Informaci\IeC {\'o}n   del Chat\relax }}{82}{figure.caption.90}}
+\newlabel{fig:infochatdocente}{{C.24}{82}{Pantalla de Información \\ del Chat\relax }{figure.caption.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.25}{\ignorespaces Pantalla de Informaci\IeC {\'o}n de   Integrante\relax }}{82}{figure.caption.90}}
+\newlabel{fig:infointegrantedocente}{{C.25}{82}{Pantalla de Información de \\ Integrante\relax }{figure.caption.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.26}{\ignorespaces Bot\IeC {\'o}n para Crear Evento\relax }}{83}{figure.caption.91}}
+\newlabel{fig:creareventodocente}{{C.26}{83}{Botón para Crear Evento\relax }{figure.caption.91}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.27}{\ignorespaces Pantalla Inicio de la Aplicaci\IeC {\'o}n\relax }}{84}{figure.caption.92}}
+\newlabel{fig:inicioappfamilia}{{C.27}{84}{Pantalla Inicio de la Aplicación\relax }{figure.caption.92}{}}
 \acronymused{SMS}
-\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Pantalla de Inicio de Sesi\IeC {\'o}n   Mediante N\IeC {\textordmasculine } de Tel\IeC {\'e}fono\relax }}{80}{figure.caption.89}}
-\newlabel{fig:iniciotfnofamilia}{{29}{80}{Pantalla de Inicio de Sesión \\ Mediante Nº de Teléfono\relax }{figure.caption.89}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Pantalla de Inicio de Sesi\IeC {\'o}n   Mediante Correo y Contrase\IeC {\~n}a\relax }}{80}{figure.caption.89}}
-\newlabel{fig:iniciocorreofamilia}{{30}{80}{Pantalla de Inicio de Sesión \\ Mediante Correo y Contraseña\relax }{figure.caption.89}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Pantalla de Perfil\relax }}{81}{figure.caption.90}}
-\newlabel{fig:perfilfamilia}{{31}{81}{Pantalla de Perfil\relax }{figure.caption.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.28}{\ignorespaces Pantalla de Inicio de Sesi\IeC {\'o}n   Mediante N\IeC {\textordmasculine } de Tel\IeC {\'e}fono\relax }}{85}{figure.caption.93}}
+\newlabel{fig:iniciotfnofamilia}{{C.28}{85}{Pantalla de Inicio de Sesión \\ Mediante Nº de Teléfono\relax }{figure.caption.93}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.29}{\ignorespaces Pantalla de Inicio de Sesi\IeC {\'o}n   Mediante Correo y Contrase\IeC {\~n}a\relax }}{85}{figure.caption.93}}
+\newlabel{fig:iniciocorreofamilia}{{C.29}{85}{Pantalla de Inicio de Sesión \\ Mediante Correo y Contraseña\relax }{figure.caption.93}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.30}{\ignorespaces Pantalla de Perfil\relax }}{86}{figure.caption.94}}
+\newlabel{fig:perfilfamilia}{{C.30}{86}{Pantalla de Perfil\relax }{figure.caption.94}{}}
 \bibdata{main}
-\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Pantalla de Informaci\IeC {\'o}n de Chat\relax }}{82}{figure.caption.91}}
-\newlabel{fig:infochatfamilia}{{32}{82}{Pantalla de Información de Chat\relax }{figure.caption.91}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.31}{\ignorespaces Pantalla de Informaci\IeC {\'o}n de Chat\relax }}{87}{figure.caption.95}}
+\newlabel{fig:infochatfamilia}{{C.31}{87}{Pantalla de Información de Chat\relax }{figure.caption.95}{}}
 \bibcite{Alias2017}{Ali17}
 \bibcite{AndroidStudio}{And}
 \bibcite{ARCO}{ARC}
@@ -474,7 +496,7 @@
 \bibcite{Educo2016}{Edu16}
 \bibcite{Elio2016}{Eli16}
 \bibcite{Firebase2018}{Fir18}
-\@writefile{toc}{\contentsline {chapter}{Referencias}{83}{appendix*.92}}
+\@writefile{toc}{\contentsline {chapter}{Referencias}{89}{appendix*.96}}
 \bibcite{Andro}{Gooa}
 \bibcite{GooFirebase}{Goob}
 \bibcite{IBM}{IBM}
