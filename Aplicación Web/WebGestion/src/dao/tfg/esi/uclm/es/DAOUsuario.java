@@ -9,7 +9,7 @@ public class DAOUsuario {
 		byte[] result;
 		
 		try {
-			md = MessageDigest.getInstance("SHA1");
+			md = MessageDigest.getInstance("SHA-256");
 	        
 	        result = md.digest(pwd.getBytes());
 	

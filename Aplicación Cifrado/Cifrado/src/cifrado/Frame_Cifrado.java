@@ -169,7 +169,7 @@ public class Frame_Cifrado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "¡El campo de contraseña no puede estar vacío!");
         } else {
             try{
-                MessageDigest md = MessageDigest.getInstance("SHA1");
+                MessageDigest md = MessageDigest.getInstance("SHA-256");
                 StringBuffer sb = new StringBuffer();
                 byte[] result = md.digest(txtPass.getText().getBytes());
 
@@ -183,7 +183,7 @@ public class Frame_Cifrado extends javax.swing.JFrame {
                 throw new RuntimeException(e);
             }
             
-            //http://www.sha1-online.com/sha1-java/
+            //http://www.sha1-online.com/sha256-java/
         }
     }//GEN-LAST:event_btnCifrarActionPerformed
 
