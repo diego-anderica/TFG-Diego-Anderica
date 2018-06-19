@@ -284,7 +284,10 @@ public class ChatActivity extends AppCompatActivity {
         TranslationResult result = translator.translate(translateOptions)
                 .execute();
 
-        ToneOptions toneOptions = new ToneOptions.Builder().html(result.getTranslations().get(0).getTranslation()).build();
+        ToneOptions toneOptions = new ToneOptions.Builder()
+                .html(result.getTranslations().get(0).getTranslation())
+                .build();
+
         ToneAnalysis tone = toneAnalyzer.tone(toneOptions).execute();
 
         listaOraciones = tone.getSentencesTone();
