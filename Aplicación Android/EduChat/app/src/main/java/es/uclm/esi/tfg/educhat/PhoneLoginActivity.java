@@ -29,6 +29,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.concurrent.TimeUnit;
 
+import es.uclm.esi.tfg.educhat.dominio.Docente;
+import es.uclm.esi.tfg.educhat.dominio.Familia;
+
 public class PhoneLoginActivity extends AppCompatActivity {
 
     private final int INVISIBLE = 0;
@@ -143,7 +146,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
     }
 
     private void enviarCodigo() {
-        //TODO: Controlar prefijos telefónicos
         String numTelefono = txtTelefono.getText().toString();
 
         numTelefono = "+34" + numTelefono;

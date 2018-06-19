@@ -30,6 +30,9 @@ import com.google.firebase.storage.UploadTask;
 
 import org.apache.commons.lang3.StringUtils;
 
+import es.uclm.esi.tfg.educhat.dominio.Docente;
+import es.uclm.esi.tfg.educhat.dominio.Familia;
+
 public class PerfilUsuarioActivity extends AppCompatActivity {
     //Constante de rastreo de intent
     private static final int PICK_IMAGE_REQUEST = 220;

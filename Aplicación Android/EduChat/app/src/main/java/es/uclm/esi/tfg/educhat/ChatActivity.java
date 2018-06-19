@@ -11,7 +11,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -55,6 +53,10 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import es.uclm.esi.tfg.educhat.dominio.Docente;
+import es.uclm.esi.tfg.educhat.dominio.Familia;
+import es.uclm.esi.tfg.educhat.dominio.Mensaje;
+
 public class ChatActivity extends AppCompatActivity {
     private static final int CORREO = 1;
     private static final int TELEFONO = 2;
@@ -80,6 +82,9 @@ public class ChatActivity extends AppCompatActivity {
     private double pondTentative;
 
     private int pondPeso;
+
+    private boolean tonoNegativo;
+    private HashMap<String, Double> mapaTonosMensaje;
 
     private boolean datosObtenidos = false;
 
@@ -144,6 +149,8 @@ public class ChatActivity extends AppCompatActivity {
         recyclerViewMensajes.setAdapter(adaptadorListaMensajes);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerViewMensajes.setLayoutManager(linearLayoutManager);
+
+        mapaTonosMensaje = new HashMap<String, Double>();
 
         try {
             credentials_tone = new JSONObject(obtenerJSON(R.raw.credentials_tone_ibm));
@@ -253,6 +260,8 @@ public class ChatActivity extends AppCompatActivity {
 
     private void enviarMensaje() {
         Mensaje mensaje = crearMensaje();
+        tonoNegativo = false;
+        mapaTonosMensaje.clear();
 
         if (!isDocente) {
             tonoUltimoMensaje = 0;
@@ -319,64 +328,103 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void analizarTonos(List<ToneScore> listaTonos, boolean actualizarBBDD) {
-        double scoreMensaje = 0.0;
-        double scoreCorrector = 0.0;
-        boolean tonoNegativo = false;
+        String tono;
+        double valorTono = 0.0;
+        double valorFinal = 0.0;
 
         if (listaTonos.size() == 0) {
             tonoUltimoMensaje = 75.0;
-        }
+        } else {
+            for (int i = 0; i < listaTonos.size(); i++) {
+                tono = listaTonos.get(i).getToneId();
+                valorTono = listaTonos.get(i).getScore();
 
-        for (int i = 0; i < listaTonos.size(); i++) {
-            if (listaTonos.get(i).getToneId().equalsIgnoreCase(ANGER)) {
-                scoreMensaje -= listaTonos.get(i).getScore() * pondAnger;
-                tonoNegativo = true;
-            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(FEAR)) {
-                scoreMensaje -= listaTonos.get(i).getScore() * pondFear;
-                tonoNegativo = true;
-            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(SADNESS)) {
-                scoreMensaje -= listaTonos.get(i).getScore() * pondSadness;
-                tonoNegativo = true;
-            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(JOY)) {
-                scoreMensaje += listaTonos.get(i).getScore() * pondJoy;
-            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(ANALYTICAL)) {
-                scoreCorrector += listaTonos.get(i).getScore() * pondAnalytical * pondPeso;
-            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(CONFIDENT)) {
-                scoreCorrector += listaTonos.get(i).getScore() * pondConfident * pondPeso;
-            } else if (listaTonos.get(i).getToneId().equalsIgnoreCase(TENTATIVE)) {
-                scoreCorrector += listaTonos.get(i).getScore() * pondTentative * pondPeso;
+                if (mapaTonosMensaje.containsKey(tono)) {
+                    mapaTonosMensaje.put(tono, mapaTonosMensaje.get(tono) + valorTono);
+                } else {
+                    mapaTonosMensaje.put(tono, valorTono);
+                }
+
             }
         }
 
-        Log.d("ScoreMensaje", Double.toString(scoreMensaje));
-        Log.d("ScoreCorrector", Double.toString(scoreCorrector));
-
-        if (tonoNegativo) {
-            scoreUsuario = scoreUsuario + (scoreMensaje - scoreCorrector);
-            tonoUltimoMensaje = (tonoUltimoMensaje + (scoreMensaje - scoreCorrector)) * 10;
-        } else {
-            scoreUsuario = scoreUsuario + (scoreMensaje + scoreCorrector);
-            tonoUltimoMensaje = (tonoUltimoMensaje + (scoreMensaje + scoreCorrector)) * 10;
-        }
-
-        Log.d("ScoreUltimo", Double.toString(tonoUltimoMensaje));
-
-        if (scoreUsuario < 0.0) {
-            scoreUsuario = 0.0;
-        } else if (scoreUsuario > 100.0) {
-            scoreUsuario = 100.0;
-        }
-
-        if (tonoUltimoMensaje < 0.0) {
-            tonoUltimoMensaje = 0.0;
-        } else if (tonoUltimoMensaje > 100.0) {
-            tonoUltimoMensaje = 100.0;
-        }
-
         if (actualizarBBDD) {
+            valorFinal = analizarMapa();
+            scoreUsuario = (scoreUsuario + valorFinal) / 2;
+
+            if (scoreUsuario < 0.0) {
+                scoreUsuario = 0.0;
+            } else if (scoreUsuario > 100.0) {
+                scoreUsuario = 100.0;
+            }
+
+            tonoUltimoMensaje = valorFinal;
+
             actualizarScoreUsuarioBBDD();
         }
 
+    }
+
+    private double analizarMapa() {
+        double acumulado = 0.0;
+        boolean tonoNegativo = false;
+
+        if (mapaTonosMensaje.containsKey(ANGER)) {
+            acumulado -= mapaTonosMensaje.get(ANGER) * pondAnger;
+            tonoNegativo = true;
+        }
+
+        if (mapaTonosMensaje.containsKey(FEAR)) {
+            acumulado -= mapaTonosMensaje.get(FEAR) * pondFear;
+            tonoNegativo = true;
+        }
+
+        if (mapaTonosMensaje.containsKey(SADNESS)) {
+            acumulado -= mapaTonosMensaje.get(SADNESS) * pondSadness;
+            tonoNegativo = true;
+        }
+
+        if (mapaTonosMensaje.containsKey(JOY)) {
+            acumulado += mapaTonosMensaje.get(JOY) * pondJoy;
+        }
+
+        if (mapaTonosMensaje.containsKey(ANALYTICAL)) {
+            if (tonoNegativo) {
+                acumulado -= mapaTonosMensaje.get(ANALYTICAL) * pondAnalytical * pondPeso;
+            } else {
+                acumulado += mapaTonosMensaje.get(ANALYTICAL) * pondAnalytical * pondPeso;
+            }
+        }
+
+        if (mapaTonosMensaje.containsKey(CONFIDENT)) {
+            if (tonoNegativo) {
+                acumulado -= mapaTonosMensaje.get(CONFIDENT) * pondConfident * pondPeso;
+            } else {
+                acumulado += mapaTonosMensaje.get(CONFIDENT) * pondConfident * pondPeso;
+            }
+        }
+
+        if (mapaTonosMensaje.containsKey(TENTATIVE)) {
+            if (tonoNegativo) {
+                acumulado -= mapaTonosMensaje.get(TENTATIVE) * pondTentative * pondPeso;
+            } else {
+                acumulado += mapaTonosMensaje.get(TENTATIVE) * pondTentative * pondPeso;
+            }
+        }
+
+        if (tonoNegativo) {
+            acumulado += 50.0;
+        } else {
+            acumulado += 75.0;
+        }
+
+        if (acumulado < 0.0) {
+            acumulado = 0.0;
+        } else if (acumulado > 100.0) {
+            acumulado = 100.0;
+        }
+
+        return acumulado;
     }
 
     private void actualizarScoreUsuarioBBDD() {
@@ -509,8 +557,6 @@ public class ChatActivity extends AppCompatActivity {
                 document.getDouble("tono"),
                 isDocente);
 
-        Log.d("MensajeChat", msj.toString());
-
         lstMensajes.add(msj);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewMensajes.getContext(),
                 linearLayoutManager.getOrientation());
@@ -610,6 +656,9 @@ public class ChatActivity extends AppCompatActivity {
 
                 if (documentSnapshot != null && documentSnapshot.exists()) {
                     setTitle(documentSnapshot.getString("Nombre"));
+                } else if (!documentSnapshot.exists()) {
+                    Toast.makeText(ChatActivity.this, R.string.msgChatActualEliminado, Toast.LENGTH_SHORT).show();
+                    finish();
                 }
             }
         });

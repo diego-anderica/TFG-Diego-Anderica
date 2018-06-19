@@ -57,6 +57,7 @@
     <string name="lblDialogoSalir">Cerrar sesión</string>
     <string name="msgDialogoSalir">Confirmar cierre de sesión</string>
     <string name="msgChatEliminado">Se ha eliminado el chat</string>
+    <string name="msgChatCreado">Se ha creado el chat</string>
     <string name="lblOpcionesChat">Opciones de chat</string>
     <string name="mnuEliminarChat">Eliminar chat</string>
     <string name="msgConfirmarEliminarChat">¿Confirmar eliminación del chat?</string>
@@ -80,6 +81,7 @@
     <!--ChatActivity-->
     <string name="msgErrorWatson">Ha ocurrido un error al conectar con el servicio de IBM</string>
     <string name="msgErrorJSON">Ha ocurrido un error al obtener las credenciales de IBM</string>
+    <string name="msgChatActualEliminado">Se ha eliminado el chat actual</string>
     <!--ChatActivity-->
 
     <!--MenuChatActivity-->

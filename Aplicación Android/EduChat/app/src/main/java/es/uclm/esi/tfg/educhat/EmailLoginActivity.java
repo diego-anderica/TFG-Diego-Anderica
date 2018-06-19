@@ -26,6 +26,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import es.uclm.esi.tfg.educhat.dominio.Docente;
+import es.uclm.esi.tfg.educhat.dominio.Familia;
+
 public class EmailLoginActivity extends AppCompatActivity {
 
     private final int LOGIN = 0;

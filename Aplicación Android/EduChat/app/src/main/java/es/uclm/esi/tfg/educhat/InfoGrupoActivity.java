@@ -30,6 +30,10 @@ import java.util.Date;
 
 import javax.annotation.Nullable;
 
+import es.uclm.esi.tfg.educhat.dominio.Docente;
+import es.uclm.esi.tfg.educhat.dominio.Familia;
+import es.uclm.esi.tfg.educhat.dominio.Mensaje;
+
 public class InfoGrupoActivity extends AppCompatActivity {
     private static final int CORREO = 1;
     private static final int TELEFONO = 2;

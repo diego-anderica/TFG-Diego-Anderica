@@ -11,6 +11,8 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import es.uclm.esi.tfg.educhat.dominio.Mensaje;
+
 public class AdaptadorListaMensajes extends RecyclerView.Adapter<AdaptadorListaMensajes.MyViewHolder> {
 
     private ArrayList<Mensaje> mensajes;

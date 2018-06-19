@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import es.uclm.esi.tfg.educhat.dominio.ChatGrupal;
+
 public class AdaptadorListaChats extends ArrayAdapter {
     private Activity context;
     private ArrayList<ChatGrupal> chatsGrupales;

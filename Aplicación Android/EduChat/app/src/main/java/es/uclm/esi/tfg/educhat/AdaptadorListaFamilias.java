@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import es.uclm.esi.tfg.educhat.dominio.Familia;
+
 public class AdaptadorListaFamilias extends ArrayAdapter {
     private Activity context;
     private ArrayList<Familia> usuarios;

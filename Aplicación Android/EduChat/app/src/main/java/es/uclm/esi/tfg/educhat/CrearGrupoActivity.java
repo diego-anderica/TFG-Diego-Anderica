@@ -27,6 +27,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import es.uclm.esi.tfg.educhat.dominio.ChatGrupal;
+import es.uclm.esi.tfg.educhat.dominio.Docente;
+import es.uclm.esi.tfg.educhat.dominio.Familia;
+import es.uclm.esi.tfg.educhat.dominio.Mensaje;
+
 import static es.uclm.esi.tfg.educhat.MainActivity.CORREO;
 import static es.uclm.esi.tfg.educhat.MainActivity.TELEFONO;
 
@@ -238,8 +243,8 @@ public class CrearGrupoActivity extends AppCompatActivity {
         mapPondTonos.put("PondFear", 29.1666666);
         mapPondTonos.put("PondSadness", 29.1666666);
         mapPondTonos.put("PondJoy", 8.333333);
-        mapPondTonos.put("PondAnalytical", 0.666666);
-        mapPondTonos.put("PondConfident", 0.1666666);
+        mapPondTonos.put("PondAnalytical", 0.166666);
+        mapPondTonos.put("PondConfident", 0.6666666);
         mapPondTonos.put("PondTentative", 0.1666666);
         mapPondTonos.put("PondPeso", 10);
 

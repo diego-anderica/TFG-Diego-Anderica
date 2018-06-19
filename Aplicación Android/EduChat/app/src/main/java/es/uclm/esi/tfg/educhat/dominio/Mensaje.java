@@ -1,4 +1,4 @@
-package es.uclm.esi.tfg.educhat;
+package es.uclm.esi.tfg.educhat.dominio;
 
 import java.util.Date;
 

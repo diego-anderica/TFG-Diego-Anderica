@@ -36,6 +36,10 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import es.uclm.esi.tfg.educhat.dominio.ChatGrupal;
+import es.uclm.esi.tfg.educhat.dominio.Docente;
+import es.uclm.esi.tfg.educhat.dominio.Familia;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String ANONYMOUS = "anonymous";
