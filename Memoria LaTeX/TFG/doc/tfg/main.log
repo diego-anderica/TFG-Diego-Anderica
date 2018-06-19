@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.27)  19 JUN 2018 11:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.27)  19 JUN 2018 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4939,13 +4939,13 @@ Package babel Info: Redefining spanish shorthand "?
  [58
 
  <./figures//capturas_app/menuppal.png> <./figures//capturas_app/perfil.png>]
-<figures//capturas_app/eliminar.png, id=1514, 317.185pt x 142.5325pt>
+<figures//capturas_app/eliminar.png, id=1515, 317.185pt x 142.5325pt>
 File: figures//capturas_app/eliminar.png Graphic file (type png)
 <use figures//capturas_app/eliminar.png>
 Package pdftex.def Info: figures//capturas_app/eliminar.png  used on input line
  570.
 (pdftex.def)             Requested size: 154.35553pt x 69.36305pt.
-<figures//capturas_app/infochat.png, id=1515, 362.35374pt x 727.71875pt>
+<figures//capturas_app/infochat.png, id=1516, 362.35374pt x 727.71875pt>
 File: figures//capturas_app/infochat.png Graphic file (type png)
 <use figures//capturas_app/infochat.png>
 Package pdftex.def Info: figures//capturas_app/infochat.png  used on input line
@@ -4987,7 +4987,7 @@ Package babel Info: Redefining spanish shorthand "?
 [59
 
  <./figures//capturas_app/eliminar.png> <./figures//capturas_app/infochat.png>]
-<figures//capturas_app/infointegrante.png, id=1524, 363.3575pt x 727.71875pt>
+<figures//capturas_app/infointegrante.png, id=1525, 363.3575pt x 727.71875pt>
 File: figures//capturas_app/infointegrante.png Graphic file (type png)
 <use figures//capturas_app/infointegrante.png>
 Package pdftex.def Info: figures//capturas_app/infointegrante.png  used on inpu
@@ -5202,7 +5202,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
-<figures//BBDDFirestore.png, id=1548, 1095.09125pt x 1164.35pt>
+<figures//BBDDFirestore.png, id=1549, 1095.09125pt x 1164.35pt>
 File: figures//BBDDFirestore.png Graphic file (type png)
 <use figures//BBDDFirestore.png>
 Package pdftex.def Info: figures//BBDDFirestore.png  used on input line 7.
@@ -5342,7 +5342,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
-<figures//manuales/administrador/inicio_firebase.png, id=1575, 1247.66125pt x 8
+<figures//manuales/administrador/inicio_firebase.png, id=1576, 1247.66125pt x 8
 88.31876pt>
 File: figures//manuales/administrador/inicio_firebase.png Graphic file (type pn
 g)
@@ -5375,7 +5375,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 16.
 [69 <./figures//manuales/administrador/inicio_firebase.png>]
-<figures//manuales/administrador/inicio_bbdd.png, id=1582, 956.57375pt x 623.32
+<figures//manuales/administrador/inicio_bbdd.png, id=1583, 956.57375pt x 623.32
 875pt>
 File: figures//manuales/administrador/inicio_bbdd.png Graphic file (type png)
 <use figures//manuales/administrador/inicio_bbdd.png>
@@ -5413,7 +5413,7 @@ Package babel Info: Redefining spanish shorthand "?
  [70
 
  <./figures//manuales/administrador/inicio_bbdd.png>]
-<figures//manuales/administrador/bbdd_docentes.png, id=1591, 956.57375pt x 625.
+<figures//manuales/administrador/bbdd_docentes.png, id=1592, 956.57375pt x 625.
 33624pt>
 File: figures//manuales/administrador/bbdd_docentes.png Graphic file (type png)
 
@@ -5421,7 +5421,7 @@ File: figures//manuales/administrador/bbdd_docentes.png Graphic file (type png)
 Package pdftex.def Info: figures//manuales/administrador/bbdd_docentes.png  use
 d on input line 35.
 (pdftex.def)             Requested size: 308.71106pt x 201.81013pt.
-<figures//manuales/administrador/add_docente.png, id=1592, 698.61pt x 426.59375
+<figures//manuales/administrador/add_docente.png, id=1593, 698.61pt x 426.59375
 pt>
 File: figures//manuales/administrador/add_docente.png Graphic file (type png)
 <use figures//manuales/administrador/add_docente.png>
@@ -5460,7 +5460,7 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/administrador/bbdd_docentes.png> <./figures//manuales/adm
 inistrador/add_docente.png>]
-<figures//manuales/administrador/ejemplodocente.png, id=1602, 702.625pt x 748.7
+<figures//manuales/administrador/ejemplodocente.png, id=1603, 702.625pt x 748.7
 975pt>
 File: figures//manuales/administrador/ejemplodocente.png Graphic file (type png
 )
@@ -5468,7 +5468,7 @@ File: figures//manuales/administrador/ejemplodocente.png Graphic file (type png
 Package pdftex.def Info: figures//manuales/administrador/ejemplodocente.png  us
 ed on input line 55.
 (pdftex.def)             Requested size: 308.71106pt x 329.00346pt.
-<figures//manuales/administrador/errordocente.png, id=1603, 698.61pt x 430.6087
+<figures//manuales/administrador/errordocente.png, id=1604, 698.61pt x 430.6087
 5pt>
 File: figures//manuales/administrador/errordocente.png Graphic file (type png)
 <use figures//manuales/administrador/errordocente.png>
@@ -5507,7 +5507,7 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/administrador/ejemplodocente.png> <./figures//manuales/ad
 ministrador/errordocente.png>]
-<figures//manuales/administrador/finadd_docente.png, id=1611, 842.14626pt x 622
+<figures//manuales/administrador/finadd_docente.png, id=1612, 842.14626pt x 622
 .325pt>
 File: figures//manuales/administrador/finadd_docente.png Graphic file (type png
 )
@@ -5515,7 +5515,7 @@ File: figures//manuales/administrador/finadd_docente.png Graphic file (type png
 Package pdftex.def Info: figures//manuales/administrador/finadd_docente.png  us
 ed on input line 73.
 (pdftex.def)             Requested size: 330.76329pt x 244.42453pt.
-<figures//manuales/administrador/filtrodocente.png, id=1613, 221.82875pt x 41.1
+<figures//manuales/administrador/filtrodocente.png, id=1614, 221.82875pt x 41.1
 5375pt>
 File: figures//manuales/administrador/filtrodocente.png Graphic file (type png)
 
@@ -5553,7 +5553,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 90.
  [73 <./figures//manuales/administrador/finadd_docente.png> <./figures//manuale
 s/administrador/filtrodocente.png>]
-<figures//manuales/administrador/eliminardocente.png, id=1621, 841.1425pt x 620
+<figures//manuales/administrador/eliminardocente.png, id=1622, 841.1425pt x 620
 .3175pt>
 File: figures//manuales/administrador/eliminardocente.png Graphic file (type pn
 g)
@@ -5592,7 +5592,7 @@ Package babel Info: Redefining spanish shorthand "?
  [74
 
  <./figures//manuales/administrador/eliminardocente.png>]
-<figures//manuales/administrador/bbdd_admins.png, id=1628, 841.1425pt x 622.325
+<figures//manuales/administrador/bbdd_admins.png, id=1629, 841.1425pt x 622.325
 pt>
 File: figures//manuales/administrador/bbdd_admins.png Graphic file (type png)
 <use figures//manuales/administrador/bbdd_admins.png>
@@ -5630,14 +5630,14 @@ Package babel Info: Redefining spanish shorthand "?
  [75
 
  <./figures//manuales/administrador/bbdd_admins.png>]
-<figures//manuales/administrador/loginweb.png, id=1636, 1113.15875pt x 459.7175
+<figures//manuales/administrador/loginweb.png, id=1637, 1113.15875pt x 459.7175
 pt>
 File: figures//manuales/administrador/loginweb.png Graphic file (type png)
 <use figures//manuales/administrador/loginweb.png>
 Package pdftex.def Info: figures//manuales/administrador/loginweb.png  used on 
 input line 127.
 (pdftex.def)             Requested size: 352.81552pt x 145.70966pt.
-<figures//manuales/administrador/mainweb.png, id=1638, 1203.49625pt x 580.1675p
+<figures//manuales/administrador/mainweb.png, id=1639, 1203.49625pt x 580.1675p
 t>
 File: figures//manuales/administrador/mainweb.png Graphic file (type png)
 <use figures//manuales/administrador/mainweb.png>
@@ -5676,7 +5676,7 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/administrador/loginweb.png> <./figures//manuales/administ
 rador/mainweb.png>]
-<figures//manuales/administrador/alta.png, id=1647, 3354.5325pt x 3340.48pt>
+<figures//manuales/administrador/alta.png, id=1648, 3354.5325pt x 3340.48pt>
 File: figures//manuales/administrador/alta.png Graphic file (type png)
 <use figures//manuales/administrador/alta.png>
 Package pdftex.def Info: figures//manuales/administrador/alta.png  used on inpu
@@ -5713,14 +5713,14 @@ Package babel Info: Redefining spanish shorthand "?
  [77
 
  <./figures//manuales/administrador/alta.png>]
-<figures//manuales/administrador/bajafamilia.png, id=1655, 1275.76625pt x 372.3
+<figures//manuales/administrador/bajafamilia.png, id=1656, 1275.76625pt x 372.3
 9125pt>
 File: figures//manuales/administrador/bajafamilia.png Graphic file (type png)
 <use figures//manuales/administrador/bajafamilia.png>
 Package pdftex.def Info: figures//manuales/administrador/bajafamilia.png  used 
 on input line 165.
 (pdftex.def)             Requested size: 352.81552pt x 102.98465pt.
-<figures//manuales/administrador/consulta.png, id=1657, 1273.75874pt x 570.13pt
+<figures//manuales/administrador/consulta.png, id=1658, 1273.75874pt x 570.13pt
 >
 File: figures//manuales/administrador/consulta.png Graphic file (type png)
 <use figures//manuales/administrador/consulta.png>
@@ -5759,7 +5759,7 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/administrador/bajafamilia.png> <./figures//manuales/admin
 istrador/consulta.png>]
-<figures//manuales/administrador/modificar.png, id=1665, 1255.69125pt x 900.363
+<figures//manuales/administrador/modificar.png, id=1666, 1255.69125pt x 900.363
 75pt>
 File: figures//manuales/administrador/modificar.png Graphic file (type png)
 <use figures//manuales/administrador/modificar.png>
@@ -5797,13 +5797,13 @@ Package babel Info: Redefining spanish shorthand "?
  [79
 
  <./figures//manuales/administrador/modificar.png>]
-<figures//manuales/docente/inicioapp.png, id=1673, 360.34625pt x 727.71875pt>
+<figures//manuales/docente/inicioapp.png, id=1674, 360.34625pt x 727.71875pt>
 File: figures//manuales/docente/inicioapp.png Graphic file (type png)
 <use figures//manuales/docente/inicioapp.png>
 Package pdftex.def Info: figures//manuales/docente/inicioapp.png  used on input
  line 207.
 (pdftex.def)             Requested size: 132.30666pt x 267.18636pt.
-<figures/manuales/docente/preguntadocente.png, id=1674, 320.19624pt x 209.78375
+<figures/manuales/docente/preguntadocente.png, id=1675, 320.19624pt x 209.78375
 pt>
 File: figures/manuales/docente/preguntadocente.png Graphic file (type png)
 <use figures/manuales/docente/preguntadocente.png>
@@ -5842,13 +5842,13 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/docente/inicioapp.png> <./figures/manuales/docente/pregun
 tadocente.png>]
-<figures//manuales/docente/iniciotfno.png, id=1684, 362.35374pt x 727.71875pt>
+<figures//manuales/docente/iniciotfno.png, id=1685, 362.35374pt x 727.71875pt>
 File: figures//manuales/docente/iniciotfno.png Graphic file (type png)
 <use figures//manuales/docente/iniciotfno.png>
 Package pdftex.def Info: figures//manuales/docente/iniciotfno.png  used on inpu
 t line 227.
 (pdftex.def)             Requested size: 132.30666pt x 265.70952pt.
-<figures/manuales/docente/iniciocorreo.png, id=1685, 364.36125pt x 726.715pt>
+<figures/manuales/docente/iniciocorreo.png, id=1686, 364.36125pt x 726.715pt>
 File: figures/manuales/docente/iniciocorreo.png Graphic file (type png)
 <use figures/manuales/docente/iniciocorreo.png>
 Package pdftex.def Info: figures/manuales/docente/iniciocorreo.png  used on inp
@@ -5886,13 +5886,13 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/docente/iniciotfno.png> <./figures/manuales/docente/inici
 ocorreo.png>]
-<figures//manuales/docente/crearchat.png, id=1694, 363.3575pt x 724.7075pt>
+<figures//manuales/docente/crearchat.png, id=1695, 363.3575pt x 724.7075pt>
 File: figures//manuales/docente/crearchat.png Graphic file (type png)
 <use figures//manuales/docente/crearchat.png>
 Package pdftex.def Info: figures//manuales/docente/crearchat.png  used on input
  line 248.
 (pdftex.def)             Requested size: 132.30666pt x 263.89125pt.
-<figures/manuales/docente/eliminar.png, id=1695, 317.185pt x 142.5325pt>
+<figures/manuales/docente/eliminar.png, id=1696, 317.185pt x 142.5325pt>
 File: figures/manuales/docente/eliminar.png Graphic file (type png)
 <use figures/manuales/docente/eliminar.png>
 Package pdftex.def Info: figures/manuales/docente/eliminar.png  used on input l
@@ -5935,7 +5935,7 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/docente/crearchat.png> <./figures/manuales/docente/elimin
 ar.png>]
-<figures//manuales/docente/perfil.png, id=1703, 361.35pt x 727.71875pt>
+<figures//manuales/docente/perfil.png, id=1704, 361.35pt x 727.71875pt>
 File: figures//manuales/docente/perfil.png Graphic file (type png)
 <use figures//manuales/docente/perfil.png>
 Package pdftex.def Info: figures//manuales/docente/perfil.png  used on input li
@@ -5972,13 +5972,13 @@ Package babel Info: Redefining spanish shorthand "?
  [83
 
  <./figures//manuales/docente/perfil.png>]
-<figures//manuales/docente/infochat.png, id=1712, 362.35374pt x 727.71875pt>
+<figures//manuales/docente/infochat.png, id=1713, 362.35374pt x 727.71875pt>
 File: figures//manuales/docente/infochat.png Graphic file (type png)
 <use figures//manuales/docente/infochat.png>
 Package pdftex.def Info: figures//manuales/docente/infochat.png  used on input 
 line 282.
 (pdftex.def)             Requested size: 132.30666pt x 265.70952pt.
-<figures/manuales/docente/infointegrante.png, id=1713, 363.3575pt x 727.71875pt
+<figures/manuales/docente/infointegrante.png, id=1714, 363.3575pt x 727.71875pt
 >
 File: figures/manuales/docente/infointegrante.png Graphic file (type png)
 <use figures/manuales/docente/infointegrante.png>
@@ -6017,7 +6017,7 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/docente/infochat.png> <./figures/manuales/docente/infoint
 egrante.png>]
-<figures//manuales/docente/crearevento.png, id=1722, 316.18124pt x 42.1575pt>
+<figures//manuales/docente/crearevento.png, id=1723, 316.18124pt x 42.1575pt>
 File: figures//manuales/docente/crearevento.png Graphic file (type png)
 <use figures//manuales/docente/crearevento.png>
 Package pdftex.def Info: figures//manuales/docente/crearevento.png  used on inp
@@ -6055,7 +6055,7 @@ Package babel Info: Redefining spanish shorthand "?
 [85
 
  <./figures//manuales/docente/crearevento.png>]
-<figures//manuales/familia/inicioapp.png, id=1729, 361.35pt x 727.71875pt>
+<figures//manuales/familia/inicioapp.png, id=1730, 361.35pt x 727.71875pt>
 File: figures//manuales/familia/inicioapp.png Graphic file (type png)
 <use figures//manuales/familia/inicioapp.png>
 Package pdftex.def Info: figures//manuales/familia/inicioapp.png  used on input
@@ -6092,13 +6092,13 @@ Package babel Info: Redefining spanish shorthand "?
  [86
 
  <./figures//manuales/familia/inicioapp.png>]
-<figures//manuales/familia/iniciotfno.png, id=1738, 359.3425pt x 728.7225pt>
+<figures//manuales/familia/iniciotfno.png, id=1739, 359.3425pt x 728.7225pt>
 File: figures//manuales/familia/iniciotfno.png Graphic file (type png)
 <use figures//manuales/familia/iniciotfno.png>
 Package pdftex.def Info: figures//manuales/familia/iniciotfno.png  used on inpu
 t line 331.
 (pdftex.def)             Requested size: 132.30666pt x 268.311pt.
-<figures/manuales/familia/iniciocorreo.png, id=1739, 361.35pt x 727.71875pt>
+<figures/manuales/familia/iniciocorreo.png, id=1740, 361.35pt x 727.71875pt>
 File: figures/manuales/familia/iniciocorreo.png Graphic file (type png)
 <use figures/manuales/familia/iniciocorreo.png>
 Package pdftex.def Info: figures/manuales/familia/iniciocorreo.png  used on inp
@@ -6136,7 +6136,7 @@ Package babel Info: Redefining spanish shorthand "?
 
  <./figures//manuales/familia/iniciotfno.png> <./figures/manuales/familia/inici
 ocorreo.png>]
-<figures//manuales/familia/perfil.png, id=1747, 361.35pt x 728.7225pt>
+<figures//manuales/familia/perfil.png, id=1748, 361.35pt x 728.7225pt>
 File: figures//manuales/familia/perfil.png Graphic file (type png)
 <use figures//manuales/familia/perfil.png>
 Package pdftex.def Info: figures//manuales/familia/perfil.png  used on input li
@@ -6173,7 +6173,7 @@ Package babel Info: Redefining spanish shorthand "?
  [88
 
  <./figures//manuales/familia/perfil.png>]
-<figures//manuales/familia/infogrupo.png, id=1754, 362.35374pt x 727.71875pt>
+<figures//manuales/familia/infogrupo.png, id=1755, 362.35374pt x 727.71875pt>
 File: figures//manuales/familia/infogrupo.png Graphic file (type png)
 <use figures//manuales/familia/infogrupo.png>
 Package pdftex.def Info: figures//manuales/familia/infogrupo.png  used on input
@@ -6516,10 +6516,10 @@ xlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017
 /texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (128 pages, 4204546 bytes).
+Output written on main.pdf (128 pages, 4204572 bytes).
 PDF statistics:
- 1993 PDF objects out of 2073 (max. 8388607)
- 1688 compressed objects within 17 object streams
+ 1994 PDF objects out of 2073 (max. 8388607)
+ 1689 compressed objects within 17 object streams
  427 named destinations out of 1000 (max. 500000)
  984 words of extra memory for PDF output out of 10000 (max. 10000000)
 
