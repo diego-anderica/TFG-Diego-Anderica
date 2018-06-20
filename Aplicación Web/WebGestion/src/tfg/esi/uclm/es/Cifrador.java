@@ -1,8 +1,8 @@
-package dao.tfg.esi.uclm.es;
+package tfg.esi.uclm.es;
 
 import java.security.MessageDigest;
 
-public class DAOUsuario {
+public class Cifrador {
 	public static String encriptar(String pwd) throws Exception {
 		MessageDigest md;
 		StringBuffer sb = new StringBuffer();

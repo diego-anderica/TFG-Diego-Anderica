@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="dao.tfg.esi.uclm.es.DAOUsuario"%>
+<%@page import="tfg.esi.uclm.es.Cifrador"%>
 <%@ page import="org.json.JSONObject"%>
 <%
 
@@ -13,7 +13,7 @@
 		String tipo = jso.optString("tipo");
         
         if(tipo.equals("LOGIN")) {
-	        String cifrada = DAOUsuario.encriptar(jso.optString("contrasena"));
+	        String cifrada = Cifrador.encriptar(jso.optString("contrasena"));
 	        respuesta.put("resultado","OK");
 	        respuesta.put("cifrada", cifrada);
 	        respuesta.put("sesion", session.getId());
