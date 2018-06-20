@@ -171,7 +171,11 @@ public class Frame_Cifrado extends javax.swing.JFrame {
             try{
                 MessageDigest md = MessageDigest.getInstance("SHA-256");
                 StringBuffer sb = new StringBuffer();
-                byte[] result = md.digest(txtPass.getText().getBytes());
+                byte[] result = null;
+                
+                md.reset();
+                md.update(txtPass.getText().getBytes());
+                result = md.digest();
 
                 for (int i = 0; i < result.length; i++) {
                     sb.append(Integer.toString((result[i] & 0xff) + 0x100, 16).substring(1));
