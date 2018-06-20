@@ -301,14 +301,12 @@
 }
 
 @Misc{Velasco2013,
-  Title                    = {Historia de la Tecnología: Skype cumple 10 años},
-
-  Author                   = {J.J. Velasco},
-  Month                    = aug,
-  Year                     = {2013},
-
-  Timestamp                = {2017-09-06},
-  Url                      = {https://hipertextual.com/2013/08/skype-decimo-aniversario}
+  author    = {Juan Jesús Velasco},
+  title     = {Historia de la Tecnología: Skype cumple 10 años},
+  month     = aug,
+  year      = {2013},
+  timestamp = {2017-09-06},
+  url       = {https://hipertextual.com/2013/08/skype-decimo-aniversario},
 }
 
 @Misc{WhatsApp2017,
@@ -394,8 +392,8 @@
   url    = {https://firebase.google.com/support/privacy/?hl=es-419},
 }
 
-@Misc{,
-  author    = {Oracle},
+@Misc{NetBeans2018,
+  author    = {NetBeans},
   title     = {NetBeans},
   year      = {2018},
   timestamp = {2018-06-17},

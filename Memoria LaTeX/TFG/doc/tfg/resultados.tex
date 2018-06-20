@@ -364,8 +364,8 @@ Por último, la principal función de la actividad de chat es la de mostrar todo
 
 \clearpage
 
-\section{Sprint 3: Integración con los servicios Watson de IBM}
-Este Sprint está principalmente enfocado a la creación, integración y manejo de resultados de los servicios de Watson que ofrece IBM mediante la plataforma IBM Bluemix. Gracias a esto, los docentes podrán obtener valores acerca del tono de conversación usado por los usuarios, divididos por mensajes y por grupo. En el primer caso, se visualizará mediante colores en los mensajes, mientras que en el segundo se mostrará mediante un porcentaje junto al nombre de cada usuario en la información del chat. Todo esto únicamente será visible para los administradores del chat.
+\section{Sprint 3: Análisis del Tono y Categorización de los Mensajes}
+Este Sprint se encuentra principalmente enfocado a la creación, integración y manejo de resultados de los servicios de Watson que ofrece IBM mediante la plataforma IBM Bluemix. Puesto que se trata de una aplicación de mensajería instantánea dirigida al ámbito educativo, el objetivo se centra en que los docentes puedan obtener valores acerca del tono de conversación utilizado dentro de un chat a nivel de mensajes y a nivel del tono general de los diferentes integrantes del mismo. En el primer caso, se visualizarán los mensajes categorizados por colores, mientras que en el segundo se mostrará mediante un porcentaje junto al nombre de cada usuario en la lista de integrantes del chat. Toda esta información únicamente será visible para los administradores del chat proporcionando, de esta manera, información adicional sobre los mensajes y los usuarios, pudiendo llegar a tomar acciones adicionales sobre ellos si fuera necesario.
 
 \subsection{Planificación del Sprint}
 En este tercer Sprint se va a desarrollar la siguiente historia de usuario:
@@ -382,7 +382,7 @@ En este tercer Sprint se va a desarrollar la siguiente historia de usuario:
 
 \subsection{Tareas del Sprint}
 \subsubsection{Creación e Integración de los Servicios de IBM Bluemix}
-En primer lugar, se han de crear los servicios en la nube de IBM. Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona soporte actualmente para los idiomas inglés y francés a la hora de realizar consultas de manera directa, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones mostradas en el Listado de Código \ref{code:peticiones}. Por tanto, el flujo de llamadas a estos servicios de IBM será el que se detalla en la Figura \ref{fig:diaflujo}, ejecutándose cada vez que un usuario de una familia envíe un mensaje a un chat. De esta manera, el texto que estos introduzcan sufrirá una traducción al idioma inglés y, posteriormente, un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes enviados, así como para computar el porcentaje total del usuario dentro de un chat que, en cierto modo, reflejará el estado de ánimo de este y se calcula como la media de los tonos de todos los mensajes que ese usuario ha enviado al chat correspondiente. Estas puntuaciones oscilarán entre valores que se encuentran entre el 0\% y el 100\%, siendo 0 el valor menos deseable y 100 el valor óptimo o más deseable. Ambas respuestas por parte de los servicios de Watson son recibidas por la aplicación en formato \acf{JSON}, por lo que deben ser interpretadas para extraer la traducción y, posteriormente, realizar el cálculo de la puntuación. En los Listados de Código \ref{code:jsontrad} y \ref{code:jsontone} se expone un ejemplo de los resultados que recibe la aplicación por parte de los servicios de Watson con el mensaje <<Esto puede ser un ejemplo de oración a analizar. ¡Esta herramienta es muy buena!>>.
+En primer lugar, se han de activar los servicios en la nube de IBM. Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona soporte actualmente para los idiomas inglés y francés a la hora de realizar consultas de manera directa, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones mostradas en el Listado \ref{code:peticiones}. Por tanto, el flujo de llamadas a estos servicios de IBM será el que se detalla en la Figura \ref{fig:diaflujo}, ejecutándose cada vez que un usuario de una familia envíe un mensaje a un chat. De esta manera, el texto que estos introduzcan será traducido al idioma inglés y, posteriormente, un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes enviados, así como para computar el porcentaje total del usuario dentro de un chat que reflejará el tono que este ha ido utilizando y se calcula como la media de los tonos de todos los mensajes que ese usuario ha enviado al chat correspondiente. Estas puntuaciones oscilarán entre valores que se encuentran entre el 0\% y el 100\%, siendo 0 el valor menos deseable y 100 el valor óptimo o más deseable. Ambas respuestas por parte de los servicios de Watson son recibidas por la aplicación en formato \acf{JSON}, por lo que deben ser interpretadas para extraer la traducción y, posteriormente, realizar el cálculo de la puntuación. En los Listados \ref{code:jsontrad} y \ref{code:jsontone} se expone un ejemplo de los resultados que recibe la aplicación por parte de los servicios de Watson con el mensaje <<Esto puede ser un ejemplo de oración a analizar. ¡Esta herramienta es muy buena!>>.
 
 \lstinputlisting[language = JAVA,
 						firstline=0,
@@ -393,7 +393,7 @@ En primer lugar, se han de crear los servicios en la nube de IBM. Una vez hecho 
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{/diagrama_flujo_watson}
+		\includegraphics[width=0.8\textwidth]{/diagrama_flujo_watson}
 		\caption{Diagrama de Flujo de Llamadas a los Servicios de Watson}
 		\label{fig:diaflujo}
 	\end{center}
@@ -413,7 +413,7 @@ En primer lugar, se han de crear los servicios en la nube de IBM. Una vez hecho 
 						label = code:jsontone]
 						{code/tone.json}
 
-El servicio \textit{Tone Analyzer} puede analizar una única oración o un conjunto de ellas. Por tanto, en caso de que un usuario envíe un texto en el que se incluyan varias oraciones, se analizarán por separado y se calculará el resultado final teniendo en cuenta los resultados individuales. Asimismo, puede devolver diferentes tonos, cada uno con una <<puntuación>> que variará entre 0.5 y 1. Este valor no comienza en 0 puesto que IBM ha determinado que hay una mayor probabilidad de que se perciba el tono devuelto a partir de 0.5; por debajo de esa puntuación no se reconoce tono alguno, pues podría ser demasiado ambiguo o no determinante. \textit{Tone Analyzer} distingue entre tonos emocionales y tonos del lenguaje, siendo los siguientes los diferentes tonos que puede devolver este servicio \cite{IBM2018}:
+El servicio \textit{Tone Analyzer} puede analizar una única oración o un conjunto de ellas dentro de un mismo texto. Por tanto, en caso de que un usuario envíe un mensaje en el que se incluyan varias oraciones, se analizarán por separado y se calculará y transformará el resultado final teniendo en cuenta los resultados individuales, puesto que será mostrado al usuario en tanto por ciento. Asimismo, puede devolver diferentes tonos, cada uno con una <<puntuación>> que variará entre 0,5 y 1. Este valor no comienza en 0 puesto que IBM ha determinado que hay una mayor probabilidad de que se perciba el tono devuelto a partir de 0,5; por debajo de esa puntuación no se reconoce tono alguno, pues podría ser demasiado ambiguo o no determinante. \textit{Tone Analyzer} distingue entre tonos emocionales y tonos del lenguaje, siendo los siguientes los diferentes tonos que puede devolver este servicio \cite{IBM2018}:
 
 \begin{itemize}
 	\item \textbf{Enfado (tono emocional)}. El enfado se debe a la injusticia, conflicto, humillación, negligencia o traición. Si este tono es <<activo>>, la persona ataca al objetivo verbal o físicamente. Por el contrario, si es <<pasivo>>, la persona tendrá mal humor y sentirá tensión y hostilidad.
@@ -451,7 +451,7 @@ Por tanto, en cuanto a tonos relacionados con las emociones, se han considerado 
 
 \clearpage
 
-Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de cada mensaje (Tabla \ref{tab:coloresmensaje}). Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje (siendo el 0\% el peor valor y el 100\% el mejor o más deseable) mediante una actividad que se desarrollará en el siguiente Sprint cuya principal función será la de informar acerca de los datos del chat como el nombre (también se podrá modificar) y una lista de sus integrantes.
+Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de los mismos (Tabla \ref{tab:coloresmensaje}). Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje (siendo el 0\% el peor valor y el 100\% el mejor o más deseable) mediante una actividad que se desarrollará en el siguiente Sprint cuya principal función será la de informar acerca de los datos del chat como el nombre (también se podrá modificar) y una lista de sus integrantes.
 
 \begin{table}[!htbp]
 	\centering
@@ -469,11 +469,11 @@ Debido a la inclusión de los tonos por mensaje y por usuario en la base de dato
 
 %TODO: Insertar imágenes de chat con colores
 
-\section{Sprint 4: Integración con Google Calendar y Otras Mejoras}
-Este último Sprint se ha dedicado a añadir funcionalidades a las ya existentes de cara a completar la aplicación final, puesto que la principal función de comunicación ya ha sido implementada en Sprints anteriores. Algunas de estas mejoras son la integración con Google Calendar o la posibilidad de editar el perfil de un usuario de la aplicación.
+\section{Sprint 4: Integración con Google Calendar y Funcionalidades Adicionales}
+Este último Sprint se ha dedicado a añadir funcionalidades a las ya existentes de cara a completar la aplicación final, puesto que la principal función de comunicación ya ha sido implementada en los Sprints anteriores. Algunas de estas mejoras son la integración con Google Calendar o la posibilidad de editar el perfil de un usuario de la aplicación.
 
 \subsection{Planificación del Sprint}
-En este Sprint se han seleccionado las siguientes historias de usuario:
+En este Sprint se van a implementar las siguientes historias de usuario:
 
 \begin{table}[hp]
 	\centering
@@ -519,7 +519,7 @@ En este Sprint se han seleccionado las siguientes historias de usuario:
 
 \subsection{Tareas del Sprint}
 \subsubsection{Integración con Google Calendar}
-Para esta funcionalidad se ha añadido un botón (+) (Figura \ref{fig:crearevento}) que lanzará la aplicación de Google Calendar y permitirá al administrador del chat crear un nuevo evento al que serán añadidos los correos electrónicos de los integrantes como <<invitados>> del mismo (Figura \ref{fig:invitados}). Este botón únicamente será visible para los administradores del chat, no mostrándose al resto de integrantes.
+Para esta funcionalidad se ha añadido un botón (+) (Figura \ref{fig:crearevento}) que lanzará la aplicación de Google Calendar y permitirá al administrador del chat crear un nuevo evento al que serán añadidos los correos electrónicos de los integrantes como <<invitados>> del mismo (Figura \ref{fig:invitados}). Este botón únicamente será visible para los administradores del chat, no mostrándose al resto de integrantes. Esta funcionalidad está destinada, principalmente, para llevar a cabo la comunicación de exámenes, tutorías o eventos de interés a las familias del chat de una manera sencilla por parte de los docentes.
 
 \begin{figure}[!h]
 	\centering
@@ -561,7 +561,7 @@ Esta funcionalidad está disponible para todos los usuarios desde la actividad p
 \clearpage
 
 \subsubsection{Eliminar y cambiar nombre de un chat}
-Mediante estas opciones se facilita la tarea de gestión de los chats a los administradores de los mismos. Para eliminar un chat bastará con dejarlo pulsado en la lista de la actividad principal mostrándose un cuadro de diálogo confirmando la eliminación (Figura \ref{fig:borrarchat}). Por otra parte, si lo que se desea es cambiar el nombre de un chat, primero se deberá entrar en el mismo y pulsar en el botón <<Info.>>, que se encuentra en la parte superior derecha. Inmediatamente se accederá a la actividad de información de grupo que se ha desarrollado para, además de cambiar el nombre, poder observar qué familias lo conforman mediante una lista (Figura \ref{fig:infochat}). Además, al lado de cada usuario se puede consultar un número en forma de porcentaje que representa el tono general que ha empleado en el grupo, siendo 100\% el mejor valor posible, como se ha detallado en el Sprint anterior.
+Mediante estas opciones se facilita la tarea de gestión de los chats a los administradores de los mismos. Para eliminar un chat bastará con dejarlo pulsado en la lista de la actividad principal mostrándose un cuadro de diálogo, confirmando la eliminación (Figura \ref{fig:borrarchat}). Por otra parte, si lo que se desea es cambiar el nombre de un chat, primero se deberá entrar en el mismo y pulsar en el botón <<Info.>>, que se encuentra en la parte superior derecha. Inmediatamente se accederá a la actividad de información de grupo que se ha desarrollado para, además de cambiar el nombre, poder observar qué familias lo conforman mediante una lista (Figura \ref{fig:infochat}). Además, al lado de cada usuario se puede consultar un número en forma de porcentaje que representa el tono general que ha empleado en el grupo, siendo 100\% el mejor valor posible, como se ha detallado en el Sprint anterior.
 
 \begin{figure}[!h]
 	\centering

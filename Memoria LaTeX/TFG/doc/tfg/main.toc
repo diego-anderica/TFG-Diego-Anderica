@@ -79,11 +79,11 @@
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Creaci\IeC {\'o}n de Chats}{48}{figure.caption.55}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad Principal}{49}{figure.caption.56}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Chat}{49}{figure.caption.56}
-\contentsline {section}{\numberline {5.4}Sprint 3: Integraci\IeC {\'o}n con los servicios Watson de IBM}{50}{section.5.4}
+\contentsline {section}{\numberline {5.4}Sprint 3: An\IeC {\'a}lisis del Tono y Categorizaci\IeC {\'o}n de los Mensajes}{50}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Planificaci\IeC {\'o}n del Sprint}{50}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Tareas del Sprint}{50}{subsection.5.4.2}
 \contentsline {subsubsection}{Creaci\IeC {\'o}n e Integraci\IeC {\'o}n de los Servicios de IBM Bluemix}{50}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}Sprint 4: Integraci\IeC {\'o}n con Google Calendar y Otras Mejoras}{56}{section.5.5}
+\contentsline {section}{\numberline {5.5}Sprint 4: Integraci\IeC {\'o}n con Google Calendar y Funcionalidades Adicionales}{56}{section.5.5}
 \contentsline {subsection}{\numberline {5.5.1}Planificaci\IeC {\'o}n del Sprint}{56}{subsection.5.5.1}
 \contentsline {subsection}{\numberline {5.5.2}Tareas del Sprint}{57}{subsection.5.5.2}
 \contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{57}{subsection.5.5.2}
@@ -95,5 +95,7 @@
 \contentsline {section}{\numberline {6.2}Trabajos Futuros}{62}{section.6.2}
 \contentsline {chapter}{\numberline {A}Dise\IeC {\~n}o de la Base de Datos}{65}{appendix.Alph1}
 \contentsline {chapter}{\numberline {B}Protecci\IeC {\'o}n de Datos de Car\IeC {\'a}cter Personal}{67}{appendix.Alph2}
-\contentsline {chapter}{\numberline {C}Manuales de Usuario}{69}{appendix.Alph3}
-\contentsline {chapter}{Referencias}{91}{appendix*.100}
+\contentsline {chapter}{\numberline {C}Manual de Usuario para el Administrador}{69}{appendix.Alph3}
+\contentsline {chapter}{\numberline {D}Manual de Usuario para el Docente}{81}{appendix.Alph4}
+\contentsline {chapter}{\numberline {E}Manual de Usuario para las Familias}{87}{appendix.Alph5}
+\contentsline {chapter}{Referencias}{91}{appendix*.103}

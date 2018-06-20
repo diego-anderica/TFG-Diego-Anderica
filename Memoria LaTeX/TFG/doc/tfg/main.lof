@@ -50,37 +50,42 @@
 \contentsline {figure}{\numberline {5.25}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Integrante\relax }}{60}{figure.caption.71}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Dise\IeC {\~n}o de la Base de Datos no Relacional\relax }}{65}{figure.caption.72}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Colecci\IeC {\'o}n <<UsuariosWeb>>\relax }}{65}{figure.caption.72}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Colecci\IeC {\'o}n <<Docentes>>\relax }}{65}{figure.caption.73}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Colecci\IeC {\'o}n <<Usuarios>>\relax }}{66}{figure.caption.74}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Colecci\IeC {\'o}n <<ChatsGrupales>>\relax }}{66}{figure.caption.75}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces P\IeC {\'a}gina de Inicio del Proyecto de Firebase\relax }}{69}{figure.caption.74}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces P\IeC {\'a}gina de Inicio de la Base de Datos\relax }}{70}{figure.caption.75}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Ejemplo Colecci\IeC {\'o}n Docentes\relax }}{71}{figure.caption.76}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces A\IeC {\~n}adir Nuevo Documento\relax }}{71}{figure.caption.77}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Ejemplo de Creaci\IeC {\'o}n de un Nuevo Docente\relax }}{72}{figure.caption.78}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Documento Existente\relax }}{72}{figure.caption.79}
-\contentsline {figure}{\numberline {C.7}{\ignorespaces Alta de Nuevo Docente Finalizada\relax }}{73}{figure.caption.80}
-\contentsline {figure}{\numberline {C.8}{\ignorespaces Bot\IeC {\'o}n para Establecer un Filtro\relax }}{73}{figure.caption.81}
-\contentsline {figure}{\numberline {C.9}{\ignorespaces Eliminar Docente\relax }}{74}{figure.caption.82}
-\contentsline {figure}{\numberline {C.10}{\ignorespaces Colecci\IeC {\'o}n <<UsuariosWeb>>\relax }}{75}{figure.caption.83}
-\contentsline {figure}{\numberline {C.11}{\ignorespaces P\IeC {\'a}gina de Inicio de Sesi\IeC {\'o}n\relax }}{76}{figure.caption.84}
-\contentsline {figure}{\numberline {C.12}{\ignorespaces P\IeC {\'a}gina Principal\relax }}{76}{figure.caption.85}
-\contentsline {figure}{\numberline {C.13}{\ignorespaces P\IeC {\'a}gina para Dar de Alta a Nuevos Usuarios\relax }}{77}{figure.caption.86}
-\contentsline {figure}{\numberline {C.14}{\ignorespaces P\IeC {\'a}gina de Baja de Familias\relax }}{78}{figure.caption.87}
-\contentsline {figure}{\numberline {C.15}{\ignorespaces P\IeC {\'a}gina de Consulta\relax }}{78}{figure.caption.88}
-\contentsline {figure}{\numberline {C.16}{\ignorespaces P\IeC {\'a}gina de Modificaci\IeC {\'o}n de Usuarios\relax }}{79}{figure.caption.89}
-\contentsline {figure}{\numberline {C.17}{\ignorespaces Pantalla de Inicio de EduChat\relax }}{80}{figure.caption.90}
-\contentsline {figure}{\numberline {C.18}{\ignorespaces Pregunta de Inicio de Sesi\IeC {\'o}n\relax }}{80}{figure.caption.90}
-\contentsline {figure}{\numberline {C.19}{\ignorespaces Pantalla de Inicio con N\IeC {\'u}mero de Tfno.\relax }}{81}{figure.caption.91}
-\contentsline {figure}{\numberline {C.20}{\ignorespaces Pantalla de Inicio con Correo y Contrase\IeC {\~n}a\relax }}{81}{figure.caption.91}
-\contentsline {figure}{\numberline {C.21}{\ignorespaces Pantalla de Creaci\IeC {\'o}n de Chat\relax }}{82}{figure.caption.92}
-\contentsline {figure}{\numberline {C.22}{\ignorespaces Confirmaci\IeC {\'o}n de Borrado de Chat\relax }}{82}{figure.caption.92}
-\contentsline {figure}{\numberline {C.23}{\ignorespaces Pantalla de Perfil\relax }}{83}{figure.caption.93}
-\contentsline {figure}{\numberline {C.24}{\ignorespaces Pantalla de Informaci\IeC {\'o}n del Chat\relax }}{84}{figure.caption.94}
-\contentsline {figure}{\numberline {C.25}{\ignorespaces Pantalla de Informaci\IeC {\'o}n de Integrante\relax }}{84}{figure.caption.94}
-\contentsline {figure}{\numberline {C.26}{\ignorespaces Bot\IeC {\'o}n para Crear Evento\relax }}{85}{figure.caption.95}
-\contentsline {figure}{\numberline {C.27}{\ignorespaces Pantalla Inicio de la Aplicaci\IeC {\'o}n\relax }}{86}{figure.caption.96}
-\contentsline {figure}{\numberline {C.28}{\ignorespaces Pantalla de Inicio de Sesi\IeC {\'o}n Mediante N\IeC {\textordmasculine } de Tel\IeC {\'e}fono\relax }}{87}{figure.caption.97}
-\contentsline {figure}{\numberline {C.29}{\ignorespaces Pantalla de Inicio de Sesi\IeC {\'o}n Mediante Correo y Contrase\IeC {\~n}a\relax }}{87}{figure.caption.97}
-\contentsline {figure}{\numberline {C.30}{\ignorespaces Pantalla de Perfil\relax }}{88}{figure.caption.98}
-\contentsline {figure}{\numberline {C.31}{\ignorespaces Pantalla de Informaci\IeC {\'o}n de Chat\relax }}{89}{figure.caption.99}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces P\IeC {\'a}gina de Inicio del Proyecto de Firebase\relax }}{69}{figure.caption.77}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces P\IeC {\'a}gina de Inicio de la Base de Datos\relax }}{70}{figure.caption.78}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Ejemplo Colecci\IeC {\'o}n Docentes\relax }}{71}{figure.caption.79}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces A\IeC {\~n}adir Nuevo Documento\relax }}{71}{figure.caption.80}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Ejemplo de Creaci\IeC {\'o}n de un Nuevo Docente\relax }}{72}{figure.caption.81}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Documento Existente\relax }}{72}{figure.caption.82}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Alta de Nuevo Docente Finalizada\relax }}{73}{figure.caption.83}
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Bot\IeC {\'o}n para Establecer un Filtro\relax }}{73}{figure.caption.84}
+\contentsline {figure}{\numberline {C.9}{\ignorespaces Eliminar Docente\relax }}{74}{figure.caption.85}
+\contentsline {figure}{\numberline {C.10}{\ignorespaces Colecci\IeC {\'o}n <<UsuariosWeb>>\relax }}{75}{figure.caption.86}
+\contentsline {figure}{\numberline {C.11}{\ignorespaces P\IeC {\'a}gina de Inicio de Sesi\IeC {\'o}n\relax }}{76}{figure.caption.87}
+\contentsline {figure}{\numberline {C.12}{\ignorespaces P\IeC {\'a}gina Principal\relax }}{76}{figure.caption.88}
+\contentsline {figure}{\numberline {C.13}{\ignorespaces P\IeC {\'a}gina para Dar de Alta a Nuevos Usuarios\relax }}{77}{figure.caption.89}
+\contentsline {figure}{\numberline {C.14}{\ignorespaces P\IeC {\'a}gina de Baja de Familias\relax }}{78}{figure.caption.90}
+\contentsline {figure}{\numberline {C.15}{\ignorespaces P\IeC {\'a}gina de Consulta\relax }}{78}{figure.caption.91}
+\contentsline {figure}{\numberline {C.16}{\ignorespaces P\IeC {\'a}gina de Modificaci\IeC {\'o}n de Usuarios\relax }}{79}{figure.caption.92}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Pantalla de Inicio de EduChat\relax }}{81}{figure.caption.93}
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Pregunta de Inicio de Sesi\IeC {\'o}n\relax }}{81}{figure.caption.93}
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Pantalla de Inicio con N\IeC {\'u}mero de Tfno.\relax }}{82}{figure.caption.94}
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Pantalla de Inicio con Correo y Contrase\IeC {\~n}a\relax }}{82}{figure.caption.94}
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Pantalla de Creaci\IeC {\'o}n de Chat\relax }}{83}{figure.caption.95}
+\contentsline {figure}{\numberline {D.6}{\ignorespaces Confirmaci\IeC {\'o}n de Borrado de Chat\relax }}{83}{figure.caption.95}
+\contentsline {figure}{\numberline {D.7}{\ignorespaces Pantalla de Perfil\relax }}{84}{figure.caption.96}
+\contentsline {figure}{\numberline {D.8}{\ignorespaces Pantalla de Informaci\IeC {\'o}n del Chat\relax }}{85}{figure.caption.97}
+\contentsline {figure}{\numberline {D.9}{\ignorespaces Pantalla de Informaci\IeC {\'o}n de Integrante\relax }}{85}{figure.caption.97}
+\contentsline {figure}{\numberline {D.10}{\ignorespaces Bot\IeC {\'o}n para Crear Evento\relax }}{86}{figure.caption.98}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Pantalla Inicio de la Aplicaci\IeC {\'o}n\relax }}{87}{figure.caption.99}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces Pantalla de Inicio de Sesi\IeC {\'o}n Mediante N\IeC {\textordmasculine } de Tel\IeC {\'e}fono\relax }}{88}{figure.caption.100}
+\contentsline {figure}{\numberline {E.3}{\ignorespaces Pantalla de Inicio de Sesi\IeC {\'o}n Mediante Correo y Contrase\IeC {\~n}a\relax }}{88}{figure.caption.100}
+\contentsline {figure}{\numberline {E.4}{\ignorespaces Pantalla de Perfil\relax }}{89}{figure.caption.101}
+\contentsline {figure}{\numberline {E.5}{\ignorespaces Pantalla de Informaci\IeC {\'o}n de Chat\relax }}{90}{figure.caption.102}
