@@ -1,7 +1,7 @@
 \chapter{Resultados}
 \label{chap:resultados}
 
-\drop{D}{urante} el desarrollo de este capítulo se mostrarán los resultados obtenidos al seguir la planificación haciendo uso de lo detallado en el capítulo anterior, por lo que el avance se dividirá en Sprints. Cada uno de ellos tendrá, al menos, una historia de usuario asignada que estará implementada al final del desarrollo.
+\drop{E}{n} este capítulo se mostrarán los resultados obtenidos al seguir la planificación inicial, conociendo lo descrito en el capítulo anterior. Por tanto, este capítulo se estructurará en Sprints y en cada uno de ellos se tendrá, al menos, una historia de usuario asignada que estará implementada al final del desarrollo.
 
 Debido a que el equipo de Scrum es reducido, se han tenido que realizar diversos ajustes para adoptar esta metodología al trabajo que se va a desarrollar. Por tanto, el equipo identificado queda de la siguiente manera:
 
@@ -11,7 +11,7 @@ Debido a que el equipo de Scrum es reducido, se han tenido que realizar diversos
 	\item \textbf{Equipo de Scrum:} Diego Andérica Richard.
 \end{itemize}
 
-Este capítulo constará de los diferentes Sprints en los que se ha dividido el proyecto, así como su planificación y correspondientes resultados de la realización de las tareas. Antes de comenzar con el primer Sprint se ha de tener en cuenta uno de los artefactos más importantes de la metodología escogida como es la Pila de Producto, puesto que es un elemento fundamental en la metodología de Scrum ya que es donde se reflejan todas las características y requisitos que debe poseer la aplicación final, siendo elaborada en el Sprint 0 con la ayuda del dueño del producto.
+Antes de comenzar con el primer Sprint se ha de tener en cuenta uno de los artefactos más importantes de la metodología escogida como es la Pila de Producto, puesto que es un elemento fundamental en la metodología de Scrum ya que es donde se reflejan todas las características y requisitos que debe poseer la aplicación final, quedando definida en el Sprint 0 con la ayuda del dueño del producto.
 
 \clearpage
 
@@ -19,7 +19,7 @@ Este capítulo constará de los diferentes Sprints en los que se ha dividido el 
 Durante este primer Sprint se realizan tareas de vital importancia como fijar qué elementos debe poseer la solución final (Pila de Producto), el coste de llevar a cabo el proyecto o la planificación temporal de este. También se debe realizar una tarea de estudio e investigación acerca de la arquitectura que se tiene pensado utilizar junto con las diferentes alternativas que pueden existir actualmente. Para construir la Pila de Producto se realizan diversas reuniones con el dueño del producto, con el fin de establecer las diferentes historias de usuario y las tareas que deberán abordarse para completar cada una de ellas.
 
 \subsection{Pila de Producto}
-La Pila de Producto, como se ha explicado con anterioridad, se trata de una lista de todo lo que puede ser necesario en el producto. Durante las reuniones que se han producido antes de comenzar el proyecto, el equipo de Scrum ha fijado las historias de usuario, así como su duración estimada y la prioridad para cada una. En este caso, la Pila de Producto es la que se muestra en la Tabla \ref{tab:pilaproducto}:
+La Pila de Producto es una lista que contiene todo lo que puede ser necesario en el producto. Durante las reuniones que se han producido antes de comenzar el proyecto, el equipo de Scrum ha fijado las historias de usuario, así como su duración estimada y la prioridad para cada una. El resultado final de la Pila de Producto es el que se muestra en la Tabla \ref{tab:pilaproducto}.
 
 \begin{table}[!htbp]
 	\centering
@@ -34,7 +34,7 @@ La Pila de Producto, como se ha explicado con anterioridad, se trata de una list
 \clearpage
 
 \subsection{Costes del Proyecto}
-Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solución, aplicación o producto suele conllevar determinados costes que han de ser estudiados y abordados antes del comienzo de los mismos. En este caso, debido a la tecnología y servicios escogidos, el proyecto no implica realizar un desembolso en nuevos materiales, productos o hardware de terceros, por lo que únicamente se deberán tener en cuenta los costes derivados del desarrollo de las soluciones en cuanto a software se refiere. Por tanto, en referencia a lo publicado en el \acf{BOE} con fecha 18 de enero de 2017, y en base a la tabla de niveles salariales acordada en el XVIII Convenio Colectivo Nacional de Empresas De Ingeniería Y Oficinas de Estudios Técnicos \cite{BOE2017}, el coste estimado del desarrollo del presente proyecto es el mostrado en la Tabla \ref{tab:costesproyecto}:
+Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solución, aplicación o producto suele conllevar determinados costes que han de ser estudiados y abordados antes de su comienzo. En este caso, debido a la tecnología y servicios escogidos, el proyecto no implica realizar un desembolso en nuevos materiales, productos o hardware de terceros, por lo que únicamente se deberán tener en cuenta los costes derivados del desarrollo de las soluciones en cuanto a software se refiere. Por tanto, en referencia a lo publicado en el \acf{BOE} con fecha 18 de enero de 2017, y en base a la tabla de niveles salariales acordada en el XVIII Convenio Colectivo Nacional de Empresas de Ingeniería y Oficinas de Estudios Técnicos \cite{BOE2017}, el coste estimado del desarrollo del presente proyecto es el mostrado en la Tabla \ref{tab:costesproyecto}:
 
 \begin{table}[!htbp]
 	\centering
@@ -60,7 +60,7 @@ El siguiente gráfico (Figura \ref{fig:plantempo}) que representa la planificaci
 \clearpage
 
 \section{Sprint 1: Diseño de una Plataforma Web para la Gestión de los Usuarios}
-Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulte mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que las contraseñas de estos no sean conocidas por terceras personas, manteniéndolas seguras.
+Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulta mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que las contraseñas de estos no sean conocidas por terceras personas, manteniéndolas seguras.
 
 \subsection{Planificación del Sprint}
 Se han elegido las dos primeras historias de usuario para la consecución de este Sprint durante la reunión inicial (Tablas \ref{tab:historia1} y \ref{tab:historia2}).
@@ -87,7 +87,7 @@ Se han elegido las dos primeras historias de usuario para la consecución de est
 
 \subsection{Tareas del Sprint}
 \subsubsection{Diseño Inicial de la Base de Datos}
-Firebase Firestore ofrece una base de datos no relacional, lo que significa que no existen relaciones ni tablas, como sí ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas. En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio Web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
+Firebase Firestore ofrece una base de datos no relacional, lo que significa que no existen relaciones ni tablas, como ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas. En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio Web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
 
 \begin{itemize}
 	\item \textbf{Usuarios}.
@@ -124,12 +124,12 @@ Firebase Firestore ofrece una base de datos no relacional, lo que significa que 
 En cuanto a la gestión de contraseñas, a excepción de las de los administradores con acceso al sitio Web, no es necesario guardarlas en la base de datos  puesto que, al hacer uso de la funcionalidad de Firebase \textit{Authentication}, estas se guardan internamente en el proyecto y únicamente son conocidas por la herramienta, asignando además un identificador único de usuario a cada uno de los usuarios registrados.
 
 \subsubsection{Implementación de la Plataforma Web}
-En el centro educativo existirá uno o varios administradores con acceso a la página Web que se encargarán de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo SHA-256, que se obtendrá gracias a una aplicación desarrollada en la siguiente historia de usuario. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en la página Web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una explicación de cada una.
+En el centro educativo podrá haber uno o varios administradores con acceso a la página Web que serán los encargados de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo SHA-256, que se obtendrá gracias a una aplicación desarrollada en la siguiente historia de usuario. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en la página Web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una breve explicación de cada una de ellas.
 
 \begin{figure}[!h]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{/captura_login_web.png}
-		\caption{Login de la Web}
+		\caption{\textit{Login} de la Web}
 		\label{fig:login_web}
 	\end{center}
 \end{figure}
@@ -206,8 +206,8 @@ Como medida adicional de seguridad y en prevención de corrupción de datos, el 
 
 \clearpage
 
-\subsubsection{Desarrollo de una Aplicación Java de Cifrado}
-Ya que un administrador será el responsable de registrar a nuevos administradores en la base de datos, necesitará conocer el correo electrónico y la contraseña del nuevo administrador para introducir esta información en la base de datos. Para mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java Swing cuya principal función sea la de cifrar la contraseña de los nuevos administradores, siendo el resultado el que será introducido en la base de datos. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada. Además, se dispone de un botón para copiarla en el portapapeles y hacer esta tarea más sencilla. El algoritmo de cifrado que se ha implementado en esta aplicación y en el servidor Web es el mostrado en el Listado de Código \ref{code:sha256} y hace uso de SHA-2, concretamente en su variante SHA-256. Este algoritmo de cifrado, a diferencia de los algoritmos MD5 o SHA-1 de los que se han encontrado vulnerabilidades, no ha sufrido ataques satisfactorios y tiene como características ser unidireccional, es decir, poder generar una cadena cifrada o \textit{hash} con la imposibilidad de realizar el proceso de manera inversa; generar una salida de 256 bits y poseer mayor seguridad que su antecesor, SHA-1.
+\subsubsection{Desarrollo de una Aplicación de Cifrado en Java}
+Puesto que un administrador será el responsable de registrar a nuevos administradores en la base de datos, necesitará conocer el correo electrónico y la contraseña del nuevo administrador para introducir esta información en la base de datos. Con el fin de mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java Swing cuya principal función sea la de cifrar la contraseña de los nuevos administradores. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada, que será la que se introduzca en la base de datos. Además, se dispone de un botón para copiarla en el portapapeles y hacer esta tarea más sencilla. El algoritmo de cifrado que se ha implementado en esta aplicación y en el servidor Web es el mostrado en el Listado \ref{code:sha256} y hace uso de SHA-2, concretamente en su variante SHA-256. Este algoritmo de cifrado, a diferencia de los algoritmos MD5 o SHA-1 de los que se han encontrado vulnerabilidades, no ha sufrido ataques satisfactorios y tiene como características principales ser unidireccional, es decir, puede generar una cadena cifrada o \textit{hash} con la imposibilidad de realizar el proceso de manera inversa; generar una salida de 256 bits y poseer mayor seguridad que su antecesor, SHA-1.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -229,10 +229,10 @@ Ya que un administrador será el responsable de registrar a nuevos administrador
 \clearpage
 
 \section{Sprint 2: Creación de la aplicación Android y creación de chats grupales}
-Este Sprint está dedicado íntegramente a la aplicación para dispositivos móviles, con lo que esto conlleve en cuanto a las tareas de diseño y comunicación con la base de datos. De esta manera, los docentes (que serán los administradores de los chats) serán los únicos capaces de crear uno y las familias podrán ver todos a los que han sido añadidas. También cada uno de los usuarios de las familias será capaz de enviar mensajes que aparecerán en el grupo acompañados de su nombre junto con la fecha y hora de envío.
+Este Sprint está dedicado íntegramente a la aplicación para dispositivos móviles, por lo que se encuentra destinado a las tareas de diseño y comunicación de esta con la base de datos. De esta manera, los docentes (que serán los administradores de los chats) serán los únicos capaces de crear uno y las familias podrán ver todos aquellos a los que han sido añadidos. También cada uno de los usuarios de las familias será capaz de enviar mensajes que aparecerán en el grupo acompañados de su nombre junto con la fecha y hora de envío.
 
 \subsection{Planificación del Sprint}
-Para este segundo Sprint se han seleccionado las siguientes historias de usuario:
+Para este segundo Sprint se implementarán las siguientes historias de usuario:
 
 \begin{table}[!htbp]
 	\centering
@@ -268,11 +268,11 @@ Para este segundo Sprint se han seleccionado las siguientes historias de usuario
 
 \subsection{Tareas del Sprint}
 \subsubsection{Diseño de la Actividad de Acceso}
-Esta tarea requiere de la integración previa de Firebase con la aplicación Android, por lo que se han seguido los pasos necesarios indicados por la propia herramienta gracias a su integración con Android Studio para que dicha aplicación pueda comunicarse con los servicios que ofrece la plataforma de Google. Una vez hecho esto, se procede a diseñar la actividad de acceso desde la que los usuarios podrán identificarse en el sistema antes de poder visualizar o enviar mensajes al mismo. Desde un primer momento se ha separado la identificación de los usuarios mediante un \textit{login} <<normal>> y otro específico para docentes, que se muestra mediante un botón independiente, como se puede ver en la Figura \ref{fig:login1}.
+Esta tarea requiere de la integración previa de Firebase con la aplicación Android, por lo que se han seguido los pasos necesarios indicados por la propia herramienta gracias a su integración con Android Studio para que dicha aplicación pueda comunicarse con los servicios que ofrece la plataforma de Google. Una vez hecho esto, se procede a diseñar la actividad de acceso desde la que los usuarios podrán identificarse en el sistema antes de poder visualizar o enviar mensajes al mismo. Desde un primer momento se ha separado la identificación de los usuarios mediante actividades de \textit{login} separadas para familias y docentes, de manera que estos últimos accederán mediante un botón independiente, tal y como se muestra en la Figura \ref{fig:login1}.
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.3\textwidth]{/capturas_app/inicioapp}
+		\includegraphics[width=0.28\textwidth]{/capturas_app/inicioapp}
 		\caption{Actividad de Inicio de Sesión}
 		\label{fig:login1}
 	\end{center}
@@ -290,11 +290,11 @@ En el caso de seleccionar el número de teléfono como método de entrada, la ap
 	\end{center}
 \end{figure}
 
-Por el contrario, si el usuario decide acceder mediante un correo electrónico y una contraseña, este deberá introducir ambos campos (Figura \ref{fig:logincorreo}) y, de nuevo, se realizará una primera comprobación de su existencia en la base de datos. En caso de que sea la primera vez que se accede a la aplicación no dispondrá de ninguna contraseña asignada, por lo que la contraseña que se introduzca por primera vez será la que el sistema utilizará para su identificación en futuras ocasiones, pudiendo ser cambiada.
+Por el contrario, si el usuario decide acceder mediante un correo electrónico y una contraseña, este deberá introducir ambos campos (Figura \ref{fig:logincorreo}) y de nuevo se realizará una primera comprobación de su existencia en la base de datos. En caso de que sea la primera vez que se accede a la aplicación no dispondrá de ninguna contraseña asignada, por lo que la contraseña que se introduzca por primera vez será la que el sistema utilizará para su identificación en futuras ocasiones, pudiendo ser convenientemente modificada.
 
 \clearpage
 
-Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo mediante la función <<¿Has olvidado tu contraseña?>>, en la que deberá introducir su correo y, acto seguido, el sistema enviará un mensaje de recuperación a la dirección de correo indicada siempre que se encuentre registrada en la base de datos. Dicho mensaje contendrá una dirección Web a la que el usuario debe entrar para introducir su nueva contraseña (Figura \ref{fig:cambiopass}). Una vez finalizado el proceso, podrá acceder al sistema con su nueva clave.
+Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo mediante la función <<¿Has olvidado tu contraseña?>>. Para ello, deberá introducir su correo y, acto seguido, el sistema enviará un mensaje de recuperación a la dirección de correo indicada siempre que se encuentre registrada en la base de datos. Dicho mensaje contendrá una dirección Web a la que el usuario debe entrar para introducir su nueva contraseña (Figura \ref{fig:cambiopass}). Una vez finalizado el proceso, podrá acceder al sistema con su nueva clave.
 
 \begin{figure}[!h]
 	\centering
@@ -314,7 +314,7 @@ Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo medi
 
 \clearpage
 
-Por otra parte, si quien quiere acceder a la aplicación es un docente, este deberá seleccionar la opción <<Soy Docente>>, en cuyo caso se preguntará si quiere autenticarse mediante número de teléfono o mediante correo y contraseña (Figura \ref{fig:logindocente}), siendo los siguientes pasos iguales a los descritos anteriormente para un usuario perteneciente a una familia.
+Por otra parte, si quien quiere acceder a la aplicación es un docente, este deberá seleccionar la opción <<Soy Docente>>, en cuyo caso se preguntará si quiere autenticarse mediante su número de teléfono o mediante su correo y contraseña (Figura \ref{fig:logindocente}), siendo los siguientes pasos iguales a los descritos anteriormente para un usuario perteneciente a una familia.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -325,7 +325,7 @@ Por otra parte, si quien quiere acceder a la aplicación es un docente, este deb
 \end{figure}
 
 \subsubsection{Adecuación de la Base de Datos}
-A la hora de guardar los grupos de chat, se debe crear una nueva colección en la base de datos con todos los datos de los mismos a la que se le ha asignado el nombre de \mbox{<<ChatsGrupales>>}. En esta colección se encuentra un documento <<Control>> con un campo <<Contador>>, que se trata de un número entero usado para otorgar un identificador único a cada una de las salas de chat en la base de datos y que se irá incrementando a medida que se vayan creando nuevas. Cada uno de dichos documentos contendrá elementos como un objeto de tipo <<Administrador>>, que representará al docente creador del grupo con todos sus datos; su identificador en la base de datos y el nombre que el docente haya asignado a dicho grupo. Además, contendrá colecciones adicionales como <<Familias>> y <<Mensajes>>. La primera incluye los documentos de la colección <<Usuarios>> que el administrador haya incluido en el grupo, es decir, las familias participantes. Por su parte, la colección <<Mensajes>>, incluye documentos con los mensajes que cada integrante ha enviado al chat, conteniendo cada uno información del remitente, así como la fecha y hora de envío.
+A la hora de guardar los grupos de chat, se debe crear una nueva colección en la base de datos con todos los datos de los mismos a la que se le ha asignado el nombre de \mbox{<<ChatsGrupales>>}. En esta colección se encuentra un documento <<Control>> con un campo <<Contador>>, que es un número entero usado para otorgar un identificador único a cada una de las salas de chat en la base de datos y que se irá incrementando a medida que se vayan creando nuevas. Cada uno de dichos documentos contendrá elementos como un objeto de tipo <<Administrador>> que representará al docente creador del grupo con todos sus datos; su identificador en la base de datos y el nombre que el docente haya asignado a dicho grupo. Además, contendrá colecciones adicionales como <<Familias>> y <<Mensajes>>. La primera incluye los documentos de la colección <<Usuarios>> que el administrador haya incluido en el grupo, es decir, las familias participantes. Por su parte, la colección <<Mensajes>>, incluye documentos con los mensajes que cada integrante ha enviado al chat, conteniendo cada uno información del remitente así como la fecha y hora de envío.
 
 \subsubsection{Diseño de la Actividad de Creación de Chats}
 Esta funcionalidad está disponible únicamente para los docentes identificados en la aplicación, puesto que son los únicos usuarios con capacidad para iniciar nuevos chats. Una vez que el docente se ha identificado en el sistema y ha accedido a la actividad principal, podrá crear un nuevo chat mediante la opción <<Crear nuevo chat...>> situada en el menú principal de la aplicación, que se encuentra en la esquina superior derecha de la pantalla. Al seleccionar esta opción, se mostrará una nueva actividad en la que se podrá introducir el nombre del grupo y los integrantes del mismo (Figura \ref{fig:creargrupo}) mediante una lista en la que se mostrarán todas las familias que se encuentren en ese momento en la colección <<Usuarios>> de la base de datos. Para finalizar su creación, se debe pulsar el botón <<Crear Chat>>, en cuyo caso la aplicación preguntará al docente si realmente desea crear ese grupo y se le devolverá a la actividad principal, donde se muestran los grupos de los que el usuario es miembro.
@@ -341,10 +341,10 @@ Esta funcionalidad está disponible únicamente para los docentes identificados 
 \newpage
 
 \subsubsection{Diseño de la Actividad Principal}
-Esta actividad será la primera que el usuario visualice nada más entrar a la aplicación y, por tanto, su principal función reside en mostrar una lista con los chats de los que sea miembro. Dicha actividad se conectará a la base de datos y buscará en la colección <<Familias>> de cada uno de los documentos de chats de la colección <<ChatsGrupales>> para comprobar su pertenencia a los mismos. Durante este rápido proceso, puesto que en las pruebas nunca ha durado más de 2 segundos, se mostrará al usuario un diálogo de carga que, una vez completada la tarea de búsqueda, mostrará la lista ya cargada con todos los grupos a los que se tiene acceso y en los que el usuario podrá pulsar para acceder a ellos, abriendo la actividad responsable de mostrar los mensajes.
+Esta actividad será la primera que el usuario visualice nada más entrar a la aplicación y, por tanto, su principal función reside en mostrar una lista con los chats de los que sea miembro. Dicha actividad se conectará a la base de datos y buscará en la colección <<Familias>> de cada uno de los documentos de chats de la colección <<ChatsGrupales>> para comprobar su pertenencia a los mismos. Durante este proceso se mostrará al usuario un diálogo de carga que, una vez completada la tarea de búsqueda, mostrará la lista ya cargada con todos los grupos a los que se tiene acceso y en los que el usuario podrá pulsar para acceder a ellos, abriendo la actividad responsable de mostrar los mensajes.
 
 \subsubsection{Diseño de la Actividad de Chat}
-Por último, la principal función de la actividad de chat es la de mostrar todos los mensajes que se han ido mandando desde su creación. En este caso, a diferencia de la actividad principal, donde se ha implementado una \textit{ListView}, en la actividad de grupo se ha utilizado una \textit{RecyclerView} (Figura \ref{fig:listview}) pensando en la eficiencia de la aplicación. Una \textit{RecyclerView} es una lista en la que se <<reciclan>> las filas de esta cuando el usuario se desplaza hacia arriba o hacia abajo y no se están mostrando. Por tanto, el rendimiento aumenta al tener muchas filas o, en este caso, mensajes en un grupo. El siguiente ejemplo representa un ejemplo de un posible grupo (Figura \ref{fig:ejemplogrupo}) 
+Por último, la principal función de la actividad de chat es la de mostrar todos los mensajes que se han ido mandando desde su creación. En este caso, a diferencia de la actividad principal, donde se ha implementado una \textit{ListView}, en la actividad de grupo se ha utilizado una \textit{RecyclerView} (Figura \ref{fig:listview}) pensando en la eficiencia de la aplicación. Una \textit{RecyclerView} es una lista en la que se <<reciclan>> las filas de esta cuando el usuario se desplaza hacia arriba o hacia abajo y no se están mostrando. Por tanto, el rendimiento aumenta al tener muchas filas o, en este caso, mensajes en un grupo. La Figura \ref{fig:ejemplogrupo} representa un ejemplo de un posible chat.
 
 \begin{figure}[!h]
 	\centering
@@ -368,7 +368,7 @@ Por último, la principal función de la actividad de chat es la de mostrar todo
 Este Sprint está principalmente enfocado a la creación, integración y manejo de resultados de los servicios de Watson que ofrece IBM mediante la plataforma IBM Bluemix. Gracias a esto, los docentes podrán obtener valores acerca del tono de conversación usado por los usuarios, divididos por mensajes y por grupo. En el primer caso, se visualizará mediante colores en los mensajes, mientras que en el segundo se mostrará mediante un porcentaje junto al nombre de cada usuario en la información del chat. Todo esto únicamente será visible para los administradores del chat.
 
 \subsection{Planificación del Sprint}
-En este tercer Sprint se ha seleccionado la siguiente historia de usuario para conformar el \textit{Sprint Backlog}:
+En este tercer Sprint se va a desarrollar la siguiente historia de usuario:
 
 \begin{table}[hp]
 	\centering
