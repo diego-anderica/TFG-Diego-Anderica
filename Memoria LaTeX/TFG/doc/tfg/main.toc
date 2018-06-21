@@ -65,37 +65,38 @@
 \contentsline {subsection}{\numberline {5.1.1}Pila de Producto}{32}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}Costes del Proyecto}{33}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Planificaci\IeC {\'o}n Temporal}{33}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Sprint 1: Dise\IeC {\~n}o de una Plataforma Web para la Gesti\IeC {\'o}n de los Usuarios}{34}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Planificaci\IeC {\'o}n del Sprint}{34}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Tareas del Sprint}{35}{subsection.5.2.2}
-\contentsline {subsubsection}{Dise\IeC {\~n}o Inicial de la Base de Datos}{35}{subsection.5.2.2}
-\contentsline {subsubsection}{Implementaci\IeC {\'o}n de la Plataforma Web}{36}{subsection.5.2.2}
-\contentsline {subsubsection}{Desarrollo de una Aplicaci\IeC {\'o}n de Cifrado en Java}{41}{figure.caption.47}
-\contentsline {section}{\numberline {5.3}Sprint 2: Creaci\IeC {\'o}n de la aplicaci\IeC {\'o}n Android y creaci\IeC {\'o}n de chats grupales}{43}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Planificaci\IeC {\'o}n del Sprint}{43}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Tareas del Sprint}{44}{subsection.5.3.2}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Acceso}{44}{subsection.5.3.2}
-\contentsline {subsubsection}{Adecuaci\IeC {\'o}n de la Base de Datos}{47}{figure.caption.55}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Creaci\IeC {\'o}n de Chats}{48}{figure.caption.55}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad Principal}{49}{figure.caption.56}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Chat}{49}{figure.caption.56}
-\contentsline {section}{\numberline {5.4}Sprint 3: An\IeC {\'a}lisis del Tono y Categorizaci\IeC {\'o}n de los Mensajes}{50}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Planificaci\IeC {\'o}n del Sprint}{50}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Tareas del Sprint}{50}{subsection.5.4.2}
-\contentsline {subsubsection}{Creaci\IeC {\'o}n e Integraci\IeC {\'o}n de los Servicios de IBM Bluemix}{50}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}Sprint 4: Integraci\IeC {\'o}n con Google Calendar y Funcionalidades Adicionales}{56}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Planificaci\IeC {\'o}n del Sprint}{56}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Tareas del Sprint}{57}{subsection.5.5.2}
-\contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{57}{subsection.5.5.2}
-\contentsline {subsubsection}{Creaci\IeC {\'o}n y Modificaci\IeC {\'o}n del Perfil}{58}{figure.caption.68}
-\contentsline {subsubsection}{Eliminar y cambiar nombre de un chat}{59}{figure.caption.69}
-\contentsline {subsubsection}{Visualizar informaci\IeC {\'o}n de los integrantes}{60}{figure.caption.70}
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajos Futuros}{61}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusiones}{61}{section.6.1}
-\contentsline {section}{\numberline {6.2}Trabajos Futuros}{62}{section.6.2}
-\contentsline {chapter}{\numberline {A}Dise\IeC {\~n}o de la Base de Datos}{65}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Protecci\IeC {\'o}n de Datos de Car\IeC {\'a}cter Personal}{67}{appendix.Alph2}
-\contentsline {chapter}{\numberline {C}Manual de Usuario para el Administrador}{69}{appendix.Alph3}
-\contentsline {chapter}{\numberline {D}Manual de Usuario para el Docente}{81}{appendix.Alph4}
-\contentsline {chapter}{\numberline {E}Manual de Usuario para las Familias}{87}{appendix.Alph5}
-\contentsline {chapter}{Referencias}{91}{appendix*.103}
+\contentsline {subsection}{\numberline {5.1.4}Diagrama de Casos de Uso}{34}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Sprint 1: Dise\IeC {\~n}o de una Plataforma Web para la Gesti\IeC {\'o}n de los Usuarios}{35}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Planificaci\IeC {\'o}n del Sprint}{35}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Tareas del Sprint}{36}{subsection.5.2.2}
+\contentsline {subsubsection}{Dise\IeC {\~n}o Inicial de la Base de Datos}{36}{subsection.5.2.2}
+\contentsline {subsubsection}{Implementaci\IeC {\'o}n de la Plataforma Web}{38}{figure.caption.43}
+\contentsline {subsubsection}{Desarrollo de una Aplicaci\IeC {\'o}n de Cifrado en Java}{43}{figure.caption.50}
+\contentsline {section}{\numberline {5.3}Sprint 2: Creaci\IeC {\'o}n de la Aplicaci\IeC {\'o}n Android y Creaci\IeC {\'o}n de Chats}{45}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Planificaci\IeC {\'o}n del Sprint}{45}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Tareas del Sprint}{46}{subsection.5.3.2}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Acceso}{46}{subsection.5.3.2}
+\contentsline {subsubsection}{Adecuaci\IeC {\'o}n de la Base de Datos}{49}{figure.caption.58}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Creaci\IeC {\'o}n de Chats}{50}{figure.caption.58}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad Principal}{51}{figure.caption.59}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Chat}{51}{figure.caption.59}
+\contentsline {section}{\numberline {5.4}Sprint 3: An\IeC {\'a}lisis del Tono y Categorizaci\IeC {\'o}n de los Mensajes}{52}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Planificaci\IeC {\'o}n del Sprint}{52}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Tareas del Sprint}{53}{subsection.5.4.2}
+\contentsline {subsubsection}{Creaci\IeC {\'o}n e Integraci\IeC {\'o}n de los Servicios de IBM Bluemix}{53}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Sprint 4: Integraci\IeC {\'o}n con Google Calendar y Desarrollo de Funcionalidades Adicionales}{59}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Planificaci\IeC {\'o}n del Sprint}{59}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Tareas del Sprint}{60}{subsection.5.5.2}
+\contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{60}{subsection.5.5.2}
+\contentsline {subsubsection}{Creaci\IeC {\'o}n y Modificaci\IeC {\'o}n del Perfil}{61}{figure.caption.72}
+\contentsline {subsubsection}{Eliminar y cambiar nombre de un chat}{62}{figure.caption.73}
+\contentsline {subsubsection}{Visualizar informaci\IeC {\'o}n de los integrantes}{63}{figure.caption.74}
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajos Futuros}{65}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusiones}{65}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trabajos Futuros}{66}{section.6.2}
+\contentsline {chapter}{\numberline {A}Dise\IeC {\~n}o de la Base de Datos}{69}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Protecci\IeC {\'o}n de Datos de Car\IeC {\'a}cter Personal}{71}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Manual de Usuario para el Administrador}{73}{appendix.Alph3}
+\contentsline {chapter}{\numberline {D}Manual de Usuario para el Docente}{85}{appendix.Alph4}
+\contentsline {chapter}{\numberline {E}Manual de Usuario para las Familias}{91}{appendix.Alph5}
+\contentsline {chapter}{Referencias}{95}{appendix*.107}

@@ -59,6 +59,19 @@ El siguiente gráfico (Figura \ref{fig:plantempo}) que representa la planificaci
 
 \clearpage
 
+\subsection{Diagrama de Casos de Uso}
+Debido a que se van a tener diferentes roles en el centro de cara al uso de la aplicación y cada uno podrá realizar diferentes tareas, se ha creado un diagrama de casos de uso (Figura \ref{fig:dcu}) para organizar y asignar cada una de ellas de una manera más visual.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{/dcu}
+		\caption{Diagrama de Casos de Uso}
+		\label{fig:dcu}
+	\end{center}
+\end{figure}
+
+\clearpage
+
 \section{Sprint 1: Diseño de una Plataforma Web para la Gestión de los Usuarios}
 Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulta mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que las contraseñas de estos no sean conocidas por terceras personas, manteniéndolas seguras.
 
@@ -87,7 +100,25 @@ Se han elegido las dos primeras historias de usuario para la consecución de est
 
 \subsection{Tareas del Sprint}
 \subsubsection{Diseño Inicial de la Base de Datos}
-Firebase Firestore ofrece una base de datos no relacional, lo que significa que no existen relaciones ni tablas, como ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas. En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio Web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
+Una vez que se ha creado el proyecto en Firebase y se tiene acceso a este (Figura \ref{fig:iniciofirebase}), se puede acceder a Firebase Firestore, que se trata de una base de datos no relacional, lo que significa que no existen relaciones ni tablas como ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas (Figura \ref{fig:bbdd}). En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio Web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{/inicio_firebase}
+		\caption{Página de Inicio de Google Firebase}
+		\label{fig:iniciofirebase}
+	\end{center}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{/ddbb}
+		\caption{Colecciones en Firebase Firestore}
+		\label{fig:bbdd}
+	\end{center}
+\end{figure}
 
 \begin{itemize}
 	\item \textbf{Usuarios}.
@@ -142,12 +173,10 @@ En el centro educativo podrá haber uno o varios administradores con acceso a la
 	\end{center}
 \end{figure}
 
-\newpage
+\clearpage
 
 \noindent \underline{Dar de Alta} \newline
 En esta primera funcionalidad, el administrador tiene la opción de rellenar un formulario para registrar una nueva familia en la base de datos, en el que se pueden incluir los datos de un único tutor legal del alumno o, si lo hubiese, también los del segundo tutor (Figura \ref{fig:alta}). Los datos que se han especificado para cada tutor son: nombre, primer apellido, segundo apellido, número de teléfono y correo electrónico. Por último, para identificar a este usuario en la base de datos, se le asignará un identificador compuesto del primer apellido de ambos tutores o, en su defecto, del único tutor, concatenando un número al final. Es decir, si dos familias diferentes poseen los mismos apellidos, se añadirá un número al final de la composición de sus apellidos para el identificador, por lo que quedarán representadas de manera única en la base de datos. Por otra parte, además de disponer del formulario para introducir nuevos usuarios, el administrador también tiene la posibilidad de importar un archivo \acs{CSV} para realizar esta tarea de una manera más sencilla y automatizada. Este archivo debe tener un formato específico detallado en la primera línea del mismo y que consta, principalmente, de los mismos datos que en el formulario separados por comas y sin espacios entre ellos, separando cada familia por un salto de línea.
-
-\clearpage
 
 \begin{figure}[!h]
 	\begin{center}
@@ -156,6 +185,8 @@ En esta primera funcionalidad, el administrador tiene la opción de rellenar un 
 		\label{fig:alta}
 	\end{center}
 \end{figure}
+
+\clearpage
 
 \noindent \underline{Dar de Baja} \newline
 Al entrar en esta página, se dispone de una lista desplegable en la que se cargarán todas las familias registradas en la base de datos (Figura \ref{fig:baja}). Al seleccionar una de ellas, se cargarán automáticamente en una tabla los datos de la misma. Como medida adicional contra el borrado accidental, la página pedirá al usuario que confirme la acción de borrado solicitada antes de ser llevada a cabo.
@@ -168,8 +199,6 @@ Al entrar en esta página, se dispone de una lista desplegable en la que se carg
 	\end{center}
 \end{figure}
 
-\clearpage
-
 \noindent \underline{Consultar Usuarios} \newline
 De manera similar, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos (Figura \ref{fig:consulta}). Si se pulsa el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
 
@@ -181,10 +210,10 @@ De manera similar, se ha implementado una tabla para consultar los datos de los 
 	\end{center}
 \end{figure}
 
+\clearpage
+
 \noindent \underline{Modificar Usuarios} \newline
 Esta funcionalidad se ha implementado mediante el uso de una lista desplegable que carga todas las familias de la base de datos y un formulario que inicialmente se muestra bloqueado para prevenir una modificación accidental de los datos (Figura \ref{fig:modificar}). Al seleccionar uno de estos registros, su información se carga en dicho formulario y al hacer clic sobre el botón de modificar se habilitan los campos para la escritura. Cuando el administrador finalice la modificación de la información, deberá hacer clic de nuevo en un botón para terminar la modificación, siendo preguntado sobre si realmente desea llevarla a cabo. En caso positivo, se sobrescribirá la información de la familia seleccionada en la base de datos.
-
-\clearpage
 
 \begin{figure}[!h]
 	\begin{center}
@@ -198,13 +227,11 @@ Como medida adicional de seguridad y en prevención de corrupción de datos, el 
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.7\textwidth]{/preguntaweb}
+		\includegraphics[width=0.5\textwidth]{/preguntaweb}
 		\caption{Pregunta para Abandonar una Página}
 		\label{fig:preguntaweb}
 	\end{center}
 \end{figure}
-
-\clearpage
 
 \subsubsection{Desarrollo de una Aplicación de Cifrado en Java}
 Puesto que un administrador será el responsable de registrar a nuevos administradores en la base de datos, necesitará conocer el correo electrónico y la contraseña del nuevo administrador para introducir esta información en la base de datos. Con el fin de mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java Swing cuya principal función sea la de cifrar la contraseña de los nuevos administradores. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada, que será la que se introduzca en la base de datos. Además, se dispone de un botón para copiarla en el portapapeles y hacer esta tarea más sencilla. El algoritmo de cifrado que se ha implementado en esta aplicación y en el servidor Web es el mostrado en el Listado \ref{code:sha256} y hace uso de SHA-2, concretamente en su variante SHA-256. Este algoritmo de cifrado, a diferencia de los algoritmos MD5 o SHA-1 de los que se han encontrado vulnerabilidades, no ha sufrido ataques satisfactorios y tiene como características principales ser unidireccional, es decir, puede generar una cadena cifrada o \textit{hash} con la imposibilidad de realizar el proceso de manera inversa; generar una salida de 256 bits y poseer mayor seguridad que su antecesor, SHA-1.
@@ -228,7 +255,7 @@ Puesto que un administrador será el responsable de registrar a nuevos administr
 
 \clearpage
 
-\section{Sprint 2: Creación de la aplicación Android y creación de chats grupales}
+\section{Sprint 2: Creación de la Aplicación Android y Creación de Chats}
 Este Sprint está dedicado íntegramente a la aplicación para dispositivos móviles, por lo que se encuentra destinado a las tareas de diseño y comunicación de esta con la base de datos. De esta manera, los docentes (que serán los administradores de los chats) serán los únicos capaces de crear uno y las familias podrán ver todos aquellos a los que han sido añadidos. También cada uno de los usuarios de las familias será capaz de enviar mensajes que aparecerán en el grupo acompañados de su nombre junto con la fecha y hora de envío.
 
 \subsection{Planificación del Sprint}
@@ -328,7 +355,7 @@ Por otra parte, si quien quiere acceder a la aplicación es un docente, este deb
 A la hora de guardar los grupos de chat, se debe crear una nueva colección en la base de datos con todos los datos de los mismos a la que se le ha asignado el nombre de \mbox{<<ChatsGrupales>>}. En esta colección se encuentra un documento <<Control>> con un campo <<Contador>>, que es un número entero usado para otorgar un identificador único a cada una de las salas de chat en la base de datos y que se irá incrementando a medida que se vayan creando nuevas. Cada uno de dichos documentos contendrá elementos como un objeto de tipo <<Administrador>> que representará al docente creador del grupo con todos sus datos; su identificador en la base de datos y el nombre que el docente haya asignado a dicho grupo. Además, contendrá colecciones adicionales como <<Familias>> y <<Mensajes>>. La primera incluye los documentos de la colección <<Usuarios>> que el administrador haya incluido en el grupo, es decir, las familias participantes. Por su parte, la colección <<Mensajes>>, incluye documentos con los mensajes que cada integrante ha enviado al chat, conteniendo cada uno información del remitente así como la fecha y hora de envío.
 
 \subsubsection{Diseño de la Actividad de Creación de Chats}
-Esta funcionalidad está disponible únicamente para los docentes identificados en la aplicación, puesto que son los únicos usuarios con capacidad para iniciar nuevos chats. Una vez que el docente se ha identificado en el sistema y ha accedido a la actividad principal, podrá crear un nuevo chat mediante la opción <<Crear nuevo chat...>> situada en el menú principal de la aplicación, que se encuentra en la esquina superior derecha de la pantalla. Al seleccionar esta opción, se mostrará una nueva actividad en la que se podrá introducir el nombre del grupo y los integrantes del mismo (Figura \ref{fig:creargrupo}) mediante una lista en la que se mostrarán todas las familias que se encuentren en ese momento en la colección <<Usuarios>> de la base de datos. Para finalizar su creación, se debe pulsar el botón <<Crear Chat>>, en cuyo caso la aplicación preguntará al docente si realmente desea crear ese grupo y se le devolverá a la actividad principal, donde se muestran los grupos de los que el usuario es miembro.
+Esta funcionalidad está disponible únicamente para los docentes identificados en la aplicación, puesto que son los únicos usuarios con capacidad para iniciar nuevos chats. Una vez que el docente se ha identificado en el sistema y ha accedido a la actividad principal, podrá crear un nuevo chat mediante la opción <<Crear nuevo chat...>> situada en el menú principal de la aplicación, que se encuentra en la esquina superior derecha de la pantalla. Al seleccionar esta opción, se mostrará una nueva actividad en la que se podrá introducir el nombre del chat y los integrantes del mismo (Figura \ref{fig:creargrupo}) mediante una lista en la que se mostrarán todas las familias que se encuentren en ese momento en la colección <<Usuarios>> de la base de datos. El docente, si así lo desea, puede crear un chat con una única familia para comunicarse exclusivamente con esta, no estando obligado a seleccionar varias familias para crear un chat. Para finalizar su creación, se debe pulsar el botón <<Crear Chat>>, en cuyo caso la aplicación preguntará al docente si realmente desea crear ese chat y se le devolverá a la actividad principal, donde se muestran aquellos de los que el usuario es miembro.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -380,9 +407,21 @@ En este tercer Sprint se va a desarrollar la siguiente historia de usuario:
 	\label{tab:historia6}
 \end{table}
 
+\clearpage
+
 \subsection{Tareas del Sprint}
 \subsubsection{Creación e Integración de los Servicios de IBM Bluemix}
-En primer lugar, se han de activar los servicios en la nube de IBM. Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona soporte actualmente para los idiomas inglés y francés a la hora de realizar consultas de manera directa, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones mostradas en el Listado \ref{code:peticiones}. Por tanto, el flujo de llamadas a estos servicios de IBM será el que se detalla en la Figura \ref{fig:diaflujo}, ejecutándose cada vez que un usuario de una familia envíe un mensaje a un chat. De esta manera, el texto que estos introduzcan será traducido al idioma inglés y, posteriormente, un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes enviados, así como para computar el porcentaje total del usuario dentro de un chat que reflejará el tono que este ha ido utilizando y se calcula como la media de los tonos de todos los mensajes que ese usuario ha enviado al chat correspondiente. Estas puntuaciones oscilarán entre valores que se encuentran entre el 0\% y el 100\%, siendo 0 el valor menos deseable y 100 el valor óptimo o más deseable. Ambas respuestas por parte de los servicios de Watson son recibidas por la aplicación en formato \acf{JSON}, por lo que deben ser interpretadas para extraer la traducción y, posteriormente, realizar el cálculo de la puntuación. En los Listados \ref{code:jsontrad} y \ref{code:jsontone} se expone un ejemplo de los resultados que recibe la aplicación por parte de los servicios de Watson con el mensaje <<Esto puede ser un ejemplo de oración a analizar. ¡Esta herramienta es muy buena!>>.
+En primer lugar, se han de activar los servicios en la nube de IBM (Figura \ref{fig:bluemix}). Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona soporte actualmente para los idiomas inglés y francés a la hora de realizar consultas de manera directa, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones mostradas en el Listado \ref{code:peticiones}. Por tanto, el flujo de llamadas a estos servicios de IBM será el que se detalla en la Figura \ref{fig:diaflujo}, ejecutándose cada vez que un usuario de una familia envíe un mensaje a un chat. De esta manera, el texto que estos introduzcan será traducido al idioma inglés y, posteriormente, un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes enviados, así como para computar el porcentaje total del usuario dentro de un chat que reflejará el tono que este ha ido utilizando y se calcula como la media de los tonos de todos los mensajes que ese usuario ha enviado al chat correspondiente. Estas puntuaciones oscilarán entre valores que se encuentran entre el 0\% y el 100\%, siendo 0 el valor menos deseable y 100 el valor óptimo o más deseable. Ambas respuestas por parte de los servicios de Watson son recibidas por la aplicación en formato \acf{JSON}, por lo que deben ser interpretadas para extraer la traducción y, posteriormente, realizar el cálculo de la puntuación. En los Listados \ref{code:jsontrad} y \ref{code:jsontone} se expone un ejemplo de los resultados que recibe la aplicación por parte de los servicios de Watson con el mensaje <<Esto puede ser un ejemplo de oración a analizar. ¡Esta herramienta es muy buena!>>.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{/bluemix}
+		\caption{Panel de Control de IBM Bluemix}
+		\label{fig:bluemix}
+	\end{center}
+\end{figure}
+
+\clearpage
 
 \lstinputlisting[language = JAVA,
 						firstline=0,
@@ -393,7 +432,7 @@ En primer lugar, se han de activar los servicios en la nube de IBM. Una vez hech
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{/diagrama_flujo_watson}
+		\includegraphics[width=0.9\textwidth]{/diagrama_flujo_watson}
 		\caption{Diagrama de Flujo de Llamadas a los Servicios de Watson}
 		\label{fig:diaflujo}
 	\end{center}
@@ -469,7 +508,7 @@ Debido a la inclusión de los tonos por mensaje y por usuario en la base de dato
 
 %TODO: Insertar imágenes de chat con colores
 
-\section{Sprint 4: Integración con Google Calendar y Funcionalidades Adicionales}
+\section{Sprint 4: Integración con Google Calendar y Desarrollo de Funcionalidades Adicionales}
 Este último Sprint se ha dedicado a añadir funcionalidades a las ya existentes de cara a completar la aplicación final, puesto que la principal función de comunicación ya ha sido implementada en los Sprints anteriores. Algunas de estas mejoras son la integración con Google Calendar o la posibilidad de editar el perfil de un usuario de la aplicación.
 
 \subsection{Planificación del Sprint}
