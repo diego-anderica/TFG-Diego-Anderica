@@ -21,3 +21,5 @@ public static String encriptar(String pwd) throws Exception {
 	
 	return sb.toString();
 }
+
+// Fuente: http://www.sha1-online.com/sha256-java/

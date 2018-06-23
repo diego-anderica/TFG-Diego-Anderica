@@ -6,27 +6,55 @@
 \drop{E}{n} este capítulo se expondrán tanto el objetivo principal como los diferentes objetivos específicos del \acs{TFG}, así como las posibles limitaciones o condicionantes que se pudieran derivar de los mismos.
 
 \section{Objetivo General}
-El principal objetivo de este trabajo se centra en implementar una herramienta de mensajería instantánea específica para el contexto educativo que permita la comunicación entre el profesorado y los padres o tutores legales de los alumnos. La motivación principal del \acs{TFG} reside en la necesidad de disponer de una aplicación adaptada y acotada para la comunicación con los padres desde el centro educativo. Actualmente, la mayor parte de las alternativas que existen son generalistas orientándose a cualquier tipo de contexto comunicativo. Por tanto, estas incluyen funcionalidades cuya utilidad en el sector profesional de la docencia sería, en determinados casos, cuestionable. Adicionalmente, se conoce que los grupos de mensajería pueden generar una serie de problemas de convivencia. Por tanto, teniendo en cuenta lo anterior, se considera de interés realizar una aplicación que trate de minimizar la ocurrencia de situaciones no deseadas.
+El principal objetivo de este trabajo se centra en implementar una herramienta de mensajería instantánea específica para el contexto educativo que permita la comunicación entre el profesorado y los padres o tutores legales de los alumnos. La motivación principal del \acs{TFG} reside en la necesidad de disponer de una aplicación adaptada y acotada para la comunicación con los padres desde el centro educativo. Actualmente, la mayor parte de las alternativas que existen son generalistas, orientándose a cualquier tipo de contexto comunicativo. Por consiguiente, estas incluyen funcionalidades cuya utilidad en el sector profesional de la docencia sería, en determinados casos, cuestionable. Adicionalmente, se conoce que los grupos de mensajería pueden generar una serie de problemas de convivencia. Por tanto, teniendo en cuenta lo anterior, se considera de interés realizar una aplicación que trate de minimizar la ocurrencia de situaciones no deseadas.
 
 \section{Objetivos Específicos}
 En esta sección se detallarán los objetivos específicos que ayudarán a la consecución del objetivo general.
 
 \clearpage
 
-\subsection{Objetivo I: Implementar un marco de gestión de usuarios vinculado al contexto educativo}
-Se pretende implementar un mecanismo de gestión de usuarios que sea eficiente y sencillo de utilizar. Por ejemplo, existe la posibilidad de que el personal del centro realice importación de archivos \acs{CSV} mediante una página Web, volcando automáticamente los datos en una base de datos para la posterior creación de chats desde la aplicación móvil. De igual manera, se deberán elegir y fijar determinados roles que serán asumidos por las diferentes personas que utilicen la aplicación: el rol de administrador de grupo, que estará destinado, principalmente, a los tutores, profesores o personal del centro que use la aplicación y  el rol de usuario normal, destinado a los tutores legales que se encuentren registrados. Además, deberá haber una persona que asuma el rol de administrador del sistema, encargada del tratamiento de los datos desde la página Web y de agregar nuevos administradores del sistema.
+\subsection{Objetivo I: Implementar un Marco de Gestión de Usuarios Vinculado al Contexto Educativo}
+Se pretende implementar un mecanismo de gestión de usuarios que sea eficiente y sencillo de utilizar. Por ejemplo, existe la posibilidad de que el personal del centro realice la importación de archivos \acs{CSV} mediante una página web, volcando automáticamente la información en una base de datos para la posterior creación de chats desde la aplicación móvil. De igual manera, se deberán elegir y fijar determinados roles que serán asumidos por las diferentes personas que utilicen la aplicación: el rol del docente, que se considerará como administrador de los chats y estará destinado, principalmente, a los tutores, profesores o personal del centro que use la aplicación y el rol de usuario normal, destinado a los tutores legales que se encuentren registrados. Además, deberá haber una persona que asuma el rol de administrador del sistema, encargada del tratamiento de los datos de las familias desde la página web y de la gestión de otros administradores y docentes del sistema.
 
-\subsection{Objetivo II: Proporcionar un entorno de ejecución multiplataforma}
-Puesto que el administrador del sistema tendrá que desempeñar tareas como la de importar datos de las familias o registrar a los usuarios, estas se realizarán mediante el uso de un ordenador personal y, para ello, se diseñará un \textit{frontend} que resulte amigable y fácil de utilizar. Por otra parte, el resto de los usuarios accederán al sistema mediante la aplicación móvil, usando el número de teléfono o correo electrónico para identificarse.
+\subsection{Objetivo II: Proporcionar un Entorno de Ejecución Multiplataforma}
+Puesto que el administrador del sistema tendrá que desempeñar tareas como la de importar datos de las familias o registrar a los diferentes usuarios, estas se realizarán mediante el uso de un ordenador personal y, para ello, se diseñará un \textit{frontend} que resulte amigable y fácil de utilizar. Por otra parte, el resto de los usuarios accederán al sistema mediante la aplicación móvil, utilizando el número de teléfono o correo electrónico para identificarse.
 
-\subsection{Objetivo III: Implementar un mecanismo de monitorización activa del tipo y contenido de los mensajes}
-Se desea disponer de un mecanismo de detección de mensajes que puedan ser potencialmente inadecuados dentro de un contexto educativo. Esto se puede conseguir mediante el uso de la plataforma \textit{Bluemix} de IBM, desde que la que se podrá acceder a <<Watson>>, un sistema de inteligencia artificial que ofrece múltiples posibilidades. Una de ellas es la de analizar los <<tonos>> en un determinado texto. Una vez analizado cada mensaje y devuelto el resultado del tono de este, debe ser interpretado por la aplicación y mostrado de una manera adecuada al administrador del chat mediante un código de colores (rojo, naranja, amarillo y verde, de menos a más deseable).
+\subsection{Objetivo III: Implementar un Mecanismo de Monitorización Activa del Tipo y Contenido de los Mensajes}
+Se desea disponer de un mecanismo de detección de mensajes que puedan ser potencialmente inadecuados dentro de un contexto educativo. Esto se puede conseguir mediante el uso de la plataforma \textit{Bluemix} de IBM, desde que la que se podrá acceder a <<Watson>>, un sistema de \acs{IA} que ofrece múltiples posibilidades. Una de ellas es la de analizar los <<tonos>> en un determinado texto. Una vez analizado cada mensaje y devuelto el resultado del tono de este, debe ser interpretado por la aplicación y mostrado de una manera adecuada al administrador del chat mediante un código de colores (rojo, naranja, amarillo y verde, de menos a más deseable).
 
-\subsection{Objetivo IV: Integración de la aplicación con Google Calendar}
+\subsection{Objetivo IV: Integración de la Aplicación con Google Calendar}
 Se integrará la aplicación con otros servicios como \textit{Google Calendar}, de manera que se puedan agregar nuevos eventos de calendario sin que el usuario tenga que cambiar de aplicación manualmente o realizar una inserción de información adicional. Ejemplos de estos eventos podrían ser añadir nuevos exámenes, reuniones, tutorías con los profesores, etc.
 
-\subsection{Objetivo V: Implementar mecanismos que permitan comunicaciones privadas docente-tutores legales del alumno}
+\subsection{Objetivo V: Implementar Mecanismos que Permitan Comunicaciones Privadas Docente-Tutores Legales del Alumno}
 Además de la comunicación mediante los grupos creados por el personal del centro, se podrán crear <<salas>> de chat integradas por un docente y una familia. Es decir, un docente crearía un grupo de chat privado para comunicarse de manera exclusiva con una familia.
+
+\chapter{Objectives}
+\drop{I}{n} this chapter the main objective will be explained along with the specific ones of this \acs{TFG} as well as the possible limitations or condicionants that would appear because of them.
+
+\section{Main Objective}
+The main objective of this work is centered on the implementation of an instant messaging tool specific for the educational context that allows the communication between the \mbox{professor} and the legal guardians of the students. The motivation of the \acs{TFG} lies in the \mbox{necessity} of having an adapted and bounded application to communicate with the fathers from the \mbox{educational} center. Nowadays, most of the existent market alternatives are \mbox{generalist} and oriented to any type of communicative context. Therefore, these include functionalities which utility in the educational context could sometimes be questionable. In addition, it is known that \mbox{instant} messaging groups can generate coexistence problems. So, taking into \mbox{account} the things \mbox{previously} mentioned, to develop an application that tries to minimize the occurrence of non desired situations is considered relevant.
+
+\section{Specific Objectives}
+In this section the specific objectives that will help to achieve the main objective will be detailed.
+
+\clearpage
+
+\subsection{Objective I: Implement an User Management Frame Linked to the Educational Context}
+It is pretended to implement a mechanism to manage the users in an efficient and easy to use way. For example, it exists the possibility that the teachers import CSV files through a website, dumping data automatically in a database in order to create chats using the mobile application. Also the different roles that the staff will assume must be chosen and fix: on the one hand, the teacher role that can be considered as de chat administrator will be mainly destinated to the different tutors, professors or other center staff that will use the application and on the other hand, the normal user role, destinated to the registrated legal guardians. Also, there must be a person to assume the system administrator role, that will be in charged of the data treatment using the webpage and the task of managing other administrators and teachers.
+
+\subsection{Objective II: Provide a Multiplatform Environment}
+Since the system administrator will be in charged of doing tasks like import family data or register new users, these will be done using a personal computer and for that a friendly and easy to use frontend must be designed. Besides, the rest of the users will access to the system using the mobile application by means of the telephone number or email to log in.
+
+\subsection{Objective III: Implement an active monitorization mechanism of the type and message content}
+It is desired to have the possibility to know potential inadequate messages inside an \mbox{educational} context. This can be achieved by using the IBM Bluemix platform, from which can be accessed <<Watson>>, an artificial intelligence system that offers multiple possibilities. One of them is to analyze the <<tones>> in a specific text. Once analized each message and returned the tone result, it must be interpreted by the application and shown in an appropiate way to the chat administrator through a color code (red, orange, yellow and green, from less to more desirable).
+
+\subsection{Objective IV: Integration with Google Calendar}
+The application will be integrated with other services like Google Calendar in a \mbox{manner} that new calendar events could be added without changing of application or typing too much additional information. Examples of these events can be new exams, meetings, \mbox{tutorships}...
+
+\clearpage
+
+\subsection{Objective V: Implement mechanisms to allow private communications teachers-legal guardians}
+Besides the communication through the groups created by the staff, there will be the possibility to create chats integrated by a teacher and only one family i.e. a teacher would create a private chat group to communicate exclusively with a single family.
 
 % Local Variables:
 %  coding: utf-8
