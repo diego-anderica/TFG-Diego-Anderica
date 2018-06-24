@@ -15,7 +15,7 @@ Antes de comenzar con el primer Sprint se ha de tener en cuenta uno de los artef
 
 \clearpage
 
-\section{Planificación inicial (Sprint 0)}
+\section{Planificación Inicial (Sprint 0)}
 Durante este primer Sprint se realizan tareas de vital importancia como fijar qué elementos debe poseer la solución final (Pila de Producto), el coste de llevar a cabo el proyecto o la planificación temporal de este. También se debe realizar una tarea de estudio e investigación acerca de la arquitectura que se tiene pensado utilizar junto con las diferentes alternativas que pueden existir actualmente. Para construir la Pila de Producto se realizan diversas reuniones con el dueño del producto, con el fin de establecer las diferentes historias de usuario y las tareas que deberán abordarse para completar cada una de ellas.
 
 \subsection{Pila de Producto}
@@ -73,7 +73,7 @@ Debido a que se van a tener diferentes roles en el centro de cara al uso de la a
 \clearpage
 
 \section{Sprint 1: Diseño de una Plataforma Web para la Gestión de los Usuarios}
-Este primer Sprint está enfocado a diseñar e implementar una plataforma Web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulta mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que las contraseñas de estos no sean conocidas por terceras personas, manteniéndolas seguras.
+Este primer Sprint se encuentra enfocado a diseñar e implementar una plataforma web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, realizar tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulta mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que estas contraseñas de estos no sean conocidas por terceras personas, manteniéndolas seguras.
 
 \subsection{Planificación del Sprint}
 Se han elegido las dos primeras historias de usuario para la consecución de este Sprint durante la reunión inicial (Tablas \ref{tab:historia1} y \ref{tab:historia2}).
@@ -100,7 +100,7 @@ Se han elegido las dos primeras historias de usuario para la consecución de est
 
 \subsection{Tareas del Sprint}
 \subsubsection{Diseño Inicial de la Base de Datos}
-Una vez que se ha creado el proyecto en Firebase y se tiene acceso a este (Figura \ref{fig:iniciofirebase}), se puede acceder a Firebase Firestore, que se trata de una base de datos no relacional, lo que significa que no existen relaciones ni tablas como ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas (Figura \ref{fig:bbdd}). En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio Web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
+Una vez que se ha creado el proyecto en Firebase y se tiene acceso a este (Figura \ref{fig:iniciofirebase}), se puede acceder a Firebase Firestore, que se trata de una base de datos no relacional, lo que significa que no existen relaciones ni tablas como ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas (Figura \ref{fig:bbdd}). En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
 
 \begin{figure}[!h]
 	\begin{center}
@@ -152,10 +152,10 @@ Una vez que se ha creado el proyecto en Firebase y se tiene acceso a este (Figur
 		
 \end{itemize}
 
-En cuanto a la gestión de contraseñas, a excepción de las de los administradores con acceso al sitio Web, no es necesario guardarlas en la base de datos  puesto que, al hacer uso de la funcionalidad de Firebase \textit{Authentication}, estas se guardan internamente en el proyecto y únicamente son conocidas por la herramienta, asignando además un identificador único de usuario a cada uno de los usuarios registrados.
+En cuanto a la gestión de contraseñas, a excepción de las de los administradores con acceso al sitio web, no es necesario guardarlas en la base de datos  puesto que, al hacer uso de la funcionalidad de Firebase \textit{Authentication}, estas se guardan internamente en el proyecto y únicamente son conocidas por la herramienta, asignando además un identificador único de usuario a cada uno de los usuarios registrados.
 
 \subsubsection{Implementación de la Plataforma Web}
-En el centro educativo podrá haber uno o varios administradores con acceso a la página Web que serán los encargados de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma Web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que proporciona un conjunto de herramientas para desarrollo con HTML, CSS y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo SHA-256, que se obtendrá gracias a una aplicación desarrollada en la siguiente historia de usuario. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en esta caché del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en la página Web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una breve explicación de cada una de ellas.
+En el centro educativo podrá haber uno o varios administradores con acceso a la página web que serán los encargados de gestionar las familias de la base de datos para que, posteriormente, estas puedan acceder a la aplicación móvil. Por tanto, se contemplan las siguientes acciones: dar de alta, dar de baja, consultar y modificar. La plataforma web debe proporcionar estas acciones de una manera sencilla, vistosa y \textit{responsive}. Para este propósito se ha decidido hacer uso de Bootstrap \cite{Bootstrap}, que ofrece un conjunto de herramientas para desarrollo con \acs{HTML}, \acs{CSS} y JavaScript. Del mismo modo, se ha incluido Firebase y las referencias a la base de datos de Firestore del proyecto. Por seguridad, el registro de un nuevo administrador en la base de datos se deberá llevar a cabo de manera manual, accediendo al proyecto de Firebase, donde se guardará un nuevo documento con el correo electrónico y la contraseña cifrada mediante el algoritmo SHA-256, que se obtendrá gracias a una aplicación desarrollada en la siguiente historia de usuario. Del mismo modo, se ha implementado un método para evitar que un usuario acceda a una página conocida dentro del servidor mediante el uso de \textit{Session Storage}. De esta manera, cuando el usuario accede correctamente con su correo y contraseña, el servidor genera y devuelve un número de sesión que se almacena en la caché con el mismo nombre del navegador junto con el correo electrónico por lo que, si alguno de estos campos se encuentra sin definir en la caché en el momento de acceder a una página, se devuelve automáticamente al inicio de sesión (Figura \ref{fig:login_web}). Una vez se ha identificado en el sitio web, el usuario accede a una página principal con cuatro botones y una barra de navegación superior desde donde puede realizar las cuatro acciones principales: dar de alta, dar de baja, consultar usuarios y modificar usuarios (Figura \ref{fig:index_web}). A continuación, se llevará a cabo una breve explicación de cada una de ellas.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -200,7 +200,7 @@ Al entrar en esta página, se dispone de una lista desplegable en la que se carg
 \end{figure}
 
 \noindent \underline{Consultar Usuarios} \newline
-De manera similar, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos (Figura \ref{fig:consulta}). Si se pulsa el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
+De manera similar, se ha implementado una tabla para consultar los datos de los usuarios aunque, en este caso, se dispone de una herramienta básica de búsqueda en la que se puede filtrar por cada uno de los campos existentes en la base de datos (Figura \ref{fig:consulta}). Si se hace clic en el botón de buscar sin escribir nada en el filtro, la tabla se cargará con todos los registros existentes.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -234,7 +234,7 @@ Como medida adicional de seguridad y en prevención de corrupción de datos, el 
 \end{figure}
 
 \subsubsection{Desarrollo de una Aplicación de Cifrado en Java}
-Puesto que un administrador será el responsable de registrar a nuevos administradores en la base de datos, necesitará conocer el correo electrónico y la contraseña del nuevo administrador para introducir esta información en la base de datos. Con el fin de mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java Swing cuya principal función sea la de cifrar la contraseña de los nuevos administradores. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada, que será la que se introduzca en la base de datos. Además, se dispone de un botón para copiarla en el portapapeles y hacer esta tarea más sencilla. El algoritmo de cifrado que se ha implementado en esta aplicación y en el servidor Web es el mostrado en el Listado \ref{code:sha256} y hace uso de SHA-2, concretamente en su variante SHA-256. Este algoritmo de cifrado, a diferencia de los algoritmos MD5 o SHA-1 de los que se han encontrado vulnerabilidades, no ha sufrido ataques satisfactorios y tiene como características principales ser unidireccional, es decir, puede generar una cadena cifrada o \textit{hash} con la imposibilidad de realizar el proceso de manera inversa; generar una salida de 256 bits y poseer mayor seguridad que su antecesor, SHA-1.
+Puesto que un administrador será el responsable de registrar a nuevos administradores en la base de datos, necesitará conocer el correo electrónico y la contraseña del nuevo administrador para introducir esta información en la base de datos. Con el fin de mantener la contraseña lo más segura posible se ha decidido desarrollar una pequeña aplicación en Java Swing cuya principal función sea la de cifrar la contraseña de los nuevos administradores. Para ello, al iniciar la aplicación (Figura \ref{fig:cifrador}) se deberá escribir la contraseña en el campo correspondiente y hacer clic sobre el botón de cifrar para generar la cadena cifrada, que será la que se introduzca en la base de datos. Además, se dispone de un botón para copiarla en el portapapeles y hacer esta tarea más sencilla. El algoritmo de cifrado que se ha implementado en esta aplicación y en el servidor web es el mostrado en el Listado \ref{code:sha256} y hace uso de SHA-2, concretamente en su variante SHA-256. Este algoritmo de cifrado, a diferencia de los algoritmos MD5 o SHA-1 de los que se han encontrado vulnerabilidades, no ha sufrido ataques satisfactorios y tiene como características principales ser unidireccional, es decir, puede generar una cadena cifrada o \textit{hash} con la imposibilidad de realizar el proceso de manera inversa; generar una salida de 256 bits y poseer mayor seguridad que su antecesor, SHA-1.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -321,7 +321,7 @@ Por el contrario, si el usuario decide acceder mediante un correo electrónico y
 
 \clearpage
 
-Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo mediante la función <<¿Has olvidado tu contraseña?>>. Para ello, deberá introducir su correo y, acto seguido, el sistema enviará un mensaje de recuperación a la dirección de correo indicada siempre que se encuentre registrada en la base de datos. Dicho mensaje contendrá una dirección Web a la que el usuario debe entrar para introducir su nueva contraseña (Figura \ref{fig:cambiopass}). Una vez finalizado el proceso, podrá acceder al sistema con su nueva clave.
+Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo mediante la función <<¿Has olvidado tu contraseña?>>. Para ello, deberá introducir su correo y, acto seguido, el sistema enviará un mensaje de recuperación a la dirección de correo indicada siempre que se encuentre registrada en la base de datos. Dicho mensaje contendrá una dirección web a la que el usuario debe dirigirse para introducir su nueva contraseña (Figura \ref{fig:cambiopass}). Una vez finalizado el proceso, podrá acceder al sistema con su nueva clave.
 
 \begin{figure}[!h]
 	\centering
@@ -411,11 +411,11 @@ En este tercer Sprint se va a desarrollar la siguiente historia de usuario:
 
 \subsection{Tareas del Sprint}
 \subsubsection{Creación e Integración de los Servicios de IBM Bluemix}
-En primer lugar, se han de activar los servicios en la nube de IBM (Figura \ref{fig:bluemix}). Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona soporte actualmente para los idiomas inglés y francés a la hora de realizar consultas de manera directa, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones mostradas en el Listado \ref{code:peticiones}. Por tanto, el flujo de llamadas a estos servicios de IBM será el que se detalla en la Figura \ref{fig:diaflujo}, ejecutándose cada vez que un usuario de una familia envíe un mensaje a un chat. De esta manera, el texto que estos introduzcan será traducido al idioma inglés y, posteriormente, un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes enviados, así como para computar el porcentaje total del usuario dentro de un chat que reflejará el tono que este ha ido utilizando y se calcula como la media de los tonos de todos los mensajes que ese usuario ha enviado al chat correspondiente. Estas puntuaciones oscilarán entre valores que se encuentran entre el 0\% y el 100\%, siendo 0 el valor menos deseable y 100 el valor óptimo o más deseable. Ambas respuestas por parte de los servicios de Watson son recibidas por la aplicación en formato \acf{JSON}, por lo que deben ser interpretadas para extraer la traducción y, posteriormente, realizar el cálculo de la puntuación. En los Listados \ref{code:jsontrad} y \ref{code:jsontone} se expone un ejemplo de los resultados que recibe la aplicación por parte de los servicios de Watson con el mensaje <<Esto puede ser un ejemplo de oración a analizar. ¡Esta herramienta es muy buena!>>.
+En primer lugar, se han de activar los servicios en la nube de IBM (Figura \ref{fig:bluemix}). Una vez hecho esto, se pueden integrar los paquetes necesarios en el proyecto. Se ha observado que el módulo de Watson \textit{Tone Analyzer} únicamente proporciona soporte actualmente para los idiomas inglés y francés a la hora de realizar consultas de manera directa, por lo que se ha optado por traducir previamente el texto a analizar. Esta traducción se realiza mediante el servicio \textit{Language Translator}, que también se encuentra disponible en la misma plataforma Watson, llevando a cabo todas las consultas mediante peticiones mostradas en el Listado \ref{code:peticiones}. Por tanto, el flujo de llamadas a estos servicios de IBM será el que se detalla en la Figura \ref{fig:diaflujo}, ejecutándose cada vez que un usuario de una familia envíe un mensaje a un chat. De esta manera, el texto que estos introduzcan será traducido al idioma inglés y, posteriormente, se llevará a cabo un análisis del tono, que será recogido en la puntuación de cada uno de los mensajes enviados y utilizado para computar el porcentaje total del usuario dentro de un chat que reflejará el tono que este ha ido utilizando. Dicho porcentaje se calcula como la media de los tonos de todos los mensajes que ese usuario ha enviado al chat correspondiente. Estas puntuaciones oscilarán entre valores que se encuentran entre el 0\% y el 100\%, siendo 0 el valor menos deseable y 100 el valor óptimo o más deseable. Ambas respuestas por parte de los servicios de Watson son recibidas por la aplicación en formato \acf{JSON}, por lo que deben ser interpretadas para extraer la traducción y, posteriormente, realizar el cálculo de la puntuación. En los Listados \ref{code:jsontrad} y \ref{code:jsontone} se expone un ejemplo de los resultados que recibe la aplicación por parte de los servicios de Watson con el mensaje <<Esto puede ser un ejemplo de oración a analizar. ¡Esta herramienta es muy buena!>>.
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.85\textwidth]{/bluemix}
+		\includegraphics[width=0.9\textwidth]{/bluemix}
 		\caption{Panel de Control de IBM Bluemix}
 		\label{fig:bluemix}
 	\end{center}
@@ -452,10 +452,10 @@ En primer lugar, se han de activar los servicios en la nube de IBM (Figura \ref{
 						label = code:jsontone]
 						{code/tone.json}
 
-El servicio \textit{Tone Analyzer} puede analizar una única oración o un conjunto de ellas dentro de un mismo texto. Por tanto, en caso de que un usuario envíe un mensaje en el que se incluyan varias oraciones, se analizarán por separado y se calculará y transformará el resultado final teniendo en cuenta los resultados individuales, puesto que será mostrado al usuario en tanto por ciento. Asimismo, puede devolver diferentes tonos, cada uno con una <<puntuación>> que variará entre 0,5 y 1. Este valor no comienza en 0 puesto que IBM ha determinado que hay una mayor probabilidad de que se perciba el tono devuelto a partir de 0,5; por debajo de esa puntuación no se reconoce tono alguno, pues podría ser demasiado ambiguo o no determinante. \textit{Tone Analyzer} distingue entre tonos emocionales y tonos del lenguaje, siendo los siguientes los diferentes tonos que puede devolver este servicio \cite{IBM2018}:
+El servicio \textit{Tone Analyzer} puede analizar una única oración o un conjunto de ellas dentro de un mismo texto. Por tanto, en caso de que un usuario envíe un mensaje en el que se incluyan varias oraciones, se analizarán por separado y se calculará y transformará el resultado final teniendo en cuenta los resultados individuales, puesto que será mostrado al usuario en tanto por ciento. Asimismo, puede devolver diferentes tonos, cada uno con una <<puntuación>> que variará entre 0,5 y 1. Este valor no comienza en 0 puesto que IBM ha determinado que hay una mayor probabilidad de que se perciba el tono devuelto a partir de 0,5; por debajo de esa puntuación no se reconoce tono alguno, ya que podría ser demasiado ambiguo o no determinante. \textit{Tone Analyzer} distingue entre tonos emocionales y tonos del lenguaje, siendo los siguientes los diferentes tonos que puede devolver este servicio \cite{IBM2018}:
 
 \begin{itemize}
-	\item \textbf{Enfado (tono emocional)}. El enfado se debe a la injusticia, conflicto, humillación, negligencia o traición. Si este tono es <<activo>>, la persona ataca al objetivo verbal o físicamente. Por el contrario, si es <<pasivo>>, la persona tendrá mal humor y sentirá tensión y hostilidad.
+	\item \textbf{Enfado (tono emocional)}. El enfado se debe a la injusticia, conflicto, humillación, negligencia o traición. Si este tono se reconoce como <<activo>>, la persona ataca al objetivo verbal o físicamente. Por el contrario, si se reconoce como <<pasivo>>, la persona tendrá mal humor y sentirá tensión y hostilidad.
 	\item \textbf{Miedo (tono emocional)}. El miedo es una respuesta al peligro inminente. Es un mecanismo de supervivencia que se desencadena como reacción a algún estímulo negativo. El miedo puede ser producto de la precaución o una fobia extrema.
 	\item \textbf{Felicidad/alegría (tono emocional)}. Tiene matices de disfrute, satisfacción y placer. La alegría trae una sensación de bienestar, paz interior, amor, seguridad y satisfacción.
 	\item \textbf{Tristeza (tono emocional)}. La tristeza indica una sensación de pérdida y desventaja. Cuando una persona está callada, menos enérgica y retraída, se puede deducir que siente tristeza.
@@ -490,7 +490,7 @@ Por tanto, en cuanto a tonos relacionados con las emociones, se han considerado 
 
 \clearpage
 
-Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de los mismos (Tabla \ref{tab:coloresmensaje}). Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje (siendo el 0\% el peor valor y el 100\% el mejor o más deseable) mediante una actividad que se desarrollará en el siguiente Sprint cuya principal función será la de informar acerca de los datos del chat como el nombre (también se podrá modificar) y una lista de sus integrantes.
+Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de los mismos (Tabla \ref{tab:coloresmensaje}). Además, si Watson analiza un mensaje y no detecta tonos que destaquen, este se mostrará en color amarillo, indicando que se debe prestar atención a dicho mensaje. Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje (siendo el 0\% el peor valor y el 100\% el mejor o más deseable) mediante una actividad que se desarrollará en el siguiente Sprint cuya principal función será la de informar acerca de los datos del chat como el nombre (que también se podrá modificar) y una lista de sus integrantes.
 
 \begin{table}[!htbp]
 	\centering
@@ -509,7 +509,7 @@ Debido a la inclusión de los tonos por mensaje y por usuario en la base de dato
 %TODO: Insertar imágenes de chat con colores
 
 \section{Sprint 4: Integración con Google Calendar y Desarrollo de Funcionalidades Adicionales}
-Este último Sprint se ha dedicado a añadir funcionalidades a las ya existentes de cara a completar la aplicación final, puesto que la principal función de comunicación ya ha sido implementada en los Sprints anteriores. Algunas de estas mejoras son la integración con Google Calendar o la posibilidad de editar el perfil de un usuario de la aplicación.
+Este último Sprint se ha dedicado a la integración con Google Calendar, así como al desarrollo de funcionalidades adicionales a las ya existentes de cara a completar la aplicación final, puesto que la principal función de comunicación ya ha sido implementada en los Sprints anteriores.
 
 \subsection{Planificación del Sprint}
 En este Sprint se van a implementar las siguientes historias de usuario:
@@ -556,6 +556,8 @@ En este Sprint se van a implementar las siguientes historias de usuario:
 	\label{tab:historia10}
 \end{table}
 
+\clearpage
+
 \subsection{Tareas del Sprint}
 \subsubsection{Integración con Google Calendar}
 Para esta funcionalidad se ha añadido un botón (+) (Figura \ref{fig:crearevento}) que lanzará la aplicación de Google Calendar y permitirá al administrador del chat crear un nuevo evento al que serán añadidos los correos electrónicos de los integrantes como <<invitados>> del mismo (Figura \ref{fig:invitados}). Este botón únicamente será visible para los administradores del chat, no mostrándose al resto de integrantes. Esta funcionalidad está destinada, principalmente, para llevar a cabo la comunicación de exámenes, tutorías o eventos de interés a las familias del chat de una manera sencilla por parte de los docentes.
@@ -576,8 +578,6 @@ Para esta funcionalidad se ha añadido un botón (+) (Figura \ref{fig:crearevent
 	\end{minipage}
 \end{figure}
 
-\clearpage
-
 \subsubsection{Creación y Modificación del Perfil}
 Esta funcionalidad está disponible para todos los usuarios desde la actividad principal mediante una opción en el menú (Figura \ref{fig:menuppal}). Esta opción lanzará una nueva actividad desde la que se podrá editar la imagen de perfil, pudiendo seleccionar una desde la galería o retirarla para establecer la imagen por defecto mediante el uso de los botones que se muestran (Figura \ref{fig:perfil}). Del mismo modo, se muestra al usuario sus datos personales que se encuentran en la base de datos.
 
@@ -585,13 +585,13 @@ Esta funcionalidad está disponible para todos los usuarios desde la actividad p
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.6\textwidth]{/capturas_app/menuppal.png}
+		\includegraphics[width=0.5\textwidth]{/capturas_app/menuppal.png}
 		\caption{Menú Principal}
 		\label{fig:menuppal}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.65\linewidth]{/capturas_app/perfil}
+		\includegraphics[width=0.5\linewidth]{/capturas_app/perfil}
 		\caption{Actividad de Perfil}
 		\label{fig:perfil}
 	\end{minipage}
@@ -625,7 +625,7 @@ Para el administrador de un chat, probablemente sea de utilidad proporcionar la 
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.4\textwidth]{/capturas_app/infointegrante}
+		\includegraphics[width=0.35\textwidth]{/capturas_app/infointegrante}
 		\caption{Actividad de Información de Integrante}
 		\label{fig:infointegrante}
 	\end{center}
