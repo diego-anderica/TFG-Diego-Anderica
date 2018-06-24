@@ -1,7 +1,7 @@
 <resources>
     <!--MenuMain-->
     <string name="app_name">EduChat</string>
-    <string name="mnuBtnCrearChat">Crear nuevo chat...</string>
+    <string name="mnuBtnCrearChat">Crear Nuevo Chat...</string>
     <string name="mnuBtnPerfil">Perfil...</string>
     <string name="mnuBtnCerrarSesion">Cerrar Sesión...</string>
     <!--MenuMain-->
