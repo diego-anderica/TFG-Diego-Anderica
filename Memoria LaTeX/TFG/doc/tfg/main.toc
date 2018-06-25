@@ -92,7 +92,7 @@
 \contentsline {subsection}{\numberline {6.4.1}Planificaci\IeC {\'o}n del Sprint}{56}{subsection.6.4.1}
 \contentsline {subsection}{\numberline {6.4.2}Tareas del Sprint}{57}{subsection.6.4.2}
 \contentsline {subsubsection}{Creaci\IeC {\'o}n e Integraci\IeC {\'o}n de los Servicios de IBM Bluemix}{57}{subsection.6.4.2}
-\contentsline {section}{\numberline {6.5}Sprint 4: Integraci\IeC {\'o}n con Google Calendar y Desarrollo de Funcionalidades Adicionales}{63}{section.6.5}
+\contentsline {section}{\numberline {6.5}Sprint 4: Integraci\IeC {\'o}n de Google Calendar y Desarrollo de Funcionalidades Adicionales}{63}{section.6.5}
 \contentsline {subsection}{\numberline {6.5.1}Planificaci\IeC {\'o}n del Sprint}{63}{subsection.6.5.1}
 \contentsline {subsection}{\numberline {6.5.2}Tareas del Sprint}{65}{subsection.6.5.2}
 \contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{65}{subsection.6.5.2}
