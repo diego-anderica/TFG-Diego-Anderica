@@ -17,92 +17,94 @@
 \contentsline {subsection}{\numberline {2.2.3}Objetivo III: Implementar un Mecanismo de Monitorizaci\IeC {\'o}n Activa del Tipo y Contenido de los Mensajes}{6}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Objetivo IV: Integraci\IeC {\'o}n de la Aplicaci\IeC {\'o}n con Google Calendar}{6}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Objetivo V: Implementar Mecanismos que Permitan Comunicaciones Privadas Docente-Tutores Legales del Alumno}{7}{subsection.2.2.5}
-\contentsline {chapter}{\numberline {3}Objectives}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Main Objective}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Specific Objectives}{9}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Objective I: Implement an User Management Frame Linked to the Educational Context}{10}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Objective II: Provide a Multiplatform Environment}{10}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Objective III: Implement an active monitorization mechanism of the type and message content}{10}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Objective IV: Integration with Google Calendar}{10}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Objective V: Implement mechanisms to allow private communications teachers-legal guardians}{11}{subsection.3.2.5}
-\contentsline {chapter}{\numberline {4}Antecedentes}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}WhatsApp}{13}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Funcionalidades para los Usuarios}{14}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Funcionalidades para los Desarrolladores}{14}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Telegram}{15}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Funcionalidades para los Usuarios}{15}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Funcionalidades para los Desarrolladores}{16}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Slack}{16}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Funcionalidades para los Usuarios}{17}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Funcionalidades para los Desarrolladores}{17}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Skype}{18}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Funcionalidades para los Usuarios}{18}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Funcionalidades para los Desarrolladores}{19}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Signal}{19}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Funcionalidades para los Usuarios}{20}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Funcionalidades para los Desarrolladores}{20}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Wickr}{20}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Funcionalidades para los Usuarios}{21}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Funcionalidades para los Desarrolladores}{21}{subsection.4.6.2}
-\contentsline {section}{\numberline {4.7}Comparaci\IeC {\'o}n de Alternativas}{22}{section.4.7}
-\contentsline {section}{\numberline {4.8}Aplicaciones Especializadas}{23}{section.4.8}
-\contentsline {subsection}{\numberline {4.8.1}miColegioApp}{23}{subsection.4.8.1}
-\contentsline {subsection}{\numberline {4.8.2}BabyNotez}{23}{subsection.4.8.2}
-\contentsline {subsection}{\numberline {4.8.3}TokApp School}{24}{subsection.4.8.3}
-\contentsline {chapter}{\numberline {5}Metodolog\IeC {\'\i }a}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Metodolog\IeC {\'\i }a de Gesti\IeC {\'o}n de Proyectos: Scrum}{25}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Teor\IeC {\'\i }a de Scrum}{25}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}El equipo de Scrum}{26}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Eventos de Scrum}{26}{subsection.5.1.3}
-\contentsline {subsubsection}{El Sprint}{27}{subsection.5.1.3}
-\contentsline {subsubsection}{Planificaci\IeC {\'o}n del Sprint (\textit {Sprint Planning})}{27}{subsection.5.1.3}
-\contentsline {subsubsection}{Scrum Diario (\textit {Daily Meeting})}{27}{subsection.5.1.3}
-\contentsline {subsubsection}{Revisi\IeC {\'o}n del Sprint (\textit {Sprint Review})}{27}{subsection.5.1.3}
-\contentsline {subsubsection}{Retrospectiva del Sprint (\textit {Sprint Retrospective})}{27}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Artefactos de Scrum}{28}{subsection.5.1.4}
-\contentsline {subsubsection}{Pila de Producto (\textit {Product Backlog})}{28}{subsection.5.1.4}
-\contentsline {subsubsection}{Pila de Sprint (\textit {Sprint Backlog})}{28}{subsection.5.1.4}
-\contentsline {subsubsection}{Incremento}{28}{subsection.5.1.4}
-\contentsline {subsubsection}{Gr\IeC {\'a}ficos \textit {burn-down} y \textit {burn-up}}{28}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}Metodolog\IeC {\'\i }a de Desarrollo de Software: Iterativo e Incremental}{29}{section.5.2}
-\contentsline {section}{\numberline {5.3}Recursos}{30}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Recursos Hardware}{30}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Recursos Software}{31}{subsection.5.3.2}
-\contentsline {chapter}{\numberline {6}Resultados}{35}{chapter.6}
-\contentsline {section}{\numberline {6.1}Planificaci\IeC {\'o}n Inicial (Sprint 0)}{36}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Pila de Producto}{36}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Costes del Proyecto}{37}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Planificaci\IeC {\'o}n Temporal}{37}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Diagrama de Casos de Uso}{38}{subsection.6.1.4}
-\contentsline {section}{\numberline {6.2}Sprint 1: Dise\IeC {\~n}o de una Plataforma Web para la Gesti\IeC {\'o}n de los Usuarios}{39}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Planificaci\IeC {\'o}n del Sprint}{39}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Tareas del Sprint}{40}{subsection.6.2.2}
-\contentsline {subsubsection}{Dise\IeC {\~n}o Inicial de la Base de Datos}{40}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {2}Objectives}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Main Objective}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Specific Objectives}{9}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Objective I: Implement an User Management Frame Linked to the Educational Context}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Objective II: Provide a Multiplatform Environment}{10}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Objective III: Implement an active monitorization mechanism of the type and message content}{10}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Objective IV: Integration with Google Calendar}{10}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Objective V: Implement mechanisms to allow private communications teachers-legal guardians}{11}{subsection.2.2.5}
+\contentsline {chapter}{\numberline {3}Antecedentes}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}WhatsApp}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Funcionalidades para los Usuarios}{14}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Funcionalidades para los Desarrolladores}{14}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Telegram}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Funcionalidades para los Usuarios}{15}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Funcionalidades para los Desarrolladores}{16}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Slack}{16}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Funcionalidades para los Usuarios}{17}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Funcionalidades para los Desarrolladores}{17}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Skype}{18}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Funcionalidades para los Usuarios}{18}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Funcionalidades para los Desarrolladores}{19}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Signal}{19}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Funcionalidades para los Usuarios}{20}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Funcionalidades para los Desarrolladores}{20}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Wickr}{20}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Funcionalidades para los Usuarios}{21}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Funcionalidades para los Desarrolladores}{21}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}Comparaci\IeC {\'o}n de Alternativas}{22}{section.3.7}
+\contentsline {section}{\numberline {3.8}Aplicaciones Especializadas}{23}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}miColegioApp}{23}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}BabyNotez}{23}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.8.3}TokApp School}{24}{subsection.3.8.3}
+\contentsline {chapter}{\numberline {4}Metodolog\IeC {\'\i }a}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Metodolog\IeC {\'\i }a de Gesti\IeC {\'o}n de Proyectos: Scrum}{25}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Teor\IeC {\'\i }a de Scrum}{25}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}El equipo de Scrum}{26}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Eventos de Scrum}{26}{subsection.4.1.3}
+\contentsline {subsubsection}{El Sprint}{27}{subsection.4.1.3}
+\contentsline {subsubsection}{Planificaci\IeC {\'o}n del Sprint (\textit {Sprint Planning})}{27}{subsection.4.1.3}
+\contentsline {subsubsection}{Scrum Diario (\textit {Daily Meeting})}{27}{subsection.4.1.3}
+\contentsline {subsubsection}{Revisi\IeC {\'o}n del Sprint (\textit {Sprint Review})}{27}{subsection.4.1.3}
+\contentsline {subsubsection}{Retrospectiva del Sprint (\textit {Sprint Retrospective})}{27}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Artefactos de Scrum}{28}{subsection.4.1.4}
+\contentsline {subsubsection}{Pila de Producto (\textit {Product Backlog})}{28}{subsection.4.1.4}
+\contentsline {subsubsection}{Pila de Sprint (\textit {Sprint Backlog})}{28}{subsection.4.1.4}
+\contentsline {subsubsection}{Incremento}{28}{subsection.4.1.4}
+\contentsline {subsubsection}{Gr\IeC {\'a}ficos \textit {burn-down} y \textit {burn-up}}{28}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Metodolog\IeC {\'\i }a de Desarrollo de Software: Iterativo e Incremental}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}Recursos}{30}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Recursos Hardware}{30}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Recursos Software}{31}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Resultados}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Planificaci\IeC {\'o}n Inicial (Sprint 0)}{36}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Pila de Producto}{36}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Costes del Proyecto}{37}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Planificaci\IeC {\'o}n Temporal}{37}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Diagrama de Casos de Uso}{38}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Sprint 1: Dise\IeC {\~n}o de una Plataforma Web para la Gesti\IeC {\'o}n de los Usuarios}{39}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Planificaci\IeC {\'o}n del Sprint}{39}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Tareas del Sprint}{40}{subsection.5.2.2}
+\contentsline {subsubsection}{Dise\IeC {\~n}o Inicial de la Base de Datos}{40}{subsection.5.2.2}
 \contentsline {subsubsection}{Implementaci\IeC {\'o}n de la Plataforma Web}{42}{figure.caption.43}
 \contentsline {subsubsection}{Desarrollo de una Aplicaci\IeC {\'o}n de Cifrado en Java}{47}{figure.caption.50}
-\contentsline {section}{\numberline {6.3}Sprint 2: Creaci\IeC {\'o}n de la Aplicaci\IeC {\'o}n Android y Creaci\IeC {\'o}n de Chats}{49}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Planificaci\IeC {\'o}n del Sprint}{49}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Tareas del Sprint}{50}{subsection.6.3.2}
-\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Acceso}{50}{subsection.6.3.2}
+\contentsline {section}{\numberline {5.3}Sprint 2: Creaci\IeC {\'o}n de la Aplicaci\IeC {\'o}n Android y Creaci\IeC {\'o}n de Chats}{49}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Planificaci\IeC {\'o}n del Sprint}{49}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Tareas del Sprint}{50}{subsection.5.3.2}
+\contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Acceso}{50}{subsection.5.3.2}
 \contentsline {subsubsection}{Adecuaci\IeC {\'o}n de la Base de Datos}{53}{figure.caption.58}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Creaci\IeC {\'o}n de Chats}{54}{figure.caption.58}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad Principal}{55}{figure.caption.59}
 \contentsline {subsubsection}{Dise\IeC {\~n}o de la Actividad de Chat}{55}{figure.caption.59}
-\contentsline {section}{\numberline {6.4}Sprint 3: An\IeC {\'a}lisis del Tono y Categorizaci\IeC {\'o}n de los Mensajes}{56}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Planificaci\IeC {\'o}n del Sprint}{56}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Tareas del Sprint}{57}{subsection.6.4.2}
-\contentsline {subsubsection}{Creaci\IeC {\'o}n e Integraci\IeC {\'o}n de los Servicios de IBM Bluemix}{57}{subsection.6.4.2}
-\contentsline {section}{\numberline {6.5}Sprint 4: Integraci\IeC {\'o}n de Google Calendar y Desarrollo de Funcionalidades Adicionales}{63}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Planificaci\IeC {\'o}n del Sprint}{63}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Tareas del Sprint}{65}{subsection.6.5.2}
-\contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{65}{subsection.6.5.2}
+\contentsline {section}{\numberline {5.4}Sprint 3: An\IeC {\'a}lisis del Tono y Categorizaci\IeC {\'o}n de los Mensajes}{56}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Planificaci\IeC {\'o}n del Sprint}{56}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Tareas del Sprint}{57}{subsection.5.4.2}
+\contentsline {subsubsection}{Creaci\IeC {\'o}n e Integraci\IeC {\'o}n de los Servicios de IBM Bluemix}{57}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Sprint 4: Integraci\IeC {\'o}n de Google Calendar y Desarrollo de Funcionalidades Adicionales}{63}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Planificaci\IeC {\'o}n del Sprint}{63}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Tareas del Sprint}{65}{subsection.5.5.2}
+\contentsline {subsubsection}{Integraci\IeC {\'o}n con Google Calendar}{65}{subsection.5.5.2}
 \contentsline {subsubsection}{Creaci\IeC {\'o}n y Modificaci\IeC {\'o}n del Perfil}{65}{figure.caption.72}
 \contentsline {subsubsection}{Eliminar y cambiar nombre de un chat}{66}{figure.caption.73}
 \contentsline {subsubsection}{Visualizar informaci\IeC {\'o}n de los integrantes}{67}{figure.caption.74}
-\contentsline {chapter}{\numberline {7}Conclusiones y Trabajos Futuros}{69}{chapter.7}
-\contentsline {section}{\numberline {7.1}Conclusiones}{69}{section.7.1}
-\contentsline {section}{\numberline {7.2}Trabajos Futuros}{70}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{71}{chapter.8}
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajos Futuros}{69}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusiones}{69}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trabajos Futuros}{70}{section.6.2}
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{71}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusions}{71}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Work}{72}{section.6.2}
 \contentsline {chapter}{\numberline {A}Dise\IeC {\~n}o de la Base de Datos}{75}{appendix.Alph1}
 \contentsline {chapter}{\numberline {B}Protecci\IeC {\'o}n de Datos de Car\IeC {\'a}cter Personal}{77}{appendix.Alph2}
 \contentsline {chapter}{\numberline {C}Manual de Usuario para el Administrador}{79}{appendix.Alph3}

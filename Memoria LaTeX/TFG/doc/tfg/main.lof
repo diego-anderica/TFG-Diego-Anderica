@@ -9,50 +9,50 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Imagotipo de WhatsApp\relax }}{13}{figure.caption.17}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Isotipo de Telegram\relax }}{15}{figure.caption.18}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Imagotipo de Slack\relax }}{16}{figure.caption.20}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Isologo de Skype\relax }}{18}{figure.caption.22}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Isotipo de Signal\relax }}{19}{figure.caption.24}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \textit {Tweet} de Snowden sobre Signal\relax }}{19}{figure.caption.25}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Imagotipo de Wickr\relax }}{21}{figure.caption.26}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Isologo de miColegioApp\relax }}{23}{figure.caption.28}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Isologo de BabyNotez\relax }}{23}{figure.caption.29}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Isotipo de TokApp School\relax }}{24}{figure.caption.30}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Imagotipo de WhatsApp\relax }}{13}{figure.caption.17}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Isotipo de Telegram\relax }}{15}{figure.caption.18}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Imagotipo de Slack\relax }}{16}{figure.caption.20}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Isologo de Skype\relax }}{18}{figure.caption.22}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Isotipo de Signal\relax }}{19}{figure.caption.24}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Tweet} de Snowden sobre Signal\relax }}{19}{figure.caption.25}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Imagotipo de Wickr\relax }}{21}{figure.caption.26}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Isologo de miColegioApp\relax }}{23}{figure.caption.28}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Isologo de BabyNotez\relax }}{23}{figure.caption.29}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Isotipo de TokApp School\relax }}{24}{figure.caption.30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Gr\IeC {\'a}fico \textit {Burn-down}\relax }}{29}{figure.caption.31}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Informaci\IeC {\'o}n de Windows\relax }}{30}{figure.caption.33}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Tablero Kanban en GitHub\relax }}{32}{figure.caption.34}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Gr\IeC {\'a}fico \textit {Burn-down}\relax }}{29}{figure.caption.31}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Informaci\IeC {\'o}n de Windows\relax }}{30}{figure.caption.33}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Tablero Kanban en GitHub\relax }}{32}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Planificaci\IeC {\'o}n Temporal\relax }}{37}{figure.caption.38}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagrama de Casos de Uso\relax }}{38}{figure.caption.39}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces P\IeC {\'a}gina de Inicio de Google Firebase\relax }}{40}{figure.caption.42}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Colecciones en Firebase Firestore\relax }}{41}{figure.caption.43}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces \textit {Login} de la Web\relax }}{43}{figure.caption.44}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces P\IeC {\'a}gina Principal de la Web\relax }}{43}{figure.caption.45}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces P\IeC {\'a}gina de Alta\relax }}{44}{figure.caption.46}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces P\IeC {\'a}gina de Baja\relax }}{45}{figure.caption.47}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces P\IeC {\'a}gina de Consulta\relax }}{45}{figure.caption.48}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces P\IeC {\'a}gina de Modificaci\IeC {\'o}n\relax }}{46}{figure.caption.49}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Pregunta para Abandonar una P\IeC {\'a}gina\relax }}{46}{figure.caption.50}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Aplicaci\IeC {\'o}n de Cifrado\relax }}{47}{figure.caption.51}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Actividad de Inicio de Sesi\IeC {\'o}n\relax }}{50}{figure.caption.55}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Actividad \textit {login} con Tel\IeC {\'e}fono\relax }}{51}{figure.caption.56}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Actividad \textit {login} con Correo y Contrase\IeC {\~n}a\relax }}{52}{figure.caption.57}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Cambio de Contrase\IeC {\~n}a\relax }}{52}{figure.caption.57}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Autenticaci\IeC {\'o}n del Docente\relax }}{53}{figure.caption.58}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Actividad de Crear Chat\relax }}{54}{figure.caption.59}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces \textit {ListView} vs \textit {RecyclerView}\relax }}{55}{figure.caption.60}
-\contentsline {figure}{\numberline {6.20}{\ignorespaces Ejemplo de un Chat\relax }}{55}{figure.caption.60}
-\contentsline {figure}{\numberline {6.21}{\ignorespaces Panel de Control de IBM Bluemix\relax }}{57}{figure.caption.63}
-\contentsline {figure}{\numberline {6.22}{\ignorespaces Diagrama de Flujo de Llamadas a los Servicios de Watson\relax }}{58}{figure.caption.64}
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Bot\IeC {\'o}n para Crear un Evento\relax }}{65}{figure.caption.72}
-\contentsline {figure}{\numberline {6.24}{\ignorespaces Ejemplo de Inserci\IeC {\'o}n de <<Invitados>>\relax }}{65}{figure.caption.72}
-\contentsline {figure}{\numberline {6.25}{\ignorespaces Men\IeC {\'u} Principal\relax }}{65}{figure.caption.73}
-\contentsline {figure}{\numberline {6.26}{\ignorespaces Actividad de Perfil\relax }}{65}{figure.caption.73}
-\contentsline {figure}{\numberline {6.27}{\ignorespaces Di\IeC {\'a}logo para Borrar un Chat\relax }}{66}{figure.caption.74}
-\contentsline {figure}{\numberline {6.28}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Chat\relax }}{66}{figure.caption.74}
-\contentsline {figure}{\numberline {6.29}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Integrante\relax }}{67}{figure.caption.75}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Planificaci\IeC {\'o}n Temporal\relax }}{37}{figure.caption.38}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de Casos de Uso\relax }}{38}{figure.caption.39}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces P\IeC {\'a}gina de Inicio de Google Firebase\relax }}{40}{figure.caption.42}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Colecciones en Firebase Firestore\relax }}{41}{figure.caption.43}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \textit {Login} de la Web\relax }}{43}{figure.caption.44}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces P\IeC {\'a}gina Principal de la Web\relax }}{43}{figure.caption.45}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces P\IeC {\'a}gina de Alta\relax }}{44}{figure.caption.46}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces P\IeC {\'a}gina de Baja\relax }}{45}{figure.caption.47}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces P\IeC {\'a}gina de Consulta\relax }}{45}{figure.caption.48}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces P\IeC {\'a}gina de Modificaci\IeC {\'o}n\relax }}{46}{figure.caption.49}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Pregunta para Abandonar una P\IeC {\'a}gina\relax }}{46}{figure.caption.50}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Aplicaci\IeC {\'o}n de Cifrado\relax }}{47}{figure.caption.51}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Actividad de Inicio de Sesi\IeC {\'o}n\relax }}{50}{figure.caption.55}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Actividad \textit {login} con Tel\IeC {\'e}fono\relax }}{51}{figure.caption.56}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Actividad \textit {login} con Correo y Contrase\IeC {\~n}a\relax }}{52}{figure.caption.57}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Cambio de Contrase\IeC {\~n}a\relax }}{52}{figure.caption.57}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Autenticaci\IeC {\'o}n del Docente\relax }}{53}{figure.caption.58}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Actividad de Crear Chat\relax }}{54}{figure.caption.59}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces \textit {ListView} vs \textit {RecyclerView}\relax }}{55}{figure.caption.60}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Ejemplo de un Chat\relax }}{55}{figure.caption.60}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Panel de Control de IBM Bluemix\relax }}{57}{figure.caption.63}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Diagrama de Flujo de Llamadas a los Servicios de Watson\relax }}{58}{figure.caption.64}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Bot\IeC {\'o}n para Crear un Evento\relax }}{65}{figure.caption.72}
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Ejemplo de Inserci\IeC {\'o}n de <<Invitados>>\relax }}{65}{figure.caption.72}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Men\IeC {\'u} Principal\relax }}{65}{figure.caption.73}
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Actividad de Perfil\relax }}{65}{figure.caption.73}
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Di\IeC {\'a}logo para Borrar un Chat\relax }}{66}{figure.caption.74}
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Chat\relax }}{66}{figure.caption.74}
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Actividad de Informaci\IeC {\'o}n de Integrante\relax }}{67}{figure.caption.75}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

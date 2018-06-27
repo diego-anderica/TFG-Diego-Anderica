@@ -1,7 +1,7 @@
 \chapter{Resultados}
 \label{chap:resultados}
 
-\drop{E}{n} este capítulo se mostrarán los resultados obtenidos al seguir la planificación inicial, conociendo lo descrito en el capítulo anterior. Por tanto, este capítulo se estructurará en Sprints y en cada uno de ellos se tendrá, al menos, una historia de usuario asignada que estará implementada al final del desarrollo.
+\drop{E}{n} este capítulo se mostrarán los resultados obtenidos al seguir la planificación inicial, tomando como base la metodología descrita en el capítulo anterior. Por tanto, este capítulo se estructurará en Sprints y en cada uno de ellos se tendrá, al menos, una historia de usuario asignada que estará implementada al final del desarrollo.
 
 Debido a que el equipo de Scrum es reducido, se han tenido que realizar diversos ajustes para adoptar esta metodología al trabajo que se va a desarrollar. Por tanto, el equipo identificado queda de la siguiente manera:
 
@@ -47,7 +47,7 @@ Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solu
 \end{table}
 
 \subsection{Planificación Temporal}
-El siguiente gráfico (Figura \ref{fig:plantempo}) que representa la planificación temporal estimada para cada uno de los Sprints en un primer momento.
+La Figura \ref{fig:plantempo}) representa la planificación temporal estimada para cada uno de los Sprints.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -73,10 +73,10 @@ Debido a que se van a tener diferentes roles en el centro de cara al uso de la a
 \clearpage
 
 \section{Sprint 1: Diseño de una Plataforma Web para la Gestión de los Usuarios}
-Este primer Sprint se encuentra enfocado a diseñar e implementar una plataforma web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, realizar tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulta mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar, puesto que una de las principales premisas es su sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que estas contraseñas de estos no sean conocidas por terceras personas, manteniéndolas seguras.
+Este primer Sprint se encuentra enfocado a diseñar e implementar una plataforma web para la gestión de los usuarios de la aplicación de mensajería instantánea. De esta manera, realizar tareas como las de añadir nuevos usuarios, consultar los existentes o modificarlos resulta mucho más sencillo, cómodo y práctico para los potenciales administradores de la plataforma que se pretende desarrollar. Esto se debe a que una de las principales premisas es la sencillez de uso, ofreciendo una interfaz más amigable que la que ofrece actualmente la base de datos de segunda generación de Firebase, Firestore. Además, se deberá crear una aplicación adicional en Java para cifrar las contraseñas de los nuevos administradores, de manera que estas contraseñas no sean conocidas por terceras personas manteniéndose, de esta manera, seguras puesto que únicamente el nuevo administrador será quien conozca su contraseña en claro.
 
 \subsection{Planificación del Sprint}
-Se han elegido las dos primeras historias de usuario para la consecución de este Sprint durante la reunión inicial (Tablas \ref{tab:historia1} y \ref{tab:historia2}).
+Durante la reunión inicial se han seleccionado las dos primeras historias de usuario para la consecución de este Sprint (Tablas \ref{tab:historia1} y \ref{tab:historia2}).
 
 \begin{table}[!htbp]
 	\centering
@@ -102,7 +102,7 @@ Se han elegido las dos primeras historias de usuario para la consecución de est
 
 \subsection{Tareas del Sprint}
 \subsubsection{Diseño Inicial de la Base de Datos}
-Una vez que se ha creado el proyecto en Firebase y se tiene acceso a este (Figura \ref{fig:iniciofirebase}), se puede acceder a Firebase Firestore, que se trata de una base de datos no relacional, lo que significa que no existen relaciones ni tablas como ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas (Figura \ref{fig:bbdd}). En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
+Una vez que se ha creado el proyecto en Firebase y se tiene acceso a este (Figura \ref{fig:iniciofirebase}), se puede acceder a una base de datos no relacional cuyo nombre es Firestore. En esta base de datos no existen relaciones ni tablas como ocurre en las bases de datos relacionales. Por tanto, en este caso, se tienen colecciones de documentos que, a su vez, pueden tener colecciones de documentos anidadas (Figura \ref{fig:bbdd}). En consecuencia, se ha realizado un primer diseño en el que la base de datos tendrá tres colecciones: <<Usuarios>>, para los usuarios de las familias; <<UsuariosWeb>>, que albergará los administradores con acceso al sitio web para la gestión de las familias y <<Docentes>>, que contendrá los datos de los docentes y potenciales administradores de los grupos de chat. Los campos que se guardarán de cada uno son los siguientes:
 
 \begin{figure}[!h]
 	\begin{center}
@@ -343,7 +343,7 @@ Si el usuario no recuerda su contraseña o decide cambiarla, podrá hacerlo medi
 
 \clearpage
 
-Por otra parte, si quien quiere acceder a la aplicación es un docente, este deberá seleccionar la opción <<Soy Docente>>, en cuyo caso se preguntará si quiere autenticarse mediante su número de teléfono o mediante su correo y contraseña (Figura \ref{fig:logindocente}), siendo los siguientes pasos iguales a los descritos anteriormente para un usuario perteneciente a una familia.
+Por otra parte, si quien quiere acceder a la aplicación es un docente, este deberá seleccionar la opción <<Soy Docente>>, en cuyo caso se preguntará si quiere autenticarse mediante su número de teléfono o mediante su correo y contraseña (Figura \ref{fig:logindocente}), siendo los siguientes pasos similares o idénticos a los descritos anteriormente para un usuario perteneciente a una familia.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -354,7 +354,7 @@ Por otra parte, si quien quiere acceder a la aplicación es un docente, este deb
 \end{figure}
 
 \subsubsection{Adecuación de la Base de Datos}
-A la hora de guardar los grupos de chat, se debe crear una nueva colección en la base de datos con todos los datos de los mismos a la que se le ha asignado el nombre de \mbox{<<ChatsGrupales>>}. En esta colección se encuentra un documento <<Control>> con un campo <<Contador>>, que es un número entero usado para otorgar un identificador único a cada una de las salas de chat en la base de datos y que se irá incrementando a medida que se vayan creando nuevas. Cada uno de dichos documentos contendrá elementos como un objeto de tipo <<Administrador>> que representará al docente creador del grupo con todos sus datos; su identificador en la base de datos y el nombre que el docente haya asignado a dicho grupo. Además, contendrá colecciones adicionales como <<Familias>> y <<Mensajes>>. La primera incluye los documentos de la colección <<Usuarios>> que el administrador haya incluido en el grupo, es decir, las familias participantes. Por su parte, la colección <<Mensajes>>, incluye documentos con los mensajes que cada integrante ha enviado al chat, conteniendo cada uno información del remitente así como la fecha y hora de envío.
+A la hora de guardar los grupos de chat, se debe crear una nueva colección en la base de datos con todos los datos de los mismos, a la que se le ha asignado el nombre de \mbox{<<ChatsGrupales>>}. En esta colección se encuentra un documento <<Control>> con un campo <<Contador>>, que es un número entero usado para otorgar un identificador único a cada una de las salas de chat en la base de datos y que se irá incrementando a medida que se vayan creando nuevas. Cada uno de dichos documentos contendrá elementos como un objeto de tipo <<Administrador>> que representará al docente creador del grupo con todos sus datos; su identificador en la base de datos y el nombre que el docente haya asignado a dicho grupo. Además, contendrá colecciones adicionales como <<Familias>> y <<Mensajes>>. La primera incluye los documentos de la colección <<Usuarios>> que el administrador haya incluido en el grupo, es decir, las familias participantes. Por su parte, la colección <<Mensajes>>, incluye documentos con los mensajes que cada integrante ha enviado al chat, conteniendo cada uno información del remitente así como la fecha y hora de envío.
 
 \subsubsection{Diseño de la Actividad de Creación de Chats}
 Esta funcionalidad está disponible únicamente para los docentes identificados en la aplicación, puesto que son los únicos usuarios con capacidad para iniciar nuevos chats. Una vez que el docente se ha identificado en el sistema y ha accedido a la actividad principal, podrá crear un nuevo chat mediante la opción <<Crear nuevo chat...>> situada en el menú principal de la aplicación, que se encuentra en la esquina superior derecha de la pantalla. Al seleccionar esta opción, se mostrará una nueva actividad en la que se podrá introducir el nombre del chat y los integrantes del mismo (Figura \ref{fig:creargrupo}) mediante una lista en la que se mostrarán todas las familias que se encuentren en ese momento en la colección <<Usuarios>> de la base de datos. El docente, si así lo desea, puede crear un chat con una única familia para comunicarse exclusivamente con esta, no estando obligado a seleccionar varias familias para crear un chat. Para finalizar su creación, se debe pulsar el botón <<Crear Chat>>, en cuyo caso la aplicación preguntará al docente si realmente desea crear ese chat y se le devolverá a la actividad principal, donde se muestran aquellos de los que el usuario es miembro.
@@ -397,7 +397,7 @@ Por último, la principal función de la actividad de chat es la de mostrar todo
 Este Sprint se encuentra principalmente enfocado a la creación, integración y manejo de resultados de los servicios de Watson que ofrece IBM mediante la plataforma IBM Bluemix. Puesto que se trata de una aplicación de mensajería instantánea dirigida al ámbito educativo, el objetivo se centra en que los docentes puedan obtener valores acerca del tono de conversación utilizado dentro de un chat a nivel de mensajes y a nivel del tono general de los diferentes integrantes del mismo. En el primer caso, se visualizarán los mensajes categorizados por colores, mientras que en el segundo se mostrará mediante un porcentaje junto al nombre de cada usuario en la lista de integrantes del chat. Toda esta información únicamente será visible para los administradores del chat proporcionando, de esta manera, información adicional sobre los mensajes y los usuarios, pudiendo llegar a tomar acciones adicionales sobre ellos si fuera necesario.
 
 \subsection{Planificación del Sprint}
-En este tercer Sprint se va a desarrollar la siguiente historia de usuario:
+En este Sprint se va a desarrollar la siguiente historia de usuario:
 
 \begin{table}[hp]
 	\centering
@@ -462,7 +462,7 @@ El servicio \textit{Tone Analyzer} puede analizar una única oración o un conju
 	\item \textbf{Felicidad/alegría (tono emocional)}. Tiene matices de disfrute, satisfacción y placer. La alegría trae una sensación de bienestar, paz interior, amor, seguridad y satisfacción.
 	\item \textbf{Tristeza (tono emocional)}. La tristeza indica una sensación de pérdida y desventaja. Cuando una persona está callada, menos enérgica y retraída, se puede deducir que siente tristeza.
 	\item \textbf{Analítico (tono del lenguaje)}. Un tono analítico indica el razonamiento y la actitud analítica de una persona sobre las cosas. Una persona analítica puede ser percibida como intelectual, racional, sistemática o sin emociones.
-	\item \textbf{Seguridad (tono del lenguaje)}. Un tono de confianza o seguridad indica el grado de certeza de una persona. Una persona segura de sí misma puede ser percibida como segura, coleccionada, optimista o egoísta.
+	\item \textbf{Seguridad (tono del lenguaje)}. Un tono de confianza o seguridad indica el grado de certeza de una persona. Una persona segura de sí misma puede ser percibida como segura, optimista o egoísta.
 	\item \textbf{Tentativo (tono del lenguaje)}. Un tono tentativo indica el grado de inhibición de una persona. Una persona tentativa puede ser percibida como cuestionable, dudosa o discutible.
 \end{itemize}
 
@@ -509,7 +509,7 @@ Debido a la inclusión de los tonos por mensaje y por usuario en la base de dato
 \clearpage
 
 \section{Sprint 4: Integración de Google Calendar y Desarrollo de Funcionalidades Adicionales}
-Este último Sprint se ha dedicado a la integración con Google Calendar, así como al desarrollo de funcionalidades adicionales a las ya existentes de cara a completar la aplicación final, puesto que la principal función de comunicación ya ha sido implementada en los Sprints anteriores.
+Este último Sprint se ha dedicado a la integración con Google Calendar, así como al desarrollo de funcionalidades adicionales a las ya existentes de cara a completar la aplicación final.
 
 \subsection{Planificación del Sprint}
 En este Sprint se van a implementar las siguientes historias de usuario:
@@ -579,7 +579,7 @@ Para esta funcionalidad se ha añadido un botón (+) (Figura \ref{fig:crearevent
 \end{figure}
 
 \subsubsection{Creación y Modificación del Perfil}
-Esta funcionalidad está disponible para todos los usuarios desde la actividad principal mediante una opción en el menú (Figura \ref{fig:menuppal}). Esta opción lanzará una nueva actividad desde la que se podrá editar la imagen de perfil, pudiendo seleccionar una desde la galería o retirarla para establecer la imagen por defecto mediante el uso de los botones que se muestran (Figura \ref{fig:perfil}). Del mismo modo, se muestra al usuario sus datos personales que se encuentran en la base de datos.
+Esta funcionalidad está disponible para todos los usuarios desde la actividad principal mediante una opción en el menú (Figura \ref{fig:menuppal}). Esta opción lanzará una nueva actividad desde la que se podrá editar la imagen de perfil, pudiendo seleccionar una desde la galería o retirarla para establecer la imagen por defecto mediante el uso de los botones que se muestran (Figura \ref{fig:perfil}). Del mismo modo, se muestran al usuario sus datos personales de los que se tiene constancia en la base de datos.
 
 \begin{figure}[!h]
 	\centering
@@ -600,7 +600,7 @@ Esta funcionalidad está disponible para todos los usuarios desde la actividad p
 \clearpage
 
 \subsubsection{Eliminar y cambiar nombre de un chat}
-Mediante estas opciones se facilita la tarea de gestión de los chats a los administradores de los mismos. Para eliminar un chat bastará con dejarlo pulsado en la lista de la actividad principal mostrándose un cuadro de diálogo, confirmando la eliminación (Figura \ref{fig:borrarchat}). Por otra parte, si lo que se desea es cambiar el nombre de un chat, primero se deberá entrar en el mismo y pulsar en el botón <<Info.>>, que se encuentra en la parte superior derecha. Inmediatamente se accederá a la actividad de información de grupo que se ha desarrollado para, además de cambiar el nombre, poder observar qué familias lo conforman mediante una lista (Figura \ref{fig:infochat}). Además, al lado de cada usuario se puede consultar un número en forma de porcentaje que representa el tono general que ha empleado en el grupo, siendo 100\% el mejor valor posible, como se ha detallado en el Sprint anterior.
+Mediante estas opciones se facilita la tarea de gestión de los chats a los administradores de los mismos. Para eliminar un chat bastará con dejarlo pulsado en la lista de la actividad principal mostrándose un cuadro de diálogo y confirmando la eliminación (Figura \ref{fig:borrarchat}). Por otra parte, si lo que se desea es cambiar el nombre de un chat, primero se deberá entrar en el mismo y pulsar en el botón <<Info.>>, que se encuentra en la parte superior derecha. Inmediatamente se accederá a la actividad de información de grupo que se ha desarrollado para, además de cambiar el nombre, poder observar qué familias lo conforman mediante una lista (Figura \ref{fig:infochat}). Además, al lado de cada usuario se puede consultar un número en forma de porcentaje que representa el tono general que ha empleado en el grupo, siendo 100\% el mejor valor posible, como se ha detallado en el Sprint anterior.
 
 \begin{figure}[!h]
 	\centering
