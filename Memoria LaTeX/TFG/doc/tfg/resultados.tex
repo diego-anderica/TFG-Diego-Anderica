@@ -3,7 +3,7 @@
 
 \drop{E}{n} este capítulo se mostrarán los resultados obtenidos al seguir la planificación inicial, tomando como base la metodología descrita en el capítulo anterior. Por tanto, este capítulo se estructurará en Sprints y en cada uno de ellos se tendrá, al menos, una historia de usuario asignada que estará implementada al final del desarrollo.
 
-Debido a que el equipo de Scrum es reducido, se han tenido que realizar diversos ajustes para adoptar esta metodología al trabajo que se va a desarrollar. Por tanto, el equipo identificado queda de la siguiente manera:
+Debido a que el equipo de Scrum es reducido, se han tenido que realizar diversos ajustes y adaptaciones con el fin de seguir esta metodología de acuerdo al trabajo que se va a desarrollar. Por tanto, el equipo identificado queda de la siguiente manera:
 
 \begin{itemize}
 	\item \textbf{Dueño del Producto:} Luis Rodríguez Benítez.
@@ -47,7 +47,7 @@ Al igual que sucede en la mayoría de proyectos, el desarrollo de una nueva solu
 \end{table}
 
 \subsection{Planificación Temporal}
-La Figura \ref{fig:plantempo}) representa la planificación temporal estimada para cada uno de los Sprints.
+La Figura \ref{fig:plantempo} representa la planificación temporal estimada para cada uno de los Sprints.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -225,7 +225,7 @@ Esta funcionalidad se ha implementado mediante el uso de una lista desplegable q
 	\end{center}
 \end{figure}
 
-Como medida adicional de seguridad y en prevención de corrupción de datos, el sitio Web preguntará al usuario si desea salir de la página en la que se encuentre, siempre y cuando se trate de una página en la que existan campos en los que el administrador pueda escribir y pudieran no haber sido guardados (Figura \ref{fig:preguntaweb}).
+Como medida adicional de seguridad y en prevención de corrupción de datos, el sitio web preguntará al usuario si desea salir de la página en la que se encuentre, siempre y cuando se trate de una página en la que existan campos en los que el administrador pueda escribir y pudieran no haber sido guardados (Figura \ref{fig:preguntaweb}).
 
 \begin{figure}[!h]
 	\begin{center}
@@ -347,7 +347,7 @@ Por otra parte, si quien quiere acceder a la aplicación es un docente, este deb
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=0.35\textwidth]{/capturas_app/logindocente.png}
+		\includegraphics[width=0.32\textwidth]{/capturas_app/logindocente.png}
 		\caption{Autenticación del Docente}
 		\label{fig:logindocente}
 	\end{center}
@@ -385,7 +385,7 @@ Por último, la principal función de la actividad de chat es la de mostrar todo
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.65\linewidth]{/capturas_app/ejemplogrupo.png}
+		\includegraphics[width=0.65\linewidth]{/capturas_app/ejemplogruposincolores}
 		\caption{Ejemplo de un Chat}
 		\label{fig:ejemplogrupo}
 	\end{minipage}
@@ -492,7 +492,9 @@ Por tanto, en cuanto a tonos relacionados con las emociones, se han considerado 
 
 \clearpage
 
-Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de los mismos (Tabla \ref{tab:coloresmensaje}). Además, si Watson analiza un mensaje y no detecta tonos que destaquen, este se mostrará en color amarillo, indicando que se debe prestar atención a dicho mensaje. Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje (siendo el 0\% el peor valor y el 100\% el mejor o más deseable) mediante una actividad que se desarrollará en el siguiente Sprint cuya principal función será la de informar acerca de los datos del chat como el nombre (que también se podrá modificar) y una lista de sus integrantes.
+Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, se debe proporcionar una manera de visualizar estos valores al administrador del mismo. Para ello, se ha decidido mostrar mediante un código de colores la puntuación de cada mensaje. De esta manera, el administrador del chat podrá ver los colores rojo, naranja, amarillo o verde, en función de la puntuación de los mismos (Tabla \ref{tab:coloresmensaje}). Además, si Watson analiza un mensaje y no detecta tonos que destaquen, este se mostrará en color amarillo, indicando que se debe prestar atención a dicho mensaje. En la Figura \ref{fig:chatcolores} se muestra un ejemplo de un chat con los mensajes coloreados. Por otro lado, la puntuación de cada usuario integrante se podrá consultar en forma de porcentaje (siendo el 0\% el peor valor y el 100\% el mejor o más deseable) mediante una actividad que se desarrollará en el siguiente Sprint cuya principal función será la de informar acerca de los datos del chat como el nombre (que también se podrá modificar) y una lista de sus integrantes.
+
+Debido a la inclusión de los tonos por mensaje y por usuario en la base de datos se ha tenido que llevar a cabo una ligera modificación de esta en lo que a la colección \mbox{<<ChatsGrupales>>} respecta. En cada uno de los chats se ha agregado un objeto <<PonderaciónTonos>>, que recogerá los pesos de cada uno de los tonos para cada chat y una colección adicional <<Tonos>>, que contendrá los tonos de cada uno de los integrantes del chat.
 
 \begin{table}[!htbp]
 	\centering
@@ -504,7 +506,17 @@ Puesto que se dispone de una puntuación por mensaje y por usuario en el chat, s
 	\label{tab:coloresmensaje}
 \end{table}
 
-Debido a la inclusión de los tonos por mensaje y por usuario en la base de datos se ha tenido que llevar a cabo una ligera modificación de esta en lo que a la colección \mbox{<<ChatsGrupales>>} respecta. En cada uno de los chats se ha agregado un objeto <<PonderaciónTonos>>, que recogerá los pesos de cada uno de los tonos para cada chat y una colección adicional <<Tonos>>, que contendrá los tonos de cada uno de los integrantes del chat.
+\clearpage
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=0.45\textwidth]{/capturas_app/ejemplogrupo}
+		\caption{Ejemplo de un Chat con Mensajes Coloreados}
+		\label{fig:chatcolores}
+	\end{center}
+\end{figure}
+
+
 
 \clearpage
 
@@ -630,11 +642,4 @@ Para el administrador de un chat, probablemente sea de utilidad proporcionar la 
 		\label{fig:infointegrante}
 	\end{center}
 \end{figure}
-
-
-
-
-
-
-
 
